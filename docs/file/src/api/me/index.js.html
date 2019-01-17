@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../../../">
+  <title data-ice="title">src/api/me/index.js | imkit-js-api-v3</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  <script src="script/manual.js"></script>
+</head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+</header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#api">api</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/api/index.js~IMKitApi.html">IMKitApi</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#api-admin">api/admin</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/api/admin/index.js~Admin.html">Admin</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#api-auth">api/auth</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/api/auth/index.js~Auth.html">Auth</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#api-file">api/file</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/api/file/index.js~File.html">File</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#api-me">api/me</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/api/me/index.js~Me.html">Me</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#api-message">api/message</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/api/message/index.js~Message.html">Message</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#api-room">api/room</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/api/room/index.js~Room.html">Room</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#api-url">api/url</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/api/url/index.js~Url.html">Url</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#socket">socket</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/socket/index.js~IMKitSocket.html">IMKitSocket</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#typedef">typedef</a><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-ApiConfig">ApiConfig</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-ClientData">ClientData</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-MessageData">MessageData</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-MessageInfo">MessageInfo</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-PushPayload">PushPayload</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-RoomData">RoomData</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-SocketConfig">SocketConfig</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-TokenData">TokenData</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">src/api/me/index.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import axios from &apos;axios&apos;;
+/**
+ * @import * from &apos;@/src/typedef&apos;;
+ */
+
+export default class Me {
+  /**
+   * @private
+   * @param {Api} api
+   */
+  constructor(api) {
+    /**
+     * @private
+     * @type {Api}
+     * */
+    this.api = api;
+    /**
+     * @private
+     * @type {Boolean}
+     */
+    this.isAdmin = false;
+  }
+
+  /**
+   * Get my info
+   * @returns {Promise&lt;ClientData|Error&gt;}
+   */
+  getInfo() {
+    return new Promise((resolve, reject) =&gt; {
+      let url = `${this.api.config.domain}/me`;
+      let data = {};
+      let headers = this.api.getHeader(this.isAdmin);
+
+      axios
+        .get(url, {
+          params: data,
+          headers: headers
+        })
+        .then(
+          res =&gt; {
+            if (res.status &gt;= 200 &amp;&amp; res.status &lt; 300 &amp;&amp; res.data.RC === 0) {
+              resolve(res.data.result);
+            }
+          },
+          error =&gt; {
+            this.api.onError(error);
+          }
+        );
+    });
+  }
+
+  /**
+   * Update my info
+   * @param {Object} info
+   * @param {String} [info.avatarUrl] &#x5927;&#x982D;&#x7DB2;&#x5740;
+   * @param {String} [info.email]
+   * @param {String} [info.nickname] &#x66B1;&#x7A31;
+   * @returns {Promise&lt;ClientData|Error&gt;}
+   */
+  updateInfo(info) {
+    return new Promise((resolve, reject) =&gt; {
+      let url = `${this.api.config.domain}/me`;
+      let data = info;
+      let headers = this.api.getHeader(this.isAdmin);
+
+      axios
+        .post(url, data, {
+          headers: headers
+        })
+        .then(
+          res =&gt; {
+            if (res.status &gt;= 200 &amp;&amp; res.status &lt; 300 &amp;&amp; res.data.RC === 0) {
+              resolve(res.data.result);
+            }
+          },
+          error =&gt; {
+            this.api.onError(error);
+          }
+        );
+    });
+  }
+
+  /**
+   * Get badge
+   * @returns {Promise&lt;{badge: Number}|Error&gt;}
+   */
+  getBadge() {
+    return new Promise((resolve, reject) =&gt; {
+      let url = `${this.api.config.domain}/me/badge`;
+      let data = {};
+      let headers = this.api.getHeader(this.isAdmin);
+
+      axios
+        .get(url, {
+          params: data,
+          headers: headers
+        })
+        .then(
+          res =&gt; {
+            if (res.status &gt;= 200 &amp;&amp; res.status &lt; 300 &amp;&amp; res.data.RC === 0) {
+              resolve(res.data.result);
+            }
+          },
+          error =&gt; {
+            this.api.onError(error);
+          }
+        );
+    });
+  }
+
+  /**
+   * subscribe
+   * @param {String} type ios or ???
+   * @param {String} token
+   * @returns {Promise&lt;{_id: String, type: String, __v: Number, client: String, token: String, deviceId: String}|Error&gt;}
+   */
+  subscribe(type, token) {
+    return new Promise((resolve, reject) =&gt; {
+      let url = `${this.api.config.domain}/me/subscribe`;
+      let data = {
+        type,
+        token
+      };
+      let headers = this.api.getHeader(this.isAdmin);
+
+      axios
+        .post(url, data, {
+          headers: headers
+        })
+        .then(
+          res =&gt; {
+            if (res.status &gt;= 200 &amp;&amp; res.status &lt; 300 &amp;&amp; res.data.RC === 0) {
+              resolve(res.data.result);
+            }
+          },
+          error =&gt; {
+            this.api.onError(error);
+          }
+        );
+    });
+  }
+
+  /**
+   * unsubscribe
+   * @param {String} type ios or ???
+   * @param {String} token
+   * @returns {Promise&lt;{n: Number, ok: Number}|Error&gt;}
+   */
+  unsubscribe(type, token) {
+    return new Promise((resolve, reject) =&gt; {
+      let url = `${this.api.config.domain}/me/unsubscribe`;
+      let data = {
+        type,
+        token
+      };
+      let headers = this.api.getHeader(this.isAdmin);
+
+      axios
+        .post(url, data, {
+          headers: headers
+        })
+        .then(
+          res =&gt; {
+            if (res.status &gt;= 200 &amp;&amp; res.status &lt; 300 &amp;&amp; res.data.RC === 0) {
+              resolve(res.data.result);
+            }
+          },
+          error =&gt; {
+            this.api.onError(error);
+          }
+        );
+    });
+  }
+
+  /**
+   * Mute room
+   * @param {String} roomId
+   * @returns {Promise&lt;ClientData|Error&gt;}
+   */
+  muteRoom(roomId) {
+    return new Promise((resolve, reject) =&gt; {
+      let url = `${this.api.config.domain}/me/mute/${roomId}`;
+      let data = {};
+      let headers = this.api.getHeader(this.isAdmin);
+
+      axios
+        .post(url, data, {
+          headers: headers
+        })
+        .then(
+          res =&gt; {
+            if (res.status &gt;= 200 &amp;&amp; res.status &lt; 300 &amp;&amp; res.data.RC === 0) {
+              resolve(res.data.result);
+            }
+          },
+          error =&gt; {
+            this.api.onError(error);
+          }
+        );
+    });
+  }
+
+  /**
+   * UnMute room
+   * @param {String} roomId
+   * @returns {Promise&lt;ClientData|Error&gt;}
+   */
+  unMuteRoom(roomId) {
+    return new Promise((resolve, reject) =&gt; {
+      let url = `${this.api.config.domain}/me/mute/${roomId}`;
+      let data = {};
+      let headers = this.api.getHeader(this.isAdmin);
+
+      axios
+        .delete(url, {
+          data: data,
+          headers: headers
+        })
+        .then(
+          res =&gt; {
+            if (res.status &gt;= 200 &amp;&amp; res.status &lt; 300 &amp;&amp; res.data.RC === 0) {
+              resolve(res.data.result);
+            }
+          },
+          error =&gt; {
+            this.api.onError(error);
+          }
+        );
+    });
+  }
+}
+</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.1.0)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>

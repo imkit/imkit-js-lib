@@ -1,0 +1,114 @@
+{
+  "type": "File",
+  "start": 0,
+  "end": 993,
+  "loc": {
+    "start": {
+      "line": 1,
+      "column": 0
+    },
+    "end": {
+      "line": 32,
+      "column": 0
+    }
+  },
+  "program": {
+    "type": "Program",
+    "start": 0,
+    "end": 993,
+    "loc": {
+      "start": {
+        "line": 1,
+        "column": 0
+      },
+      "end": {
+        "line": 32,
+        "column": 0
+      }
+    },
+    "sourceType": "module",
+    "body": [],
+    "directives": [],
+    "leadingComments": null,
+    "innerComments": [
+      {
+        "type": "CommentBlock",
+        "value": "*\r\n * @typedef {Object} MessageData\r\n * @property {String} messageType\r\n * 'text', 'image', 'video', 'audio', 'location', 'sticker',\r\n * 'joinRoom', 'leaveRoom', 'addMember', 'deleteMember'\r\n * @property {String} message\r\n * @property {String} [sticker]\r\n * @property {String} [originalUrl]\r\n * @property {String} [thumbnailUrl]\r\n * @property {Number} [width]\r\n * @property {Number} [height]\r\n * @property {Number} [latitude]\r\n * @property {Number} [longitude]\r\n * @property {String} [duration]\r\n * @property {String} [extra]\r\n * @property {MessageData} [reply]\r\n *\r\n * @property {Object} sender\r\n * @property {String} sender.id client id\r\n * @property {String} sender.avatarUrl\r\n * @property {String} sender.nickname\r\n * @property {String} sender.lastLoginTime\r\n * @property {Number} sender.lastLoginTimeMS\r\n *\r\n * @property {String} messageTime\r\n * @property {Number} messageTimeMS\r\n * @property {String} id message id\r\n * @property {String} [appID]\r\n * @property {Number} [__v]\r\n *\r\n ",
+        "start": 0,
+        "end": 991,
+        "loc": {
+          "start": {
+            "line": 1,
+            "column": 0
+          },
+          "end": {
+            "line": 31,
+            "column": 3
+          }
+        }
+      }
+    ]
+  },
+  "comments": [
+    {
+      "type": "CommentBlock",
+      "value": "*\r\n * @typedef {Object} MessageData\r\n * @property {String} messageType\r\n * 'text', 'image', 'video', 'audio', 'location', 'sticker',\r\n * 'joinRoom', 'leaveRoom', 'addMember', 'deleteMember'\r\n * @property {String} message\r\n * @property {String} [sticker]\r\n * @property {String} [originalUrl]\r\n * @property {String} [thumbnailUrl]\r\n * @property {Number} [width]\r\n * @property {Number} [height]\r\n * @property {Number} [latitude]\r\n * @property {Number} [longitude]\r\n * @property {String} [duration]\r\n * @property {String} [extra]\r\n * @property {MessageData} [reply]\r\n *\r\n * @property {Object} sender\r\n * @property {String} sender.id client id\r\n * @property {String} sender.avatarUrl\r\n * @property {String} sender.nickname\r\n * @property {String} sender.lastLoginTime\r\n * @property {Number} sender.lastLoginTimeMS\r\n *\r\n * @property {String} messageTime\r\n * @property {Number} messageTimeMS\r\n * @property {String} id message id\r\n * @property {String} [appID]\r\n * @property {Number} [__v]\r\n *\r\n ",
+      "start": 0,
+      "end": 991,
+      "loc": {
+        "start": {
+          "line": 1,
+          "column": 0
+        },
+        "end": {
+          "line": 31,
+          "column": 3
+        }
+      }
+    }
+  ],
+  "tokens": [
+    {
+      "type": "CommentBlock",
+      "value": "*\r\n * @typedef {Object} MessageData\r\n * @property {String} messageType\r\n * 'text', 'image', 'video', 'audio', 'location', 'sticker',\r\n * 'joinRoom', 'leaveRoom', 'addMember', 'deleteMember'\r\n * @property {String} message\r\n * @property {String} [sticker]\r\n * @property {String} [originalUrl]\r\n * @property {String} [thumbnailUrl]\r\n * @property {Number} [width]\r\n * @property {Number} [height]\r\n * @property {Number} [latitude]\r\n * @property {Number} [longitude]\r\n * @property {String} [duration]\r\n * @property {String} [extra]\r\n * @property {MessageData} [reply]\r\n *\r\n * @property {Object} sender\r\n * @property {String} sender.id client id\r\n * @property {String} sender.avatarUrl\r\n * @property {String} sender.nickname\r\n * @property {String} sender.lastLoginTime\r\n * @property {Number} sender.lastLoginTimeMS\r\n *\r\n * @property {String} messageTime\r\n * @property {Number} messageTimeMS\r\n * @property {String} id message id\r\n * @property {String} [appID]\r\n * @property {Number} [__v]\r\n *\r\n ",
+      "start": 0,
+      "end": 991,
+      "loc": {
+        "start": {
+          "line": 1,
+          "column": 0
+        },
+        "end": {
+          "line": 31,
+          "column": 3
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "eof",
+        "beforeExpr": false,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 993,
+      "end": 993,
+      "loc": {
+        "start": {
+          "line": 32,
+          "column": 0
+        },
+        "end": {
+          "line": 32,
+          "column": 0
+        }
+      }
+    }
+  ]
+}

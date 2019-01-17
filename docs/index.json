@@ -1,0 +1,5108 @@
+[
+  {
+    "__docId__": 1,
+    "kind": "external",
+    "name": "Infinity",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Infinity",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Infinity",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 2,
+    "kind": "external",
+    "name": "NaN",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/NaN",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~NaN",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 3,
+    "kind": "external",
+    "name": "undefined",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~undefined",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 4,
+    "kind": "external",
+    "name": "null",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/null",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~null",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 5,
+    "kind": "external",
+    "name": "Object",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Object",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 6,
+    "kind": "external",
+    "name": "object",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~object",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 7,
+    "kind": "external",
+    "name": "Function",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Function",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 8,
+    "kind": "external",
+    "name": "function",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~function",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 9,
+    "kind": "external",
+    "name": "Boolean",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Boolean",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 10,
+    "kind": "external",
+    "name": "boolean",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~boolean",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 11,
+    "kind": "external",
+    "name": "Symbol",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Symbol",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 12,
+    "kind": "external",
+    "name": "Error",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Error",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 13,
+    "kind": "external",
+    "name": "EvalError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/EvalError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~EvalError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 14,
+    "kind": "external",
+    "name": "InternalError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/InternalError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~InternalError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 15,
+    "kind": "external",
+    "name": "RangeError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RangeError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~RangeError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 16,
+    "kind": "external",
+    "name": "ReferenceError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ReferenceError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~ReferenceError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 17,
+    "kind": "external",
+    "name": "SyntaxError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SyntaxError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~SyntaxError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 18,
+    "kind": "external",
+    "name": "TypeError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypeError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~TypeError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 19,
+    "kind": "external",
+    "name": "URIError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/URIError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~URIError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 20,
+    "kind": "external",
+    "name": "Number",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Number",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 21,
+    "kind": "external",
+    "name": "number",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~number",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 22,
+    "kind": "external",
+    "name": "Date",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Date",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 23,
+    "kind": "external",
+    "name": "String",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~String",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 24,
+    "kind": "external",
+    "name": "string",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~string",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 25,
+    "kind": "external",
+    "name": "RegExp",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~RegExp",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 26,
+    "kind": "external",
+    "name": "Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 27,
+    "kind": "external",
+    "name": "Int8Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int8Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Int8Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 28,
+    "kind": "external",
+    "name": "Uint8Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Uint8Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 29,
+    "kind": "external",
+    "name": "Uint8ClampedArray",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8ClampedArray",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Uint8ClampedArray",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 30,
+    "kind": "external",
+    "name": "Int16Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int16Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Int16Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 31,
+    "kind": "external",
+    "name": "Uint16Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint16Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Uint16Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 32,
+    "kind": "external",
+    "name": "Int32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int32Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Int32Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 33,
+    "kind": "external",
+    "name": "Uint32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint32Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Uint32Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 34,
+    "kind": "external",
+    "name": "Float32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float32Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Float32Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 35,
+    "kind": "external",
+    "name": "Float64Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float64Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Float64Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 36,
+    "kind": "external",
+    "name": "Map",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Map",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 37,
+    "kind": "external",
+    "name": "Set",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Set",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 38,
+    "kind": "external",
+    "name": "WeakMap",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakMap",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~WeakMap",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 39,
+    "kind": "external",
+    "name": "WeakSet",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakSet",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~WeakSet",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 40,
+    "kind": "external",
+    "name": "ArrayBuffer",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~ArrayBuffer",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 41,
+    "kind": "external",
+    "name": "DataView",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~DataView",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 42,
+    "kind": "external",
+    "name": "JSON",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~JSON",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 43,
+    "kind": "external",
+    "name": "Promise",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Promise",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 44,
+    "kind": "external",
+    "name": "Generator",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Generator",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Generator",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 45,
+    "kind": "external",
+    "name": "GeneratorFunction",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/GeneratorFunction",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~GeneratorFunction",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 46,
+    "kind": "external",
+    "name": "Reflect",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Reflect",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 47,
+    "kind": "external",
+    "name": "Proxy",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Proxy",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 48,
+    "kind": "file",
+    "name": "src/api/admin/index.js",
+    "content": "import axios from 'axios';\r\nimport Room from '../room';\r\n/**\r\n * @import * from '@/src/typedef';\r\n */\r\n\r\nexport default class Admin {\r\n  /**\r\n   * @private\r\n   * @param {Api} api\r\n   */\r\n  constructor(api) {\r\n    /**\r\n     * @private\r\n     * @type {ApiConfig}\r\n     * */\r\n    this.api = api;\r\n    /**\r\n     * @private\r\n     * @type {Boolean}\r\n     */\r\n    this.isAdmin = true;\r\n    /** @type {Room} */\r\n    this.room = new Room(this.api);\r\n    this.room.isAdmin = this.isAdmin;\r\n  }\r\n\r\n  /**\r\n   * Get clients list\r\n   * @param {Number} [limit = 10]\r\n   * @param {{nickname: Object}} [q = {}]\r\n   * @returns {Promise<ClientData[]|Error>}\r\n   */\r\n  getClients(limit = 10, q = {}) {\r\n    return new Promise((resolve, reject) => {\r\n      let url = `${this.api.config.domain}/admin/clients`;\r\n      let data = {\r\n        limit,\r\n        q\r\n      };\r\n      let headers = this.api.getHeader(this.isAdmin);\r\n\r\n      axios\r\n        .get(url, {\r\n          params: data,\r\n          headers: headers\r\n        })\r\n        .then(\r\n          res => {\r\n            if (res.status >= 200 && res.status < 300 && res.data.RC === 0) {\r\n              resolve(res.data.result);\r\n            }\r\n          },\r\n          error => {\r\n            this.api.onError(error);\r\n          }\r\n        );\r\n    });\r\n  }\r\n\r\n  /**\r\n   * Update or create client\r\n   * @param {Object} clientInfo\r\n   * @param {String} [clientInfo._id]\r\n   * @param {String} [clientInfo.avatarUrl] 大頭網址\r\n   * @param {String} [clientInfo.email]\r\n   * @param {String} [clientInfo.nickname] 暱稱\r\n   * @returns {Promise<ClientData|Error>}\r\n   */\r\n  updateClient(clientInfo) {\r\n    return new Promise((resolve, reject) => {\r\n      let url = `${this.api.config.domain}/admin/clients`;\r\n      let data = clientInfo;\r\n      let headers = this.api.getHeader(this.isAdmin);\r\n\r\n      axios\r\n        .post(url, data, {\r\n          headers: headers\r\n        })\r\n        .then(\r\n          res => {\r\n            if (res.status >= 200 && res.status < 300 && res.data.RC === 0) {\r\n              resolve(res.data.result);\r\n            }\r\n          },\r\n          error => {\r\n            this.api.onError(error);\r\n          }\r\n        );\r\n    });\r\n  }\r\n\r\n  /**\r\n   * Bind token to client\r\n   * @param {String} id Client id\r\n   * @param {String} token\r\n   * @returns {Promise<TokenData|Error>}\r\n   */\r\n  bindToken(id, token) {\r\n    return new Promise((resolve, reject) => {\r\n      let url = `${this.api.config.domain}/admin/clients/${id}/token/`;\r\n      let data = {\r\n        token\r\n      };\r\n\r\n      let headers = this.api.getHeader(this.isAdmin);\r\n\r\n      axios\r\n        .put(url, data, {\r\n          headers: headers\r\n        })\r\n        .then(\r\n          res => {\r\n            if (res.status >= 200 && res.status < 300 && res.data.RC === 0) {\r\n              resolve(res.data.result);\r\n            }\r\n          },\r\n          error => {\r\n            this.api.onError(error);\r\n          }\r\n        );\r\n    });\r\n  }\r\n\r\n  /**\r\n   * Revoke token to client\r\n   * @param {String} id Client id\r\n   * @param {String} token\r\n   * @returns {Promise<{}|Error>}\r\n   */\r\n  revokeToken(id, token) {\r\n    return new Promise((resolve, reject) => {\r\n      let url = `${this.api.config.domain}/admin/clients/${id}/token/`;\r\n      let data = {\r\n        token\r\n      };\r\n\r\n      let headers = this.api.getHeader(this.isAdmin);\r\n\r\n      axios\r\n        .delete(url, {\r\n          data: data,\r\n          headers: headers\r\n        })\r\n        .then(\r\n          res => {\r\n            if (res.status >= 200 && res.status < 300 && res.data.RC === 0) {\r\n              resolve(res.data.result);\r\n            }\r\n          },\r\n          error => {\r\n            this.api.onError(error);\r\n          }\r\n        );\r\n    });\r\n  }\r\n\r\n  /**\r\n   * Get connection count\r\n   * @returns {Promise<{count: Number}|Error>}\r\n   */\r\n  getConnectionCount() {\r\n    return new Promise((resolve, reject) => {\r\n      let url = `${this.api.config.domain}/admin/connection-count`;\r\n      let data = {};\r\n      let headers = this.api.getHeader(this.isAdmin);\r\n\r\n      axios\r\n        .get(url, {\r\n          params: data,\r\n          headers: headers\r\n        })\r\n        .then(\r\n          res => {\r\n            if (res.status >= 200 && res.status < 300 && res.data.RC === 0) {\r\n              resolve(res.data.result);\r\n            }\r\n          },\r\n          error => {\r\n            this.api.onError(error);\r\n          }\r\n        );\r\n    });\r\n  }\r\n\r\n  /**\r\n   * Generate token\r\n   * @param {Number} [size = 16]\r\n   * @returns {Promise<{token: String}|Error>}\r\n   */\r\n  generateToken(size = 16) {\r\n    return new Promise((resolve, reject) => {\r\n      let url = `${this.api.config.domain}/auths/token`;\r\n      let data = {\r\n        size\r\n      };\r\n      let headers = this.api.getHeader(this.isAdmin);\r\n\r\n      axios\r\n        .get(url, {\r\n          params: data,\r\n          headers: headers\r\n        })\r\n        .then(\r\n          res => {\r\n            if (res.status >= 200 && res.status < 300 && res.data.RC === 0) {\r\n              resolve(res.data.result);\r\n            }\r\n          },\r\n          error => {\r\n            this.api.onError(error);\r\n          }\r\n        );\r\n    });\r\n  }\r\n\r\n  /**\r\n   * Get token list\r\n   * @returns {Promise<{totalCount: Number, data: TokenData[]}|Error>}\r\n   */\r\n  getTokenList() {\r\n    return new Promise((resolve, reject) => {\r\n      let url = `${this.api.config.domain}/auths/tokens`;\r\n      let data = {};\r\n      let headers = this.api.getHeader(this.isAdmin);\r\n\r\n      axios\r\n        .get(url, {\r\n          params: data,\r\n          headers: headers\r\n        })\r\n        .then(\r\n          res => {\r\n            if (res.status >= 200 && res.status < 300 && res.data.RC === 0) {\r\n              resolve(res.data.result);\r\n            }\r\n          },\r\n          error => {\r\n            this.api.onError(error);\r\n          }\r\n        );\r\n    });\r\n  }\r\n\r\n  /**\r\n   * Push to tokens\r\n   * @param {String} type ios or ???\r\n   * @param {String[]} tokens\r\n   * @param {PushPayload} payload\r\n   * @returns {Promise<null|Error>}\r\n   */\r\n  pushToTokens(type, tokens, payload) {\r\n    return new Promise((resolve, reject) => {\r\n      let url = `${this.api.config.domain}/push/push2tokens`;\r\n      let data = {\r\n        type,\r\n        tokens,\r\n        payload\r\n      };\r\n      let headers = this.api.getHeader(this.isAdmin);\r\n\r\n      axios\r\n        .post(url, data, {\r\n          headers: headers\r\n        })\r\n        .then(\r\n          res => {\r\n            if (res.status >= 200 && res.status < 300 && res.data.RC === 0) {\r\n              resolve(res.data.result);\r\n            }\r\n          },\r\n          error => {\r\n            this.api.onError(error);\r\n          }\r\n        );\r\n    });\r\n  }\r\n\r\n  /**\r\n   * Push to clients\r\n   * @param {String[]} clients\r\n   * @param {PushPayload} payload\r\n   * @returns {Promise<null|Error>}\r\n   */\r\n  pushToClients(clients, payload) {\r\n    return new Promise((resolve, reject) => {\r\n      let url = `${this.api.config.domain}/push/push2clients`;\r\n      let data = {\r\n        clients,\r\n        payload\r\n      };\r\n      let headers = this.api.getHeader(this.isAdmin);\r\n\r\n      axios\r\n        .post(url, data, {\r\n          headers: headers\r\n        })\r\n        .then(\r\n          res => {\r\n            if (res.status >= 200 && res.status < 300 && res.data.RC === 0) {\r\n              resolve(res.data.result);\r\n            }\r\n          },\r\n          error => {\r\n            this.api.onError(error);\r\n          }\r\n        );\r\n    });\r\n  }\r\n}\r\n",
+    "static": true,
+    "longname": "E:/REPO/IMKit/IMKit-Chat-v3/imkit-js-api-v3/src/api/admin/index.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 49,
+    "kind": "class",
+    "name": "Admin",
+    "memberof": "src/api/admin/index.js",
+    "static": true,
+    "longname": "src/api/admin/index.js~Admin",
+    "access": "public",
+    "export": true,
+    "importPath": "imkit-js-api-v3/src/api/admin/index.js",
+    "importStyle": "Admin",
+    "description": "",
+    "lineNumber": 7,
+    "unknown": [
+      {
+        "tagName": "@import",
+        "tagValue": "* from '@/src/typedef';"
+      }
+    ],
+    "interface": false
+  },
+  {
+    "__docId__": 50,
+    "kind": "constructor",
+    "name": "constructor",
+    "memberof": "src/api/admin/index.js~Admin",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/api/admin/index.js~Admin#constructor",
+    "access": "private",
+    "description": "",
+    "lineNumber": 12,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Api"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "api",
+        "description": ""
+      }
+    ],
+    "ignore": true
+  },
+  {
+    "__docId__": 51,
+    "kind": "member",
+    "name": "api",
+    "memberof": "src/api/admin/index.js~Admin",
+    "static": false,
+    "longname": "src/api/admin/index.js~Admin#api",
+    "access": "private",
+    "description": "",
+    "lineNumber": 17,
+    "type": {
+      "nullable": null,
+      "types": [
+        "ApiConfig"
+      ],
+      "spread": false,
+      "description": null
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 52,
+    "kind": "member",
+    "name": "isAdmin",
+    "memberof": "src/api/admin/index.js~Admin",
+    "static": false,
+    "longname": "src/api/admin/index.js~Admin#isAdmin",
+    "access": "private",
+    "description": "",
+    "lineNumber": 22,
+    "type": {
+      "nullable": null,
+      "types": [
+        "Boolean"
+      ],
+      "spread": false,
+      "description": null
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 53,
+    "kind": "member",
+    "name": "room",
+    "memberof": "src/api/admin/index.js~Admin",
+    "static": false,
+    "longname": "src/api/admin/index.js~Admin#room",
+    "access": "public",
+    "description": null,
+    "lineNumber": 24,
+    "type": {
+      "nullable": null,
+      "types": [
+        "Room"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 54,
+    "kind": "method",
+    "name": "getClients",
+    "memberof": "src/api/admin/index.js~Admin",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/api/admin/index.js~Admin#getClients",
+    "access": "public",
+    "description": "Get clients list",
+    "lineNumber": 34,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Promise<ClientData[]|Error>}"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Number"
+        ],
+        "spread": false,
+        "optional": true,
+        "defaultValue": " 10",
+        "defaultRaw": 10,
+        "name": "limit",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "{nickname: Object}"
+        ],
+        "spread": false,
+        "optional": true,
+        "defaultValue": " {}",
+        "defaultRaw": {},
+        "name": "q",
+        "description": ""
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise<ClientData[]|Error>"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 55,
+    "kind": "method",
+    "name": "updateClient",
+    "memberof": "src/api/admin/index.js~Admin",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/api/admin/index.js~Admin#updateClient",
+    "access": "public",
+    "description": "Update or create client",
+    "lineNumber": 70,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Promise<ClientData|Error>}"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "clientInfo",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "clientInfo._id",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "clientInfo.avatarUrl",
+        "description": "大頭網址"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "clientInfo.email",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "clientInfo.nickname",
+        "description": "暱稱"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise<ClientData|Error>"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 56,
+    "kind": "method",
+    "name": "bindToken",
+    "memberof": "src/api/admin/index.js~Admin",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/api/admin/index.js~Admin#bindToken",
+    "access": "public",
+    "description": "Bind token to client",
+    "lineNumber": 99,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Promise<TokenData|Error>}"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "id",
+        "description": "Client id"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "token",
+        "description": ""
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise<TokenData|Error>"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 57,
+    "kind": "method",
+    "name": "revokeToken",
+    "memberof": "src/api/admin/index.js~Admin",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/api/admin/index.js~Admin#revokeToken",
+    "access": "public",
+    "description": "Revoke token to client",
+    "lineNumber": 131,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Promise<{}|Error>}"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "id",
+        "description": "Client id"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "token",
+        "description": ""
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise<{}|Error>"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 58,
+    "kind": "method",
+    "name": "getConnectionCount",
+    "memberof": "src/api/admin/index.js~Admin",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/api/admin/index.js~Admin#getConnectionCount",
+    "access": "public",
+    "description": "Get connection count",
+    "lineNumber": 162,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Promise<{count: Number}|Error>}"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise<{count: Number}|Error>"
+      ],
+      "spread": false,
+      "description": ""
+    },
+    "params": []
+  },
+  {
+    "__docId__": 59,
+    "kind": "method",
+    "name": "generateToken",
+    "memberof": "src/api/admin/index.js~Admin",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/api/admin/index.js~Admin#generateToken",
+    "access": "public",
+    "description": "Generate token",
+    "lineNumber": 191,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Promise<{token: String}|Error>}"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Number"
+        ],
+        "spread": false,
+        "optional": true,
+        "defaultValue": " 16",
+        "defaultRaw": 16,
+        "name": "size",
+        "description": ""
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise<{token: String}|Error>"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 60,
+    "kind": "method",
+    "name": "getTokenList",
+    "memberof": "src/api/admin/index.js~Admin",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/api/admin/index.js~Admin#getTokenList",
+    "access": "public",
+    "description": "Get token list",
+    "lineNumber": 221,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Promise<{totalCount: Number, data: TokenData[]}|Error>}"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise<{totalCount: Number, data: TokenData[]}|Error>"
+      ],
+      "spread": false,
+      "description": ""
+    },
+    "params": []
+  },
+  {
+    "__docId__": 61,
+    "kind": "method",
+    "name": "pushToTokens",
+    "memberof": "src/api/admin/index.js~Admin",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/api/admin/index.js~Admin#pushToTokens",
+    "access": "public",
+    "description": "Push to tokens",
+    "lineNumber": 252,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Promise<null|Error>}"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "type",
+        "description": "ios or ???"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String[]"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "tokens",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "PushPayload"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "payload",
+        "description": ""
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise<null|Error>"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 62,
+    "kind": "method",
+    "name": "pushToClients",
+    "memberof": "src/api/admin/index.js~Admin",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/api/admin/index.js~Admin#pushToClients",
+    "access": "public",
+    "description": "Push to clients",
+    "lineNumber": 285,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Promise<null|Error>}"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "String[]"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "clients",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "PushPayload"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "payload",
+        "description": ""
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise<null|Error>"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 63,
+    "kind": "file",
+    "name": "src/api/auth/index.js",
+    "content": "import axios from 'axios';\r\n/**\r\n * @import * from '@/src/typedef';\r\n */\r\n\r\nexport default class Auth {\r\n  /**\r\n   * @private\r\n   * @param {Api} api\r\n   */\r\n  constructor(api) {\r\n    /**\r\n     * @private\r\n     * @type {Api}\r\n     */\r\n    this.api = api;\r\n    /**\r\n     * @private\r\n     * @type {Boolean}\r\n     */\r\n    this.isAdmin = false;\r\n  }\r\n\r\n  /**\r\n   * Create/Update user info and return token\r\n   * @param {Object} [info]\r\n   * @param {String} [info.id] Client id\r\n   * @param {String} [info.nickname]\r\n   * @param {String} [info.avatarUrl]\r\n   * @param {String} [info.email]\r\n   * @returns {Promise<{token: String}|Error>}\r\n   */\r\n  sign(info = {}) {\r\n    return new Promise((resolve, reject) => {\r\n      let url = `${this.api.config.authBase}/sign`;\r\n      let data = info;\r\n      let headers = {};\r\n\r\n      axios\r\n        .post(url, data, {\r\n          headers: headers\r\n        })\r\n        .then(\r\n          res => {\r\n            if (res.status >= 200 && res.status < 300) {\r\n              resolve(res.data);\r\n            }\r\n          },\r\n          error => {\r\n            this.api.onError(error);\r\n          }\r\n        );\r\n    });\r\n  }\r\n\r\n  /**\r\n   * Verify token and get client id\r\n   * @param {String} token\r\n   * @returns {Promise<{id: String, nickname: String, avatarUrl: String}|Error>}\r\n   */\r\n  verify(token) {\r\n    return new Promise((resolve, reject) => {\r\n      let url = `${this.api.config.authBase}/verify`;\r\n      let data = {\r\n        token\r\n      };\r\n      let headers = {};\r\n\r\n      axios\r\n        .post(url, data, {\r\n          headers: headers\r\n        })\r\n        .then(\r\n          res => {\r\n            if (res.status >= 200 && res.status < 300) {\r\n              resolve(res.data);\r\n            }\r\n          },\r\n          error => {\r\n            this.api.onError(error);\r\n          }\r\n        );\r\n    });\r\n  }\r\n}\r\n",
+    "static": true,
+    "longname": "E:/REPO/IMKit/IMKit-Chat-v3/imkit-js-api-v3/src/api/auth/index.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 64,
+    "kind": "class",
+    "name": "Auth",
+    "memberof": "src/api/auth/index.js",
+    "static": true,
+    "longname": "src/api/auth/index.js~Auth",
+    "access": "public",
+    "export": true,
+    "importPath": "imkit-js-api-v3/src/api/auth/index.js",
+    "importStyle": "Auth",
+    "description": "",
+    "lineNumber": 6,
+    "unknown": [
+      {
+        "tagName": "@import",
+        "tagValue": "* from '@/src/typedef';"
+      }
+    ],
+    "interface": false
+  },
+  {
+    "__docId__": 65,
+    "kind": "constructor",
+    "name": "constructor",
+    "memberof": "src/api/auth/index.js~Auth",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/api/auth/index.js~Auth#constructor",
+    "access": "private",
+    "description": "",
+    "lineNumber": 11,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Api"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "api",
+        "description": ""
+      }
+    ],
+    "ignore": true
+  },
+  {
+    "__docId__": 66,
+    "kind": "member",
+    "name": "api",
+    "memberof": "src/api/auth/index.js~Auth",
+    "static": false,
+    "longname": "src/api/auth/index.js~Auth#api",
+    "access": "private",
+    "description": "",
+    "lineNumber": 16,
+    "type": {
+      "nullable": null,
+      "types": [
+        "Api"
+      ],
+      "spread": false,
+      "description": null
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 67,
+    "kind": "member",
+    "name": "isAdmin",
+    "memberof": "src/api/auth/index.js~Auth",
+    "static": false,
+    "longname": "src/api/auth/index.js~Auth#isAdmin",
+    "access": "private",
+    "description": "",
+    "lineNumber": 21,
+    "type": {
+      "nullable": null,
+      "types": [
+        "Boolean"
+      ],
+      "spread": false,
+      "description": null
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 68,
+    "kind": "method",
+    "name": "sign",
+    "memberof": "src/api/auth/index.js~Auth",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/api/auth/index.js~Auth#sign",
+    "access": "public",
+    "description": "Create/Update user info and return token",
+    "lineNumber": 33,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Promise<{token: String}|Error>}"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "info",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "info.id",
+        "description": "Client id"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "info.nickname",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "info.avatarUrl",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "info.email",
+        "description": ""
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise<{token: String}|Error>"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 69,
+    "kind": "method",
+    "name": "verify",
+    "memberof": "src/api/auth/index.js~Auth",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/api/auth/index.js~Auth#verify",
+    "access": "public",
+    "description": "Verify token and get client id",
+    "lineNumber": 61,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Promise<{id: String, nickname: String, avatarUrl: String}|Error>}"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "token",
+        "description": ""
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise<{id: String, nickname: String, avatarUrl: String}|Error>"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 70,
+    "kind": "file",
+    "name": "src/api/file/index.js",
+    "content": "import axios from 'axios';\r\n/**\r\n * @import * from '@/src/typedef';\r\n */\r\n\r\nexport default class File {\r\n  /**\r\n   * @private\r\n   * @param {Api} api\r\n   */\r\n  constructor(api) {\r\n    /**\r\n     * @private\r\n     * @type {Api}\r\n     * */\r\n    this.api = api;\r\n    /**\r\n     * @private\r\n     * @type {Boolean}\r\n     */\r\n    this.isAdmin = false;\r\n  }\r\n\r\n  /**\r\n   * Upload File\r\n   * @param {String} bucketName\r\n   * @param {File} file\r\n   * @param {Object} extra\r\n   * @param {Function} progress\r\n   * @returns {Promise<String|Error>}\r\n   */\r\n  upload(bucketName, file, extra = {}, progress = e => {}) {\r\n    return new Promise((resolve, reject) => {\r\n      let url = `${this.api.config.domain}/files/${bucketName}`;\r\n      let data = new FormData();\r\n      let headers = this.api.getHeader(this.isAdmin);\r\n\r\n      data.append('extra', JSON.stringify(extra));\r\n      data.append('file', file);\r\n      // headers = Object.assign(headers, data.getHeaders());\r\n\r\n      axios\r\n        .post(url, data, {\r\n          headers: headers,\r\n          onUploadProgress: progress\r\n        })\r\n        .then(\r\n          res => {\r\n            if (res.status >= 200 && res.status < 300 && res.data.RC === 0) {\r\n              resolve(\r\n                `${this.api.config.domain}/files/${bucketName}/${\r\n                  res.data.result.id\r\n                }`\r\n              );\r\n            } else {\r\n              resolve(res.data);\r\n            }\r\n          },\r\n          error => {\r\n            this.api.onError(error);\r\n          }\r\n        );\r\n    });\r\n  }\r\n\r\n  /**\r\n   * Get File metadata\r\n   * @param {String} bucketName\r\n   * @param {String} fileId\r\n   * @returns {Promise<{AcceptRanges: String, LastModified: String, ContentLength: Number, ETag: String, ContentType: String, Metadata: Object[], extra: Object[]|Error>}\r\n   */\r\n  getMetadata(bucketName, fileId) {\r\n    return new Promise((resolve, reject) => {\r\n      let url = `${\r\n        this.api.config.domain\r\n      }/files/${bucketName}/${fileId}/metadata`;\r\n      let data = {};\r\n      let headers = this.api.getHeader(this.isAdmin);\r\n\r\n      axios\r\n        .get(url, {\r\n          params: data,\r\n          headers: headers\r\n        })\r\n        .then(\r\n          res => {\r\n            if (res.status >= 200 && res.status < 300 && res.data.RC === 0) {\r\n              resolve(res.data.result);\r\n            }\r\n          },\r\n          error => {\r\n            this.api.onError(error);\r\n          }\r\n        );\r\n    });\r\n  }\r\n\r\n  /**\r\n   * Downliad File\r\n   * @param {String} bucketName\r\n   * @param {String} fileId\r\n   * @param {Object} appendHeaders\r\n   * @param {Function} progress\r\n   */\r\n  download(bucketName, fileId, appendHeaders = {}, progress = e => {}) {\r\n    return new Promise((resolve, reject) => {\r\n      let url = `${this.api.config.domain}/files/${bucketName}/${fileId}`;\r\n      let data = {};\r\n      let headers = this.api.getHeader(this.isAdmin);\r\n\r\n      headers = Object.assign(headers, appendHeaders);\r\n\r\n      axios\r\n        .get(url, {\r\n          params: data,\r\n          headers: headers,\r\n          onDownloadProgress: progress,\r\n          responseType: 'arraybuffer'\r\n        })\r\n        .then(\r\n          res => {\r\n            if (res.status >= 200 && res.status < 300) {\r\n              resolve(res);\r\n            }\r\n          },\r\n          error => {\r\n            this.api.onError(error);\r\n          }\r\n        );\r\n    });\r\n  }\r\n}\r\n",
+    "static": true,
+    "longname": "E:/REPO/IMKit/IMKit-Chat-v3/imkit-js-api-v3/src/api/file/index.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 71,
+    "kind": "class",
+    "name": "File",
+    "memberof": "src/api/file/index.js",
+    "static": true,
+    "longname": "src/api/file/index.js~File",
+    "access": "public",
+    "export": true,
+    "importPath": "imkit-js-api-v3/src/api/file/index.js",
+    "importStyle": "File",
+    "description": "",
+    "lineNumber": 6,
+    "unknown": [
+      {
+        "tagName": "@import",
+        "tagValue": "* from '@/src/typedef';"
+      }
+    ],
+    "interface": false
+  },
+  {
+    "__docId__": 72,
+    "kind": "constructor",
+    "name": "constructor",
+    "memberof": "src/api/file/index.js~File",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/api/file/index.js~File#constructor",
+    "access": "private",
+    "description": "",
+    "lineNumber": 11,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Api"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "api",
+        "description": ""
+      }
+    ],
+    "ignore": true
+  },
+  {
+    "__docId__": 73,
+    "kind": "member",
+    "name": "api",
+    "memberof": "src/api/file/index.js~File",
+    "static": false,
+    "longname": "src/api/file/index.js~File#api",
+    "access": "private",
+    "description": "",
+    "lineNumber": 16,
+    "type": {
+      "nullable": null,
+      "types": [
+        "Api"
+      ],
+      "spread": false,
+      "description": null
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 74,
+    "kind": "member",
+    "name": "isAdmin",
+    "memberof": "src/api/file/index.js~File",
+    "static": false,
+    "longname": "src/api/file/index.js~File#isAdmin",
+    "access": "private",
+    "description": "",
+    "lineNumber": 21,
+    "type": {
+      "nullable": null,
+      "types": [
+        "Boolean"
+      ],
+      "spread": false,
+      "description": null
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 75,
+    "kind": "method",
+    "name": "upload",
+    "memberof": "src/api/file/index.js~File",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/api/file/index.js~File#upload",
+    "access": "public",
+    "description": "Upload File",
+    "lineNumber": 32,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Promise<String|Error>}"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "bucketName",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "File"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "file",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "extra",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Function"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "progress",
+        "description": ""
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise<String|Error>"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 76,
+    "kind": "method",
+    "name": "getMetadata",
+    "memberof": "src/api/file/index.js~File",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/api/file/index.js~File#getMetadata",
+    "access": "public",
+    "description": "Get File metadata",
+    "lineNumber": 72,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Promise<{AcceptRanges: String, LastModified: String, ContentLength: Number, ETag: String, ContentType: String, Metadata: Object[], extra: Object[]|Error>}"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "bucketName",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "fileId",
+        "description": ""
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise<{AcceptRanges: String, LastModified: String, ContentLength: Number, ETag: String, ContentType: String, Metadata: Object[], extra: Object[]|Error>"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 77,
+    "kind": "method",
+    "name": "download",
+    "memberof": "src/api/file/index.js~File",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/api/file/index.js~File#download",
+    "access": "public",
+    "description": "Downliad File",
+    "lineNumber": 105,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "bucketName",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "fileId",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "appendHeaders",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Function"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "progress",
+        "description": ""
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 78,
+    "kind": "file",
+    "name": "src/api/index.js",
+    "content": "import Admin from './admin';\r\nimport Auth from './auth';\r\nimport File from './file';\r\nimport Me from './me';\r\nimport Message from './message';\r\nimport Room from './room';\r\nimport Url from './url';\r\n/**\r\n * @import * from '@/src/typedef';\r\n */\r\n\r\nexport default class IMKitApi {\r\n  /**\r\n   * 建立 API 物件\r\n   * @param {ApiConfig} config\r\n   */\r\n  constructor(config) {\r\n    /** @type {ApiConfig} */\r\n    this.config = config;\r\n    /** @type {Admin} */\r\n    this.admin = new Admin(this);\r\n    /** @type {Auth} */\r\n    this.auth = new Auth(this);\r\n    /** @type {File} */\r\n    this.file = new File(this);\r\n    /** @type {Me} */\r\n    this.me = new Me(this);\r\n    /** @type {Message} */\r\n    this.message = new Message(this);\r\n    /** @type {Room} */\r\n    this.room = new Room(this);\r\n    /** @type {Url} */\r\n    this.url = new Url(this);\r\n  }\r\n\r\n  /**\r\n   * @private\r\n   * @param {Boolean} isAdmin\r\n   */\r\n  getHeader(isAdmin = false) {\r\n    let header;\r\n\r\n    if (isAdmin) {\r\n      header = {\r\n        API_KEY: this.config.apiKey\r\n      };\r\n    } else {\r\n      header = {\r\n        'IM-Authorization': this.config.token,\r\n        CLIENT_KEY: this.config.clientKey\r\n      };\r\n    }\r\n    return header;\r\n  }\r\n\r\n  /**\r\n   * @private\r\n   * @param {Object} error\r\n   */\r\n  onError(error) {\r\n    if (error.response.data.RC) {\r\n      this.config.events.onAjaxError(error.response.data);\r\n    } else {\r\n      this.config.events.onAjaxError({\r\n        RC: error.response.status,\r\n        RM: error.response.statusText\r\n      });\r\n    }\r\n  }\r\n}\r\n",
+    "static": true,
+    "longname": "E:/REPO/IMKit/IMKit-Chat-v3/imkit-js-api-v3/src/api/index.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 79,
+    "kind": "class",
+    "name": "IMKitApi",
+    "memberof": "src/api/index.js",
+    "static": true,
+    "longname": "src/api/index.js~IMKitApi",
+    "access": "public",
+    "export": true,
+    "importPath": "imkit-js-api-v3/src/api/index.js",
+    "importStyle": "IMKitApi",
+    "description": "",
+    "lineNumber": 12,
+    "unknown": [
+      {
+        "tagName": "@import",
+        "tagValue": "* from '@/src/typedef';"
+      }
+    ],
+    "interface": false
+  },
+  {
+    "__docId__": 80,
+    "kind": "constructor",
+    "name": "constructor",
+    "memberof": "src/api/index.js~IMKitApi",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/api/index.js~IMKitApi#constructor",
+    "access": "public",
+    "description": "建立 API 物件",
+    "lineNumber": 17,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "ApiConfig"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "config",
+        "description": ""
+      }
+    ]
+  },
+  {
+    "__docId__": 81,
+    "kind": "member",
+    "name": "config",
+    "memberof": "src/api/index.js~IMKitApi",
+    "static": false,
+    "longname": "src/api/index.js~IMKitApi#config",
+    "access": "public",
+    "description": null,
+    "lineNumber": 19,
+    "type": {
+      "nullable": null,
+      "types": [
+        "ApiConfig"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 82,
+    "kind": "member",
+    "name": "admin",
+    "memberof": "src/api/index.js~IMKitApi",
+    "static": false,
+    "longname": "src/api/index.js~IMKitApi#admin",
+    "access": "public",
+    "description": null,
+    "lineNumber": 21,
+    "type": {
+      "nullable": null,
+      "types": [
+        "Admin"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 83,
+    "kind": "member",
+    "name": "auth",
+    "memberof": "src/api/index.js~IMKitApi",
+    "static": false,
+    "longname": "src/api/index.js~IMKitApi#auth",
+    "access": "public",
+    "description": null,
+    "lineNumber": 23,
+    "type": {
+      "nullable": null,
+      "types": [
+        "Auth"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 84,
+    "kind": "member",
+    "name": "file",
+    "memberof": "src/api/index.js~IMKitApi",
+    "static": false,
+    "longname": "src/api/index.js~IMKitApi#file",
+    "access": "public",
+    "description": null,
+    "lineNumber": 25,
+    "type": {
+      "nullable": null,
+      "types": [
+        "File"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 85,
+    "kind": "member",
+    "name": "me",
+    "memberof": "src/api/index.js~IMKitApi",
+    "static": false,
+    "longname": "src/api/index.js~IMKitApi#me",
+    "access": "public",
+    "description": null,
+    "lineNumber": 27,
+    "type": {
+      "nullable": null,
+      "types": [
+        "Me"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 86,
+    "kind": "member",
+    "name": "message",
+    "memberof": "src/api/index.js~IMKitApi",
+    "static": false,
+    "longname": "src/api/index.js~IMKitApi#message",
+    "access": "public",
+    "description": null,
+    "lineNumber": 29,
+    "type": {
+      "nullable": null,
+      "types": [
+        "Message"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 87,
+    "kind": "member",
+    "name": "room",
+    "memberof": "src/api/index.js~IMKitApi",
+    "static": false,
+    "longname": "src/api/index.js~IMKitApi#room",
+    "access": "public",
+    "description": null,
+    "lineNumber": 31,
+    "type": {
+      "nullable": null,
+      "types": [
+        "Room"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 88,
+    "kind": "member",
+    "name": "url",
+    "memberof": "src/api/index.js~IMKitApi",
+    "static": false,
+    "longname": "src/api/index.js~IMKitApi#url",
+    "access": "public",
+    "description": null,
+    "lineNumber": 33,
+    "type": {
+      "nullable": null,
+      "types": [
+        "Url"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 89,
+    "kind": "method",
+    "name": "getHeader",
+    "memberof": "src/api/index.js~IMKitApi",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/api/index.js~IMKitApi#getHeader",
+    "access": "private",
+    "description": "",
+    "lineNumber": 40,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Boolean"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "isAdmin",
+        "description": ""
+      }
+    ],
+    "ignore": true,
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 90,
+    "kind": "method",
+    "name": "onError",
+    "memberof": "src/api/index.js~IMKitApi",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/api/index.js~IMKitApi#onError",
+    "access": "private",
+    "description": "",
+    "lineNumber": 60,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "error",
+        "description": ""
+      }
+    ],
+    "ignore": true,
+    "return": null
+  },
+  {
+    "__docId__": 91,
+    "kind": "file",
+    "name": "src/api/me/index.js",
+    "content": "import axios from 'axios';\r\n/**\r\n * @import * from '@/src/typedef';\r\n */\r\n\r\nexport default class Me {\r\n  /**\r\n   * @private\r\n   * @param {Api} api\r\n   */\r\n  constructor(api) {\r\n    /**\r\n     * @private\r\n     * @type {Api}\r\n     * */\r\n    this.api = api;\r\n    /**\r\n     * @private\r\n     * @type {Boolean}\r\n     */\r\n    this.isAdmin = false;\r\n  }\r\n\r\n  /**\r\n   * Get my info\r\n   * @returns {Promise<ClientData|Error>}\r\n   */\r\n  getInfo() {\r\n    return new Promise((resolve, reject) => {\r\n      let url = `${this.api.config.domain}/me`;\r\n      let data = {};\r\n      let headers = this.api.getHeader(this.isAdmin);\r\n\r\n      axios\r\n        .get(url, {\r\n          params: data,\r\n          headers: headers\r\n        })\r\n        .then(\r\n          res => {\r\n            if (res.status >= 200 && res.status < 300 && res.data.RC === 0) {\r\n              resolve(res.data.result);\r\n            }\r\n          },\r\n          error => {\r\n            this.api.onError(error);\r\n          }\r\n        );\r\n    });\r\n  }\r\n\r\n  /**\r\n   * Update my info\r\n   * @param {Object} info\r\n   * @param {String} [info.avatarUrl] 大頭網址\r\n   * @param {String} [info.email]\r\n   * @param {String} [info.nickname] 暱稱\r\n   * @returns {Promise<ClientData|Error>}\r\n   */\r\n  updateInfo(info) {\r\n    return new Promise((resolve, reject) => {\r\n      let url = `${this.api.config.domain}/me`;\r\n      let data = info;\r\n      let headers = this.api.getHeader(this.isAdmin);\r\n\r\n      axios\r\n        .post(url, data, {\r\n          headers: headers\r\n        })\r\n        .then(\r\n          res => {\r\n            if (res.status >= 200 && res.status < 300 && res.data.RC === 0) {\r\n              resolve(res.data.result);\r\n            }\r\n          },\r\n          error => {\r\n            this.api.onError(error);\r\n          }\r\n        );\r\n    });\r\n  }\r\n\r\n  /**\r\n   * Get badge\r\n   * @returns {Promise<{badge: Number}|Error>}\r\n   */\r\n  getBadge() {\r\n    return new Promise((resolve, reject) => {\r\n      let url = `${this.api.config.domain}/me/badge`;\r\n      let data = {};\r\n      let headers = this.api.getHeader(this.isAdmin);\r\n\r\n      axios\r\n        .get(url, {\r\n          params: data,\r\n          headers: headers\r\n        })\r\n        .then(\r\n          res => {\r\n            if (res.status >= 200 && res.status < 300 && res.data.RC === 0) {\r\n              resolve(res.data.result);\r\n            }\r\n          },\r\n          error => {\r\n            this.api.onError(error);\r\n          }\r\n        );\r\n    });\r\n  }\r\n\r\n  /**\r\n   * subscribe\r\n   * @param {String} type ios or ???\r\n   * @param {String} token\r\n   * @returns {Promise<{_id: String, type: String, __v: Number, client: String, token: String, deviceId: String}|Error>}\r\n   */\r\n  subscribe(type, token) {\r\n    return new Promise((resolve, reject) => {\r\n      let url = `${this.api.config.domain}/me/subscribe`;\r\n      let data = {\r\n        type,\r\n        token\r\n      };\r\n      let headers = this.api.getHeader(this.isAdmin);\r\n\r\n      axios\r\n        .post(url, data, {\r\n          headers: headers\r\n        })\r\n        .then(\r\n          res => {\r\n            if (res.status >= 200 && res.status < 300 && res.data.RC === 0) {\r\n              resolve(res.data.result);\r\n            }\r\n          },\r\n          error => {\r\n            this.api.onError(error);\r\n          }\r\n        );\r\n    });\r\n  }\r\n\r\n  /**\r\n   * unsubscribe\r\n   * @param {String} type ios or ???\r\n   * @param {String} token\r\n   * @returns {Promise<{n: Number, ok: Number}|Error>}\r\n   */\r\n  unsubscribe(type, token) {\r\n    return new Promise((resolve, reject) => {\r\n      let url = `${this.api.config.domain}/me/unsubscribe`;\r\n      let data = {\r\n        type,\r\n        token\r\n      };\r\n      let headers = this.api.getHeader(this.isAdmin);\r\n\r\n      axios\r\n        .post(url, data, {\r\n          headers: headers\r\n        })\r\n        .then(\r\n          res => {\r\n            if (res.status >= 200 && res.status < 300 && res.data.RC === 0) {\r\n              resolve(res.data.result);\r\n            }\r\n          },\r\n          error => {\r\n            this.api.onError(error);\r\n          }\r\n        );\r\n    });\r\n  }\r\n\r\n  /**\r\n   * Mute room\r\n   * @param {String} roomId\r\n   * @returns {Promise<ClientData|Error>}\r\n   */\r\n  muteRoom(roomId) {\r\n    return new Promise((resolve, reject) => {\r\n      let url = `${this.api.config.domain}/me/mute/${roomId}`;\r\n      let data = {};\r\n      let headers = this.api.getHeader(this.isAdmin);\r\n\r\n      axios\r\n        .post(url, data, {\r\n          headers: headers\r\n        })\r\n        .then(\r\n          res => {\r\n            if (res.status >= 200 && res.status < 300 && res.data.RC === 0) {\r\n              resolve(res.data.result);\r\n            }\r\n          },\r\n          error => {\r\n            this.api.onError(error);\r\n          }\r\n        );\r\n    });\r\n  }\r\n\r\n  /**\r\n   * UnMute room\r\n   * @param {String} roomId\r\n   * @returns {Promise<ClientData|Error>}\r\n   */\r\n  unMuteRoom(roomId) {\r\n    return new Promise((resolve, reject) => {\r\n      let url = `${this.api.config.domain}/me/mute/${roomId}`;\r\n      let data = {};\r\n      let headers = this.api.getHeader(this.isAdmin);\r\n\r\n      axios\r\n        .delete(url, {\r\n          data: data,\r\n          headers: headers\r\n        })\r\n        .then(\r\n          res => {\r\n            if (res.status >= 200 && res.status < 300 && res.data.RC === 0) {\r\n              resolve(res.data.result);\r\n            }\r\n          },\r\n          error => {\r\n            this.api.onError(error);\r\n          }\r\n        );\r\n    });\r\n  }\r\n}\r\n",
+    "static": true,
+    "longname": "E:/REPO/IMKit/IMKit-Chat-v3/imkit-js-api-v3/src/api/me/index.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 92,
+    "kind": "class",
+    "name": "Me",
+    "memberof": "src/api/me/index.js",
+    "static": true,
+    "longname": "src/api/me/index.js~Me",
+    "access": "public",
+    "export": true,
+    "importPath": "imkit-js-api-v3/src/api/me/index.js",
+    "importStyle": "Me",
+    "description": "",
+    "lineNumber": 6,
+    "unknown": [
+      {
+        "tagName": "@import",
+        "tagValue": "* from '@/src/typedef';"
+      }
+    ],
+    "interface": false
+  },
+  {
+    "__docId__": 93,
+    "kind": "constructor",
+    "name": "constructor",
+    "memberof": "src/api/me/index.js~Me",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/api/me/index.js~Me#constructor",
+    "access": "private",
+    "description": "",
+    "lineNumber": 11,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Api"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "api",
+        "description": ""
+      }
+    ],
+    "ignore": true
+  },
+  {
+    "__docId__": 94,
+    "kind": "member",
+    "name": "api",
+    "memberof": "src/api/me/index.js~Me",
+    "static": false,
+    "longname": "src/api/me/index.js~Me#api",
+    "access": "private",
+    "description": "",
+    "lineNumber": 16,
+    "type": {
+      "nullable": null,
+      "types": [
+        "Api"
+      ],
+      "spread": false,
+      "description": null
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 95,
+    "kind": "member",
+    "name": "isAdmin",
+    "memberof": "src/api/me/index.js~Me",
+    "static": false,
+    "longname": "src/api/me/index.js~Me#isAdmin",
+    "access": "private",
+    "description": "",
+    "lineNumber": 21,
+    "type": {
+      "nullable": null,
+      "types": [
+        "Boolean"
+      ],
+      "spread": false,
+      "description": null
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 96,
+    "kind": "method",
+    "name": "getInfo",
+    "memberof": "src/api/me/index.js~Me",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/api/me/index.js~Me#getInfo",
+    "access": "public",
+    "description": "Get my info",
+    "lineNumber": 28,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Promise<ClientData|Error>}"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise<ClientData|Error>"
+      ],
+      "spread": false,
+      "description": ""
+    },
+    "params": []
+  },
+  {
+    "__docId__": 97,
+    "kind": "method",
+    "name": "updateInfo",
+    "memberof": "src/api/me/index.js~Me",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/api/me/index.js~Me#updateInfo",
+    "access": "public",
+    "description": "Update my info",
+    "lineNumber": 60,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Promise<ClientData|Error>}"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "info",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "info.avatarUrl",
+        "description": "大頭網址"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "info.email",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "info.nickname",
+        "description": "暱稱"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise<ClientData|Error>"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 98,
+    "kind": "method",
+    "name": "getBadge",
+    "memberof": "src/api/me/index.js~Me",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/api/me/index.js~Me#getBadge",
+    "access": "public",
+    "description": "Get badge",
+    "lineNumber": 87,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Promise<{badge: Number}|Error>}"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise<{badge: Number}|Error>"
+      ],
+      "spread": false,
+      "description": ""
+    },
+    "params": []
+  },
+  {
+    "__docId__": 99,
+    "kind": "method",
+    "name": "subscribe",
+    "memberof": "src/api/me/index.js~Me",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/api/me/index.js~Me#subscribe",
+    "access": "public",
+    "description": "subscribe",
+    "lineNumber": 117,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Promise<{_id: String, type: String, __v: Number, client: String, token: String, deviceId: String}|Error>}"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "type",
+        "description": "ios or ???"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "token",
+        "description": ""
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise<{_id: String, type: String, __v: Number, client: String, token: String, deviceId: String}|Error>"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 100,
+    "kind": "method",
+    "name": "unsubscribe",
+    "memberof": "src/api/me/index.js~Me",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/api/me/index.js~Me#unsubscribe",
+    "access": "public",
+    "description": "unsubscribe",
+    "lineNumber": 149,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Promise<{n: Number, ok: Number}|Error>}"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "type",
+        "description": "ios or ???"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "token",
+        "description": ""
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise<{n: Number, ok: Number}|Error>"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 101,
+    "kind": "method",
+    "name": "muteRoom",
+    "memberof": "src/api/me/index.js~Me",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/api/me/index.js~Me#muteRoom",
+    "access": "public",
+    "description": "Mute room",
+    "lineNumber": 180,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Promise<ClientData|Error>}"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "roomId",
+        "description": ""
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise<ClientData|Error>"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 102,
+    "kind": "method",
+    "name": "unMuteRoom",
+    "memberof": "src/api/me/index.js~Me",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/api/me/index.js~Me#unMuteRoom",
+    "access": "public",
+    "description": "UnMute room",
+    "lineNumber": 208,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Promise<ClientData|Error>}"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "roomId",
+        "description": ""
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise<ClientData|Error>"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 103,
+    "kind": "file",
+    "name": "src/api/message/index.js",
+    "content": "import axios from 'axios';\r\n/**\r\n * @import * from '@/src/typedef';\r\n */\r\n\r\nexport default class Message {\r\n  /**\r\n   * @private\r\n   * @param {Api} api\r\n   */\r\n  constructor(api) {\r\n    /**\r\n     * @private\r\n     * @type {Api}\r\n     * */\r\n    this.api = api;\r\n    /**\r\n     * @private\r\n     * @type {Boolean}\r\n     */\r\n    this.isAdmin = false;\r\n  }\r\n\r\n  /**\r\n   * Search message\r\n   * @param {String} [limit = 20]\r\n   * @param {Object} [q = {}]\r\n   * @param {String} [q.sender]\r\n   * @param {Object} [q.message]\r\n   * @returns {Promise<{totalCount: Number, data: MessageData[]}|Error>}\r\n   */\r\n  search(limit = 20, q = {}) {\r\n    return new Promise((resolve, reject) => {\r\n      let url = `${this.api.config.domain}/messages`;\r\n      let data = {\r\n        limit,\r\n        q\r\n      };\r\n      let headers = this.api.getHeader(this.isAdmin);\r\n\r\n      axios\r\n        .get(url, {\r\n          params: data,\r\n          headers: headers\r\n        })\r\n        .then(\r\n          res => {\r\n            if (res.status >= 200 && res.status < 300 && res.data.RC === 0) {\r\n              resolve(res.data.result);\r\n            }\r\n          },\r\n          error => {\r\n            this.api.onError(error);\r\n          }\r\n        );\r\n    });\r\n  }\r\n}\r\n",
+    "static": true,
+    "longname": "E:/REPO/IMKit/IMKit-Chat-v3/imkit-js-api-v3/src/api/message/index.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 104,
+    "kind": "class",
+    "name": "Message",
+    "memberof": "src/api/message/index.js",
+    "static": true,
+    "longname": "src/api/message/index.js~Message",
+    "access": "public",
+    "export": true,
+    "importPath": "imkit-js-api-v3/src/api/message/index.js",
+    "importStyle": "Message",
+    "description": "",
+    "lineNumber": 6,
+    "unknown": [
+      {
+        "tagName": "@import",
+        "tagValue": "* from '@/src/typedef';"
+      }
+    ],
+    "interface": false
+  },
+  {
+    "__docId__": 105,
+    "kind": "constructor",
+    "name": "constructor",
+    "memberof": "src/api/message/index.js~Message",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/api/message/index.js~Message#constructor",
+    "access": "private",
+    "description": "",
+    "lineNumber": 11,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Api"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "api",
+        "description": ""
+      }
+    ],
+    "ignore": true
+  },
+  {
+    "__docId__": 106,
+    "kind": "member",
+    "name": "api",
+    "memberof": "src/api/message/index.js~Message",
+    "static": false,
+    "longname": "src/api/message/index.js~Message#api",
+    "access": "private",
+    "description": "",
+    "lineNumber": 16,
+    "type": {
+      "nullable": null,
+      "types": [
+        "Api"
+      ],
+      "spread": false,
+      "description": null
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 107,
+    "kind": "member",
+    "name": "isAdmin",
+    "memberof": "src/api/message/index.js~Message",
+    "static": false,
+    "longname": "src/api/message/index.js~Message#isAdmin",
+    "access": "private",
+    "description": "",
+    "lineNumber": 21,
+    "type": {
+      "nullable": null,
+      "types": [
+        "Boolean"
+      ],
+      "spread": false,
+      "description": null
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 108,
+    "kind": "method",
+    "name": "search",
+    "memberof": "src/api/message/index.js~Message",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/api/message/index.js~Message#search",
+    "access": "public",
+    "description": "Search message",
+    "lineNumber": 32,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Promise<{totalCount: Number, data: MessageData[]}|Error>}"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": true,
+        "defaultValue": " 20",
+        "defaultRaw": 20,
+        "name": "limit",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": true,
+        "defaultValue": " {}",
+        "defaultRaw": {},
+        "name": "q",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "q.sender",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "q.message",
+        "description": ""
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise<{totalCount: Number, data: MessageData[]}|Error>"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 109,
+    "kind": "file",
+    "name": "src/api/room/index.js",
+    "content": "import axios from 'axios';\r\n/**\r\n * @import * from '@/src/typedef';\r\n */\r\n\r\nexport default class Room {\r\n  /**\r\n   * @private\r\n   * @param {Api} api\r\n   */\r\n  constructor(api) {\r\n    /**\r\n     * @private\r\n     * @type {Api}\r\n     * */\r\n    this.api = api;\r\n    /**\r\n     * @private\r\n     * @type {Boolean}\r\n     */\r\n    this.isAdmin = false;\r\n  }\r\n\r\n  /**\r\n   * Get rooms list\r\n   * @param {Number} [limit = 20] 最大回傳筆數\r\n   * @param {Number} [skip = 0] 從第幾筆開始\r\n   * @param {{members: String}} [q = {}] ???\r\n   * @returns {Promise<{totalCount: Number, data: RoomData[]}|Error>}\r\n   */\r\n  getRoomsList(limit = 20, skip = 0, q = {}) {\r\n    return new Promise((resolve, reject) => {\r\n      let url = `${this.api.config.domain}/rooms`;\r\n      let data = {\r\n        limit,\r\n        skip,\r\n        q\r\n      };\r\n      let headers = this.api.getHeader(this.isAdmin);\r\n\r\n      axios\r\n        .get(url, {\r\n          params: data,\r\n          headers: headers\r\n        })\r\n        .then(\r\n          res => {\r\n            if (res.status >= 200 && res.status < 300 && res.data.RC === 0) {\r\n              resolve(res.data.result);\r\n            }\r\n          },\r\n          error => {\r\n            this.api.onError(error);\r\n          }\r\n        );\r\n    });\r\n  }\r\n\r\n  /**\r\n   * Get room\r\n   * @param {String} roomId Room id\r\n   * @returns {Promise<RoomData|Error>}\r\n   */\r\n  getRoom(roomId) {\r\n    return new Promise((resolve, reject) => {\r\n      let url = `${this.api.config.domain}/rooms/${roomId}`;\r\n      let data = {};\r\n      let headers = this.api.getHeader(this.isAdmin);\r\n\r\n      axios\r\n        .get(url, {\r\n          params: data,\r\n          headers: headers\r\n        })\r\n        .then(\r\n          res => {\r\n            if (res.status >= 200 && res.status < 300 && res.data.RC === 0) {\r\n              resolve(res.data.result);\r\n            }\r\n          },\r\n          error => {\r\n            this.api.onError(error);\r\n          }\r\n        );\r\n    });\r\n  }\r\n\r\n  /**\r\n   * Create room\r\n   * @param {Object} roomInfo\r\n   * @param {String} [roomInfo._id]\r\n   * @param {String} [roomInfo.name]\r\n   * @param {String} [roomInfo.description]\r\n   * @param {String} [roomInfo.cover] Image url\r\n   * @returns {Promise<RoomData|Error>}\r\n   */\r\n  createRoom(roomInfo) {\r\n    return new Promise((resolve, reject) => {\r\n      let url = `${this.api.config.domain}/rooms`;\r\n      let data = roomInfo;\r\n      let headers = this.api.getHeader(this.isAdmin);\r\n\r\n      axios\r\n        .post(url, data, {\r\n          headers: headers\r\n        })\r\n        .then(\r\n          res => {\r\n            if (res.status >= 200 && res.status < 300 && res.data.RC === 0) {\r\n              resolve(res.data.result);\r\n            }\r\n          },\r\n          error => {\r\n            this.api.onError(error);\r\n          }\r\n        );\r\n    });\r\n  }\r\n\r\n  /**\r\n   * Create And Join Room\r\n   * @param {Object} roomInfo\r\n   * @param {String} [roomInfo._id]\r\n   * @param {String} [roomInfo.name]\r\n   * @param {String} [roomInfo.description]\r\n   * @param {String} [roomInfo.cover] Image url\r\n   * @param {String[]|String} [roomInfo.invitee] 要邀請的，傳入字串建立雙人聊天室，傳入陣列建立群組聊天室\r\n   * @returns {Promise<RoomData|Error>}\r\n   */\r\n  createAndJoinRoom(roomInfo) {\r\n    return new Promise((resolve, reject) => {\r\n      let url = `${this.api.config.domain}/rooms/createAndJoin`;\r\n      let data = roomInfo;\r\n      let headers = this.api.getHeader(this.isAdmin);\r\n\r\n      axios\r\n        .post(url, data, {\r\n          headers: headers\r\n        })\r\n        .then(\r\n          res => {\r\n            if (res.status >= 200 && res.status < 300 && res.data.RC === 0) {\r\n              resolve(res.data.result);\r\n            }\r\n          },\r\n          error => {\r\n            this.api.onError(error);\r\n          }\r\n        );\r\n    });\r\n  }\r\n\r\n  /**\r\n   * Update room\r\n   * @param {String} roomId\r\n   * @param {Object} roomInfo\r\n   * @param {String} [roomInfo.name]\r\n   * @param {String} [roomInfo.description]\r\n   * @param {String} [roomInfo.cover] Image url\r\n   * @returns {Promise<RoomData|Error>}\r\n   */\r\n  updateRoom(roomId, roomInfo) {\r\n    return new Promise((resolve, reject) => {\r\n      let url = `${this.api.config.domain}/rooms/${roomId}`;\r\n      let data = roomInfo;\r\n\r\n      let headers = this.api.getHeader(this.isAdmin);\r\n\r\n      axios\r\n        .put(url, data, {\r\n          headers: headers\r\n        })\r\n        .then(\r\n          res => {\r\n            if (res.status >= 200 && res.status < 300 && res.data.RC === 0) {\r\n              resolve(res.data.result);\r\n            }\r\n          },\r\n          error => {\r\n            this.api.onError(error);\r\n          }\r\n        );\r\n    });\r\n  }\r\n\r\n  /**\r\n   * 已讀\r\n   * @param {String} roomId\r\n   * @param {String} messageId\r\n   * @returns {Promise<{client:String, lastRead:String, badge:Number}|Error>}\r\n   */\r\n  updateLastRead(roomId, messageId) {\r\n    return new Promise((resolve, reject) => {\r\n      let url = `${this.api.config.domain}/rooms/${roomId}/lastRead`;\r\n      let data = {\r\n        message: messageId\r\n      };\r\n\r\n      let headers = this.api.getHeader(this.isAdmin);\r\n\r\n      axios\r\n        .put(url, data, {\r\n          headers: headers\r\n        })\r\n        .then(\r\n          res => {\r\n            if (res.status >= 200 && res.status < 300 && res.data.RC === 0) {\r\n              resolve(res.data.result);\r\n            }\r\n          },\r\n          error => {\r\n            this.api.onError(error);\r\n          }\r\n        );\r\n    });\r\n  }\r\n\r\n  /**\r\n   * Delete room\r\n   * @param {String} roomId\r\n   * @returns {Promise<{n: Number, nModified: Number, ok: Number}|Error>}\r\n   */\r\n  deleteRoom(roomId) {\r\n    return new Promise((resolve, reject) => {\r\n      let url = `${this.api.config.domain}/rooms/${roomId}`;\r\n      let data = {};\r\n      let headers = this.api.getHeader(this.isAdmin);\r\n\r\n      axios\r\n        .delete(url, {\r\n          data: data,\r\n          headers: headers\r\n        })\r\n        .then(\r\n          res => {\r\n            if (res.status >= 200 && res.status < 300 && res.data.RC === 0) {\r\n              resolve(res.data.result);\r\n            }\r\n          },\r\n          error => {\r\n            this.api.onError(error);\r\n          }\r\n        );\r\n    });\r\n  }\r\n\r\n  /**\r\n   * Join room\r\n   * @param {String} roomId\r\n   * @returns {Promise<RoomData|Error>}\r\n   */\r\n  joinRoom(roomId) {\r\n    return new Promise((resolve, reject) => {\r\n      let url = `${this.api.config.domain}/rooms/${roomId}/join`;\r\n      let data = {};\r\n      let headers = this.api.getHeader(this.isAdmin);\r\n\r\n      axios\r\n        .post(url, data, {\r\n          headers: headers\r\n        })\r\n        .then(\r\n          res => {\r\n            if (res.status >= 200 && res.status < 300 && res.data.RC === 0) {\r\n              resolve(res.data.result);\r\n            }\r\n          },\r\n          error => {\r\n            this.api.onError(error);\r\n          }\r\n        );\r\n    });\r\n  }\r\n\r\n  /**\r\n   * Add member to room\r\n   * @param {String} roomId\r\n   * @param {String} uid\r\n   * @returns {Promise<RoomData|Error>}\r\n   */\r\n  addMember(roomId, uid) {\r\n    return new Promise((resolve, reject) => {\r\n      let url = `${this.api.config.domain}/rooms/${roomId}/members/${uid}`;\r\n      let data = {};\r\n      let headers = this.api.getHeader(this.isAdmin);\r\n\r\n      axios\r\n        .post(url, data, {\r\n          headers: headers\r\n        })\r\n        .then(\r\n          res => {\r\n            if (res.status >= 200 && res.status < 300 && res.data.RC === 0) {\r\n              resolve(res.data.result);\r\n            }\r\n          },\r\n          error => {\r\n            this.api.onError(error);\r\n          }\r\n        );\r\n    });\r\n  }\r\n\r\n  /**\r\n   * Add members to room\r\n   * @param {String} roomId\r\n   * @param {String[]} invitees\r\n   * @returns {Promise<RoomData|Error>}\r\n   */\r\n  addMembers(roomId, invitees) {\r\n    return new Promise((resolve, reject) => {\r\n      let url = `${this.api.config.domain}/rooms/${roomId}/members/`;\r\n      let data = { invitees };\r\n      let headers = this.api.getHeader(this.isAdmin);\r\n\r\n      axios\r\n        .post(url, data, {\r\n          headers: headers\r\n        })\r\n        .then(\r\n          res => {\r\n            if (res.status >= 200 && res.status < 300 && res.data.RC === 0) {\r\n              resolve(res.data.result);\r\n            }\r\n          },\r\n          error => {\r\n            this.api.onError(error);\r\n          }\r\n        );\r\n    });\r\n  }\r\n\r\n  /**\r\n   * Delete member from room\r\n   * @param {String} roomId\r\n   * @param {String} uid\r\n   * @returns {Promise<RoomData|Error>}\r\n   */\r\n  deleteMember(roomId, uid) {\r\n    return new Promise((resolve, reject) => {\r\n      let url = `${this.api.config.domain}/rooms/${roomId}/members/${uid}`;\r\n      let data = {};\r\n      let headers = this.api.getHeader(this.isAdmin);\r\n\r\n      axios\r\n        .delete(url, {\r\n          data: data,\r\n          headers: headers\r\n        })\r\n        .then(\r\n          res => {\r\n            if (res.status >= 200 && res.status < 300 && res.data.RC === 0) {\r\n              resolve(res.data.result);\r\n            }\r\n          },\r\n          error => {\r\n            this.api.onError(error);\r\n          }\r\n        );\r\n    });\r\n  }\r\n\r\n  /**\r\n   * Tell other room members, I am Typing\r\n   * @param {String} roomId\r\n   * @param {String} message\r\n   * @returns {Promise<{message: String, room: String, sender: String}|Error>}\r\n   */\r\n  typing(roomId, message) {\r\n    return new Promise((resolve, reject) => {\r\n      let url = `${this.api.config.domain}/rooms/${roomId}/typing`;\r\n      let data = {\r\n        message\r\n      };\r\n      let headers = this.api.getHeader(this.isAdmin);\r\n\r\n      axios\r\n        .post(url, data, {\r\n          headers: headers\r\n        })\r\n        .then(\r\n          res => {\r\n            if (res.status >= 200 && res.status < 300 && res.data.RC === 0) {\r\n              resolve(res.data.result);\r\n            }\r\n          },\r\n          error => {\r\n            this.api.onError(error);\r\n          }\r\n        );\r\n    });\r\n  }\r\n\r\n  /**\r\n   * Send Message\r\n   * @param {String} roomId\r\n   * @param {MessageInfo} message\r\n   * @returns {Promise<MessageData|Error>}\r\n   */\r\n  sendMessage(roomId, message) {\r\n    return new Promise((resolve, reject) => {\r\n      let url = `${this.api.config.domain}/rooms/${roomId}/message`;\r\n      let data = message;\r\n      let headers = this.api.getHeader(this.isAdmin);\r\n\r\n      axios\r\n        .post(url, data, {\r\n          headers: headers\r\n        })\r\n        .then(\r\n          res => {\r\n            if (res.status >= 200 && res.status < 300 && res.data.RC === 0) {\r\n              resolve(res.data.result);\r\n            }\r\n          },\r\n          error => {\r\n            this.api.onError(error);\r\n          }\r\n        );\r\n    });\r\n  }\r\n\r\n  /**\r\n   * Update member property\r\n   * @param {String} roomId\r\n   * @param {String} clientId\r\n   * @param {Object} property\r\n   * @param {String} property.property\r\n   * @param {String} property.value\r\n   * @returns {Promise<{client: String, rule: String}|Error>}\r\n   */\r\n  updateMemberProperty(roomId, clientId, property) {\r\n    return new Promise((resolve, reject) => {\r\n      let url = `${this.api.config.domain}/rooms/${roomId}/member/${clientId}`;\r\n      let data = property;\r\n\r\n      let headers = this.api.getHeader(this.isAdmin);\r\n\r\n      axios\r\n        .put(url, data, {\r\n          headers: headers\r\n        })\r\n        .then(\r\n          res => {\r\n            if (res.status >= 200 && res.status < 300 && res.data.RC === 0) {\r\n              resolve(res.data.result);\r\n            }\r\n          },\r\n          error => {\r\n            this.api.onError(error);\r\n          }\r\n        );\r\n    });\r\n  }\r\n\r\n  /**\r\n   * Get room messages list\r\n   * @param {String} roomId\r\n   * @param {Number} limit\r\n   * @param {String} beforeMessage Message id\r\n   * @returns {Promise<{totalCount: Number, data: MessageData[]}|Error>}\r\n   */\r\n  getRoomMessages(roomId, limit = 20, beforeMessage = null) {\r\n    return new Promise((resolve, reject) => {\r\n      let url = `${this.api.config.domain}/rooms/${roomId}/messages`;\r\n      let data = {\r\n        limit,\r\n        beforeMessage\r\n      };\r\n      let headers = this.api.getHeader(this.isAdmin);\r\n\r\n      axios\r\n        .get(url, {\r\n          params: data,\r\n          headers: headers\r\n        })\r\n        .then(\r\n          res => {\r\n            if (res.status >= 200 && res.status < 300 && res.data.RC === 0) {\r\n              resolve(res.data.result);\r\n            }\r\n          },\r\n          error => {\r\n            this.api.onError(error);\r\n          }\r\n        );\r\n    });\r\n  }\r\n\r\n  /**\r\n   * Get room messages count after timeInMS\r\n   * @param {String} roomId\r\n   * @param {Number} [timeInMS = 0]\r\n   * @returns {Promise<{count: Number}|Error>}\r\n   */\r\n  getRoomMessagesCount(roomId, timeInMS = 0) {\r\n    return new Promise((resolve, reject) => {\r\n      let url = `${this.api.config.domain}/rooms/${roomId}/count`;\r\n      let data = {\r\n        timeInMS\r\n      };\r\n      let headers = this.api.getHeader(this.isAdmin);\r\n\r\n      axios\r\n        .get(url, {\r\n          params: data,\r\n          headers: headers\r\n        })\r\n        .then(\r\n          res => {\r\n            if (res.status >= 200 && res.status < 300 && res.data.RC === 0) {\r\n              resolve(res.data.result);\r\n            }\r\n          },\r\n          error => {\r\n            this.api.onError(error);\r\n          }\r\n        );\r\n    });\r\n  }\r\n}\r\n",
+    "static": true,
+    "longname": "E:/REPO/IMKit/IMKit-Chat-v3/imkit-js-api-v3/src/api/room/index.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 110,
+    "kind": "class",
+    "name": "Room",
+    "memberof": "src/api/room/index.js",
+    "static": true,
+    "longname": "src/api/room/index.js~Room",
+    "access": "public",
+    "export": true,
+    "importPath": "imkit-js-api-v3/src/api/room/index.js",
+    "importStyle": "Room",
+    "description": "",
+    "lineNumber": 6,
+    "unknown": [
+      {
+        "tagName": "@import",
+        "tagValue": "* from '@/src/typedef';"
+      }
+    ],
+    "interface": false
+  },
+  {
+    "__docId__": 111,
+    "kind": "constructor",
+    "name": "constructor",
+    "memberof": "src/api/room/index.js~Room",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/api/room/index.js~Room#constructor",
+    "access": "private",
+    "description": "",
+    "lineNumber": 11,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Api"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "api",
+        "description": ""
+      }
+    ],
+    "ignore": true
+  },
+  {
+    "__docId__": 112,
+    "kind": "member",
+    "name": "api",
+    "memberof": "src/api/room/index.js~Room",
+    "static": false,
+    "longname": "src/api/room/index.js~Room#api",
+    "access": "private",
+    "description": "",
+    "lineNumber": 16,
+    "type": {
+      "nullable": null,
+      "types": [
+        "Api"
+      ],
+      "spread": false,
+      "description": null
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 113,
+    "kind": "member",
+    "name": "isAdmin",
+    "memberof": "src/api/room/index.js~Room",
+    "static": false,
+    "longname": "src/api/room/index.js~Room#isAdmin",
+    "access": "private",
+    "description": "",
+    "lineNumber": 21,
+    "type": {
+      "nullable": null,
+      "types": [
+        "Boolean"
+      ],
+      "spread": false,
+      "description": null
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 114,
+    "kind": "method",
+    "name": "getRoomsList",
+    "memberof": "src/api/room/index.js~Room",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/api/room/index.js~Room#getRoomsList",
+    "access": "public",
+    "description": "Get rooms list",
+    "lineNumber": 31,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Promise<{totalCount: Number, data: RoomData[]}|Error>}"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Number"
+        ],
+        "spread": false,
+        "optional": true,
+        "defaultValue": " 20",
+        "defaultRaw": 20,
+        "name": "limit",
+        "description": "最大回傳筆數"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Number"
+        ],
+        "spread": false,
+        "optional": true,
+        "defaultValue": " 0",
+        "defaultRaw": 0,
+        "name": "skip",
+        "description": "從第幾筆開始"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "{members: String}"
+        ],
+        "spread": false,
+        "optional": true,
+        "defaultValue": " {}",
+        "defaultRaw": {},
+        "name": "q",
+        "description": "???"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise<{totalCount: Number, data: RoomData[]}|Error>"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 115,
+    "kind": "method",
+    "name": "getRoom",
+    "memberof": "src/api/room/index.js~Room",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/api/room/index.js~Room#getRoom",
+    "access": "public",
+    "description": "Get room",
+    "lineNumber": 64,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Promise<RoomData|Error>}"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "roomId",
+        "description": "Room id"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise<RoomData|Error>"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 116,
+    "kind": "method",
+    "name": "createRoom",
+    "memberof": "src/api/room/index.js~Room",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/api/room/index.js~Room#createRoom",
+    "access": "public",
+    "description": "Create room",
+    "lineNumber": 97,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Promise<RoomData|Error>}"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "roomInfo",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "roomInfo._id",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "roomInfo.name",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "roomInfo.description",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "roomInfo.cover",
+        "description": "Image url"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise<RoomData|Error>"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 117,
+    "kind": "method",
+    "name": "createAndJoinRoom",
+    "memberof": "src/api/room/index.js~Room",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/api/room/index.js~Room#createAndJoinRoom",
+    "access": "public",
+    "description": "Create And Join Room",
+    "lineNumber": 130,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Promise<RoomData|Error>}"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "roomInfo",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "roomInfo._id",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "roomInfo.name",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "roomInfo.description",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "roomInfo.cover",
+        "description": "Image url"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String[]",
+          "String"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "roomInfo.invitee",
+        "description": "要邀請的，傳入字串建立雙人聊天室，傳入陣列建立群組聊天室"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise<RoomData|Error>"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 118,
+    "kind": "method",
+    "name": "updateRoom",
+    "memberof": "src/api/room/index.js~Room",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/api/room/index.js~Room#updateRoom",
+    "access": "public",
+    "description": "Update room",
+    "lineNumber": 162,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Promise<RoomData|Error>}"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "roomId",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "roomInfo",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "roomInfo.name",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "roomInfo.description",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "roomInfo.cover",
+        "description": "Image url"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise<RoomData|Error>"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 119,
+    "kind": "method",
+    "name": "updateLastRead",
+    "memberof": "src/api/room/index.js~Room",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/api/room/index.js~Room#updateLastRead",
+    "access": "public",
+    "description": "已讀",
+    "lineNumber": 192,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Promise<{client:String, lastRead:String, badge:Number}|Error>}"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "roomId",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "messageId",
+        "description": ""
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise<{client:String, lastRead:String, badge:Number}|Error>"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 120,
+    "kind": "method",
+    "name": "deleteRoom",
+    "memberof": "src/api/room/index.js~Room",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/api/room/index.js~Room#deleteRoom",
+    "access": "public",
+    "description": "Delete room",
+    "lineNumber": 223,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Promise<{n: Number, nModified: Number, ok: Number}|Error>}"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "roomId",
+        "description": ""
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise<{n: Number, nModified: Number, ok: Number}|Error>"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 121,
+    "kind": "method",
+    "name": "joinRoom",
+    "memberof": "src/api/room/index.js~Room",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/api/room/index.js~Room#joinRoom",
+    "access": "public",
+    "description": "Join room",
+    "lineNumber": 252,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Promise<RoomData|Error>}"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "roomId",
+        "description": ""
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise<RoomData|Error>"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 122,
+    "kind": "method",
+    "name": "addMember",
+    "memberof": "src/api/room/index.js~Room",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/api/room/index.js~Room#addMember",
+    "access": "public",
+    "description": "Add member to room",
+    "lineNumber": 281,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Promise<RoomData|Error>}"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "roomId",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "uid",
+        "description": ""
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise<RoomData|Error>"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 123,
+    "kind": "method",
+    "name": "addMembers",
+    "memberof": "src/api/room/index.js~Room",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/api/room/index.js~Room#addMembers",
+    "access": "public",
+    "description": "Add members to room",
+    "lineNumber": 310,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Promise<RoomData|Error>}"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "roomId",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String[]"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "invitees",
+        "description": ""
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise<RoomData|Error>"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 124,
+    "kind": "method",
+    "name": "deleteMember",
+    "memberof": "src/api/room/index.js~Room",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/api/room/index.js~Room#deleteMember",
+    "access": "public",
+    "description": "Delete member from room",
+    "lineNumber": 339,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Promise<RoomData|Error>}"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "roomId",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "uid",
+        "description": ""
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise<RoomData|Error>"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 125,
+    "kind": "method",
+    "name": "typing",
+    "memberof": "src/api/room/index.js~Room",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/api/room/index.js~Room#typing",
+    "access": "public",
+    "description": "Tell other room members, I am Typing",
+    "lineNumber": 369,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Promise<{message: String, room: String, sender: String}|Error>}"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "roomId",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "message",
+        "description": ""
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise<{message: String, room: String, sender: String}|Error>"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 126,
+    "kind": "method",
+    "name": "sendMessage",
+    "memberof": "src/api/room/index.js~Room",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/api/room/index.js~Room#sendMessage",
+    "access": "public",
+    "description": "Send Message",
+    "lineNumber": 400,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Promise<MessageData|Error>}"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "roomId",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "MessageInfo"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "message",
+        "description": ""
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise<MessageData|Error>"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 127,
+    "kind": "method",
+    "name": "updateMemberProperty",
+    "memberof": "src/api/room/index.js~Room",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/api/room/index.js~Room#updateMemberProperty",
+    "access": "public",
+    "description": "Update member property",
+    "lineNumber": 432,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Promise<{client: String, rule: String}|Error>}"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "roomId",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "clientId",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "property",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "property.property",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "property.value",
+        "description": ""
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise<{client: String, rule: String}|Error>"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 128,
+    "kind": "method",
+    "name": "getRoomMessages",
+    "memberof": "src/api/room/index.js~Room",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/api/room/index.js~Room#getRoomMessages",
+    "access": "public",
+    "description": "Get room messages list",
+    "lineNumber": 463,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Promise<{totalCount: Number, data: MessageData[]}|Error>}"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "roomId",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "limit",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "beforeMessage",
+        "description": "Message id"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise<{totalCount: Number, data: MessageData[]}|Error>"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 129,
+    "kind": "method",
+    "name": "getRoomMessagesCount",
+    "memberof": "src/api/room/index.js~Room",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/api/room/index.js~Room#getRoomMessagesCount",
+    "access": "public",
+    "description": "Get room messages count after timeInMS",
+    "lineNumber": 496,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Promise<{count: Number}|Error>}"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "roomId",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Number"
+        ],
+        "spread": false,
+        "optional": true,
+        "defaultValue": " 0",
+        "defaultRaw": 0,
+        "name": "timeInMS",
+        "description": ""
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise<{count: Number}|Error>"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 130,
+    "kind": "file",
+    "name": "src/api/url/index.js",
+    "content": "import axios from 'axios';\r\n/**\r\n * @import * from '@/src/typedef';\r\n */\r\n\r\nexport default class Url {\r\n  /**\r\n   * @private\r\n   * @param {Api} api\r\n   */\r\n  constructor(api) {\r\n    /**\r\n     * @private\r\n     * @type {Api}\r\n     * */\r\n    this.api = api;\r\n  }\r\n\r\n  /**\r\n   * Get url preview data\r\n   * @param {String} url 網址\r\n   * @returns {Promise<{description: String, images: String, title: String}|Error>}\r\n   */\r\n  getPreview(url) {\r\n    return new Promise(resolve => {\r\n      let apiUrl = `${this.api.config.urlPreviewApi}/`;\r\n      let data = {\r\n        url\r\n      };\r\n\r\n      axios\r\n        .get(apiUrl, {\r\n          params: data\r\n        })\r\n        .then(res => {\r\n          resolve({\r\n            description: res.data.Description,\r\n            images: res.data.Images,\r\n            title: res.data.Title\r\n          });\r\n        })\r\n        .catch(() => {\r\n          resolve(null);\r\n        });\r\n    });\r\n  }\r\n}\r\n",
+    "static": true,
+    "longname": "E:/REPO/IMKit/IMKit-Chat-v3/imkit-js-api-v3/src/api/url/index.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 131,
+    "kind": "class",
+    "name": "Url",
+    "memberof": "src/api/url/index.js",
+    "static": true,
+    "longname": "src/api/url/index.js~Url",
+    "access": "public",
+    "export": true,
+    "importPath": "imkit-js-api-v3/src/api/url/index.js",
+    "importStyle": "Url",
+    "description": "",
+    "lineNumber": 6,
+    "unknown": [
+      {
+        "tagName": "@import",
+        "tagValue": "* from '@/src/typedef';"
+      }
+    ],
+    "interface": false
+  },
+  {
+    "__docId__": 132,
+    "kind": "constructor",
+    "name": "constructor",
+    "memberof": "src/api/url/index.js~Url",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/api/url/index.js~Url#constructor",
+    "access": "private",
+    "description": "",
+    "lineNumber": 11,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Api"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "api",
+        "description": ""
+      }
+    ],
+    "ignore": true
+  },
+  {
+    "__docId__": 133,
+    "kind": "member",
+    "name": "api",
+    "memberof": "src/api/url/index.js~Url",
+    "static": false,
+    "longname": "src/api/url/index.js~Url#api",
+    "access": "private",
+    "description": "",
+    "lineNumber": 16,
+    "type": {
+      "nullable": null,
+      "types": [
+        "Api"
+      ],
+      "spread": false,
+      "description": null
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 134,
+    "kind": "method",
+    "name": "getPreview",
+    "memberof": "src/api/url/index.js~Url",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/api/url/index.js~Url#getPreview",
+    "access": "public",
+    "description": "Get url preview data",
+    "lineNumber": 24,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Promise<{description: String, images: String, title: String}|Error>}"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "url",
+        "description": "網址"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise<{description: String, images: String, title: String}|Error>"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 135,
+    "kind": "file",
+    "name": "src/index.js",
+    "content": "import IMKitApi from './api';\nimport IMKitSocket from './socket';\nexport { IMKitApi, IMKitSocket };\n\nwindow.IMKitApi = IMKitApi;\nwindow.IMKitSocket = IMKitSocket;\n",
+    "static": true,
+    "longname": "E:/REPO/IMKit/IMKit-Chat-v3/imkit-js-api-v3/src/index.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 136,
+    "kind": "file",
+    "name": "src/socket/index.js",
+    "content": "import io from 'socket.io-client';\r\n/**\r\n * @import * from '@/src/typedef';\r\n */\r\n\r\nexport default class IMKitSocket {\r\n  /**\r\n   * 建立 Socket 物件\r\n   * @param {SocketConfig} config\r\n   */\r\n  constructor(config) {\r\n    /** @type {SocketConfig} */\r\n    this.config = config;\r\n\r\n    /**\r\n     * @private\r\n     * @type {SocketIOClient.Socket}\r\n     */\r\n    this.socket = io(this.config.domain, {});\r\n    this.socket.connect();\r\n\r\n    this.socket.on('connect', () => {\r\n      if (config.onConnect) {\r\n        config.onConnect();\r\n      } else {\r\n        console.log('Default connect success');\r\n      }\r\n    });\r\n\r\n    this.socket.on('disconnect', () => {\r\n      if (config.onDisconnect) {\r\n        config.onDisconnect();\r\n      } else {\r\n        console.log('Default disconnect success');\r\n      }\r\n    });\r\n\r\n    this.socket.on('chat message', data => {\r\n      if (config.onReceiveMessage) {\r\n        config.onReceiveMessage(data);\r\n      } else {\r\n        console.log(data);\r\n      }\r\n    });\r\n\r\n    this.socket.on('room', data => {\r\n      if (config.onReceiveRoom) {\r\n        config.onReceiveRoom(data);\r\n      } else {\r\n        console.log(data);\r\n      }\r\n    });\r\n\r\n    this.socket.on('typing', data => {\r\n      if (config.onReceiveTyping) {\r\n        config.onReceiveTyping(data);\r\n      } else {\r\n        console.log(data);\r\n      }\r\n    });\r\n\r\n    this.socket.on('lastRead', data => {\r\n      if (config.onReceivelastRead) {\r\n        config.onReceivelastRead(data);\r\n      } else {\r\n        console.log(data);\r\n      }\r\n    });\r\n  }\r\n\r\n  /**\r\n   * chatIn\r\n   * @returns {Promise<{client: String}|Error>}\r\n   */\r\n  chatIn() {\r\n    return new Promise((resolve, reject) => {\r\n      this.socket.emit('auth', this.config.token, res => {\r\n        if (res.RC === 0) {\r\n          resolve(res.result);\r\n        } else {\r\n          this.onError(res);\r\n          reject(new Error(`[IMKit WebSocket] ${res.RM}`));\r\n        }\r\n      });\r\n    });\r\n  }\r\n\r\n  /**\r\n   * Send message\r\n   * @param {String} roomId\r\n   * @param {MessageInfo} message\r\n   * @returns {Promise<MessageData|Error>}\r\n   */\r\n  sendMessage(roomId, message) {\r\n    return new Promise((resolve, reject) => {\r\n      let data = Object.assign(message, {\r\n        room: roomId\r\n      });\r\n\r\n      this.socket.emit('chat message', data, res => {\r\n        if (res.RC === 0) {\r\n          resolve(res.result);\r\n        } else {\r\n          this.onError(res);\r\n          reject(new Error(`[IMKit WebSocket] ${res.RM}`));\r\n        }\r\n      });\r\n    });\r\n  }\r\n\r\n  /**\r\n   * Typing\r\n   * @param {String} roomId\r\n   * @param {String} text\r\n   */\r\n  typing(roomId, text) {\r\n    this.socket.emit('typing', roomId, text);\r\n  }\r\n\r\n  /**\r\n   * @private\r\n   * @param {Object} error\r\n   */\r\n  onError(error) {\r\n    this.config.events.onAjaxError(error);\r\n  }\r\n}\r\n",
+    "static": true,
+    "longname": "E:/REPO/IMKit/IMKit-Chat-v3/imkit-js-api-v3/src/socket/index.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 137,
+    "kind": "class",
+    "name": "IMKitSocket",
+    "memberof": "src/socket/index.js",
+    "static": true,
+    "longname": "src/socket/index.js~IMKitSocket",
+    "access": "public",
+    "export": true,
+    "importPath": "imkit-js-api-v3/src/socket/index.js",
+    "importStyle": "IMKitSocket",
+    "description": "",
+    "lineNumber": 6,
+    "unknown": [
+      {
+        "tagName": "@import",
+        "tagValue": "* from '@/src/typedef';"
+      }
+    ],
+    "interface": false
+  },
+  {
+    "__docId__": 138,
+    "kind": "constructor",
+    "name": "constructor",
+    "memberof": "src/socket/index.js~IMKitSocket",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/socket/index.js~IMKitSocket#constructor",
+    "access": "public",
+    "description": "建立 Socket 物件",
+    "lineNumber": 11,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "SocketConfig"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "config",
+        "description": ""
+      }
+    ]
+  },
+  {
+    "__docId__": 139,
+    "kind": "member",
+    "name": "config",
+    "memberof": "src/socket/index.js~IMKitSocket",
+    "static": false,
+    "longname": "src/socket/index.js~IMKitSocket#config",
+    "access": "public",
+    "description": null,
+    "lineNumber": 13,
+    "type": {
+      "nullable": null,
+      "types": [
+        "SocketConfig"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 140,
+    "kind": "member",
+    "name": "socket",
+    "memberof": "src/socket/index.js~IMKitSocket",
+    "static": false,
+    "longname": "src/socket/index.js~IMKitSocket#socket",
+    "access": "private",
+    "description": "",
+    "lineNumber": 19,
+    "type": {
+      "nullable": null,
+      "types": [
+        "SocketIOClient.Socket"
+      ],
+      "spread": false,
+      "description": null
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 141,
+    "kind": "method",
+    "name": "chatIn",
+    "memberof": "src/socket/index.js~IMKitSocket",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/socket/index.js~IMKitSocket#chatIn",
+    "access": "public",
+    "description": "chatIn",
+    "lineNumber": 75,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Promise<{client: String}|Error>}"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise<{client: String}|Error>"
+      ],
+      "spread": false,
+      "description": ""
+    },
+    "params": []
+  },
+  {
+    "__docId__": 142,
+    "kind": "method",
+    "name": "sendMessage",
+    "memberof": "src/socket/index.js~IMKitSocket",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/socket/index.js~IMKitSocket#sendMessage",
+    "access": "public",
+    "description": "Send message",
+    "lineNumber": 94,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Promise<MessageData|Error>}"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "roomId",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "MessageInfo"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "message",
+        "description": ""
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise<MessageData|Error>"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 143,
+    "kind": "method",
+    "name": "typing",
+    "memberof": "src/socket/index.js~IMKitSocket",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/socket/index.js~IMKitSocket#typing",
+    "access": "public",
+    "description": "Typing",
+    "lineNumber": 116,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "roomId",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "text",
+        "description": ""
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 144,
+    "kind": "method",
+    "name": "onError",
+    "memberof": "src/socket/index.js~IMKitSocket",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/socket/index.js~IMKitSocket#onError",
+    "access": "private",
+    "description": "",
+    "lineNumber": 124,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "error",
+        "description": ""
+      }
+    ],
+    "ignore": true,
+    "return": null
+  },
+  {
+    "__docId__": 145,
+    "kind": "file",
+    "name": "src/typedef/ApiConfig.js",
+    "content": "/**\r\n * @typedef {Object} ApiConfig\r\n * @property {String} domain\r\n * @property {String} [urlPreviewApi]\r\n * @property {String} [apiKey]\r\n * @property {String} clientKey\r\n * @property {String} [clientId]\r\n * @property {String} [token]\r\n * @property {String} [authBase]\r\n * @property {Object} [events]\r\n * @property {function(error: Object)} [events.onAjaxError]\r\n */\r\n",
+    "static": true,
+    "longname": "E:/REPO/IMKit/IMKit-Chat-v3/imkit-js-api-v3/src/typedef/ApiConfig.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 146,
+    "kind": "typedef",
+    "name": "ApiConfig",
+    "memberof": "src/typedef/ApiConfig.js",
+    "static": true,
+    "longname": "src/typedef/ApiConfig.js~ApiConfig",
+    "access": "public",
+    "description": "",
+    "properties": [
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "domain",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "urlPreviewApi",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "apiKey",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "clientKey",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "clientId",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "token",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "authBase",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "events",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "function(error: Object)"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "events.onAjaxError",
+        "description": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "Object"
+      ],
+      "optional": false,
+      "name": "ApiConfig"
+    }
+  },
+  {
+    "__docId__": 147,
+    "kind": "file",
+    "name": "src/typedef/ClientData.js",
+    "content": "/**\r\n * @typedef {Object} ClientData\r\n * @property {String} _id\r\n * @property {String} avatarUrl\r\n * @property {String} email\r\n * @property {String} nickname\r\n * @property {Object} address\r\n * @property {Number} address.port\r\n * @property {String} address.family\r\n * @property {String} address.address\r\n * @property {String} userAgent\r\n * @property {String} lastLoginTime\r\n * @property {Number} lastLoginTimeMS\r\n * @property {String} id\r\n */\r\n",
+    "static": true,
+    "longname": "E:/REPO/IMKit/IMKit-Chat-v3/imkit-js-api-v3/src/typedef/ClientData.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 148,
+    "kind": "typedef",
+    "name": "ClientData",
+    "memberof": "src/typedef/ClientData.js",
+    "static": true,
+    "longname": "src/typedef/ClientData.js~ClientData",
+    "access": "public",
+    "description": "",
+    "properties": [
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "_id",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "avatarUrl",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "email",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "nickname",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "address",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "address.port",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "address.family",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "address.address",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "userAgent",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "lastLoginTime",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "lastLoginTimeMS",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "id",
+        "description": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "Object"
+      ],
+      "optional": false,
+      "name": "ClientData"
+    }
+  },
+  {
+    "__docId__": 149,
+    "kind": "file",
+    "name": "src/typedef/MessageData.js",
+    "content": "/**\r\n * @typedef {Object} MessageData\r\n * @property {String} messageType\r\n * 'text', 'image', 'video', 'audio', 'location', 'sticker',\r\n * 'joinRoom', 'leaveRoom', 'addMember', 'deleteMember'\r\n * @property {String} message\r\n * @property {String} [sticker]\r\n * @property {String} [originalUrl]\r\n * @property {String} [thumbnailUrl]\r\n * @property {Number} [width]\r\n * @property {Number} [height]\r\n * @property {Number} [latitude]\r\n * @property {Number} [longitude]\r\n * @property {String} [duration]\r\n * @property {String} [extra]\r\n * @property {MessageData} [reply]\r\n *\r\n * @property {Object} sender\r\n * @property {String} sender.id client id\r\n * @property {String} sender.avatarUrl\r\n * @property {String} sender.nickname\r\n * @property {String} sender.lastLoginTime\r\n * @property {Number} sender.lastLoginTimeMS\r\n *\r\n * @property {String} messageTime\r\n * @property {Number} messageTimeMS\r\n * @property {String} id message id\r\n * @property {String} [appID]\r\n * @property {Number} [__v]\r\n *\r\n */\r\n",
+    "static": true,
+    "longname": "E:/REPO/IMKit/IMKit-Chat-v3/imkit-js-api-v3/src/typedef/MessageData.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 150,
+    "kind": "typedef",
+    "name": "MessageData",
+    "memberof": "src/typedef/MessageData.js",
+    "static": true,
+    "longname": "src/typedef/MessageData.js~MessageData",
+    "access": "public",
+    "description": "",
+    "properties": [
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "messageType",
+        "description": "'text', 'image', 'video', 'audio', 'location', 'sticker',\n'joinRoom', 'leaveRoom', 'addMember', 'deleteMember'"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "message",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "sticker",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "originalUrl",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "thumbnailUrl",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Number"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "width",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Number"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "height",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Number"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "latitude",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Number"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "longitude",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "duration",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "extra",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "MessageData"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "reply",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "sender",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "sender.id",
+        "description": "client id"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "sender.avatarUrl",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "sender.nickname",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "sender.lastLoginTime",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "sender.lastLoginTimeMS",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "messageTime",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "messageTimeMS",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "id",
+        "description": "message id"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "appID",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Number"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "__v",
+        "description": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "Object"
+      ],
+      "optional": false,
+      "name": "MessageData"
+    }
+  },
+  {
+    "__docId__": 151,
+    "kind": "file",
+    "name": "src/typedef/MessageInfo.js",
+    "content": "/**\r\n * 丟什麼進去就會吐什麼出來，it's very free~~~\r\n * @typedef {Object} MessageInfo\r\n * @property {String} messageType\r\n * 'text', 'image', 'video', 'audio', 'location', 'sticker',\r\n * 'joinRoom', 'leaveRoom', 'addMember', 'deleteMember'\r\n * @property {String} [message]\r\n * @property {String} [sticker]\r\n * @property {String} [originalUrl]\r\n * @property {String} [thumbnailUrl]\r\n * @property {String} [width]\r\n * @property {String} [height]\r\n * @property {String} [latitude]\r\n * @property {String} [longitude]\r\n * @property {String} [duration]\r\n * @property {String} [extra]\r\n * @property {String} [reply]\r\n */\r\n",
+    "static": true,
+    "longname": "E:/REPO/IMKit/IMKit-Chat-v3/imkit-js-api-v3/src/typedef/MessageInfo.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 152,
+    "kind": "typedef",
+    "name": "MessageInfo",
+    "memberof": "src/typedef/MessageInfo.js",
+    "static": true,
+    "longname": "src/typedef/MessageInfo.js~MessageInfo",
+    "access": "public",
+    "description": "丟什麼進去就會吐什麼出來，it's very free~~~",
+    "properties": [
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "messageType",
+        "description": "'text', 'image', 'video', 'audio', 'location', 'sticker',\n'joinRoom', 'leaveRoom', 'addMember', 'deleteMember'"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "message",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "sticker",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "originalUrl",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "thumbnailUrl",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "width",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "height",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "latitude",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "longitude",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "duration",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "extra",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "reply",
+        "description": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "Object"
+      ],
+      "optional": false,
+      "name": "MessageInfo"
+    }
+  },
+  {
+    "__docId__": 153,
+    "kind": "file",
+    "name": "src/typedef/Push.js",
+    "content": "/**\r\n * @typedef {Object} PushPayload\r\n * @property {String} topic\r\n * @property {Number} badge\r\n * @property {String} sound\r\n * @property {String} nickname\r\n * @property {String} title\r\n * @property {String} collapseKey\r\n * @property {String} body\r\n * @property {String} icon\r\n * @property {String} sample-type:sample\r\n * @property {Object} alert\r\n * @property {String} alert.loc-key\r\n * @property {String[]} alert.loc-args\r\n */\r\n",
+    "static": true,
+    "longname": "E:/REPO/IMKit/IMKit-Chat-v3/imkit-js-api-v3/src/typedef/Push.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 154,
+    "kind": "typedef",
+    "name": "PushPayload",
+    "memberof": "src/typedef/Push.js",
+    "static": true,
+    "longname": "src/typedef/Push.js~PushPayload",
+    "access": "public",
+    "description": "",
+    "properties": [
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "topic",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "badge",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "sound",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "nickname",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "title",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "collapseKey",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "body",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "icon",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "sample-type:sample",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "alert",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "alert.loc-key",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String[]"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "alert.loc-args",
+        "description": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "Object"
+      ],
+      "optional": false,
+      "name": "PushPayload"
+    }
+  },
+  {
+    "__docId__": 155,
+    "kind": "file",
+    "name": "src/typedef/RoomData.js",
+    "content": "/**\n * @typedef {Object} RoomData\n * @property {String} _id\n * @property {String} appID 房間 ID\n * @property {MessageData} lastMessage 最後一則訊息\n * @property {String} name Room name\n * @property {Number} serviceStatus ???\n * @property {String} createdTime ex: 2018-05-21T08:41:28.438Z\n * @property {Object[]} memberProperties 會員已讀狀態\n * @property {Number} memberProperties.badge\n * @property {String} memberProperties.lastRead\n * @property {String} memberProperties.client\n * @property {Object[]} members 會員列表\n * @property {String} members[].id\n * @property {String} members[].avatarUrl\n * @property {String} members[].nickname\n * @property {String} members[].lastLoginTime\n * @property {Number} members[].lastLoginTimeMS\n * @property {Boolean} muted 是否靜音\n * @property {Number} createdTimeMS ex: 1526892088438\n * @property {String} id 房間 ID\n */\n",
+    "static": true,
+    "longname": "E:/REPO/IMKit/IMKit-Chat-v3/imkit-js-api-v3/src/typedef/RoomData.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 156,
+    "kind": "typedef",
+    "name": "RoomData",
+    "memberof": "src/typedef/RoomData.js",
+    "static": true,
+    "longname": "src/typedef/RoomData.js~RoomData",
+    "access": "public",
+    "description": "",
+    "properties": [
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "_id",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "appID",
+        "description": "房間 ID"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "MessageData"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "lastMessage",
+        "description": "最後一則訊息"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "name",
+        "description": "Room name"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "serviceStatus",
+        "description": "???"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "createdTime",
+        "description": "ex: 2018-05-21T08:41:28.438Z"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Object[]"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "memberProperties",
+        "description": "會員已讀狀態"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "memberProperties.badge",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "memberProperties.lastRead",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "memberProperties.client",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Object[]"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "members",
+        "description": "會員列表"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "members[].id",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "members[].avatarUrl",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "members[].nickname",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "members[].lastLoginTime",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "members[].lastLoginTimeMS",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Boolean"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "muted",
+        "description": "是否靜音"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "createdTimeMS",
+        "description": "ex: 1526892088438"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "id",
+        "description": "房間 ID"
+      }
+    ],
+    "type": {
+      "types": [
+        "Object"
+      ],
+      "optional": false,
+      "name": "RoomData"
+    }
+  },
+  {
+    "__docId__": 157,
+    "kind": "file",
+    "name": "src/typedef/SocketConfig.js",
+    "content": "/**\r\n * When Socket Receive Message\r\n * @name SocketOnReceiveMessageFunction\r\n * @function\r\n * @param {MessageData} message\r\n */\r\n/**\r\n * @typedef {Object} SocketConfig\r\n * @property {String} domain\r\n * @property {String} [token]\r\n * @property {Object} [events]\r\n * @property {function(error: Object)} [events.onAjaxError]\r\n * @property {function()} [onConnect]\r\n * @property {function()} [onDisconnect]\r\n * @property {function(message: MessageData)} [onReceiveMessage]\r\n * @property {function(room: {room: String, memberProperty: {badge: Number, client: String, lastRead: String}[]})} [onReceiveRoom]\r\n * @property {function(typing: {message: String, room: String, sender: String})} [onReceiveTyping]\r\n * @property {function(data: {messageID: String, roomID: String, memberID: String})} [onReceivelastRead]\r\n */\r\n",
+    "static": true,
+    "longname": "E:/REPO/IMKit/IMKit-Chat-v3/imkit-js-api-v3/src/typedef/SocketConfig.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 158,
+    "kind": "typedef",
+    "name": "SocketConfig",
+    "memberof": "src/typedef/SocketConfig.js",
+    "static": true,
+    "longname": "src/typedef/SocketConfig.js~SocketConfig",
+    "access": "public",
+    "description": "",
+    "properties": [
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "domain",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "token",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "events",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "function(error: Object)"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "events.onAjaxError",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "function()"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "onConnect",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "function()"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "onDisconnect",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "function(message: MessageData)"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "onReceiveMessage",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "function(room: {room: String, memberProperty: {badge: Number, client: String, lastRead: String}[]})"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "onReceiveRoom",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "function(typing: {message: String, room: String, sender: String})"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "onReceiveTyping",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "function(data: {messageID: String, roomID: String, memberID: String})"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "onReceivelastRead",
+        "description": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "Object"
+      ],
+      "optional": false,
+      "name": "SocketConfig"
+    }
+  },
+  {
+    "__docId__": 159,
+    "kind": "file",
+    "name": "src/typedef/TokenData.js",
+    "content": "/**\r\n * @typedef {Object} TokenData\r\n * @property {String} [_id]\r\n * @property {String} token\r\n * @property {String} client\r\n * @property {String} expirationDate\r\n * @property {Number} expirationDateMS\r\n * @property {String} [id]\r\n */\r\n",
+    "static": true,
+    "longname": "E:/REPO/IMKit/IMKit-Chat-v3/imkit-js-api-v3/src/typedef/TokenData.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 160,
+    "kind": "typedef",
+    "name": "TokenData",
+    "memberof": "src/typedef/TokenData.js",
+    "static": true,
+    "longname": "src/typedef/TokenData.js~TokenData",
+    "access": "public",
+    "description": "",
+    "properties": [
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "_id",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "token",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "client",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "expirationDate",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "expirationDateMS",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "id",
+        "description": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "Object"
+      ],
+      "optional": false,
+      "name": "TokenData"
+    }
+  },
+  {
+    "kind": "index",
+    "content": "# Imkit Js Api v3\n\n描述描述\n\n## Installing\n\n### NodeJs\n\n```sh\n$ npm install --save https://github.com/FUNTEKco/imkit-js-api-v3\n```\n\n### Bower\n\n```sh\n$ bower install https://github.com/FUNTEKco/imkit-js-api-v3\n```\n\n## Use\n\n### NodeJs\n\n```javascript\nimport { IMKitApi, IMKitSocket } from 'imkit-js-api-v3';\n\nlet api = new IMKitApi(apiConfig);\nlet socket = new IMKitSocket(socketConfig);\n```\n\n### Bower\n\n```html\n<script src=\"bower_components/imkit-js-api-v3/lib/imkit-js-api-v3.js\"></script>\nor\n<script src=\"bower_components/imkit-js-api-v3/lib/imkit-js-api-v3.min.js\"></script>\n```\n\n```javascript\nlet api = new IMKitApi(apiConfig);\nlet socket = new IMKitSocket(socketConfig);\n```\n\n### CDN\n\n```html\n<script src=\"https://cdn.rawgit.com/FUNTEKco/imkit-js-api-v3/master/lib/imkit-js-api-v3.js\"></script>\n```\n\n```javascript\nlet api = new IMKitApi(apiConfig);\nlet socket = new IMKitSocket(socketConfig);\n```\n",
+    "longname": "E:\\REPO\\IMKit\\IMKit-Chat-v3\\imkit-js-api-v3\\README.md",
+    "name": "./README.md",
+    "static": true,
+    "access": "public"
+  },
+  {
+    "kind": "packageJSON",
+    "content": "{\r\n  \"name\": \"imkit-js-api-v3\",\r\n  \"version\": \"3.0.4\",\r\n  \"description\": \"\",\r\n  \"main\": \"src/index.js\",\r\n  \"scripts\": {\r\n    \"build\": \"webpack --env dev && webpack --env build\",\r\n    \"dev\": \"webpack --progress --colors --watch --env dev\",\r\n    \"test\": \"mocha --require babel-register --colors ./test/*.spec.js\",\r\n    \"test:watch\": \"mocha --require babel-register --colors -w ./test/*.spec.js\",\r\n    \"test:api\": \"mocha --require babel-register --colors ./test/api.spec.js\",\r\n    \"test:socket\": \"mocha --require babel-register --colors ./test/socket.spec.js\",\r\n    \"doc\": \"./node_modules/.bin/esdoc\"\r\n  },\r\n  \"repository\": {\r\n    \"type\": \"git\",\r\n    \"url\": \"\"\r\n  },\r\n  \"keywords\": [],\r\n  \"author\": \"Gagu\",\r\n  \"license\": \"ISC\",\r\n  \"bugs\": {\r\n    \"url\": \"https://\"\r\n  },\r\n  \"homepage\": \"https://\",\r\n  \"devDependencies\": {\r\n    \"@babel/cli\": \"^7.0.0-beta.51\",\r\n    \"@babel/core\": \"^7.0.0-beta.51\",\r\n    \"@babel/preset-env\": \"^7.0.0-beta.51\",\r\n    \"babel-eslint\": \"^8.0.3\",\r\n    \"babel-loader\": \"^8.0.0-beta.4\",\r\n    \"babel-plugin-add-module-exports\": \"^0.2.1\",\r\n    \"babel-preset-env\": \"^7.0.0-beta.3\",\r\n    \"babel-register\": \"^7.0.0-beta.3\",\r\n    \"chai\": \"^4.1.2\",\r\n    \"esdoc\": \"^1.1.0\",\r\n    \"esdoc-standard-plugin\": \"^1.0.0\",\r\n    \"eslint\": \"^5.0.1\",\r\n    \"eslint-loader\": \"^2.0.0\",\r\n    \"jsdom\": \"11.11.0\",\r\n    \"jsdom-global\": \"3.0.2\",\r\n    \"mocha\": \"^4.0.1\",\r\n    \"uglifyjs-webpack-plugin\": \"^1.2.7\",\r\n    \"webpack\": \"^4.12.2\",\r\n    \"webpack-cli\": \"^3.0.8\",\r\n    \"yargs\": \"^10.0.3\"\r\n  },\r\n  \"dependencies\": {\r\n    \"axios\": \"^0.18.0\",\r\n    \"socket.io-client\": \"^2.1.1\"\r\n  }\r\n}\r\n",
+    "longname": "E:\\REPO\\IMKit\\IMKit-Chat-v3\\imkit-js-api-v3\\package.json",
+    "name": "package.json",
+    "static": true,
+    "access": "public"
+  }
+]

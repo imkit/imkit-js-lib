@@ -1,0 +1,114 @@
+{
+  "type": "File",
+  "start": 0,
+  "end": 431,
+  "loc": {
+    "start": {
+      "line": 1,
+      "column": 0
+    },
+    "end": {
+      "line": 16,
+      "column": 0
+    }
+  },
+  "program": {
+    "type": "Program",
+    "start": 0,
+    "end": 431,
+    "loc": {
+      "start": {
+        "line": 1,
+        "column": 0
+      },
+      "end": {
+        "line": 16,
+        "column": 0
+      }
+    },
+    "sourceType": "module",
+    "body": [],
+    "directives": [],
+    "leadingComments": null,
+    "innerComments": [
+      {
+        "type": "CommentBlock",
+        "value": "*\r\n * @typedef {Object} PushPayload\r\n * @property {String} topic\r\n * @property {Number} badge\r\n * @property {String} sound\r\n * @property {String} nickname\r\n * @property {String} title\r\n * @property {String} collapseKey\r\n * @property {String} body\r\n * @property {String} icon\r\n * @property {String} sample-type:sample\r\n * @property {Object} alert\r\n * @property {String} alert.loc-key\r\n * @property {String[]} alert.loc-args\r\n ",
+        "start": 0,
+        "end": 429,
+        "loc": {
+          "start": {
+            "line": 1,
+            "column": 0
+          },
+          "end": {
+            "line": 15,
+            "column": 3
+          }
+        }
+      }
+    ]
+  },
+  "comments": [
+    {
+      "type": "CommentBlock",
+      "value": "*\r\n * @typedef {Object} PushPayload\r\n * @property {String} topic\r\n * @property {Number} badge\r\n * @property {String} sound\r\n * @property {String} nickname\r\n * @property {String} title\r\n * @property {String} collapseKey\r\n * @property {String} body\r\n * @property {String} icon\r\n * @property {String} sample-type:sample\r\n * @property {Object} alert\r\n * @property {String} alert.loc-key\r\n * @property {String[]} alert.loc-args\r\n ",
+      "start": 0,
+      "end": 429,
+      "loc": {
+        "start": {
+          "line": 1,
+          "column": 0
+        },
+        "end": {
+          "line": 15,
+          "column": 3
+        }
+      }
+    }
+  ],
+  "tokens": [
+    {
+      "type": "CommentBlock",
+      "value": "*\r\n * @typedef {Object} PushPayload\r\n * @property {String} topic\r\n * @property {Number} badge\r\n * @property {String} sound\r\n * @property {String} nickname\r\n * @property {String} title\r\n * @property {String} collapseKey\r\n * @property {String} body\r\n * @property {String} icon\r\n * @property {String} sample-type:sample\r\n * @property {Object} alert\r\n * @property {String} alert.loc-key\r\n * @property {String[]} alert.loc-args\r\n ",
+      "start": 0,
+      "end": 429,
+      "loc": {
+        "start": {
+          "line": 1,
+          "column": 0
+        },
+        "end": {
+          "line": 15,
+          "column": 3
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "eof",
+        "beforeExpr": false,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 431,
+      "end": 431,
+      "loc": {
+        "start": {
+          "line": 16,
+          "column": 0
+        },
+        "end": {
+          "line": 16,
+          "column": 0
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,162 @@
+{
+  "type": "File",
+  "start": 0,
+  "end": 814,
+  "loc": {
+    "start": {
+      "line": 1,
+      "column": 0
+    },
+    "end": {
+      "line": 20,
+      "column": 0
+    }
+  },
+  "program": {
+    "type": "Program",
+    "start": 0,
+    "end": 814,
+    "loc": {
+      "start": {
+        "line": 1,
+        "column": 0
+      },
+      "end": {
+        "line": 20,
+        "column": 0
+      }
+    },
+    "sourceType": "module",
+    "body": [],
+    "directives": [],
+    "leadingComments": null,
+    "innerComments": [
+      {
+        "type": "CommentBlock",
+        "value": "*\r\n * When Socket Receive Message\r\n * @name SocketOnReceiveMessageFunction\r\n * @function\r\n * @param {MessageData} message\r\n ",
+        "start": 0,
+        "end": 128,
+        "loc": {
+          "start": {
+            "line": 1,
+            "column": 0
+          },
+          "end": {
+            "line": 6,
+            "column": 3
+          }
+        }
+      },
+      {
+        "type": "CommentBlock",
+        "value": "*\r\n * @typedef {Object} SocketConfig\r\n * @property {String} domain\r\n * @property {String} [token]\r\n * @property {Object} [events]\r\n * @property {function(error: Object)} [events.onAjaxError]\r\n * @property {function()} [onConnect]\r\n * @property {function()} [onDisconnect]\r\n * @property {function(message: MessageData)} [onReceiveMessage]\r\n * @property {function(room: {room: String, memberProperty: {badge: Number, client: String, lastRead: String}[]})} [onReceiveRoom]\r\n * @property {function(typing: {message: String, room: String, sender: String})} [onReceiveTyping]\r\n * @property {function(data: {messageID: String, roomID: String, memberID: String})} [onReceivelastRead]\r\n ",
+        "start": 130,
+        "end": 812,
+        "loc": {
+          "start": {
+            "line": 7,
+            "column": 0
+          },
+          "end": {
+            "line": 19,
+            "column": 3
+          }
+        }
+      }
+    ]
+  },
+  "comments": [
+    {
+      "type": "CommentBlock",
+      "value": "*\r\n * When Socket Receive Message\r\n * @name SocketOnReceiveMessageFunction\r\n * @function\r\n * @param {MessageData} message\r\n ",
+      "start": 0,
+      "end": 128,
+      "loc": {
+        "start": {
+          "line": 1,
+          "column": 0
+        },
+        "end": {
+          "line": 6,
+          "column": 3
+        }
+      }
+    },
+    {
+      "type": "CommentBlock",
+      "value": "*\r\n * @typedef {Object} SocketConfig\r\n * @property {String} domain\r\n * @property {String} [token]\r\n * @property {Object} [events]\r\n * @property {function(error: Object)} [events.onAjaxError]\r\n * @property {function()} [onConnect]\r\n * @property {function()} [onDisconnect]\r\n * @property {function(message: MessageData)} [onReceiveMessage]\r\n * @property {function(room: {room: String, memberProperty: {badge: Number, client: String, lastRead: String}[]})} [onReceiveRoom]\r\n * @property {function(typing: {message: String, room: String, sender: String})} [onReceiveTyping]\r\n * @property {function(data: {messageID: String, roomID: String, memberID: String})} [onReceivelastRead]\r\n ",
+      "start": 130,
+      "end": 812,
+      "loc": {
+        "start": {
+          "line": 7,
+          "column": 0
+        },
+        "end": {
+          "line": 19,
+          "column": 3
+        }
+      }
+    }
+  ],
+  "tokens": [
+    {
+      "type": "CommentBlock",
+      "value": "*\r\n * When Socket Receive Message\r\n * @name SocketOnReceiveMessageFunction\r\n * @function\r\n * @param {MessageData} message\r\n ",
+      "start": 0,
+      "end": 128,
+      "loc": {
+        "start": {
+          "line": 1,
+          "column": 0
+        },
+        "end": {
+          "line": 6,
+          "column": 3
+        }
+      }
+    },
+    {
+      "type": "CommentBlock",
+      "value": "*\r\n * @typedef {Object} SocketConfig\r\n * @property {String} domain\r\n * @property {String} [token]\r\n * @property {Object} [events]\r\n * @property {function(error: Object)} [events.onAjaxError]\r\n * @property {function()} [onConnect]\r\n * @property {function()} [onDisconnect]\r\n * @property {function(message: MessageData)} [onReceiveMessage]\r\n * @property {function(room: {room: String, memberProperty: {badge: Number, client: String, lastRead: String}[]})} [onReceiveRoom]\r\n * @property {function(typing: {message: String, room: String, sender: String})} [onReceiveTyping]\r\n * @property {function(data: {messageID: String, roomID: String, memberID: String})} [onReceivelastRead]\r\n ",
+      "start": 130,
+      "end": 812,
+      "loc": {
+        "start": {
+          "line": 7,
+          "column": 0
+        },
+        "end": {
+          "line": 19,
+          "column": 3
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "eof",
+        "beforeExpr": false,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 814,
+      "end": 814,
+      "loc": {
+        "start": {
+          "line": 20,
+          "column": 0
+        },
+        "end": {
+          "line": 20,
+          "column": 0
+        }
+      }
+    }
+  ]
+}

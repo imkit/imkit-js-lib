@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../../../">
+  <title data-ice="title">src/api/file/index.js | imkit-js-api-v3</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  <script src="script/manual.js"></script>
+</head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+</header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#api">api</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/api/index.js~IMKitApi.html">IMKitApi</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#api-admin">api/admin</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/api/admin/index.js~Admin.html">Admin</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#api-auth">api/auth</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/api/auth/index.js~Auth.html">Auth</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#api-file">api/file</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/api/file/index.js~File.html">File</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#api-me">api/me</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/api/me/index.js~Me.html">Me</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#api-message">api/message</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/api/message/index.js~Message.html">Message</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#api-room">api/room</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/api/room/index.js~Room.html">Room</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#api-url">api/url</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/api/url/index.js~Url.html">Url</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#socket">socket</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/socket/index.js~IMKitSocket.html">IMKitSocket</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#typedef">typedef</a><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-ApiConfig">ApiConfig</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-ClientData">ClientData</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-MessageData">MessageData</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-MessageInfo">MessageInfo</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-PushPayload">PushPayload</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-RoomData">RoomData</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-SocketConfig">SocketConfig</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-TokenData">TokenData</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">src/api/file/index.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import axios from &apos;axios&apos;;
+/**
+ * @import * from &apos;@/src/typedef&apos;;
+ */
+
+export default class File {
+  /**
+   * @private
+   * @param {Api} api
+   */
+  constructor(api) {
+    /**
+     * @private
+     * @type {Api}
+     * */
+    this.api = api;
+    /**
+     * @private
+     * @type {Boolean}
+     */
+    this.isAdmin = false;
+  }
+
+  /**
+   * Upload File
+   * @param {String} bucketName
+   * @param {File} file
+   * @param {Object} extra
+   * @param {Function} progress
+   * @returns {Promise&lt;String|Error&gt;}
+   */
+  upload(bucketName, file, extra = {}, progress = e =&gt; {}) {
+    return new Promise((resolve, reject) =&gt; {
+      let url = `${this.api.config.domain}/files/${bucketName}`;
+      let data = new FormData();
+      let headers = this.api.getHeader(this.isAdmin);
+
+      data.append(&apos;extra&apos;, JSON.stringify(extra));
+      data.append(&apos;file&apos;, file);
+      // headers = Object.assign(headers, data.getHeaders());
+
+      axios
+        .post(url, data, {
+          headers: headers,
+          onUploadProgress: progress
+        })
+        .then(
+          res =&gt; {
+            if (res.status &gt;= 200 &amp;&amp; res.status &lt; 300 &amp;&amp; res.data.RC === 0) {
+              resolve(
+                `${this.api.config.domain}/files/${bucketName}/${
+                  res.data.result.id
+                }`
+              );
+            } else {
+              resolve(res.data);
+            }
+          },
+          error =&gt; {
+            this.api.onError(error);
+          }
+        );
+    });
+  }
+
+  /**
+   * Get File metadata
+   * @param {String} bucketName
+   * @param {String} fileId
+   * @returns {Promise&lt;{AcceptRanges: String, LastModified: String, ContentLength: Number, ETag: String, ContentType: String, Metadata: Object[], extra: Object[]|Error&gt;}
+   */
+  getMetadata(bucketName, fileId) {
+    return new Promise((resolve, reject) =&gt; {
+      let url = `${
+        this.api.config.domain
+      }/files/${bucketName}/${fileId}/metadata`;
+      let data = {};
+      let headers = this.api.getHeader(this.isAdmin);
+
+      axios
+        .get(url, {
+          params: data,
+          headers: headers
+        })
+        .then(
+          res =&gt; {
+            if (res.status &gt;= 200 &amp;&amp; res.status &lt; 300 &amp;&amp; res.data.RC === 0) {
+              resolve(res.data.result);
+            }
+          },
+          error =&gt; {
+            this.api.onError(error);
+          }
+        );
+    });
+  }
+
+  /**
+   * Downliad File
+   * @param {String} bucketName
+   * @param {String} fileId
+   * @param {Object} appendHeaders
+   * @param {Function} progress
+   */
+  download(bucketName, fileId, appendHeaders = {}, progress = e =&gt; {}) {
+    return new Promise((resolve, reject) =&gt; {
+      let url = `${this.api.config.domain}/files/${bucketName}/${fileId}`;
+      let data = {};
+      let headers = this.api.getHeader(this.isAdmin);
+
+      headers = Object.assign(headers, appendHeaders);
+
+      axios
+        .get(url, {
+          params: data,
+          headers: headers,
+          onDownloadProgress: progress,
+          responseType: &apos;arraybuffer&apos;
+        })
+        .then(
+          res =&gt; {
+            if (res.status &gt;= 200 &amp;&amp; res.status &lt; 300) {
+              resolve(res);
+            }
+          },
+          error =&gt; {
+            this.api.onError(error);
+          }
+        );
+    });
+  }
+}
+</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.1.0)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>

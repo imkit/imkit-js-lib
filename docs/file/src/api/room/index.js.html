@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../../../">
+  <title data-ice="title">src/api/room/index.js | imkit-js-api-v3</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  <script src="script/manual.js"></script>
+</head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+</header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#api">api</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/api/index.js~IMKitApi.html">IMKitApi</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#api-admin">api/admin</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/api/admin/index.js~Admin.html">Admin</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#api-auth">api/auth</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/api/auth/index.js~Auth.html">Auth</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#api-file">api/file</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/api/file/index.js~File.html">File</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#api-me">api/me</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/api/me/index.js~Me.html">Me</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#api-message">api/message</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/api/message/index.js~Message.html">Message</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#api-room">api/room</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/api/room/index.js~Room.html">Room</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#api-url">api/url</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/api/url/index.js~Url.html">Url</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#socket">socket</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/socket/index.js~IMKitSocket.html">IMKitSocket</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#typedef">typedef</a><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-ApiConfig">ApiConfig</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-ClientData">ClientData</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-MessageData">MessageData</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-MessageInfo">MessageInfo</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-PushPayload">PushPayload</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-RoomData">RoomData</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-SocketConfig">SocketConfig</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-TokenData">TokenData</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">src/api/room/index.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import axios from &apos;axios&apos;;
+/**
+ * @import * from &apos;@/src/typedef&apos;;
+ */
+
+export default class Room {
+  /**
+   * @private
+   * @param {Api} api
+   */
+  constructor(api) {
+    /**
+     * @private
+     * @type {Api}
+     * */
+    this.api = api;
+    /**
+     * @private
+     * @type {Boolean}
+     */
+    this.isAdmin = false;
+  }
+
+  /**
+   * Get rooms list
+   * @param {Number} [limit = 20] &#x6700;&#x5927;&#x56DE;&#x50B3;&#x7B46;&#x6578;
+   * @param {Number} [skip = 0] &#x5F9E;&#x7B2C;&#x5E7E;&#x7B46;&#x958B;&#x59CB;
+   * @param {{members: String}} [q = {}] ???
+   * @returns {Promise&lt;{totalCount: Number, data: RoomData[]}|Error&gt;}
+   */
+  getRoomsList(limit = 20, skip = 0, q = {}) {
+    return new Promise((resolve, reject) =&gt; {
+      let url = `${this.api.config.domain}/rooms`;
+      let data = {
+        limit,
+        skip,
+        q
+      };
+      let headers = this.api.getHeader(this.isAdmin);
+
+      axios
+        .get(url, {
+          params: data,
+          headers: headers
+        })
+        .then(
+          res =&gt; {
+            if (res.status &gt;= 200 &amp;&amp; res.status &lt; 300 &amp;&amp; res.data.RC === 0) {
+              resolve(res.data.result);
+            }
+          },
+          error =&gt; {
+            this.api.onError(error);
+          }
+        );
+    });
+  }
+
+  /**
+   * Get room
+   * @param {String} roomId Room id
+   * @returns {Promise&lt;RoomData|Error&gt;}
+   */
+  getRoom(roomId) {
+    return new Promise((resolve, reject) =&gt; {
+      let url = `${this.api.config.domain}/rooms/${roomId}`;
+      let data = {};
+      let headers = this.api.getHeader(this.isAdmin);
+
+      axios
+        .get(url, {
+          params: data,
+          headers: headers
+        })
+        .then(
+          res =&gt; {
+            if (res.status &gt;= 200 &amp;&amp; res.status &lt; 300 &amp;&amp; res.data.RC === 0) {
+              resolve(res.data.result);
+            }
+          },
+          error =&gt; {
+            this.api.onError(error);
+          }
+        );
+    });
+  }
+
+  /**
+   * Create room
+   * @param {Object} roomInfo
+   * @param {String} [roomInfo._id]
+   * @param {String} [roomInfo.name]
+   * @param {String} [roomInfo.description]
+   * @param {String} [roomInfo.cover] Image url
+   * @returns {Promise&lt;RoomData|Error&gt;}
+   */
+  createRoom(roomInfo) {
+    return new Promise((resolve, reject) =&gt; {
+      let url = `${this.api.config.domain}/rooms`;
+      let data = roomInfo;
+      let headers = this.api.getHeader(this.isAdmin);
+
+      axios
+        .post(url, data, {
+          headers: headers
+        })
+        .then(
+          res =&gt; {
+            if (res.status &gt;= 200 &amp;&amp; res.status &lt; 300 &amp;&amp; res.data.RC === 0) {
+              resolve(res.data.result);
+            }
+          },
+          error =&gt; {
+            this.api.onError(error);
+          }
+        );
+    });
+  }
+
+  /**
+   * Create And Join Room
+   * @param {Object} roomInfo
+   * @param {String} [roomInfo._id]
+   * @param {String} [roomInfo.name]
+   * @param {String} [roomInfo.description]
+   * @param {String} [roomInfo.cover] Image url
+   * @param {String[]|String} [roomInfo.invitee] &#x8981;&#x9080;&#x8ACB;&#x7684;&#xFF0C;&#x50B3;&#x5165;&#x5B57;&#x4E32;&#x5EFA;&#x7ACB;&#x96D9;&#x4EBA;&#x804A;&#x5929;&#x5BA4;&#xFF0C;&#x50B3;&#x5165;&#x9663;&#x5217;&#x5EFA;&#x7ACB;&#x7FA4;&#x7D44;&#x804A;&#x5929;&#x5BA4;
+   * @returns {Promise&lt;RoomData|Error&gt;}
+   */
+  createAndJoinRoom(roomInfo) {
+    return new Promise((resolve, reject) =&gt; {
+      let url = `${this.api.config.domain}/rooms/createAndJoin`;
+      let data = roomInfo;
+      let headers = this.api.getHeader(this.isAdmin);
+
+      axios
+        .post(url, data, {
+          headers: headers
+        })
+        .then(
+          res =&gt; {
+            if (res.status &gt;= 200 &amp;&amp; res.status &lt; 300 &amp;&amp; res.data.RC === 0) {
+              resolve(res.data.result);
+            }
+          },
+          error =&gt; {
+            this.api.onError(error);
+          }
+        );
+    });
+  }
+
+  /**
+   * Update room
+   * @param {String} roomId
+   * @param {Object} roomInfo
+   * @param {String} [roomInfo.name]
+   * @param {String} [roomInfo.description]
+   * @param {String} [roomInfo.cover] Image url
+   * @returns {Promise&lt;RoomData|Error&gt;}
+   */
+  updateRoom(roomId, roomInfo) {
+    return new Promise((resolve, reject) =&gt; {
+      let url = `${this.api.config.domain}/rooms/${roomId}`;
+      let data = roomInfo;
+
+      let headers = this.api.getHeader(this.isAdmin);
+
+      axios
+        .put(url, data, {
+          headers: headers
+        })
+        .then(
+          res =&gt; {
+            if (res.status &gt;= 200 &amp;&amp; res.status &lt; 300 &amp;&amp; res.data.RC === 0) {
+              resolve(res.data.result);
+            }
+          },
+          error =&gt; {
+            this.api.onError(error);
+          }
+        );
+    });
+  }
+
+  /**
+   * &#x5DF2;&#x8B80;
+   * @param {String} roomId
+   * @param {String} messageId
+   * @returns {Promise&lt;{client:String, lastRead:String, badge:Number}|Error&gt;}
+   */
+  updateLastRead(roomId, messageId) {
+    return new Promise((resolve, reject) =&gt; {
+      let url = `${this.api.config.domain}/rooms/${roomId}/lastRead`;
+      let data = {
+        message: messageId
+      };
+
+      let headers = this.api.getHeader(this.isAdmin);
+
+      axios
+        .put(url, data, {
+          headers: headers
+        })
+        .then(
+          res =&gt; {
+            if (res.status &gt;= 200 &amp;&amp; res.status &lt; 300 &amp;&amp; res.data.RC === 0) {
+              resolve(res.data.result);
+            }
+          },
+          error =&gt; {
+            this.api.onError(error);
+          }
+        );
+    });
+  }
+
+  /**
+   * Delete room
+   * @param {String} roomId
+   * @returns {Promise&lt;{n: Number, nModified: Number, ok: Number}|Error&gt;}
+   */
+  deleteRoom(roomId) {
+    return new Promise((resolve, reject) =&gt; {
+      let url = `${this.api.config.domain}/rooms/${roomId}`;
+      let data = {};
+      let headers = this.api.getHeader(this.isAdmin);
+
+      axios
+        .delete(url, {
+          data: data,
+          headers: headers
+        })
+        .then(
+          res =&gt; {
+            if (res.status &gt;= 200 &amp;&amp; res.status &lt; 300 &amp;&amp; res.data.RC === 0) {
+              resolve(res.data.result);
+            }
+          },
+          error =&gt; {
+            this.api.onError(error);
+          }
+        );
+    });
+  }
+
+  /**
+   * Join room
+   * @param {String} roomId
+   * @returns {Promise&lt;RoomData|Error&gt;}
+   */
+  joinRoom(roomId) {
+    return new Promise((resolve, reject) =&gt; {
+      let url = `${this.api.config.domain}/rooms/${roomId}/join`;
+      let data = {};
+      let headers = this.api.getHeader(this.isAdmin);
+
+      axios
+        .post(url, data, {
+          headers: headers
+        })
+        .then(
+          res =&gt; {
+            if (res.status &gt;= 200 &amp;&amp; res.status &lt; 300 &amp;&amp; res.data.RC === 0) {
+              resolve(res.data.result);
+            }
+          },
+          error =&gt; {
+            this.api.onError(error);
+          }
+        );
+    });
+  }
+
+  /**
+   * Add member to room
+   * @param {String} roomId
+   * @param {String} uid
+   * @returns {Promise&lt;RoomData|Error&gt;}
+   */
+  addMember(roomId, uid) {
+    return new Promise((resolve, reject) =&gt; {
+      let url = `${this.api.config.domain}/rooms/${roomId}/members/${uid}`;
+      let data = {};
+      let headers = this.api.getHeader(this.isAdmin);
+
+      axios
+        .post(url, data, {
+          headers: headers
+        })
+        .then(
+          res =&gt; {
+            if (res.status &gt;= 200 &amp;&amp; res.status &lt; 300 &amp;&amp; res.data.RC === 0) {
+              resolve(res.data.result);
+            }
+          },
+          error =&gt; {
+            this.api.onError(error);
+          }
+        );
+    });
+  }
+
+  /**
+   * Add members to room
+   * @param {String} roomId
+   * @param {String[]} invitees
+   * @returns {Promise&lt;RoomData|Error&gt;}
+   */
+  addMembers(roomId, invitees) {
+    return new Promise((resolve, reject) =&gt; {
+      let url = `${this.api.config.domain}/rooms/${roomId}/members/`;
+      let data = { invitees };
+      let headers = this.api.getHeader(this.isAdmin);
+
+      axios
+        .post(url, data, {
+          headers: headers
+        })
+        .then(
+          res =&gt; {
+            if (res.status &gt;= 200 &amp;&amp; res.status &lt; 300 &amp;&amp; res.data.RC === 0) {
+              resolve(res.data.result);
+            }
+          },
+          error =&gt; {
+            this.api.onError(error);
+          }
+        );
+    });
+  }
+
+  /**
+   * Delete member from room
+   * @param {String} roomId
+   * @param {String} uid
+   * @returns {Promise&lt;RoomData|Error&gt;}
+   */
+  deleteMember(roomId, uid) {
+    return new Promise((resolve, reject) =&gt; {
+      let url = `${this.api.config.domain}/rooms/${roomId}/members/${uid}`;
+      let data = {};
+      let headers = this.api.getHeader(this.isAdmin);
+
+      axios
+        .delete(url, {
+          data: data,
+          headers: headers
+        })
+        .then(
+          res =&gt; {
+            if (res.status &gt;= 200 &amp;&amp; res.status &lt; 300 &amp;&amp; res.data.RC === 0) {
+              resolve(res.data.result);
+            }
+          },
+          error =&gt; {
+            this.api.onError(error);
+          }
+        );
+    });
+  }
+
+  /**
+   * Tell other room members, I am Typing
+   * @param {String} roomId
+   * @param {String} message
+   * @returns {Promise&lt;{message: String, room: String, sender: String}|Error&gt;}
+   */
+  typing(roomId, message) {
+    return new Promise((resolve, reject) =&gt; {
+      let url = `${this.api.config.domain}/rooms/${roomId}/typing`;
+      let data = {
+        message
+      };
+      let headers = this.api.getHeader(this.isAdmin);
+
+      axios
+        .post(url, data, {
+          headers: headers
+        })
+        .then(
+          res =&gt; {
+            if (res.status &gt;= 200 &amp;&amp; res.status &lt; 300 &amp;&amp; res.data.RC === 0) {
+              resolve(res.data.result);
+            }
+          },
+          error =&gt; {
+            this.api.onError(error);
+          }
+        );
+    });
+  }
+
+  /**
+   * Send Message
+   * @param {String} roomId
+   * @param {MessageInfo} message
+   * @returns {Promise&lt;MessageData|Error&gt;}
+   */
+  sendMessage(roomId, message) {
+    return new Promise((resolve, reject) =&gt; {
+      let url = `${this.api.config.domain}/rooms/${roomId}/message`;
+      let data = message;
+      let headers = this.api.getHeader(this.isAdmin);
+
+      axios
+        .post(url, data, {
+          headers: headers
+        })
+        .then(
+          res =&gt; {
+            if (res.status &gt;= 200 &amp;&amp; res.status &lt; 300 &amp;&amp; res.data.RC === 0) {
+              resolve(res.data.result);
+            }
+          },
+          error =&gt; {
+            this.api.onError(error);
+          }
+        );
+    });
+  }
+
+  /**
+   * Update member property
+   * @param {String} roomId
+   * @param {String} clientId
+   * @param {Object} property
+   * @param {String} property.property
+   * @param {String} property.value
+   * @returns {Promise&lt;{client: String, rule: String}|Error&gt;}
+   */
+  updateMemberProperty(roomId, clientId, property) {
+    return new Promise((resolve, reject) =&gt; {
+      let url = `${this.api.config.domain}/rooms/${roomId}/member/${clientId}`;
+      let data = property;
+
+      let headers = this.api.getHeader(this.isAdmin);
+
+      axios
+        .put(url, data, {
+          headers: headers
+        })
+        .then(
+          res =&gt; {
+            if (res.status &gt;= 200 &amp;&amp; res.status &lt; 300 &amp;&amp; res.data.RC === 0) {
+              resolve(res.data.result);
+            }
+          },
+          error =&gt; {
+            this.api.onError(error);
+          }
+        );
+    });
+  }
+
+  /**
+   * Get room messages list
+   * @param {String} roomId
+   * @param {Number} limit
+   * @param {String} beforeMessage Message id
+   * @returns {Promise&lt;{totalCount: Number, data: MessageData[]}|Error&gt;}
+   */
+  getRoomMessages(roomId, limit = 20, beforeMessage = null) {
+    return new Promise((resolve, reject) =&gt; {
+      let url = `${this.api.config.domain}/rooms/${roomId}/messages`;
+      let data = {
+        limit,
+        beforeMessage
+      };
+      let headers = this.api.getHeader(this.isAdmin);
+
+      axios
+        .get(url, {
+          params: data,
+          headers: headers
+        })
+        .then(
+          res =&gt; {
+            if (res.status &gt;= 200 &amp;&amp; res.status &lt; 300 &amp;&amp; res.data.RC === 0) {
+              resolve(res.data.result);
+            }
+          },
+          error =&gt; {
+            this.api.onError(error);
+          }
+        );
+    });
+  }
+
+  /**
+   * Get room messages count after timeInMS
+   * @param {String} roomId
+   * @param {Number} [timeInMS = 0]
+   * @returns {Promise&lt;{count: Number}|Error&gt;}
+   */
+  getRoomMessagesCount(roomId, timeInMS = 0) {
+    return new Promise((resolve, reject) =&gt; {
+      let url = `${this.api.config.domain}/rooms/${roomId}/count`;
+      let data = {
+        timeInMS
+      };
+      let headers = this.api.getHeader(this.isAdmin);
+
+      axios
+        .get(url, {
+          params: data,
+          headers: headers
+        })
+        .then(
+          res =&gt; {
+            if (res.status &gt;= 200 &amp;&amp; res.status &lt; 300 &amp;&amp; res.data.RC === 0) {
+              resolve(res.data.result);
+            }
+          },
+          error =&gt; {
+            this.api.onError(error);
+          }
+        );
+    });
+  }
+}
+</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.1.0)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>

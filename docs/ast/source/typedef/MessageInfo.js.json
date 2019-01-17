@@ -1,0 +1,114 @@
+{
+  "type": "File",
+  "start": 0,
+  "end": 602,
+  "loc": {
+    "start": {
+      "line": 1,
+      "column": 0
+    },
+    "end": {
+      "line": 19,
+      "column": 0
+    }
+  },
+  "program": {
+    "type": "Program",
+    "start": 0,
+    "end": 602,
+    "loc": {
+      "start": {
+        "line": 1,
+        "column": 0
+      },
+      "end": {
+        "line": 19,
+        "column": 0
+      }
+    },
+    "sourceType": "module",
+    "body": [],
+    "directives": [],
+    "leadingComments": null,
+    "innerComments": [
+      {
+        "type": "CommentBlock",
+        "value": "*\r\n * 丟什麼進去就會吐什麼出來，it's very free~~~\r\n * @typedef {Object} MessageInfo\r\n * @property {String} messageType\r\n * 'text', 'image', 'video', 'audio', 'location', 'sticker',\r\n * 'joinRoom', 'leaveRoom', 'addMember', 'deleteMember'\r\n * @property {String} [message]\r\n * @property {String} [sticker]\r\n * @property {String} [originalUrl]\r\n * @property {String} [thumbnailUrl]\r\n * @property {String} [width]\r\n * @property {String} [height]\r\n * @property {String} [latitude]\r\n * @property {String} [longitude]\r\n * @property {String} [duration]\r\n * @property {String} [extra]\r\n * @property {String} [reply]\r\n ",
+        "start": 0,
+        "end": 600,
+        "loc": {
+          "start": {
+            "line": 1,
+            "column": 0
+          },
+          "end": {
+            "line": 18,
+            "column": 3
+          }
+        }
+      }
+    ]
+  },
+  "comments": [
+    {
+      "type": "CommentBlock",
+      "value": "*\r\n * 丟什麼進去就會吐什麼出來，it's very free~~~\r\n * @typedef {Object} MessageInfo\r\n * @property {String} messageType\r\n * 'text', 'image', 'video', 'audio', 'location', 'sticker',\r\n * 'joinRoom', 'leaveRoom', 'addMember', 'deleteMember'\r\n * @property {String} [message]\r\n * @property {String} [sticker]\r\n * @property {String} [originalUrl]\r\n * @property {String} [thumbnailUrl]\r\n * @property {String} [width]\r\n * @property {String} [height]\r\n * @property {String} [latitude]\r\n * @property {String} [longitude]\r\n * @property {String} [duration]\r\n * @property {String} [extra]\r\n * @property {String} [reply]\r\n ",
+      "start": 0,
+      "end": 600,
+      "loc": {
+        "start": {
+          "line": 1,
+          "column": 0
+        },
+        "end": {
+          "line": 18,
+          "column": 3
+        }
+      }
+    }
+  ],
+  "tokens": [
+    {
+      "type": "CommentBlock",
+      "value": "*\r\n * 丟什麼進去就會吐什麼出來，it's very free~~~\r\n * @typedef {Object} MessageInfo\r\n * @property {String} messageType\r\n * 'text', 'image', 'video', 'audio', 'location', 'sticker',\r\n * 'joinRoom', 'leaveRoom', 'addMember', 'deleteMember'\r\n * @property {String} [message]\r\n * @property {String} [sticker]\r\n * @property {String} [originalUrl]\r\n * @property {String} [thumbnailUrl]\r\n * @property {String} [width]\r\n * @property {String} [height]\r\n * @property {String} [latitude]\r\n * @property {String} [longitude]\r\n * @property {String} [duration]\r\n * @property {String} [extra]\r\n * @property {String} [reply]\r\n ",
+      "start": 0,
+      "end": 600,
+      "loc": {
+        "start": {
+          "line": 1,
+          "column": 0
+        },
+        "end": {
+          "line": 18,
+          "column": 3
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "eof",
+        "beforeExpr": false,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 602,
+      "end": 602,
+      "loc": {
+        "start": {
+          "line": 19,
+          "column": 0
+        },
+        "end": {
+          "line": 19,
+          "column": 0
+        }
+      }
+    }
+  ]
+}
