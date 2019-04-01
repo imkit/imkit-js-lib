@@ -145,6 +145,7 @@ export default class Room {
    * @param {String} [roomInfo.name]
    * @param {String} [roomInfo.description]
    * @param {String} [roomInfo.cover] Image url
+   * @param {String} [roomInfo.roomType] &#x623F;&#x9593; type, &quot;direct&quot; or &quot;group&quot;
    * @returns {Promise&lt;RoomData|Error&gt;}
    */
   createRoom(roomInfo) {
@@ -177,7 +178,8 @@ export default class Room {
    * @param {String} [roomInfo.name]
    * @param {String} [roomInfo.description]
    * @param {String} [roomInfo.cover] Image url
-   * @param {String[]|String} [roomInfo.invitee] &#x8981;&#x9080;&#x8ACB;&#x7684;&#xFF0C;&#x50B3;&#x5165;&#x5B57;&#x4E32;&#x5EFA;&#x7ACB;&#x96D9;&#x4EBA;&#x804A;&#x5929;&#x5BA4;&#xFF0C;&#x50B3;&#x5165;&#x9663;&#x5217;&#x5EFA;&#x7ACB;&#x7FA4;&#x7D44;&#x804A;&#x5929;&#x5BA4;
+   * @param {String} [roomInfo.roomType] &#x623F;&#x9593; type, &quot;direct&quot; or &quot;group&quot;
+   * @param {String[]|String} [roomInfo.invitee] &#x8981;&#x9080;&#x8ACB;&#x7684;&#x4EBA;
    * @returns {Promise&lt;RoomData|Error&gt;}
    */
   createAndJoinRoom(roomInfo) {

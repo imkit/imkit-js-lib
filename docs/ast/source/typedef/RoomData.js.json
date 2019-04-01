@@ -1,28 +1,28 @@
 {
   "type": "File",
   "start": 0,
-  "end": 839,
+  "end": 897,
   "loc": {
     "start": {
       "line": 1,
       "column": 0
     },
     "end": {
-      "line": 23,
+      "line": 24,
       "column": 0
     }
   },
   "program": {
     "type": "Program",
     "start": 0,
-    "end": 839,
+    "end": 897,
     "loc": {
       "start": {
         "line": 1,
         "column": 0
       },
       "end": {
-        "line": 23,
+        "line": 24,
         "column": 0
       }
     },
@@ -33,16 +33,16 @@
     "innerComments": [
       {
         "type": "CommentBlock",
-        "value": "*\n * @typedef {Object} RoomData\n * @property {String} _id\n * @property {String} appID 房間 ID\n * @property {MessageData} lastMessage 最後一則訊息\n * @property {String} name Room name\n * @property {Number} serviceStatus ???\n * @property {String} createdTime ex: 2018-05-21T08:41:28.438Z\n * @property {Object[]} memberProperties 會員已讀狀態\n * @property {Number} memberProperties.badge\n * @property {String} memberProperties.lastRead\n * @property {String} memberProperties.client\n * @property {Object[]} members 會員列表\n * @property {String} members[].id\n * @property {String} members[].avatarUrl\n * @property {String} members[].nickname\n * @property {String} members[].lastLoginTime\n * @property {Number} members[].lastLoginTimeMS\n * @property {Boolean} muted 是否靜音\n * @property {Number} createdTimeMS ex: 1526892088438\n * @property {String} id 房間 ID\n ",
+        "value": "*\n * @typedef {Object} RoomData\n * @property {String} _id\n * @property {String} appID 房間 ID\n * @property {MessageData} lastMessage 最後一則訊息\n * @property {String} name Room name\n * @property {Number} serviceStatus\n * @property {String} createdTime ex: 2018-05-21T08:41:28.438Z\n * @property {Object[]} memberProperties 會員已讀狀態\n * @property {Number} memberProperties.badge\n * @property {String} memberProperties.lastRead\n * @property {String} memberProperties.client\n * @property {Object[]} members 會員列表\n * @property {String} members[].id\n * @property {String} members[].avatarUrl\n * @property {String} members[].nickname\n * @property {String} members[].lastLoginTime\n * @property {Number} members[].lastLoginTimeMS\n * @property {Boolean} muted 是否靜音\n * @property {Number} createdTimeMS ex: 1526892088438\n * @property {String} id 房間 ID\n * @property {String} [roomType] 房間 type, \"direct\" or \"group\"\n ",
         "start": 0,
-        "end": 838,
+        "end": 896,
         "loc": {
           "start": {
             "line": 1,
             "column": 0
           },
           "end": {
-            "line": 22,
+            "line": 23,
             "column": 3
           }
         }
@@ -52,16 +52,16 @@
   "comments": [
     {
       "type": "CommentBlock",
-      "value": "*\n * @typedef {Object} RoomData\n * @property {String} _id\n * @property {String} appID 房間 ID\n * @property {MessageData} lastMessage 最後一則訊息\n * @property {String} name Room name\n * @property {Number} serviceStatus ???\n * @property {String} createdTime ex: 2018-05-21T08:41:28.438Z\n * @property {Object[]} memberProperties 會員已讀狀態\n * @property {Number} memberProperties.badge\n * @property {String} memberProperties.lastRead\n * @property {String} memberProperties.client\n * @property {Object[]} members 會員列表\n * @property {String} members[].id\n * @property {String} members[].avatarUrl\n * @property {String} members[].nickname\n * @property {String} members[].lastLoginTime\n * @property {Number} members[].lastLoginTimeMS\n * @property {Boolean} muted 是否靜音\n * @property {Number} createdTimeMS ex: 1526892088438\n * @property {String} id 房間 ID\n ",
+      "value": "*\n * @typedef {Object} RoomData\n * @property {String} _id\n * @property {String} appID 房間 ID\n * @property {MessageData} lastMessage 最後一則訊息\n * @property {String} name Room name\n * @property {Number} serviceStatus\n * @property {String} createdTime ex: 2018-05-21T08:41:28.438Z\n * @property {Object[]} memberProperties 會員已讀狀態\n * @property {Number} memberProperties.badge\n * @property {String} memberProperties.lastRead\n * @property {String} memberProperties.client\n * @property {Object[]} members 會員列表\n * @property {String} members[].id\n * @property {String} members[].avatarUrl\n * @property {String} members[].nickname\n * @property {String} members[].lastLoginTime\n * @property {Number} members[].lastLoginTimeMS\n * @property {Boolean} muted 是否靜音\n * @property {Number} createdTimeMS ex: 1526892088438\n * @property {String} id 房間 ID\n * @property {String} [roomType] 房間 type, \"direct\" or \"group\"\n ",
       "start": 0,
-      "end": 838,
+      "end": 896,
       "loc": {
         "start": {
           "line": 1,
           "column": 0
         },
         "end": {
-          "line": 22,
+          "line": 23,
           "column": 3
         }
       }
@@ -70,16 +70,16 @@
   "tokens": [
     {
       "type": "CommentBlock",
-      "value": "*\n * @typedef {Object} RoomData\n * @property {String} _id\n * @property {String} appID 房間 ID\n * @property {MessageData} lastMessage 最後一則訊息\n * @property {String} name Room name\n * @property {Number} serviceStatus ???\n * @property {String} createdTime ex: 2018-05-21T08:41:28.438Z\n * @property {Object[]} memberProperties 會員已讀狀態\n * @property {Number} memberProperties.badge\n * @property {String} memberProperties.lastRead\n * @property {String} memberProperties.client\n * @property {Object[]} members 會員列表\n * @property {String} members[].id\n * @property {String} members[].avatarUrl\n * @property {String} members[].nickname\n * @property {String} members[].lastLoginTime\n * @property {Number} members[].lastLoginTimeMS\n * @property {Boolean} muted 是否靜音\n * @property {Number} createdTimeMS ex: 1526892088438\n * @property {String} id 房間 ID\n ",
+      "value": "*\n * @typedef {Object} RoomData\n * @property {String} _id\n * @property {String} appID 房間 ID\n * @property {MessageData} lastMessage 最後一則訊息\n * @property {String} name Room name\n * @property {Number} serviceStatus\n * @property {String} createdTime ex: 2018-05-21T08:41:28.438Z\n * @property {Object[]} memberProperties 會員已讀狀態\n * @property {Number} memberProperties.badge\n * @property {String} memberProperties.lastRead\n * @property {String} memberProperties.client\n * @property {Object[]} members 會員列表\n * @property {String} members[].id\n * @property {String} members[].avatarUrl\n * @property {String} members[].nickname\n * @property {String} members[].lastLoginTime\n * @property {Number} members[].lastLoginTimeMS\n * @property {Boolean} muted 是否靜音\n * @property {Number} createdTimeMS ex: 1526892088438\n * @property {String} id 房間 ID\n * @property {String} [roomType] 房間 type, \"direct\" or \"group\"\n ",
       "start": 0,
-      "end": 838,
+      "end": 896,
       "loc": {
         "start": {
           "line": 1,
           "column": 0
         },
         "end": {
-          "line": 22,
+          "line": 23,
           "column": 3
         }
       }
@@ -97,15 +97,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 839,
-      "end": 839,
+      "start": 897,
+      "end": 897,
       "loc": {
         "start": {
-          "line": 23,
+          "line": 24,
           "column": 0
         },
         "end": {
-          "line": 23,
+          "line": 24,
           "column": 0
         }
       }

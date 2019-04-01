@@ -2448,7 +2448,7 @@
     "__docId__": 109,
     "kind": "file",
     "name": "src/api/room/index.js",
-    "content": "import axios from 'axios';\r\n/**\r\n * @import * from '@/src/typedef';\r\n */\r\n\r\nexport default class Room {\r\n  /**\r\n   * @private\r\n   * @param {Api} api\r\n   */\r\n  constructor(api) {\r\n    /**\r\n     * @private\r\n     * @type {Api}\r\n     * */\r\n    this.api = api;\r\n    /**\r\n     * @private\r\n     * @type {Boolean}\r\n     */\r\n    this.isAdmin = false;\r\n  }\r\n\r\n  /**\r\n   * Get rooms list\r\n   * @param {Number} [limit = 20] 最大回傳筆數\r\n   * @param {Number} [skip = 0] 從第幾筆開始\r\n   * @param {{members: String}} [q = {}] ???\r\n   * @returns {Promise<{totalCount: Number, data: RoomData[]}|Error>}\r\n   */\r\n  getRoomsList(limit = 20, skip = 0, q = {}) {\r\n    return new Promise((resolve, reject) => {\r\n      let url = `${this.api.config.domain}/rooms`;\r\n      let data = {\r\n        limit,\r\n        skip,\r\n        q\r\n      };\r\n      let headers = this.api.getHeader(this.isAdmin);\r\n\r\n      axios\r\n        .get(url, {\r\n          params: data,\r\n          headers: headers\r\n        })\r\n        .then(\r\n          res => {\r\n            if (res.status >= 200 && res.status < 300 && res.data.RC === 0) {\r\n              resolve(res.data.result);\r\n            }\r\n          },\r\n          error => {\r\n            this.api.onError(error);\r\n          }\r\n        );\r\n    });\r\n  }\r\n\r\n  /**\r\n   * Get room\r\n   * @param {String} roomId Room id\r\n   * @returns {Promise<RoomData|Error>}\r\n   */\r\n  getRoom(roomId) {\r\n    return new Promise((resolve, reject) => {\r\n      let url = `${this.api.config.domain}/rooms/${roomId}`;\r\n      let data = {};\r\n      let headers = this.api.getHeader(this.isAdmin);\r\n\r\n      axios\r\n        .get(url, {\r\n          params: data,\r\n          headers: headers\r\n        })\r\n        .then(\r\n          res => {\r\n            if (res.status >= 200 && res.status < 300 && res.data.RC === 0) {\r\n              resolve(res.data.result);\r\n            }\r\n          },\r\n          error => {\r\n            this.api.onError(error);\r\n          }\r\n        );\r\n    });\r\n  }\r\n\r\n  /**\r\n   * Create room\r\n   * @param {Object} roomInfo\r\n   * @param {String} [roomInfo._id]\r\n   * @param {String} [roomInfo.name]\r\n   * @param {String} [roomInfo.description]\r\n   * @param {String} [roomInfo.cover] Image url\r\n   * @returns {Promise<RoomData|Error>}\r\n   */\r\n  createRoom(roomInfo) {\r\n    return new Promise((resolve, reject) => {\r\n      let url = `${this.api.config.domain}/rooms`;\r\n      let data = roomInfo;\r\n      let headers = this.api.getHeader(this.isAdmin);\r\n\r\n      axios\r\n        .post(url, data, {\r\n          headers: headers\r\n        })\r\n        .then(\r\n          res => {\r\n            if (res.status >= 200 && res.status < 300 && res.data.RC === 0) {\r\n              resolve(res.data.result);\r\n            }\r\n          },\r\n          error => {\r\n            this.api.onError(error);\r\n          }\r\n        );\r\n    });\r\n  }\r\n\r\n  /**\r\n   * Create And Join Room\r\n   * @param {Object} roomInfo\r\n   * @param {String} [roomInfo._id]\r\n   * @param {String} [roomInfo.name]\r\n   * @param {String} [roomInfo.description]\r\n   * @param {String} [roomInfo.cover] Image url\r\n   * @param {String[]|String} [roomInfo.invitee] 要邀請的，傳入字串建立雙人聊天室，傳入陣列建立群組聊天室\r\n   * @returns {Promise<RoomData|Error>}\r\n   */\r\n  createAndJoinRoom(roomInfo) {\r\n    return new Promise((resolve, reject) => {\r\n      let url = `${this.api.config.domain}/rooms/createAndJoin`;\r\n      let data = roomInfo;\r\n      let headers = this.api.getHeader(this.isAdmin);\r\n\r\n      axios\r\n        .post(url, data, {\r\n          headers: headers\r\n        })\r\n        .then(\r\n          res => {\r\n            if (res.status >= 200 && res.status < 300 && res.data.RC === 0) {\r\n              resolve(res.data.result);\r\n            }\r\n          },\r\n          error => {\r\n            this.api.onError(error);\r\n          }\r\n        );\r\n    });\r\n  }\r\n\r\n  /**\r\n   * Update room\r\n   * @param {String} roomId\r\n   * @param {Object} roomInfo\r\n   * @param {String} [roomInfo.name]\r\n   * @param {String} [roomInfo.description]\r\n   * @param {String} [roomInfo.cover] Image url\r\n   * @returns {Promise<RoomData|Error>}\r\n   */\r\n  updateRoom(roomId, roomInfo) {\r\n    return new Promise((resolve, reject) => {\r\n      let url = `${this.api.config.domain}/rooms/${roomId}`;\r\n      let data = roomInfo;\r\n\r\n      let headers = this.api.getHeader(this.isAdmin);\r\n\r\n      axios\r\n        .put(url, data, {\r\n          headers: headers\r\n        })\r\n        .then(\r\n          res => {\r\n            if (res.status >= 200 && res.status < 300 && res.data.RC === 0) {\r\n              resolve(res.data.result);\r\n            }\r\n          },\r\n          error => {\r\n            this.api.onError(error);\r\n          }\r\n        );\r\n    });\r\n  }\r\n\r\n  /**\r\n   * 已讀\r\n   * @param {String} roomId\r\n   * @param {String} messageId\r\n   * @returns {Promise<{client:String, lastRead:String, badge:Number}|Error>}\r\n   */\r\n  updateLastRead(roomId, messageId) {\r\n    return new Promise((resolve, reject) => {\r\n      let url = `${this.api.config.domain}/rooms/${roomId}/lastRead`;\r\n      let data = {\r\n        message: messageId\r\n      };\r\n\r\n      let headers = this.api.getHeader(this.isAdmin);\r\n\r\n      axios\r\n        .put(url, data, {\r\n          headers: headers\r\n        })\r\n        .then(\r\n          res => {\r\n            if (res.status >= 200 && res.status < 300 && res.data.RC === 0) {\r\n              resolve(res.data.result);\r\n            }\r\n          },\r\n          error => {\r\n            this.api.onError(error);\r\n          }\r\n        );\r\n    });\r\n  }\r\n\r\n  /**\r\n   * Delete room\r\n   * @param {String} roomId\r\n   * @returns {Promise<{n: Number, nModified: Number, ok: Number}|Error>}\r\n   */\r\n  deleteRoom(roomId) {\r\n    return new Promise((resolve, reject) => {\r\n      let url = `${this.api.config.domain}/rooms/${roomId}`;\r\n      let data = {};\r\n      let headers = this.api.getHeader(this.isAdmin);\r\n\r\n      axios\r\n        .delete(url, {\r\n          data: data,\r\n          headers: headers\r\n        })\r\n        .then(\r\n          res => {\r\n            if (res.status >= 200 && res.status < 300 && res.data.RC === 0) {\r\n              resolve(res.data.result);\r\n            }\r\n          },\r\n          error => {\r\n            this.api.onError(error);\r\n          }\r\n        );\r\n    });\r\n  }\r\n\r\n  /**\r\n   * Join room\r\n   * @param {String} roomId\r\n   * @returns {Promise<RoomData|Error>}\r\n   */\r\n  joinRoom(roomId) {\r\n    return new Promise((resolve, reject) => {\r\n      let url = `${this.api.config.domain}/rooms/${roomId}/join`;\r\n      let data = {};\r\n      let headers = this.api.getHeader(this.isAdmin);\r\n\r\n      axios\r\n        .post(url, data, {\r\n          headers: headers\r\n        })\r\n        .then(\r\n          res => {\r\n            if (res.status >= 200 && res.status < 300 && res.data.RC === 0) {\r\n              resolve(res.data.result);\r\n            }\r\n          },\r\n          error => {\r\n            this.api.onError(error);\r\n          }\r\n        );\r\n    });\r\n  }\r\n\r\n  /**\r\n   * Add member to room\r\n   * @param {String} roomId\r\n   * @param {String} uid\r\n   * @returns {Promise<RoomData|Error>}\r\n   */\r\n  addMember(roomId, uid) {\r\n    return new Promise((resolve, reject) => {\r\n      let url = `${this.api.config.domain}/rooms/${roomId}/members/${uid}`;\r\n      let data = {};\r\n      let headers = this.api.getHeader(this.isAdmin);\r\n\r\n      axios\r\n        .post(url, data, {\r\n          headers: headers\r\n        })\r\n        .then(\r\n          res => {\r\n            if (res.status >= 200 && res.status < 300 && res.data.RC === 0) {\r\n              resolve(res.data.result);\r\n            }\r\n          },\r\n          error => {\r\n            this.api.onError(error);\r\n          }\r\n        );\r\n    });\r\n  }\r\n\r\n  /**\r\n   * Add members to room\r\n   * @param {String} roomId\r\n   * @param {String[]} invitees\r\n   * @returns {Promise<RoomData|Error>}\r\n   */\r\n  addMembers(roomId, invitees) {\r\n    return new Promise((resolve, reject) => {\r\n      let url = `${this.api.config.domain}/rooms/${roomId}/members/`;\r\n      let data = { invitees };\r\n      let headers = this.api.getHeader(this.isAdmin);\r\n\r\n      axios\r\n        .post(url, data, {\r\n          headers: headers\r\n        })\r\n        .then(\r\n          res => {\r\n            if (res.status >= 200 && res.status < 300 && res.data.RC === 0) {\r\n              resolve(res.data.result);\r\n            }\r\n          },\r\n          error => {\r\n            this.api.onError(error);\r\n          }\r\n        );\r\n    });\r\n  }\r\n\r\n  /**\r\n   * Delete member from room\r\n   * @param {String} roomId\r\n   * @param {String} uid\r\n   * @returns {Promise<RoomData|Error>}\r\n   */\r\n  deleteMember(roomId, uid) {\r\n    return new Promise((resolve, reject) => {\r\n      let url = `${this.api.config.domain}/rooms/${roomId}/members/${uid}`;\r\n      let data = {};\r\n      let headers = this.api.getHeader(this.isAdmin);\r\n\r\n      axios\r\n        .delete(url, {\r\n          data: data,\r\n          headers: headers\r\n        })\r\n        .then(\r\n          res => {\r\n            if (res.status >= 200 && res.status < 300 && res.data.RC === 0) {\r\n              resolve(res.data.result);\r\n            }\r\n          },\r\n          error => {\r\n            this.api.onError(error);\r\n          }\r\n        );\r\n    });\r\n  }\r\n\r\n  /**\r\n   * Tell other room members, I am Typing\r\n   * @param {String} roomId\r\n   * @param {String} message\r\n   * @returns {Promise<{message: String, room: String, sender: String}|Error>}\r\n   */\r\n  typing(roomId, message) {\r\n    return new Promise((resolve, reject) => {\r\n      let url = `${this.api.config.domain}/rooms/${roomId}/typing`;\r\n      let data = {\r\n        message\r\n      };\r\n      let headers = this.api.getHeader(this.isAdmin);\r\n\r\n      axios\r\n        .post(url, data, {\r\n          headers: headers\r\n        })\r\n        .then(\r\n          res => {\r\n            if (res.status >= 200 && res.status < 300 && res.data.RC === 0) {\r\n              resolve(res.data.result);\r\n            }\r\n          },\r\n          error => {\r\n            this.api.onError(error);\r\n          }\r\n        );\r\n    });\r\n  }\r\n\r\n  /**\r\n   * Send Message\r\n   * @param {String} roomId\r\n   * @param {MessageInfo} message\r\n   * @returns {Promise<MessageData|Error>}\r\n   */\r\n  sendMessage(roomId, message) {\r\n    return new Promise((resolve, reject) => {\r\n      let url = `${this.api.config.domain}/rooms/${roomId}/message`;\r\n      let data = message;\r\n      let headers = this.api.getHeader(this.isAdmin);\r\n\r\n      axios\r\n        .post(url, data, {\r\n          headers: headers\r\n        })\r\n        .then(\r\n          res => {\r\n            if (res.status >= 200 && res.status < 300 && res.data.RC === 0) {\r\n              resolve(res.data.result);\r\n            }\r\n          },\r\n          error => {\r\n            this.api.onError(error);\r\n          }\r\n        );\r\n    });\r\n  }\r\n\r\n  /**\r\n   * Update member property\r\n   * @param {String} roomId\r\n   * @param {String} clientId\r\n   * @param {Object} property\r\n   * @param {String} property.property\r\n   * @param {String} property.value\r\n   * @returns {Promise<{client: String, rule: String}|Error>}\r\n   */\r\n  updateMemberProperty(roomId, clientId, property) {\r\n    return new Promise((resolve, reject) => {\r\n      let url = `${this.api.config.domain}/rooms/${roomId}/member/${clientId}`;\r\n      let data = property;\r\n\r\n      let headers = this.api.getHeader(this.isAdmin);\r\n\r\n      axios\r\n        .put(url, data, {\r\n          headers: headers\r\n        })\r\n        .then(\r\n          res => {\r\n            if (res.status >= 200 && res.status < 300 && res.data.RC === 0) {\r\n              resolve(res.data.result);\r\n            }\r\n          },\r\n          error => {\r\n            this.api.onError(error);\r\n          }\r\n        );\r\n    });\r\n  }\r\n\r\n  /**\r\n   * Get room messages list\r\n   * @param {String} roomId\r\n   * @param {Number} limit\r\n   * @param {String} beforeMessage Message id\r\n   * @returns {Promise<{totalCount: Number, data: MessageData[]}|Error>}\r\n   */\r\n  getRoomMessages(roomId, limit = 20, beforeMessage = null) {\r\n    return new Promise((resolve, reject) => {\r\n      let url = `${this.api.config.domain}/rooms/${roomId}/messages`;\r\n      let data = {\r\n        limit,\r\n        beforeMessage\r\n      };\r\n      let headers = this.api.getHeader(this.isAdmin);\r\n\r\n      axios\r\n        .get(url, {\r\n          params: data,\r\n          headers: headers\r\n        })\r\n        .then(\r\n          res => {\r\n            if (res.status >= 200 && res.status < 300 && res.data.RC === 0) {\r\n              resolve(res.data.result);\r\n            }\r\n          },\r\n          error => {\r\n            this.api.onError(error);\r\n          }\r\n        );\r\n    });\r\n  }\r\n\r\n  /**\r\n   * Get room messages count after timeInMS\r\n   * @param {String} roomId\r\n   * @param {Number} [timeInMS = 0]\r\n   * @returns {Promise<{count: Number}|Error>}\r\n   */\r\n  getRoomMessagesCount(roomId, timeInMS = 0) {\r\n    return new Promise((resolve, reject) => {\r\n      let url = `${this.api.config.domain}/rooms/${roomId}/count`;\r\n      let data = {\r\n        timeInMS\r\n      };\r\n      let headers = this.api.getHeader(this.isAdmin);\r\n\r\n      axios\r\n        .get(url, {\r\n          params: data,\r\n          headers: headers\r\n        })\r\n        .then(\r\n          res => {\r\n            if (res.status >= 200 && res.status < 300 && res.data.RC === 0) {\r\n              resolve(res.data.result);\r\n            }\r\n          },\r\n          error => {\r\n            this.api.onError(error);\r\n          }\r\n        );\r\n    });\r\n  }\r\n}\r\n",
+    "content": "import axios from 'axios';\r\n/**\r\n * @import * from '@/src/typedef';\r\n */\r\n\r\nexport default class Room {\r\n  /**\r\n   * @private\r\n   * @param {Api} api\r\n   */\r\n  constructor(api) {\r\n    /**\r\n     * @private\r\n     * @type {Api}\r\n     * */\r\n    this.api = api;\r\n    /**\r\n     * @private\r\n     * @type {Boolean}\r\n     */\r\n    this.isAdmin = false;\r\n  }\r\n\r\n  /**\r\n   * Get rooms list\r\n   * @param {Number} [limit = 20] 最大回傳筆數\r\n   * @param {Number} [skip = 0] 從第幾筆開始\r\n   * @param {{members: String}} [q = {}] ???\r\n   * @returns {Promise<{totalCount: Number, data: RoomData[]}|Error>}\r\n   */\r\n  getRoomsList(limit = 20, skip = 0, q = {}) {\r\n    return new Promise((resolve, reject) => {\r\n      let url = `${this.api.config.domain}/rooms`;\r\n      let data = {\r\n        limit,\r\n        skip,\r\n        q\r\n      };\r\n      let headers = this.api.getHeader(this.isAdmin);\r\n\r\n      axios\r\n        .get(url, {\r\n          params: data,\r\n          headers: headers\r\n        })\r\n        .then(\r\n          res => {\r\n            if (res.status >= 200 && res.status < 300 && res.data.RC === 0) {\r\n              resolve(res.data.result);\r\n            }\r\n          },\r\n          error => {\r\n            this.api.onError(error);\r\n          }\r\n        );\r\n    });\r\n  }\r\n\r\n  /**\r\n   * Get room\r\n   * @param {String} roomId Room id\r\n   * @returns {Promise<RoomData|Error>}\r\n   */\r\n  getRoom(roomId) {\r\n    return new Promise((resolve, reject) => {\r\n      let url = `${this.api.config.domain}/rooms/${roomId}`;\r\n      let data = {};\r\n      let headers = this.api.getHeader(this.isAdmin);\r\n\r\n      axios\r\n        .get(url, {\r\n          params: data,\r\n          headers: headers\r\n        })\r\n        .then(\r\n          res => {\r\n            if (res.status >= 200 && res.status < 300 && res.data.RC === 0) {\r\n              resolve(res.data.result);\r\n            }\r\n          },\r\n          error => {\r\n            this.api.onError(error);\r\n          }\r\n        );\r\n    });\r\n  }\r\n\r\n  /**\r\n   * Create room\r\n   * @param {Object} roomInfo\r\n   * @param {String} [roomInfo._id]\r\n   * @param {String} [roomInfo.name]\r\n   * @param {String} [roomInfo.description]\r\n   * @param {String} [roomInfo.cover] Image url\r\n   * @param {String} [roomInfo.roomType] 房間 type, \"direct\" or \"group\"\r\n   * @returns {Promise<RoomData|Error>}\r\n   */\r\n  createRoom(roomInfo) {\r\n    return new Promise((resolve, reject) => {\r\n      let url = `${this.api.config.domain}/rooms`;\r\n      let data = roomInfo;\r\n      let headers = this.api.getHeader(this.isAdmin);\r\n\r\n      axios\r\n        .post(url, data, {\r\n          headers: headers\r\n        })\r\n        .then(\r\n          res => {\r\n            if (res.status >= 200 && res.status < 300 && res.data.RC === 0) {\r\n              resolve(res.data.result);\r\n            }\r\n          },\r\n          error => {\r\n            this.api.onError(error);\r\n          }\r\n        );\r\n    });\r\n  }\r\n\r\n  /**\r\n   * Create And Join Room\r\n   * @param {Object} roomInfo\r\n   * @param {String} [roomInfo._id]\r\n   * @param {String} [roomInfo.name]\r\n   * @param {String} [roomInfo.description]\r\n   * @param {String} [roomInfo.cover] Image url\r\n   * @param {String} [roomInfo.roomType] 房間 type, \"direct\" or \"group\"\r\n   * @param {String[]|String} [roomInfo.invitee] 要邀請的人\r\n   * @returns {Promise<RoomData|Error>}\r\n   */\r\n  createAndJoinRoom(roomInfo) {\r\n    return new Promise((resolve, reject) => {\r\n      let url = `${this.api.config.domain}/rooms/createAndJoin`;\r\n      let data = roomInfo;\r\n      let headers = this.api.getHeader(this.isAdmin);\r\n\r\n      axios\r\n        .post(url, data, {\r\n          headers: headers\r\n        })\r\n        .then(\r\n          res => {\r\n            if (res.status >= 200 && res.status < 300 && res.data.RC === 0) {\r\n              resolve(res.data.result);\r\n            }\r\n          },\r\n          error => {\r\n            this.api.onError(error);\r\n          }\r\n        );\r\n    });\r\n  }\r\n\r\n  /**\r\n   * Update room\r\n   * @param {String} roomId\r\n   * @param {Object} roomInfo\r\n   * @param {String} [roomInfo.name]\r\n   * @param {String} [roomInfo.description]\r\n   * @param {String} [roomInfo.cover] Image url\r\n   * @returns {Promise<RoomData|Error>}\r\n   */\r\n  updateRoom(roomId, roomInfo) {\r\n    return new Promise((resolve, reject) => {\r\n      let url = `${this.api.config.domain}/rooms/${roomId}`;\r\n      let data = roomInfo;\r\n\r\n      let headers = this.api.getHeader(this.isAdmin);\r\n\r\n      axios\r\n        .put(url, data, {\r\n          headers: headers\r\n        })\r\n        .then(\r\n          res => {\r\n            if (res.status >= 200 && res.status < 300 && res.data.RC === 0) {\r\n              resolve(res.data.result);\r\n            }\r\n          },\r\n          error => {\r\n            this.api.onError(error);\r\n          }\r\n        );\r\n    });\r\n  }\r\n\r\n  /**\r\n   * 已讀\r\n   * @param {String} roomId\r\n   * @param {String} messageId\r\n   * @returns {Promise<{client:String, lastRead:String, badge:Number}|Error>}\r\n   */\r\n  updateLastRead(roomId, messageId) {\r\n    return new Promise((resolve, reject) => {\r\n      let url = `${this.api.config.domain}/rooms/${roomId}/lastRead`;\r\n      let data = {\r\n        message: messageId\r\n      };\r\n\r\n      let headers = this.api.getHeader(this.isAdmin);\r\n\r\n      axios\r\n        .put(url, data, {\r\n          headers: headers\r\n        })\r\n        .then(\r\n          res => {\r\n            if (res.status >= 200 && res.status < 300 && res.data.RC === 0) {\r\n              resolve(res.data.result);\r\n            }\r\n          },\r\n          error => {\r\n            this.api.onError(error);\r\n          }\r\n        );\r\n    });\r\n  }\r\n\r\n  /**\r\n   * Delete room\r\n   * @param {String} roomId\r\n   * @returns {Promise<{n: Number, nModified: Number, ok: Number}|Error>}\r\n   */\r\n  deleteRoom(roomId) {\r\n    return new Promise((resolve, reject) => {\r\n      let url = `${this.api.config.domain}/rooms/${roomId}`;\r\n      let data = {};\r\n      let headers = this.api.getHeader(this.isAdmin);\r\n\r\n      axios\r\n        .delete(url, {\r\n          data: data,\r\n          headers: headers\r\n        })\r\n        .then(\r\n          res => {\r\n            if (res.status >= 200 && res.status < 300 && res.data.RC === 0) {\r\n              resolve(res.data.result);\r\n            }\r\n          },\r\n          error => {\r\n            this.api.onError(error);\r\n          }\r\n        );\r\n    });\r\n  }\r\n\r\n  /**\r\n   * Join room\r\n   * @param {String} roomId\r\n   * @returns {Promise<RoomData|Error>}\r\n   */\r\n  joinRoom(roomId) {\r\n    return new Promise((resolve, reject) => {\r\n      let url = `${this.api.config.domain}/rooms/${roomId}/join`;\r\n      let data = {};\r\n      let headers = this.api.getHeader(this.isAdmin);\r\n\r\n      axios\r\n        .post(url, data, {\r\n          headers: headers\r\n        })\r\n        .then(\r\n          res => {\r\n            if (res.status >= 200 && res.status < 300 && res.data.RC === 0) {\r\n              resolve(res.data.result);\r\n            }\r\n          },\r\n          error => {\r\n            this.api.onError(error);\r\n          }\r\n        );\r\n    });\r\n  }\r\n\r\n  /**\r\n   * Add member to room\r\n   * @param {String} roomId\r\n   * @param {String} uid\r\n   * @returns {Promise<RoomData|Error>}\r\n   */\r\n  addMember(roomId, uid) {\r\n    return new Promise((resolve, reject) => {\r\n      let url = `${this.api.config.domain}/rooms/${roomId}/members/${uid}`;\r\n      let data = {};\r\n      let headers = this.api.getHeader(this.isAdmin);\r\n\r\n      axios\r\n        .post(url, data, {\r\n          headers: headers\r\n        })\r\n        .then(\r\n          res => {\r\n            if (res.status >= 200 && res.status < 300 && res.data.RC === 0) {\r\n              resolve(res.data.result);\r\n            }\r\n          },\r\n          error => {\r\n            this.api.onError(error);\r\n          }\r\n        );\r\n    });\r\n  }\r\n\r\n  /**\r\n   * Add members to room\r\n   * @param {String} roomId\r\n   * @param {String[]} invitees\r\n   * @returns {Promise<RoomData|Error>}\r\n   */\r\n  addMembers(roomId, invitees) {\r\n    return new Promise((resolve, reject) => {\r\n      let url = `${this.api.config.domain}/rooms/${roomId}/members/`;\r\n      let data = { invitees };\r\n      let headers = this.api.getHeader(this.isAdmin);\r\n\r\n      axios\r\n        .post(url, data, {\r\n          headers: headers\r\n        })\r\n        .then(\r\n          res => {\r\n            if (res.status >= 200 && res.status < 300 && res.data.RC === 0) {\r\n              resolve(res.data.result);\r\n            }\r\n          },\r\n          error => {\r\n            this.api.onError(error);\r\n          }\r\n        );\r\n    });\r\n  }\r\n\r\n  /**\r\n   * Delete member from room\r\n   * @param {String} roomId\r\n   * @param {String} uid\r\n   * @returns {Promise<RoomData|Error>}\r\n   */\r\n  deleteMember(roomId, uid) {\r\n    return new Promise((resolve, reject) => {\r\n      let url = `${this.api.config.domain}/rooms/${roomId}/members/${uid}`;\r\n      let data = {};\r\n      let headers = this.api.getHeader(this.isAdmin);\r\n\r\n      axios\r\n        .delete(url, {\r\n          data: data,\r\n          headers: headers\r\n        })\r\n        .then(\r\n          res => {\r\n            if (res.status >= 200 && res.status < 300 && res.data.RC === 0) {\r\n              resolve(res.data.result);\r\n            }\r\n          },\r\n          error => {\r\n            this.api.onError(error);\r\n          }\r\n        );\r\n    });\r\n  }\r\n\r\n  /**\r\n   * Tell other room members, I am Typing\r\n   * @param {String} roomId\r\n   * @param {String} message\r\n   * @returns {Promise<{message: String, room: String, sender: String}|Error>}\r\n   */\r\n  typing(roomId, message) {\r\n    return new Promise((resolve, reject) => {\r\n      let url = `${this.api.config.domain}/rooms/${roomId}/typing`;\r\n      let data = {\r\n        message\r\n      };\r\n      let headers = this.api.getHeader(this.isAdmin);\r\n\r\n      axios\r\n        .post(url, data, {\r\n          headers: headers\r\n        })\r\n        .then(\r\n          res => {\r\n            if (res.status >= 200 && res.status < 300 && res.data.RC === 0) {\r\n              resolve(res.data.result);\r\n            }\r\n          },\r\n          error => {\r\n            this.api.onError(error);\r\n          }\r\n        );\r\n    });\r\n  }\r\n\r\n  /**\r\n   * Send Message\r\n   * @param {String} roomId\r\n   * @param {MessageInfo} message\r\n   * @returns {Promise<MessageData|Error>}\r\n   */\r\n  sendMessage(roomId, message) {\r\n    return new Promise((resolve, reject) => {\r\n      let url = `${this.api.config.domain}/rooms/${roomId}/message`;\r\n      let data = message;\r\n      let headers = this.api.getHeader(this.isAdmin);\r\n\r\n      axios\r\n        .post(url, data, {\r\n          headers: headers\r\n        })\r\n        .then(\r\n          res => {\r\n            if (res.status >= 200 && res.status < 300 && res.data.RC === 0) {\r\n              resolve(res.data.result);\r\n            }\r\n          },\r\n          error => {\r\n            this.api.onError(error);\r\n          }\r\n        );\r\n    });\r\n  }\r\n\r\n  /**\r\n   * Update member property\r\n   * @param {String} roomId\r\n   * @param {String} clientId\r\n   * @param {Object} property\r\n   * @param {String} property.property\r\n   * @param {String} property.value\r\n   * @returns {Promise<{client: String, rule: String}|Error>}\r\n   */\r\n  updateMemberProperty(roomId, clientId, property) {\r\n    return new Promise((resolve, reject) => {\r\n      let url = `${this.api.config.domain}/rooms/${roomId}/member/${clientId}`;\r\n      let data = property;\r\n\r\n      let headers = this.api.getHeader(this.isAdmin);\r\n\r\n      axios\r\n        .put(url, data, {\r\n          headers: headers\r\n        })\r\n        .then(\r\n          res => {\r\n            if (res.status >= 200 && res.status < 300 && res.data.RC === 0) {\r\n              resolve(res.data.result);\r\n            }\r\n          },\r\n          error => {\r\n            this.api.onError(error);\r\n          }\r\n        );\r\n    });\r\n  }\r\n\r\n  /**\r\n   * Get room messages list\r\n   * @param {String} roomId\r\n   * @param {Number} limit\r\n   * @param {String} beforeMessage Message id\r\n   * @returns {Promise<{totalCount: Number, data: MessageData[]}|Error>}\r\n   */\r\n  getRoomMessages(roomId, limit = 20, beforeMessage = null) {\r\n    return new Promise((resolve, reject) => {\r\n      let url = `${this.api.config.domain}/rooms/${roomId}/messages`;\r\n      let data = {\r\n        limit,\r\n        beforeMessage\r\n      };\r\n      let headers = this.api.getHeader(this.isAdmin);\r\n\r\n      axios\r\n        .get(url, {\r\n          params: data,\r\n          headers: headers\r\n        })\r\n        .then(\r\n          res => {\r\n            if (res.status >= 200 && res.status < 300 && res.data.RC === 0) {\r\n              resolve(res.data.result);\r\n            }\r\n          },\r\n          error => {\r\n            this.api.onError(error);\r\n          }\r\n        );\r\n    });\r\n  }\r\n\r\n  /**\r\n   * Get room messages count after timeInMS\r\n   * @param {String} roomId\r\n   * @param {Number} [timeInMS = 0]\r\n   * @returns {Promise<{count: Number}|Error>}\r\n   */\r\n  getRoomMessagesCount(roomId, timeInMS = 0) {\r\n    return new Promise((resolve, reject) => {\r\n      let url = `${this.api.config.domain}/rooms/${roomId}/count`;\r\n      let data = {\r\n        timeInMS\r\n      };\r\n      let headers = this.api.getHeader(this.isAdmin);\r\n\r\n      axios\r\n        .get(url, {\r\n          params: data,\r\n          headers: headers\r\n        })\r\n        .then(\r\n          res => {\r\n            if (res.status >= 200 && res.status < 300 && res.data.RC === 0) {\r\n              resolve(res.data.result);\r\n            }\r\n          },\r\n          error => {\r\n            this.api.onError(error);\r\n          }\r\n        );\r\n    });\r\n  }\r\n}\r\n",
     "static": true,
     "longname": "E:/REPO/IMKit/IMKit-Chat-v3/imkit-js-api-v3/src/api/room/index.js",
     "access": "public",
@@ -2657,7 +2657,7 @@
     "longname": "src/api/room/index.js~Room#createRoom",
     "access": "public",
     "description": "Create room",
-    "lineNumber": 97,
+    "lineNumber": 98,
     "unknown": [
       {
         "tagName": "@returns",
@@ -2714,6 +2714,16 @@
         "optional": true,
         "name": "roomInfo.cover",
         "description": "Image url"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "roomInfo.roomType",
+        "description": "房間 type, \"direct\" or \"group\""
       }
     ],
     "return": {
@@ -2736,7 +2746,7 @@
     "longname": "src/api/room/index.js~Room#createAndJoinRoom",
     "access": "public",
     "description": "Create And Join Room",
-    "lineNumber": 130,
+    "lineNumber": 132,
     "unknown": [
       {
         "tagName": "@returns",
@@ -2797,13 +2807,23 @@
       {
         "nullable": null,
         "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "roomInfo.roomType",
+        "description": "房間 type, \"direct\" or \"group\""
+      },
+      {
+        "nullable": null,
+        "types": [
           "String[]",
           "String"
         ],
         "spread": false,
         "optional": true,
         "name": "roomInfo.invitee",
-        "description": "要邀請的，傳入字串建立雙人聊天室，傳入陣列建立群組聊天室"
+        "description": "要邀請的人"
       }
     ],
     "return": {
@@ -2826,7 +2846,7 @@
     "longname": "src/api/room/index.js~Room#updateRoom",
     "access": "public",
     "description": "Update room",
-    "lineNumber": 162,
+    "lineNumber": 164,
     "unknown": [
       {
         "tagName": "@returns",
@@ -2905,7 +2925,7 @@
     "longname": "src/api/room/index.js~Room#updateLastRead",
     "access": "public",
     "description": "已讀",
-    "lineNumber": 192,
+    "lineNumber": 194,
     "unknown": [
       {
         "tagName": "@returns",
@@ -2954,7 +2974,7 @@
     "longname": "src/api/room/index.js~Room#deleteRoom",
     "access": "public",
     "description": "Delete room",
-    "lineNumber": 223,
+    "lineNumber": 225,
     "unknown": [
       {
         "tagName": "@returns",
@@ -2993,7 +3013,7 @@
     "longname": "src/api/room/index.js~Room#joinRoom",
     "access": "public",
     "description": "Join room",
-    "lineNumber": 252,
+    "lineNumber": 254,
     "unknown": [
       {
         "tagName": "@returns",
@@ -3032,7 +3052,7 @@
     "longname": "src/api/room/index.js~Room#addMember",
     "access": "public",
     "description": "Add member to room",
-    "lineNumber": 281,
+    "lineNumber": 283,
     "unknown": [
       {
         "tagName": "@returns",
@@ -3081,7 +3101,7 @@
     "longname": "src/api/room/index.js~Room#addMembers",
     "access": "public",
     "description": "Add members to room",
-    "lineNumber": 310,
+    "lineNumber": 312,
     "unknown": [
       {
         "tagName": "@returns",
@@ -3130,7 +3150,7 @@
     "longname": "src/api/room/index.js~Room#deleteMember",
     "access": "public",
     "description": "Delete member from room",
-    "lineNumber": 339,
+    "lineNumber": 341,
     "unknown": [
       {
         "tagName": "@returns",
@@ -3179,7 +3199,7 @@
     "longname": "src/api/room/index.js~Room#typing",
     "access": "public",
     "description": "Tell other room members, I am Typing",
-    "lineNumber": 369,
+    "lineNumber": 371,
     "unknown": [
       {
         "tagName": "@returns",
@@ -3228,7 +3248,7 @@
     "longname": "src/api/room/index.js~Room#sendMessage",
     "access": "public",
     "description": "Send Message",
-    "lineNumber": 400,
+    "lineNumber": 402,
     "unknown": [
       {
         "tagName": "@returns",
@@ -3277,7 +3297,7 @@
     "longname": "src/api/room/index.js~Room#updateMemberProperty",
     "access": "public",
     "description": "Update member property",
-    "lineNumber": 432,
+    "lineNumber": 434,
     "unknown": [
       {
         "tagName": "@returns",
@@ -3356,7 +3376,7 @@
     "longname": "src/api/room/index.js~Room#getRoomMessages",
     "access": "public",
     "description": "Get room messages list",
-    "lineNumber": 463,
+    "lineNumber": 465,
     "unknown": [
       {
         "tagName": "@returns",
@@ -3415,7 +3435,7 @@
     "longname": "src/api/room/index.js~Room#getRoomMessagesCount",
     "access": "public",
     "description": "Get room messages count after timeInMS",
-    "lineNumber": 496,
+    "lineNumber": 498,
     "unknown": [
       {
         "tagName": "@returns",
@@ -4653,7 +4673,7 @@
     "__docId__": 155,
     "kind": "file",
     "name": "src/typedef/RoomData.js",
-    "content": "/**\n * @typedef {Object} RoomData\n * @property {String} _id\n * @property {String} appID 房間 ID\n * @property {MessageData} lastMessage 最後一則訊息\n * @property {String} name Room name\n * @property {Number} serviceStatus ???\n * @property {String} createdTime ex: 2018-05-21T08:41:28.438Z\n * @property {Object[]} memberProperties 會員已讀狀態\n * @property {Number} memberProperties.badge\n * @property {String} memberProperties.lastRead\n * @property {String} memberProperties.client\n * @property {Object[]} members 會員列表\n * @property {String} members[].id\n * @property {String} members[].avatarUrl\n * @property {String} members[].nickname\n * @property {String} members[].lastLoginTime\n * @property {Number} members[].lastLoginTimeMS\n * @property {Boolean} muted 是否靜音\n * @property {Number} createdTimeMS ex: 1526892088438\n * @property {String} id 房間 ID\n */\n",
+    "content": "/**\n * @typedef {Object} RoomData\n * @property {String} _id\n * @property {String} appID 房間 ID\n * @property {MessageData} lastMessage 最後一則訊息\n * @property {String} name Room name\n * @property {Number} serviceStatus\n * @property {String} createdTime ex: 2018-05-21T08:41:28.438Z\n * @property {Object[]} memberProperties 會員已讀狀態\n * @property {Number} memberProperties.badge\n * @property {String} memberProperties.lastRead\n * @property {String} memberProperties.client\n * @property {Object[]} members 會員列表\n * @property {String} members[].id\n * @property {String} members[].avatarUrl\n * @property {String} members[].nickname\n * @property {String} members[].lastLoginTime\n * @property {Number} members[].lastLoginTimeMS\n * @property {Boolean} muted 是否靜音\n * @property {Number} createdTimeMS ex: 1526892088438\n * @property {String} id 房間 ID\n * @property {String} [roomType] 房間 type, \"direct\" or \"group\"\n */\n",
     "static": true,
     "longname": "E:/REPO/IMKit/IMKit-Chat-v3/imkit-js-api-v3/src/typedef/RoomData.js",
     "access": "public",
@@ -4718,7 +4738,7 @@
         "spread": false,
         "optional": false,
         "name": "serviceStatus",
-        "description": "???"
+        "description": ""
       },
       {
         "nullable": null,
@@ -4859,6 +4879,16 @@
         "optional": false,
         "name": "id",
         "description": "房間 ID"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "roomType",
+        "description": "房間 type, \"direct\" or \"group\""
       }
     ],
     "type": {
@@ -5091,7 +5121,7 @@
   },
   {
     "kind": "index",
-    "content": "# Imkit Js Api v3\n\n描述描述\n\n## Installing\n\n### NodeJs\n\n```sh\n$ npm install --save https://github.com/imkit/imkit-js-lib\n```\n\n### Bower\n\n```sh\n$ bower install https://github.com/imkit/imkit-js-lib\n```\n\n## Use\n\n### NodeJs\n\n```javascript\nimport { IMKitApi, IMKitSocket } from 'imkit-js-api-v3';\n\nlet api = new IMKitApi(apiConfig);\nlet socket = new IMKitSocket(socketConfig);\n```\n\n### Bower\n\n```html\n<script src=\"bower_components/imkit-js-api-v3/lib/imkit-js-api-v3.js\"></script>\nor\n<script src=\"bower_components/imkit-js-api-v3/lib/imkit-js-api-v3.min.js\"></script>\n```\n\n```javascript\nlet api = new IMKitApi(apiConfig);\nlet socket = new IMKitSocket(socketConfig);\n```\n\n### CDN\n\n```html\n<script src=\"https://cdn.jsdelivr.net/gh/imkit/imkit-js-lib/lib/imkit-js-api-v3.min.js\"></script>\n```\n\n```javascript\nlet api = new IMKitApi(apiConfig);\nlet socket = new IMKitSocket(socketConfig);\n```\n",
+    "content": "# Imkit Js Api v3\r\n\r\n描述描述\r\n\r\n## Installing\r\n\r\n### NodeJs\r\n\r\n```sh\r\n$ npm install --save https://github.com/imkit/imkit-js-lib\r\n```\r\n\r\n### Bower\r\n\r\n```sh\r\n$ bower install https://github.com/imkit/imkit-js-lib\r\n```\r\n\r\n## Use\r\n\r\n### NodeJs\r\n\r\n```javascript\r\nimport { IMKitApi, IMKitSocket } from 'imkit-js-api-v3';\r\n\r\nlet api = new IMKitApi(apiConfig);\r\nlet socket = new IMKitSocket(socketConfig);\r\n```\r\n\r\n### Bower\r\n\r\n```html\r\n<script src=\"bower_components/imkit-js-api-v3/lib/imkit-js-api-v3.js\"></script>\r\nor\r\n<script src=\"bower_components/imkit-js-api-v3/lib/imkit-js-api-v3.min.js\"></script>\r\n```\r\n\r\n```javascript\r\nlet api = new IMKitApi(apiConfig);\r\nlet socket = new IMKitSocket(socketConfig);\r\n```\r\n\r\n### CDN\r\n\r\n```html\r\n<script src=\"https://cdn.jsdelivr.net/gh/imkit/imkit-js-lib/lib/imkit-js-api-v3.min.js\"></script>\r\n```\r\n\r\n```javascript\r\nlet api = new IMKitApi(apiConfig);\r\nlet socket = new IMKitSocket(socketConfig);\r\n```\r\n",
     "longname": "E:\\REPO\\IMKit\\IMKit-Chat-v3\\imkit-js-api-v3\\README.md",
     "name": "./README.md",
     "static": true,
