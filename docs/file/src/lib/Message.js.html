@@ -75,7 +75,7 @@ class Message {
             reject(err);
           } else {
             let publicKey = forge.pki.publicKeyToPem(keypair.publicKey);
-            let privateKey = forge.pki.publicKeyToPem(keypair.privateKey);
+            let privateKey = forge.pki.privateKeyToPem(keypair.privateKey);
             resolve({
               publicKey: publicKey
                 .replace(/-+END.*KEY-+/g, &apos;&apos;)

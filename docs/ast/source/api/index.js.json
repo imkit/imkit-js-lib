@@ -1,28 +1,28 @@
 {
   "type": "File",
   "start": 0,
-  "end": 1712,
+  "end": 1698,
   "loc": {
     "start": {
       "line": 1,
       "column": 0
     },
     "end": {
-      "line": 83,
+      "line": 82,
       "column": 0
     }
   },
   "program": {
     "type": "Program",
     "start": 0,
-    "end": 1712,
+    "end": 1698,
     "loc": {
       "start": {
         "line": 1,
         "column": 0
       },
       "end": {
-        "line": 83,
+        "line": 82,
         "column": 0
       }
     },
@@ -601,28 +601,28 @@
       {
         "type": "ExportDefaultDeclaration",
         "start": 261,
-        "end": 1711,
+        "end": 1697,
         "loc": {
           "start": {
             "line": 13,
             "column": 0
           },
           "end": {
-            "line": 82,
+            "line": 81,
             "column": 1
           }
         },
         "declaration": {
           "type": "ClassDeclaration",
           "start": 276,
-          "end": 1711,
+          "end": 1697,
           "loc": {
             "start": {
               "line": 13,
               "column": 15
             },
             "end": {
-              "line": 82,
+              "line": 81,
               "column": 1
             }
           },
@@ -648,14 +648,14 @@
           "body": {
             "type": "ClassBody",
             "start": 291,
-            "end": 1711,
+            "end": 1697,
             "loc": {
               "start": {
                 "line": 13,
                 "column": 30
               },
               "end": {
-                "line": 82,
+                "line": 81,
                 "column": 1
               }
             },
@@ -3814,16 +3814,16 @@
                 "trailingComments": [
                   {
                     "type": "CommentBlock",
-                    "value": "*\n   * 產生 RSA 金鑰\n   * @private\n   * @returns {Promise<{publicKey: String, privateKey: String}|Error>}\n   ",
+                    "value": "*\n   * 產生 RSA 金鑰\n   * @returns {Promise<{publicKey: String, privateKey: String}|Error>}\n   ",
                     "start": 1534,
-                    "end": 1643,
+                    "end": 1629,
                     "loc": {
                       "start": {
                         "line": 74,
                         "column": 2
                       },
                       "end": {
-                        "line": 78,
+                        "line": 77,
                         "column": 5
                       }
                     }
@@ -3832,15 +3832,15 @@
               },
               {
                 "type": "ClassMethod",
-                "start": 1646,
-                "end": 1709,
+                "start": 1632,
+                "end": 1695,
                 "loc": {
                   "start": {
-                    "line": 79,
+                    "line": 78,
                     "column": 2
                   },
                   "end": {
-                    "line": 81,
+                    "line": 80,
                     "column": 3
                   }
                 },
@@ -3848,15 +3848,15 @@
                 "computed": false,
                 "key": {
                   "type": "Identifier",
-                  "start": 1646,
-                  "end": 1660,
+                  "start": 1632,
+                  "end": 1646,
                   "loc": {
                     "start": {
-                      "line": 79,
+                      "line": 78,
                       "column": 2
                     },
                     "end": {
-                      "line": 79,
+                      "line": 78,
                       "column": 16
                     },
                     "identifierName": "generateRsaKey"
@@ -3872,86 +3872,86 @@
                 "params": [],
                 "body": {
                   "type": "BlockStatement",
-                  "start": 1663,
-                  "end": 1709,
+                  "start": 1649,
+                  "end": 1695,
                   "loc": {
                     "start": {
-                      "line": 79,
+                      "line": 78,
                       "column": 19
                     },
                     "end": {
-                      "line": 81,
+                      "line": 80,
                       "column": 3
                     }
                   },
                   "body": [
                     {
                       "type": "ReturnStatement",
-                      "start": 1669,
-                      "end": 1705,
+                      "start": 1655,
+                      "end": 1691,
                       "loc": {
                         "start": {
-                          "line": 80,
+                          "line": 79,
                           "column": 4
                         },
                         "end": {
-                          "line": 80,
+                          "line": 79,
                           "column": 40
                         }
                       },
                       "argument": {
                         "type": "CallExpression",
-                        "start": 1676,
-                        "end": 1704,
+                        "start": 1662,
+                        "end": 1690,
                         "loc": {
                           "start": {
-                            "line": 80,
+                            "line": 79,
                             "column": 11
                           },
                           "end": {
-                            "line": 80,
+                            "line": 79,
                             "column": 39
                           }
                         },
                         "callee": {
                           "type": "MemberExpression",
-                          "start": 1676,
-                          "end": 1702,
+                          "start": 1662,
+                          "end": 1688,
                           "loc": {
                             "start": {
-                              "line": 80,
+                              "line": 79,
                               "column": 11
                             },
                             "end": {
-                              "line": 80,
+                              "line": 79,
                               "column": 37
                             }
                           },
                           "object": {
                             "type": "MemberExpression",
-                            "start": 1676,
-                            "end": 1687,
+                            "start": 1662,
+                            "end": 1673,
                             "loc": {
                               "start": {
-                                "line": 80,
+                                "line": 79,
                                 "column": 11
                               },
                               "end": {
-                                "line": 80,
+                                "line": 79,
                                 "column": 22
                               }
                             },
                             "object": {
                               "type": "Identifier",
-                              "start": 1676,
-                              "end": 1679,
+                              "start": 1662,
+                              "end": 1665,
                               "loc": {
                                 "start": {
-                                  "line": 80,
+                                  "line": 79,
                                   "column": 11
                                 },
                                 "end": {
-                                  "line": 80,
+                                  "line": 79,
                                   "column": 14
                                 },
                                 "identifierName": "lib"
@@ -3960,15 +3960,15 @@
                             },
                             "property": {
                               "type": "Identifier",
-                              "start": 1680,
-                              "end": 1687,
+                              "start": 1666,
+                              "end": 1673,
                               "loc": {
                                 "start": {
-                                  "line": 80,
+                                  "line": 79,
                                   "column": 15
                                 },
                                 "end": {
-                                  "line": 80,
+                                  "line": 79,
                                   "column": 22
                                 },
                                 "identifierName": "message"
@@ -3979,15 +3979,15 @@
                           },
                           "property": {
                             "type": "Identifier",
-                            "start": 1688,
-                            "end": 1702,
+                            "start": 1674,
+                            "end": 1688,
                             "loc": {
                               "start": {
-                                "line": 80,
+                                "line": 79,
                                 "column": 23
                               },
                               "end": {
-                                "line": 80,
+                                "line": 79,
                                 "column": 37
                               },
                               "identifierName": "generateRsaKey"
@@ -4005,16 +4005,16 @@
                 "leadingComments": [
                   {
                     "type": "CommentBlock",
-                    "value": "*\n   * 產生 RSA 金鑰\n   * @private\n   * @returns {Promise<{publicKey: String, privateKey: String}|Error>}\n   ",
+                    "value": "*\n   * 產生 RSA 金鑰\n   * @returns {Promise<{publicKey: String, privateKey: String}|Error>}\n   ",
                     "start": 1534,
-                    "end": 1643,
+                    "end": 1629,
                     "loc": {
                       "start": {
                         "line": 74,
                         "column": 2
                       },
                       "end": {
-                        "line": 78,
+                        "line": 77,
                         "column": 5
                       }
                     }
@@ -4260,16 +4260,16 @@
     },
     {
       "type": "CommentBlock",
-      "value": "*\n   * 產生 RSA 金鑰\n   * @private\n   * @returns {Promise<{publicKey: String, privateKey: String}|Error>}\n   ",
+      "value": "*\n   * 產生 RSA 金鑰\n   * @returns {Promise<{publicKey: String, privateKey: String}|Error>}\n   ",
       "start": 1534,
-      "end": 1643,
+      "end": 1629,
       "loc": {
         "start": {
           "line": 74,
           "column": 2
         },
         "end": {
-          "line": 78,
+          "line": 77,
           "column": 5
         }
       }
@@ -11107,16 +11107,16 @@
     },
     {
       "type": "CommentBlock",
-      "value": "*\n   * 產生 RSA 金鑰\n   * @private\n   * @returns {Promise<{publicKey: String, privateKey: String}|Error>}\n   ",
+      "value": "*\n   * 產生 RSA 金鑰\n   * @returns {Promise<{publicKey: String, privateKey: String}|Error>}\n   ",
       "start": 1534,
-      "end": 1643,
+      "end": 1629,
       "loc": {
         "start": {
           "line": 74,
           "column": 2
         },
         "end": {
-          "line": 78,
+          "line": 77,
           "column": 5
         }
       }
@@ -11134,15 +11134,15 @@
         "binop": null
       },
       "value": "generateRsaKey",
-      "start": 1646,
-      "end": 1660,
+      "start": 1632,
+      "end": 1646,
       "loc": {
         "start": {
-          "line": 79,
+          "line": 78,
           "column": 2
         },
         "end": {
-          "line": 79,
+          "line": 78,
           "column": 16
         }
       }
@@ -11159,15 +11159,15 @@
         "postfix": false,
         "binop": null
       },
-      "start": 1660,
-      "end": 1661,
+      "start": 1646,
+      "end": 1647,
       "loc": {
         "start": {
-          "line": 79,
+          "line": 78,
           "column": 16
         },
         "end": {
-          "line": 79,
+          "line": 78,
           "column": 17
         }
       }
@@ -11184,15 +11184,15 @@
         "postfix": false,
         "binop": null
       },
-      "start": 1661,
-      "end": 1662,
+      "start": 1647,
+      "end": 1648,
       "loc": {
         "start": {
-          "line": 79,
+          "line": 78,
           "column": 17
         },
         "end": {
-          "line": 79,
+          "line": 78,
           "column": 18
         }
       }
@@ -11209,15 +11209,15 @@
         "postfix": false,
         "binop": null
       },
-      "start": 1663,
-      "end": 1664,
+      "start": 1649,
+      "end": 1650,
       "loc": {
         "start": {
-          "line": 79,
+          "line": 78,
           "column": 19
         },
         "end": {
-          "line": 79,
+          "line": 78,
           "column": 20
         }
       }
@@ -11237,15 +11237,15 @@
         "updateContext": null
       },
       "value": "return",
-      "start": 1669,
-      "end": 1675,
+      "start": 1655,
+      "end": 1661,
       "loc": {
         "start": {
-          "line": 80,
+          "line": 79,
           "column": 4
         },
         "end": {
-          "line": 80,
+          "line": 79,
           "column": 10
         }
       }
@@ -11263,15 +11263,15 @@
         "binop": null
       },
       "value": "lib",
-      "start": 1676,
-      "end": 1679,
+      "start": 1662,
+      "end": 1665,
       "loc": {
         "start": {
-          "line": 80,
+          "line": 79,
           "column": 11
         },
         "end": {
-          "line": 80,
+          "line": 79,
           "column": 14
         }
       }
@@ -11289,15 +11289,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 1679,
-      "end": 1680,
+      "start": 1665,
+      "end": 1666,
       "loc": {
         "start": {
-          "line": 80,
+          "line": 79,
           "column": 14
         },
         "end": {
-          "line": 80,
+          "line": 79,
           "column": 15
         }
       }
@@ -11315,15 +11315,15 @@
         "binop": null
       },
       "value": "message",
-      "start": 1680,
-      "end": 1687,
+      "start": 1666,
+      "end": 1673,
       "loc": {
         "start": {
-          "line": 80,
+          "line": 79,
           "column": 15
         },
         "end": {
-          "line": 80,
+          "line": 79,
           "column": 22
         }
       }
@@ -11341,15 +11341,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 1687,
-      "end": 1688,
+      "start": 1673,
+      "end": 1674,
       "loc": {
         "start": {
-          "line": 80,
+          "line": 79,
           "column": 22
         },
         "end": {
-          "line": 80,
+          "line": 79,
           "column": 23
         }
       }
@@ -11367,15 +11367,15 @@
         "binop": null
       },
       "value": "generateRsaKey",
-      "start": 1688,
-      "end": 1702,
+      "start": 1674,
+      "end": 1688,
       "loc": {
         "start": {
-          "line": 80,
+          "line": 79,
           "column": 23
         },
         "end": {
-          "line": 80,
+          "line": 79,
           "column": 37
         }
       }
@@ -11392,15 +11392,15 @@
         "postfix": false,
         "binop": null
       },
-      "start": 1702,
-      "end": 1703,
+      "start": 1688,
+      "end": 1689,
       "loc": {
         "start": {
-          "line": 80,
+          "line": 79,
           "column": 37
         },
         "end": {
-          "line": 80,
+          "line": 79,
           "column": 38
         }
       }
@@ -11417,15 +11417,15 @@
         "postfix": false,
         "binop": null
       },
-      "start": 1703,
-      "end": 1704,
+      "start": 1689,
+      "end": 1690,
       "loc": {
         "start": {
-          "line": 80,
+          "line": 79,
           "column": 38
         },
         "end": {
-          "line": 80,
+          "line": 79,
           "column": 39
         }
       }
@@ -11443,15 +11443,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 1704,
-      "end": 1705,
+      "start": 1690,
+      "end": 1691,
       "loc": {
         "start": {
-          "line": 80,
+          "line": 79,
           "column": 39
         },
         "end": {
-          "line": 80,
+          "line": 79,
           "column": 40
         }
       }
@@ -11468,15 +11468,15 @@
         "postfix": false,
         "binop": null
       },
-      "start": 1708,
-      "end": 1709,
+      "start": 1694,
+      "end": 1695,
       "loc": {
         "start": {
-          "line": 81,
+          "line": 80,
           "column": 2
         },
         "end": {
-          "line": 81,
+          "line": 80,
           "column": 3
         }
       }
@@ -11493,15 +11493,15 @@
         "postfix": false,
         "binop": null
       },
-      "start": 1710,
-      "end": 1711,
+      "start": 1696,
+      "end": 1697,
       "loc": {
         "start": {
-          "line": 82,
+          "line": 81,
           "column": 0
         },
         "end": {
-          "line": 82,
+          "line": 81,
           "column": 1
         }
       }
@@ -11519,15 +11519,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 1712,
-      "end": 1712,
+      "start": 1698,
+      "end": 1698,
       "loc": {
         "start": {
-          "line": 83,
+          "line": 82,
           "column": 0
         },
         "end": {
-          "line": 83,
+          "line": 82,
           "column": 0
         }
       }

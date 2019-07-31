@@ -480,6 +480,12 @@ window.esdocSearchIndex = [
     "member"
   ],
   [
+    "src/api/index.js~imkitapi#generatersakey",
+    "class/src/api/index.js~IMKitApi.html#instance-method-generateRsaKey",
+    "src/api/index.js~IMKitApi#generateRsaKey",
+    "method"
+  ],
+  [
     "src/api/index.js~imkitapi#me",
     "class/src/api/index.js~IMKitApi.html#instance-member-me",
     "src/api/index.js~IMKitApi#me",

@@ -1,7 +1,7 @@
 {
   "type": "File",
   "start": 0,
-  "end": 467,
+  "end": 483,
   "loc": {
     "start": {
       "line": 1,
@@ -15,7 +15,7 @@
   "program": {
     "type": "Program",
     "start": 0,
-    "end": 467,
+    "end": 483,
     "loc": {
       "start": {
         "line": 1,
@@ -33,9 +33,9 @@
     "innerComments": [
       {
         "type": "CommentBlock",
-        "value": "*\n * @typedef {Object} ClientData\n * @property {String} _id\n * @property {String} avatarUrl\n * @property {String} email\n * @property {String} nickname\n * @property {Object} address\n * @property {Number} address.port\n * @property {String} address.family\n * @property {String} address.address\n * @property {String} userAgent\n * @property {String} lastLoginTime\n * @property {Number} lastLoginTimeMS\n * @property {String} id\n * @property {String} publicKey 訊息加密公鑰\n ",
+        "value": "*\r\n * @typedef {Object} ClientData\r\n * @property {String} _id\r\n * @property {String} avatarUrl\r\n * @property {String} email\r\n * @property {String} nickname\r\n * @property {Object} address\r\n * @property {Number} address.port\r\n * @property {String} address.family\r\n * @property {String} address.address\r\n * @property {String} userAgent\r\n * @property {String} lastLoginTime\r\n * @property {Number} lastLoginTimeMS\r\n * @property {String} id\r\n * @property {String} publicKey 訊息加密公鑰\r\n ",
         "start": 0,
-        "end": 466,
+        "end": 481,
         "loc": {
           "start": {
             "line": 1,
@@ -52,9 +52,9 @@
   "comments": [
     {
       "type": "CommentBlock",
-      "value": "*\n * @typedef {Object} ClientData\n * @property {String} _id\n * @property {String} avatarUrl\n * @property {String} email\n * @property {String} nickname\n * @property {Object} address\n * @property {Number} address.port\n * @property {String} address.family\n * @property {String} address.address\n * @property {String} userAgent\n * @property {String} lastLoginTime\n * @property {Number} lastLoginTimeMS\n * @property {String} id\n * @property {String} publicKey 訊息加密公鑰\n ",
+      "value": "*\r\n * @typedef {Object} ClientData\r\n * @property {String} _id\r\n * @property {String} avatarUrl\r\n * @property {String} email\r\n * @property {String} nickname\r\n * @property {Object} address\r\n * @property {Number} address.port\r\n * @property {String} address.family\r\n * @property {String} address.address\r\n * @property {String} userAgent\r\n * @property {String} lastLoginTime\r\n * @property {Number} lastLoginTimeMS\r\n * @property {String} id\r\n * @property {String} publicKey 訊息加密公鑰\r\n ",
       "start": 0,
-      "end": 466,
+      "end": 481,
       "loc": {
         "start": {
           "line": 1,
@@ -70,9 +70,9 @@
   "tokens": [
     {
       "type": "CommentBlock",
-      "value": "*\n * @typedef {Object} ClientData\n * @property {String} _id\n * @property {String} avatarUrl\n * @property {String} email\n * @property {String} nickname\n * @property {Object} address\n * @property {Number} address.port\n * @property {String} address.family\n * @property {String} address.address\n * @property {String} userAgent\n * @property {String} lastLoginTime\n * @property {Number} lastLoginTimeMS\n * @property {String} id\n * @property {String} publicKey 訊息加密公鑰\n ",
+      "value": "*\r\n * @typedef {Object} ClientData\r\n * @property {String} _id\r\n * @property {String} avatarUrl\r\n * @property {String} email\r\n * @property {String} nickname\r\n * @property {Object} address\r\n * @property {Number} address.port\r\n * @property {String} address.family\r\n * @property {String} address.address\r\n * @property {String} userAgent\r\n * @property {String} lastLoginTime\r\n * @property {Number} lastLoginTimeMS\r\n * @property {String} id\r\n * @property {String} publicKey 訊息加密公鑰\r\n ",
       "start": 0,
-      "end": 466,
+      "end": 481,
       "loc": {
         "start": {
           "line": 1,
@@ -97,8 +97,8 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 467,
-      "end": 467,
+      "start": 483,
+      "end": 483,
       "loc": {
         "start": {
           "line": 17,
