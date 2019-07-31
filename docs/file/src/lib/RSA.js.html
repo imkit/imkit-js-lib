@@ -2,8 +2,8 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <base data-ice="baseUrl" href="../../../../">
-  <title data-ice="title">src/api/file/index.js | imkit-js-api-v3</title>
+  <base data-ice="baseUrl" href="../../../">
+  <title data-ice="title">src/lib/RSA.js | imkit-js-api-v3</title>
   <link type="text/css" rel="stylesheet" href="css/style.css">
   <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
   <script src="script/prettify/prettify.js"></script>
@@ -50,146 +50,76 @@
 </div>
 </nav>
 
-<div class="content" data-ice="content"><h1 data-ice="title">src/api/file/index.js</h1>
-<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import axios from &apos;axios&apos;;
+<div class="content" data-ice="content"><h1 data-ice="title">src/lib/RSA.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import JSEncrypt from &apos;jsencrypt&apos;;
+
 /**
  * @import * from &apos;@/src/typedef&apos;;
  */
 
-export default class File {
+/**
+ * @private
+ */
+class RSA {
   /**
    * @private
-   * @param {Api} api
+   * @param {MessageData} message
+   * @param {String} privateKey
+   * @param {String} clientId
+   * @returns {MessageData}
    */
-  constructor(api) {
-    /**
-     * @private
-     * @type {Api}
-     * */
-    this.api = api;
-    /**
-     * @private
-     * @type {Boolean}
-     */
-    this.isAdmin = false;
+  decryptMessage(message, privateKey, clientId) {
+    if (message.messageType === &apos;encrypted&apos;) {
+      try {
+        let encrypted = message.message
+          .split(&apos;|&apos;)
+          .find(_message =&gt; {
+            return atob(_message.split(&apos;:&apos;)[0]) === clientId;
+          })
+          .split(&apos;:&apos;)[1];
+        let decrypt = new JSEncrypt();
+
+        decrypt.setPrivateKey(privateKey);
+        return Object.assign(message, JSON.parse(decrypt.decrypt(encrypted)));
+      } catch (e) {
+        console.error(e);
+      }
+    }
+    return message;
   }
 
   /**
-   * Upload File
-   * @param {String} bucketName
-   * @param {File} file
-   * @param {Object} extra
-   * @param {Function} progress
-   * @returns {Promise&lt;String|Error&gt;}
+   * @private
+   * @param {RoomData} room
+   * @param {MessageInfo} message
+   * @returns {MessageInfo}
    */
-  upload(bucketName, file, extra = {}, progress = e =&gt; {}) {
-    return new Promise((resolve, reject) =&gt; {
-      let url = `${this.api.config.domain}/files/${encodeURIComponent(
-        bucketName
-      )}`;
-      let data = new FormData();
-      let headers = this.api.getHeader(this.isAdmin);
-
-      data.append(&apos;extra&apos;, JSON.stringify(extra));
-      data.append(&apos;file&apos;, file);
-      // headers = Object.assign(headers, data.getHeaders());
-
-      axios
-        .post(url, data, {
-          headers: headers,
-          onUploadProgress: progress
+  encryptMessage(room, message) {
+    if (room.encrypted) {
+      let messageStr = JSON.stringify(message);
+      let messageArray = room.members
+        .filter(member =&gt; {
+          return member.publicKey;
         })
-        .then(
-          res =&gt; {
-            if (res.status &gt;= 200 &amp;&amp; res.status &lt; 300 &amp;&amp; res.data.RC === 0) {
-              resolve(
-                `${this.api.config.domain}/files/${bucketName}/${
-                  res.data.result.id
-                }`
-              );
-            } else {
-              resolve(res.data);
-            }
-          },
-          error =&gt; {
-            this.api.onError(error);
-            reject(error);
-          }
-        );
-    });
-  }
+        .map(member =&gt; {
+          let encrypt = new JSEncrypt();
+          let encrypted;
 
-  /**
-   * Get File metadata
-   * @param {String} bucketName
-   * @param {String} fileId
-   * @returns {Promise&lt;{AcceptRanges: String, LastModified: String, ContentLength: Number, ETag: String, ContentType: String, Metadata: Object[], extra: Object[]|Error&gt;}
-   */
-  getMetadata(bucketName, fileId) {
-    return new Promise((resolve, reject) =&gt; {
-      let url = `${this.api.config.domain}/files/${encodeURIComponent(
-        bucketName
-      )}/${fileId}/metadata`;
-      let data = {};
-      let headers = this.api.getHeader(this.isAdmin);
+          encrypt.setPublicKey(member.publicKey);
+          encrypted = encrypt.encrypt(messageStr);
+          return `${btoa(member._id)}:${encrypted}`;
+        });
 
-      axios
-        .get(url, {
-          params: data,
-          headers: headers
-        })
-        .then(
-          res =&gt; {
-            if (res.status &gt;= 200 &amp;&amp; res.status &lt; 300 &amp;&amp; res.data.RC === 0) {
-              resolve(res.data.result);
-            }
-          },
-          error =&gt; {
-            this.api.onError(error);
-            reject(error);
-          }
-        );
-    });
-  }
-
-  /**
-   * Downliad File
-   * @param {String} bucketName
-   * @param {String} fileId
-   * @param {Object} appendHeaders
-   * @param {Function} progress
-   */
-  download(bucketName, fileId, appendHeaders = {}, progress = e =&gt; {}) {
-    return new Promise((resolve, reject) =&gt; {
-      let url = `${this.api.config.domain}/files/${encodeURIComponent(
-        bucketName
-      )}/${fileId}`;
-      let data = {};
-      let headers = this.api.getHeader(this.isAdmin);
-
-      headers = Object.assign(headers, appendHeaders);
-
-      axios
-        .get(url, {
-          params: data,
-          headers: headers,
-          onDownloadProgress: progress,
-          responseType: &apos;arraybuffer&apos;
-        })
-        .then(
-          res =&gt; {
-            if (res.status &gt;= 200 &amp;&amp; res.status &lt; 300) {
-              resolve(res);
-            }
-          },
-          error =&gt; {
-            this.api.onError(error);
-            reject(error);
-          }
-        );
-    });
+      return {
+        messageType: &apos;encrypted&apos;,
+        message: messageArray.join(&apos;|&apos;)
+      };
+    }
+    return message;
   }
 }
+
+export default RSA;
 </code></pre>
 
 </div>

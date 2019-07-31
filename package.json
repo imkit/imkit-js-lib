@@ -1,6 +1,6 @@
 {
   "name": "imkit-js-api-v3",
-  "version": "3.0.5",
+  "version": "3.0.6",
   "description": "",
   "main": "lib/imkit-js-api-v3.min.js",
   "scripts": {

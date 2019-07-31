@@ -101,6 +101,7 @@ export default class Auth {
           },
           error =&gt; {
             this.api.onError(error);
+            reject(error);
           }
         );
     });
@@ -131,6 +132,7 @@ export default class Auth {
           },
           error =&gt; {
             this.api.onError(error);
+            reject(error);
           }
         );
     });

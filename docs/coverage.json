@@ -1,7 +1,7 @@
 {
-  "coverage": "100%",
-  "expectCount": 87,
-  "actualCount": 87,
+  "coverage": "95.14%",
+  "expectCount": 103,
+  "actualCount": 98,
   "files": {
     "src/api/admin/index.js": {
       "expectCount": 14,
@@ -19,8 +19,8 @@
       "undocumentLines": []
     },
     "src/api/index.js": {
-      "expectCount": 12,
-      "actualCount": 12,
+      "expectCount": 13,
+      "actualCount": 13,
       "undocumentLines": []
     },
     "src/api/me/index.js": {
@@ -43,9 +43,25 @@
       "actualCount": 4,
       "undocumentLines": []
     },
+    "src/lib/index.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "src/lib/Message.js": {
+      "expectCount": 9,
+      "actualCount": 4,
+      "undocumentLines": [
+        119,
+        127,
+        135,
+        139,
+        150
+      ]
+    },
     "src/socket/index.js": {
-      "expectCount": 8,
-      "actualCount": 8,
+      "expectCount": 13,
+      "actualCount": 13,
       "undocumentLines": []
     }
   }

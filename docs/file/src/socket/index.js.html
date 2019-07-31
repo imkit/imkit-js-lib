@@ -52,6 +52,7 @@
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/socket/index.js</h1>
 <pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import io from &apos;socket.io-client&apos;;
+import lib from &apos;../lib&apos;;
 /**
  * @import * from &apos;@/src/typedef&apos;;
  */
@@ -66,31 +67,65 @@ export default class IMKitSocket {
     this.config = config;
 
     /**
+     * &#x4E0A;&#x4E00;&#x6B21;&#x6536;&#x5230; ping &#x7684;&#x6642;&#x9593;
+     * @private
+     * @type {Number}
+     */
+    this.pingTime = 0;
+
+    /**
+     * 5 &#x79D2; ping &#x4E00;&#x6B21;
+     * @private
+     * @type {Number}
+     */
+    this.pingDelay = 6000;
+
+    /**
+     * @private
+     * @type {Boolean}
+     */
+    this.connectStatus = false;
+
+    /**
      * @private
      * @type {SocketIOClient.Socket}
      */
     this.socket = io(this.config.domain, {});
     this.socket.connect();
 
-    this.socket.on(&apos;connect&apos;, () =&gt; {
-      if (config.onConnect) {
-        config.onConnect();
+    setInterval(() =&gt; {
+      if (this.connectStatus) {
+        if (Date.now() - this.pingTime &gt; this.pingDelay) {
+          this.disconnect();
+        }
       } else {
-        console.log(&apos;Default connect success&apos;);
+        if (Date.now() - this.pingTime &lt; this.pingDelay) {
+          this.onConnect();
+        }
       }
+    }, this.pingDelay);
+
+    this.socket.on(&apos;ping&apos;, () =&gt; {
+      this.pingTime = Date.now();
+    });
+
+    this.socket.on(&apos;connect&apos;, () =&gt; {
+      this.onConnect();
     });
 
     this.socket.on(&apos;disconnect&apos;, () =&gt; {
-      if (config.onDisconnect) {
-        config.onDisconnect();
-      } else {
-        console.log(&apos;Default disconnect success&apos;);
-      }
+      this.disconnect();
     });
 
     this.socket.on(&apos;chat message&apos;, data =&gt; {
       if (config.onReceiveMessage) {
-        config.onReceiveMessage(data);
+        config.onReceiveMessage(
+          lib.message.decrypt(
+            data,
+            this.config.privateKey,
+            this.config.clientId
+          )
+        );
       } else {
         console.log(data);
       }
@@ -119,6 +154,32 @@ export default class IMKitSocket {
         console.log(data);
       }
     });
+  }
+
+  /**
+   * @private
+   */
+  onConnect() {
+    this.pingTime = Date.now();
+    this.connectStatus = true;
+    if (this.config.onConnect) {
+      this.config.onConnect();
+    } else {
+      console.log(&apos;Default connect success&apos;);
+    }
+  }
+
+  /**
+   * @private
+   */
+  disconnect() {
+    this.pingTime = 0;
+    this.connectStatus = false;
+    if (this.config.onDisconnect) {
+      this.config.onDisconnect();
+    } else {
+      console.log(&apos;Default disconnect success&apos;);
+    }
   }
 
   /**

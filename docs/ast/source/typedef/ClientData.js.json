@@ -1,28 +1,28 @@
 {
   "type": "File",
   "start": 0,
-  "end": 443,
+  "end": 467,
   "loc": {
     "start": {
       "line": 1,
       "column": 0
     },
     "end": {
-      "line": 16,
+      "line": 17,
       "column": 0
     }
   },
   "program": {
     "type": "Program",
     "start": 0,
-    "end": 443,
+    "end": 467,
     "loc": {
       "start": {
         "line": 1,
         "column": 0
       },
       "end": {
-        "line": 16,
+        "line": 17,
         "column": 0
       }
     },
@@ -33,16 +33,16 @@
     "innerComments": [
       {
         "type": "CommentBlock",
-        "value": "*\r\n * @typedef {Object} ClientData\r\n * @property {String} _id\r\n * @property {String} avatarUrl\r\n * @property {String} email\r\n * @property {String} nickname\r\n * @property {Object} address\r\n * @property {Number} address.port\r\n * @property {String} address.family\r\n * @property {String} address.address\r\n * @property {String} userAgent\r\n * @property {String} lastLoginTime\r\n * @property {Number} lastLoginTimeMS\r\n * @property {String} id\r\n ",
+        "value": "*\n * @typedef {Object} ClientData\n * @property {String} _id\n * @property {String} avatarUrl\n * @property {String} email\n * @property {String} nickname\n * @property {Object} address\n * @property {Number} address.port\n * @property {String} address.family\n * @property {String} address.address\n * @property {String} userAgent\n * @property {String} lastLoginTime\n * @property {Number} lastLoginTimeMS\n * @property {String} id\n * @property {String} publicKey 訊息加密公鑰\n ",
         "start": 0,
-        "end": 441,
+        "end": 466,
         "loc": {
           "start": {
             "line": 1,
             "column": 0
           },
           "end": {
-            "line": 15,
+            "line": 16,
             "column": 3
           }
         }
@@ -52,16 +52,16 @@
   "comments": [
     {
       "type": "CommentBlock",
-      "value": "*\r\n * @typedef {Object} ClientData\r\n * @property {String} _id\r\n * @property {String} avatarUrl\r\n * @property {String} email\r\n * @property {String} nickname\r\n * @property {Object} address\r\n * @property {Number} address.port\r\n * @property {String} address.family\r\n * @property {String} address.address\r\n * @property {String} userAgent\r\n * @property {String} lastLoginTime\r\n * @property {Number} lastLoginTimeMS\r\n * @property {String} id\r\n ",
+      "value": "*\n * @typedef {Object} ClientData\n * @property {String} _id\n * @property {String} avatarUrl\n * @property {String} email\n * @property {String} nickname\n * @property {Object} address\n * @property {Number} address.port\n * @property {String} address.family\n * @property {String} address.address\n * @property {String} userAgent\n * @property {String} lastLoginTime\n * @property {Number} lastLoginTimeMS\n * @property {String} id\n * @property {String} publicKey 訊息加密公鑰\n ",
       "start": 0,
-      "end": 441,
+      "end": 466,
       "loc": {
         "start": {
           "line": 1,
           "column": 0
         },
         "end": {
-          "line": 15,
+          "line": 16,
           "column": 3
         }
       }
@@ -70,16 +70,16 @@
   "tokens": [
     {
       "type": "CommentBlock",
-      "value": "*\r\n * @typedef {Object} ClientData\r\n * @property {String} _id\r\n * @property {String} avatarUrl\r\n * @property {String} email\r\n * @property {String} nickname\r\n * @property {Object} address\r\n * @property {Number} address.port\r\n * @property {String} address.family\r\n * @property {String} address.address\r\n * @property {String} userAgent\r\n * @property {String} lastLoginTime\r\n * @property {Number} lastLoginTimeMS\r\n * @property {String} id\r\n ",
+      "value": "*\n * @typedef {Object} ClientData\n * @property {String} _id\n * @property {String} avatarUrl\n * @property {String} email\n * @property {String} nickname\n * @property {Object} address\n * @property {Number} address.port\n * @property {String} address.family\n * @property {String} address.address\n * @property {String} userAgent\n * @property {String} lastLoginTime\n * @property {Number} lastLoginTimeMS\n * @property {String} id\n * @property {String} publicKey 訊息加密公鑰\n ",
       "start": 0,
-      "end": 441,
+      "end": 466,
       "loc": {
         "start": {
           "line": 1,
           "column": 0
         },
         "end": {
-          "line": 15,
+          "line": 16,
           "column": 3
         }
       }
@@ -97,15 +97,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 443,
-      "end": 443,
+      "start": 467,
+      "end": 467,
       "loc": {
         "start": {
-          "line": 16,
+          "line": 17,
           "column": 0
         },
         "end": {
-          "line": 16,
+          "line": 17,
           "column": 0
         }
       }

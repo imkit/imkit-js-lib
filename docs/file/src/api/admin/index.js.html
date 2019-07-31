@@ -106,6 +106,7 @@ export default class Admin {
           },
           error =&gt; {
             this.api.onError(error);
+            reject(error);
           }
         );
     });
@@ -118,6 +119,7 @@ export default class Admin {
    * @param {String} [clientInfo.avatarUrl] &#x5927;&#x982D;&#x7DB2;&#x5740;
    * @param {String} [clientInfo.email]
    * @param {String} [clientInfo.nickname] &#x66B1;&#x7A31;
+   * @param {String} [clientInfo.publicKey] &#x8A0A;&#x606F;&#x52A0;&#x5BC6;&#x516C;&#x9470;
    * @returns {Promise&lt;ClientData|Error&gt;}
    */
   updateClient(clientInfo) {
@@ -138,6 +140,7 @@ export default class Admin {
           },
           error =&gt; {
             this.api.onError(error);
+            reject(error);
           }
         );
     });
@@ -170,6 +173,7 @@ export default class Admin {
           },
           error =&gt; {
             this.api.onError(error);
+            reject(error);
           }
         );
     });
@@ -203,6 +207,7 @@ export default class Admin {
           },
           error =&gt; {
             this.api.onError(error);
+            reject(error);
           }
         );
     });
@@ -231,6 +236,7 @@ export default class Admin {
           },
           error =&gt; {
             this.api.onError(error);
+            reject(error);
           }
         );
     });
@@ -262,6 +268,7 @@ export default class Admin {
           },
           error =&gt; {
             this.api.onError(error);
+            reject(error);
           }
         );
     });
@@ -290,6 +297,7 @@ export default class Admin {
           },
           error =&gt; {
             this.api.onError(error);
+            reject(error);
           }
         );
     });
@@ -324,6 +332,7 @@ export default class Admin {
           },
           error =&gt; {
             this.api.onError(error);
+            reject(error);
           }
         );
     });
@@ -356,6 +365,7 @@ export default class Admin {
           },
           error =&gt; {
             this.api.onError(error);
+            reject(error);
           }
         );
     });

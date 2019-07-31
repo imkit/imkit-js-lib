@@ -684,6 +684,18 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
+    "src/lib/message.js",
+    "file/src/lib/Message.js.html",
+    "src/lib/Message.js",
+    "file"
+  ],
+  [
+    "src/lib/index.js",
+    "file/src/lib/index.js.html",
+    "src/lib/index.js",
+    "file"
+  ],
+  [
     "src/socket/index.js",
     "file/src/socket/index.js.html",
     "src/socket/index.js",

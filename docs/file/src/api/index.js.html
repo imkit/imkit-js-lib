@@ -58,6 +58,7 @@ import Me from &apos;./me&apos;;
 import Message from &apos;./message&apos;;
 import Room from &apos;./room&apos;;
 import Url from &apos;./url&apos;;
+import lib from &apos;../lib&apos;;
 /**
  * @import * from &apos;@/src/typedef&apos;;
  */
@@ -111,14 +112,25 @@ export default class IMKitApi {
    * @param {Object} error
    */
   onError(error) {
-    if (error.response.data.RC) {
-      this.config.events.onAjaxError(error.response.data);
-    } else {
-      this.config.events.onAjaxError({
-        RC: error.response.status,
-        RM: error.response.statusText
-      });
+    if (error.response) {
+      if (error.response.data.RC) {
+        this.config.events.onAjaxError(error.response.data);
+      } else {
+        this.config.events.onAjaxError({
+          RC: error.response.status,
+          RM: error.response.statusText
+        });
+      }
     }
+  }
+
+  /**
+   * &#x7522;&#x751F; RSA &#x91D1;&#x9470;
+   * @private
+   * @returns {Promise&lt;{publicKey: String, privateKey: String}|Error&gt;}
+   */
+  generateRsaKey() {
+    return lib.message.generateRsaKey();
   }
 }
 </code></pre>

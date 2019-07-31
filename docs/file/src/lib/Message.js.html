@@ -2,8 +2,8 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <base data-ice="baseUrl" href="../../../../">
-  <title data-ice="title">src/api/file/index.js | imkit-js-api-v3</title>
+  <base data-ice="baseUrl" href="../../../">
+  <title data-ice="title">src/lib/Message.js | imkit-js-api-v3</title>
   <link type="text/css" rel="stylesheet" href="css/style.css">
   <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
   <script src="script/prettify/prettify.js"></script>
@@ -50,146 +50,169 @@
 </div>
 </nav>
 
-<div class="content" data-ice="content"><h1 data-ice="title">src/api/file/index.js</h1>
-<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import axios from &apos;axios&apos;;
+<div class="content" data-ice="content"><h1 data-ice="title">src/lib/Message.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import forge from &apos;node-forge&apos;;
+import CryptoJS from &apos;crypto-js&apos;;
+
 /**
  * @import * from &apos;@/src/typedef&apos;;
  */
 
-export default class File {
+/**
+ * @private
+ */
+class Message {
   /**
    * @private
-   * @param {Api} api
+   * @returns {Promise&lt;{publicKey: String, privateKey: String}|Error&gt;}
    */
-  constructor(api) {
-    /**
-     * @private
-     * @type {Api}
-     * */
-    this.api = api;
-    /**
-     * @private
-     * @type {Boolean}
-     */
-    this.isAdmin = false;
-  }
-
-  /**
-   * Upload File
-   * @param {String} bucketName
-   * @param {File} file
-   * @param {Object} extra
-   * @param {Function} progress
-   * @returns {Promise&lt;String|Error&gt;}
-   */
-  upload(bucketName, file, extra = {}, progress = e =&gt; {}) {
+  generateRsaKey() {
     return new Promise((resolve, reject) =&gt; {
-      let url = `${this.api.config.domain}/files/${encodeURIComponent(
-        bucketName
-      )}`;
-      let data = new FormData();
-      let headers = this.api.getHeader(this.isAdmin);
-
-      data.append(&apos;extra&apos;, JSON.stringify(extra));
-      data.append(&apos;file&apos;, file);
-      // headers = Object.assign(headers, data.getHeaders());
-
-      axios
-        .post(url, data, {
-          headers: headers,
-          onUploadProgress: progress
-        })
-        .then(
-          res =&gt; {
-            if (res.status &gt;= 200 &amp;&amp; res.status &lt; 300 &amp;&amp; res.data.RC === 0) {
-              resolve(
-                `${this.api.config.domain}/files/${bucketName}/${
-                  res.data.result.id
-                }`
-              );
-            } else {
-              resolve(res.data);
-            }
-          },
-          error =&gt; {
-            this.api.onError(error);
-            reject(error);
+      forge.pki.rsa.generateKeyPair(
+        { bits: 2048, workers: 2 },
+        (err, keypair) =&gt; {
+          if (err) {
+            reject(err);
+          } else {
+            let publicKey = forge.pki.publicKeyToPem(keypair.publicKey);
+            let privateKey = forge.pki.publicKeyToPem(keypair.privateKey);
+            resolve({
+              publicKey: publicKey
+                .replace(/-+END.*KEY-+/g, &apos;&apos;)
+                .replace(/-+BEGIN.*KEY-+/g, &apos;&apos;)
+                .replace(/\r\n|\n/g, &apos;&apos;),
+              privateKey: privateKey
+                .replace(/-+END.*KEY-+/g, &apos;&apos;)
+                .replace(/-+BEGIN.*KEY-+/g, &apos;&apos;)
+                .replace(/\r\n|\n/g, &apos;&apos;)
+            });
           }
-        );
+        }
+      );
     });
   }
 
   /**
-   * Get File metadata
-   * @param {String} bucketName
-   * @param {String} fileId
-   * @returns {Promise&lt;{AcceptRanges: String, LastModified: String, ContentLength: Number, ETag: String, ContentType: String, Metadata: Object[], extra: Object[]|Error&gt;}
+   * @private
+   * @param {MessageData} message
+   * @param {String} privateKey
+   * @param {String} clientId
+   * @returns {MessageData}
    */
-  getMetadata(bucketName, fileId) {
-    return new Promise((resolve, reject) =&gt; {
-      let url = `${this.api.config.domain}/files/${encodeURIComponent(
-        bucketName
-      )}/${fileId}/metadata`;
-      let data = {};
-      let headers = this.api.getHeader(this.isAdmin);
+  decrypt(message, privateKey, clientId) {
+    if (message.messageType === &apos;encrypted&apos;) {
+      try {
+        let messageArray = message.message.split(&apos;|&apos;);
+        let encrypted = messageArray
+          .find(_message =&gt; {
+            return atob(_message.split(&apos;:&apos;)[0]) === clientId;
+          })
+          .split(&apos;:&apos;);
 
-      axios
-        .get(url, {
-          params: data,
-          headers: headers
-        })
-        .then(
-          res =&gt; {
-            if (res.status &gt;= 200 &amp;&amp; res.status &lt; 300 &amp;&amp; res.data.RC === 0) {
-              resolve(res.data.result);
-            }
-          },
-          error =&gt; {
-            this.api.onError(error);
-            reject(error);
-          }
+        // RSA
+        let key = this.rsaDecrypt(privateKey, encrypted[2]);
+        let iv = this.rsaDecrypt(privateKey, encrypted[1]);
+
+        // AES
+        let messageStr = this.aesDecrypt(
+          key,
+          iv,
+          messageArray[messageArray.length - 1]
         );
-    });
+
+        message = Object.assign(message, JSON.parse(messageStr));
+        if (message.reply) {
+          message.reply = this.decrypt(message.reply, privateKey, clientId);
+        }
+        return message;
+      } catch (e) {}
+    }
+    return message;
   }
 
   /**
-   * Downliad File
-   * @param {String} bucketName
-   * @param {String} fileId
-   * @param {Object} appendHeaders
-   * @param {Function} progress
+   * @private
+   * @param {RoomData} room
+   * @param {MessageInfo} message
+   * @returns {MessageInfo}
    */
-  download(bucketName, fileId, appendHeaders = {}, progress = e =&gt; {}) {
-    return new Promise((resolve, reject) =&gt; {
-      let url = `${this.api.config.domain}/files/${encodeURIComponent(
-        bucketName
-      )}/${fileId}`;
-      let data = {};
-      let headers = this.api.getHeader(this.isAdmin);
+  encrypt(room, message) {
+    if (room.encrypted) {
+      let reply = message.reply;
+      delete message.reply;
+      let messageStr = JSON.stringify(message);
 
-      headers = Object.assign(headers, appendHeaders);
+      // AES
+      let key = this.aesGenerateKey();
+      let iv = this.aesGenerateKey();
+      // AES &#x52A0;&#x5BC6;&#x5B57;&#x4E32;
+      let aesEncryptedMessage = this.aesEncrypt(key, iv, messageStr);
 
-      axios
-        .get(url, {
-          params: data,
-          headers: headers,
-          onDownloadProgress: progress,
-          responseType: &apos;arraybuffer&apos;
+      let messageArray = room.members
+        .filter(member =&gt; {
+          return member.publicKey;
         })
-        .then(
-          res =&gt; {
-            if (res.status &gt;= 200 &amp;&amp; res.status &lt; 300) {
-              resolve(res);
-            }
-          },
-          error =&gt; {
-            this.api.onError(error);
-            reject(error);
-          }
-        );
-    });
+        .map(member =&gt; {
+          // RSA
+          let encryptedKey = this.rsaEncrypt(member.publicKey, key);
+          let encryptedIv = this.rsaEncrypt(member.publicKey, iv);
+          return `${btoa(member._id)}:${encryptedIv}:${encryptedKey}`;
+        });
+
+      messageArray.push(aesEncryptedMessage);
+      return {
+        messageType: &apos;encrypted&apos;,
+        message: messageArray.join(&apos;|&apos;),
+        reply: reply
+      };
+    }
+    return message;
+  }
+
+  rsaEncrypt(publicKey, message) {
+    let _publicKey = forge.pki.publicKeyFromPem(
+      `-----BEGIN RSA PUBLIC KEY-----${publicKey}-----END RSA PUBLIC KEY-----`
+    );
+
+    return btoa(_publicKey.encrypt(atob(message), &apos;RSAES-PKCS1-V1_5&apos;));
+  }
+
+  rsaDecrypt(privateKey, encrypted) {
+    let _privateKey = forge.pki.privateKeyFromPem(
+      `-----BEGIN RSA PRIVATE KEY-----${privateKey}-----END RSA PRIVATE KEY-----`
+    );
+
+    return btoa(_privateKey.decrypt(atob(encrypted), &apos;RSAES-PKCS1-V1_5&apos;));
+  }
+
+  aesGenerateKey() {
+    return btoa(CryptoJS.lib.WordArray.random(8));
+  }
+
+  aesEncrypt(key, iv, message) {
+    let _key = CryptoJS.enc.Base64.parse(key);
+    let _iv = CryptoJS.enc.Base64.parse(iv);
+
+    return CryptoJS.AES.encrypt(message, _key, {
+      iv: _iv,
+      mode: CryptoJS.mode.CBC,
+      padding: CryptoJS.pad.Pkcs7
+    }).toString();
+  }
+
+  aesDecrypt(key, iv, encrypted) {
+    let _key = CryptoJS.enc.Base64.parse(key);
+    let _iv = CryptoJS.enc.Base64.parse(iv);
+
+    return CryptoJS.AES.decrypt(encrypted.toString(), _key, {
+      iv: _iv,
+      mode: CryptoJS.mode.CBC,
+      padding: CryptoJS.pad.Pkcs7
+    }).toString(CryptoJS.enc.Utf8);
   }
 }
+
+export default Message;
 </code></pre>
 
 </div>
