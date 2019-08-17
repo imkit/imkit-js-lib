@@ -44,6 +44,7 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-MessageInfo">MessageInfo</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-PushPayload">PushPayload</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-RoomData">RoomData</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-RoomPref">RoomPref</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-SocketConfig">SocketConfig</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-TokenData">TokenData</a></span></span></li>
 </ul>
@@ -164,6 +165,49 @@ export default class File {
       let url = `${this.api.config.domain}/files/${encodeURIComponent(
         bucketName
       )}/${fileId}`;
+      let data = {
+        signedUrlOnly: 1
+      };
+      let headers = this.api.getHeader(this.isAdmin);
+
+      headers = Object.assign(headers, appendHeaders);
+
+      axios
+        .get(url, {
+          params: data,
+          headers: headers
+        })
+        .then(
+          async res =&gt; {
+            if (res.status &gt;= 200 &amp;&amp; res.status &lt; 300) {
+              try {
+                let resFile = await this.downloadFileFormRealUrl(
+                  res.data.result.url,
+                  appendHeaders,
+                  progress
+                );
+                resolve(resFile);
+              } catch (e) {
+                reject(e);
+              }
+            }
+          },
+          error =&gt; {
+            this.api.onError(error);
+            reject(error);
+          }
+        );
+    });
+  }
+  /**
+   * Downliad File
+   * @private
+   * @param {String} url
+   * @param {Object} appendHeaders
+   * @param {Function} progress
+   */
+  downloadFileFormRealUrl(url, appendHeaders = {}, progress = e =&gt; {}) {
+    return new Promise((resolve, reject) =&gt; {
       let data = {};
       let headers = this.api.getHeader(this.isAdmin);
 
@@ -177,7 +221,7 @@ export default class File {
           responseType: &apos;arraybuffer&apos;
         })
         .then(
-          res =&gt; {
+          async res =&gt; {
             if (res.status &gt;= 200 &amp;&amp; res.status &lt; 300) {
               resolve(res);
             }

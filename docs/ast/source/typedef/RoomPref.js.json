@@ -1,0 +1,114 @@
+{
+  "type": "File",
+  "start": 0,
+  "end": 218,
+  "loc": {
+    "start": {
+      "line": 1,
+      "column": 0
+    },
+    "end": {
+      "line": 9,
+      "column": 0
+    }
+  },
+  "program": {
+    "type": "Program",
+    "start": 0,
+    "end": 218,
+    "loc": {
+      "start": {
+        "line": 1,
+        "column": 0
+      },
+      "end": {
+        "line": 9,
+        "column": 0
+      }
+    },
+    "sourceType": "module",
+    "body": [],
+    "directives": [],
+    "leadingComments": null,
+    "innerComments": [
+      {
+        "type": "CommentBlock",
+        "value": "*\n * @typedef {Object} RoomPref\n * @property {String[]} [tags]\n * @property {String} [folder] 房間所屬資料夾\n * @property {Boolean} [muted] 是否靜音\n * @property {Boolean} [sticky] 是否置頂\n * @property {Boolean} [hidden] 是否隱藏\n ",
+        "start": 0,
+        "end": 217,
+        "loc": {
+          "start": {
+            "line": 1,
+            "column": 0
+          },
+          "end": {
+            "line": 8,
+            "column": 3
+          }
+        }
+      }
+    ]
+  },
+  "comments": [
+    {
+      "type": "CommentBlock",
+      "value": "*\n * @typedef {Object} RoomPref\n * @property {String[]} [tags]\n * @property {String} [folder] 房間所屬資料夾\n * @property {Boolean} [muted] 是否靜音\n * @property {Boolean} [sticky] 是否置頂\n * @property {Boolean} [hidden] 是否隱藏\n ",
+      "start": 0,
+      "end": 217,
+      "loc": {
+        "start": {
+          "line": 1,
+          "column": 0
+        },
+        "end": {
+          "line": 8,
+          "column": 3
+        }
+      }
+    }
+  ],
+  "tokens": [
+    {
+      "type": "CommentBlock",
+      "value": "*\n * @typedef {Object} RoomPref\n * @property {String[]} [tags]\n * @property {String} [folder] 房間所屬資料夾\n * @property {Boolean} [muted] 是否靜音\n * @property {Boolean} [sticky] 是否置頂\n * @property {Boolean} [hidden] 是否隱藏\n ",
+      "start": 0,
+      "end": 217,
+      "loc": {
+        "start": {
+          "line": 1,
+          "column": 0
+        },
+        "end": {
+          "line": 8,
+          "column": 3
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "eof",
+        "beforeExpr": false,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 218,
+      "end": 218,
+      "loc": {
+        "start": {
+          "line": 9,
+          "column": 0
+        },
+        "end": {
+          "line": 9,
+          "column": 0
+        }
+      }
+    }
+  ]
+}

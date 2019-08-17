@@ -44,6 +44,7 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-MessageInfo">MessageInfo</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-PushPayload">PushPayload</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-RoomData">RoomData</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-RoomPref">RoomPref</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-SocketConfig">SocketConfig</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-TokenData">TokenData</a></span></span></li>
 </ul>
@@ -256,6 +257,38 @@ export default class Room {
 
       axios
         .put(url, data, {
+          headers: headers
+        })
+        .then(
+          res =&gt; {
+            if (res.status &gt;= 200 &amp;&amp; res.status &lt; 300 &amp;&amp; res.data.RC === 0) {
+              resolve(res.data.result);
+            }
+          },
+          error =&gt; {
+            this.api.onError(error);
+            reject(error);
+          }
+        );
+    });
+  }
+
+  /**
+   * &#x66F4;&#x65B0;&#x500B;&#x4EBA;&#x7684;&#x623F;&#x9593;&#x8CC7;&#x8A0A;
+   * @param {String} roomId
+   * @param {RoomPref} pref
+   */
+  updateRoomPref(roomId, pref) {
+    return new Promise((resolve, reject) =&gt; {
+      let url = `${this.api.config.domain}/roomPrefs/${encodeURIComponent(
+        roomId
+      )}`;
+      let data = pref;
+
+      let headers = this.api.getHeader(this.isAdmin);
+
+      axios
+        .post(url, data, {
           headers: headers
         })
         .then(

@@ -672,6 +672,12 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "src/api/room/index.js~room#updateroompref",
+    "class/src/api/room/index.js~Room.html#instance-method-updateRoomPref",
+    "src/api/room/index.js~Room#updateRoomPref",
+    "method"
+  ],
+  [
     "src/api/url/index.js",
     "file/src/api/url/index.js.html",
     "src/api/url/index.js",
@@ -807,6 +813,18 @@ window.esdocSearchIndex = [
     "src/typedef/roomdata.js~roomdata",
     "typedef/index.html#static-typedef-RoomData",
     "src/typedef/RoomData.js~RoomData",
+    "typedef"
+  ],
+  [
+    "src/typedef/roompref.js",
+    "file/src/typedef/RoomPref.js.html",
+    "src/typedef/RoomPref.js",
+    "file"
+  ],
+  [
+    "src/typedef/roompref.js~roompref",
+    "typedef/index.html#static-typedef-RoomPref",
+    "src/typedef/RoomPref.js~RoomPref",
     "typedef"
   ],
   [
