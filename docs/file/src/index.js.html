@@ -56,8 +56,10 @@
 import IMKitSocket from &apos;./socket&apos;;
 export { IMKitApi, IMKitSocket };
 
-window.IMKitApi = IMKitApi;
-window.IMKitSocket = IMKitSocket;
+if (typeof window !== &apos;undefined&apos;) {
+  window.IMKitApi = IMKitApi;
+  window.IMKitSocket = IMKitSocket;
+}
 </code></pre>
 
 </div>
