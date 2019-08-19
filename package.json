@@ -1,8 +1,8 @@
 {
   "name": "imkit-js-api-v3",
-  "version": "3.0.8",
+  "version": "3.0.9",
   "description": "",
-  "main": "lib/imkit-js-api-v3.min.js",
+  "main": "index.js",
   "scripts": {
     "build": "webpack --env dev && webpack --env build",
     "dev": "webpack --progress --colors --watch --env dev",
