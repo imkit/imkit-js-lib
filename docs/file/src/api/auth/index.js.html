@@ -82,6 +82,7 @@ export default class Auth {
    * @param {String} [info.nickname]
    * @param {String} [info.avatarUrl]
    * @param {String} [info.email]
+   * @param {String} [info.publicKey]
    * @returns {Promise&lt;{token: String}|Error&gt;}
    */
   sign(info = {}) {
@@ -111,7 +112,7 @@ export default class Auth {
   /**
    * Verify token and get client id
    * @param {String} token
-   * @returns {Promise&lt;{id: String, nickname: String, avatarUrl: String}|Error&gt;}
+   * @returns {Promise&lt;{id: String, nickname: String, avatarUrl: String, email:String, publicKey:String}|Error&gt;}
    */
   verify(token) {
     return new Promise((resolve, reject) =&gt; {

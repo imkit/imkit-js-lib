@@ -306,6 +306,40 @@ export default class Room {
   }
 
   /**
+   * Update room bot
+   * @param {String} roomId
+   * @param {Object} roomInfo
+   * @param {String} [roomInfo.botState]
+   * @returns {Promise&lt;RoomData|Error&gt;}
+   */
+  updateRoomBot(roomId, roomInfo) {
+    return new Promise((resolve, reject) =&gt; {
+      let url = `${this.api.config.domain}/rooms/${encodeURIComponent(
+        roomId
+      )}/bot`;
+      let data = roomInfo;
+
+      let headers = this.api.getHeader(this.isAdmin);
+
+      axios
+        .put(url, data, {
+          headers: headers
+        })
+        .then(
+          res =&gt; {
+            if (res.status &gt;= 200 &amp;&amp; res.status &lt; 300 &amp;&amp; res.data.RC === 0) {
+              resolve(res.data.result);
+            }
+          },
+          error =&gt; {
+            this.api.onError(error);
+            reject(error);
+          }
+        );
+    });
+  }
+
+  /**
    * &#x5DF2;&#x8B80;
    * @param {String} roomId
    * @param {String} messageId

@@ -119,6 +119,7 @@ export default class IMKitSocket {
     });
 
     this.socket.on(&apos;chat message&apos;, data =&gt; {
+      data = this.base64Decode(data);
       if (config.onReceiveMessage) {
         config.onReceiveMessage(
           lib.message.decrypt(
@@ -133,6 +134,7 @@ export default class IMKitSocket {
     });
 
     this.socket.on(&apos;room&apos;, data =&gt; {
+      data = this.base64Decode(data);
       if (config.onReceiveRoom) {
         config.onReceiveRoom(data);
       } else {
@@ -141,6 +143,7 @@ export default class IMKitSocket {
     });
 
     this.socket.on(&apos;typing&apos;, data =&gt; {
+      data = this.base64Decode(data);
       if (config.onReceiveTyping) {
         config.onReceiveTyping(data);
       } else {
@@ -149,8 +152,36 @@ export default class IMKitSocket {
     });
 
     this.socket.on(&apos;lastRead&apos;, data =&gt; {
+      data = this.base64Decode(data);
       if (config.onReceivelastRead) {
         config.onReceivelastRead(data);
+      } else {
+        console.log(data);
+      }
+    });
+
+    this.socket.on(&apos;roomPref&apos;, data =&gt; {
+      data = this.base64Decode(data);
+      if (config.onReceiveRoomPref) {
+        config.onReceiveRoomPref(data);
+      } else {
+        console.log(data);
+      }
+    });
+
+    this.socket.on(&apos;myPrefChange&apos;, data =&gt; {
+      data = this.base64Decode(data);
+      if (config.onReceiveMyPrefChange) {
+        config.onReceiveMyPrefChange(data);
+      } else {
+        console.log(data);
+      }
+    });
+
+    this.socket.on(&apos;myPrefDelete&apos;, data =&gt; {
+      data = new Buffer(data, &apos;base64&apos;).toString();
+      if (config.onReceiveMyPrefDelete) {
+        config.onReceiveMyPrefDelete(data);
       } else {
         console.log(data);
       }
@@ -161,13 +192,15 @@ export default class IMKitSocket {
    * @private
    */
   onConnect() {
-    this.pingTime = Date.now();
-    this.connectStatus = true;
-    if (this.config.onConnect) {
-      this.config.onConnect();
-    } else {
-      console.log(&apos;Default connect success&apos;);
-    }
+    this.socket.emit(&apos;conf&apos;, { encoding: &apos;base64&apos; }, () =&gt; {
+      this.pingTime = Date.now();
+      this.connectStatus = true;
+      if (this.config.onConnect) {
+        this.config.onConnect();
+      } else {
+        console.log(&apos;Default connect success&apos;);
+      }
+    });
   }
 
   /**
@@ -190,11 +223,12 @@ export default class IMKitSocket {
   chatIn() {
     return new Promise((resolve, reject) =&gt; {
       this.socket.emit(&apos;auth&apos;, this.config.token, res =&gt; {
+        res = this.base64Decode(res);
         if (res.RC === 0) {
           resolve(res.result);
         } else {
           this.onError(res);
-          reject(new Error(`[IMKit WebSocket] ${res.RM}`));
+          reject(new Error(`[IMKit WebSocket (auth)] ${res.RM}`));
         }
       });
     });
@@ -217,7 +251,7 @@ export default class IMKitSocket {
           resolve(res.result);
         } else {
           this.onError(res);
-          reject(new Error(`[IMKit WebSocket] ${res.RM}`));
+          reject(new Error(`[IMKit WebSocket (sendMessage)] ${res.RM}`));
         }
       });
     });
@@ -238,6 +272,10 @@ export default class IMKitSocket {
    */
   onError(error) {
     this.config.events.onAjaxError(error);
+  }
+
+  base64Decode(base64) {
+    return JSON.parse(new Buffer(base64, &apos;base64&apos;).toString());
   }
 }
 </code></pre>

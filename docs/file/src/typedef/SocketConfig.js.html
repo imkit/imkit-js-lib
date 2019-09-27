@@ -72,6 +72,9 @@
  * @property {function(room: {room: String, memberProperty: {badge: Number, client: String, lastRead: String}[]})} [onReceiveRoom]
  * @property {function(typing: {message: String, room: String, sender: String})} [onReceiveTyping]
  * @property {function(data: {messageID: String, roomID: String, memberID: String})} [onReceivelastRead]
+ * @property {function(data: {room: String, folder: String, hidden: Boolean, muted: Boolean, sticky: Boolean, tags: String[]})} [onReceiveRoomPref]
+ * @property {function(data: Object)} [onReceiveMyPrefChange]
+ * @property {function(data: String)} [onReceiveMyPrefDelete]
  */
 </code></pre>
 

@@ -232,7 +232,7 @@ export default class Me {
   }
 
   /**
-   * Mute room
+   * Mute room (&#x68C4;&#x7528;)
    * @param {String} roomId
    * @returns {Promise&lt;ClientData|Error&gt;}
    */
@@ -263,7 +263,7 @@ export default class Me {
   }
 
   /**
-   * UnMute room
+   * UnMute room (&#x68C4;&#x7528;)
    * @param {String} roomId
    * @returns {Promise&lt;ClientData|Error&gt;}
    */
@@ -278,6 +278,87 @@ export default class Me {
       axios
         .delete(url, {
           data: data,
+          headers: headers
+        })
+        .then(
+          res =&gt; {
+            if (res.status &gt;= 200 &amp;&amp; res.status &lt; 300 &amp;&amp; res.data.RC === 0) {
+              resolve(res.data.result);
+            }
+          },
+          error =&gt; {
+            this.api.onError(error);
+            reject(error);
+          }
+        );
+    });
+  }
+
+  /**
+   * Get Pref list
+   */
+  getPref() {
+    return new Promise((resolve, reject) =&gt; {
+      let url = `${this.api.config.domain}/me/pref`;
+      let headers = this.api.getHeader(this.isAdmin);
+
+      axios
+        .get(url, {
+          headers: headers
+        })
+        .then(
+          res =&gt; {
+            if (res.status &gt;= 200 &amp;&amp; res.status &lt; 300 &amp;&amp; res.data.RC === 0) {
+              resolve(res.data.result);
+            }
+          },
+          error =&gt; {
+            this.api.onError(error);
+            reject(error);
+          }
+        );
+    });
+  }
+
+  /**
+   * Create or Update Pref
+   * @param {String} key
+   * @param {Object} data
+   */
+  updatePref(key, data) {
+    return new Promise((resolve, reject) =&gt; {
+      let url = `${this.api.config.domain}/me/pref/${key}`;
+      let headers = this.api.getHeader(this.isAdmin);
+
+      axios
+        .post(url, data, {
+          headers: headers
+        })
+        .then(
+          res =&gt; {
+            if (res.status &gt;= 200 &amp;&amp; res.status &lt; 300 &amp;&amp; res.data.RC === 0) {
+              resolve(res.data.result);
+            }
+          },
+          error =&gt; {
+            this.api.onError(error);
+            reject(error);
+          }
+        );
+    });
+  }
+
+  /**
+   * Delete Pref
+   * @param {String} key
+   */
+  deletePref(key) {
+    return new Promise((resolve, reject) =&gt; {
+      let url = `${this.api.config.domain}/me/pref/${key}`;
+      let headers = this.api.getHeader(this.isAdmin);
+
+      axios
+        .delete(url, {
           headers: headers
         })
         .then(

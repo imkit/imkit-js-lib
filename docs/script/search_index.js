@@ -516,6 +516,12 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
+    "src/api/me/index.js~me#deletepref",
+    "class/src/api/me/index.js~Me.html#instance-method-deletePref",
+    "src/api/me/index.js~Me#deletePref",
+    "method"
+  ],
+  [
     "src/api/me/index.js~me#getbadge",
     "class/src/api/me/index.js~Me.html#instance-method-getBadge",
     "src/api/me/index.js~Me#getBadge",
@@ -525,6 +531,12 @@ window.esdocSearchIndex = [
     "src/api/me/index.js~me#getinfo",
     "class/src/api/me/index.js~Me.html#instance-method-getInfo",
     "src/api/me/index.js~Me#getInfo",
+    "method"
+  ],
+  [
+    "src/api/me/index.js~me#getpref",
+    "class/src/api/me/index.js~Me.html#instance-method-getPref",
+    "src/api/me/index.js~Me#getPref",
     "method"
   ],
   [
@@ -555,6 +567,12 @@ window.esdocSearchIndex = [
     "src/api/me/index.js~me#updateinfo",
     "class/src/api/me/index.js~Me.html#instance-method-updateInfo",
     "src/api/me/index.js~Me#updateInfo",
+    "method"
+  ],
+  [
+    "src/api/me/index.js~me#updatepref",
+    "class/src/api/me/index.js~Me.html#instance-method-updatePref",
+    "src/api/me/index.js~Me#updatePref",
     "method"
   ],
   [
@@ -672,6 +690,12 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "src/api/room/index.js~room#updateroombot",
+    "class/src/api/room/index.js~Room.html#instance-method-updateRoomBot",
+    "src/api/room/index.js~Room#updateRoomBot",
+    "method"
+  ],
+  [
     "src/api/room/index.js~room#updateroompref",
     "class/src/api/room/index.js~Room.html#instance-method-updateRoomPref",
     "src/api/room/index.js~Room#updateRoomPref",
@@ -712,6 +736,12 @@ window.esdocSearchIndex = [
     "file/src/socket/index.js.html",
     "src/socket/index.js",
     "file"
+  ],
+  [
+    "src/socket/index.js~imkitsocket#base64decode",
+    "class/src/socket/index.js~IMKitSocket.html#instance-method-base64Decode",
+    "src/socket/index.js~IMKitSocket#base64Decode",
+    "method"
   ],
   [
     "src/socket/index.js~imkitsocket#chatin",

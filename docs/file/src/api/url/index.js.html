@@ -87,11 +87,7 @@ export default class Url {
           params: data
         })
         .then(res =&gt; {
-          resolve({
-            description: res.data.Description,
-            images: res.data.Images,
-            title: res.data.Title
-          });
+          resolve(res.data);
         })
         .catch(() =&gt; {
           resolve(null);
