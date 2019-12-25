@@ -45,6 +45,14 @@ app.post('/getToken', (req, res, next) => {
     });
 });
 
+app.post('/getRoomsList', (req, res, next) => {
+  let api = getApi(req.body.token);
+  api.room.getRoomsList().then(function(data) {
+    res.header('Content-Type', 'application/json');
+    res.send(JSON.stringify(data, null, 2));
+  });
+});
+
 app.post('/createRoom', (req, res, next) => {
   let api = getApi(req.body.token);
   api.room
