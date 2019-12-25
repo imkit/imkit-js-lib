@@ -37,6 +37,12 @@ let socket = new IMKitSocket(socketConfig);
 ```
 ### 執行範例
 
+在使用 IMKit API 之前，會先需要取得你們服務內的 token，比方說你們的平台內會有一個 Web Server 專門會在使用者註冊或登入時，核發一個 token 回來。
+這邊為了方便您快速使用 IMKit API，我們在 IMKit 平台上有建立一個 Demo Web Server，我們在下面提供一個 signin.html，請下載後用瀏覽器打開此檔案，即可連到 Demo Web Server 並在頁面上顯示取得的 token。
+
+接下來即可將此 token 拿來當作呼叫 API 時的參數。
+
+
 ```javascript
 
 
