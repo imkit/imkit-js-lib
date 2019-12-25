@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    form {
+      display: inline-block;
+      border: #555 solid thin;
+      margin: 5px;
+      padding: 5px;
+    }
+  </style>
+</head>
+
+<body>
+  <form action="/getToken" method="POST">
+    <b>Get token</b>
+    <br>
+    mobile: <input type="text" name="mobile" value="123">
+    <br>
+    password: <input type="text" name="password" value="123">
+    <br>
+    <input type="submit" value="Submit">
+  </form>
+  <form action="/createRoom" method="POST">
+    <b>Create room</b>
+    <br>
+    token: <input type="text" name="token" value="">
+    <br>
+    room id: <input type="text" name="_id" value="">
+    <br>
+    name: <input type="text" name="name" value="">
+    <br>
+    <input type="submit" value="Submit">
+  </form>
+  <form action="/joinRoom" method="POST">
+    <b>Join room</b>
+    <br>
+    token: <input type="text" name="token" value="">
+    <br>
+    room id: <input type="text" name="_id" value="">
+    <br>
+    <input type="submit" value="Submit">
+  </form>
+  <form action="/addMember" method="POST">
+    <b>Add member</b>
+    <br>
+    token: <input type="text" name="token" value="">
+    <br>
+    room id: <input type="text" name="roomid" value="">
+    <br>
+    member id: <input type="text" name="memberid" value="5ddb9d771ccb17001f2ebe92">
+    <br>
+    <input type="submit" value="Submit">
+  </form>
+  <form action="/deleteMember" method="POST">
+    <b>Delete member from room</b>
+    <br>
+    token: <input type="text" name="token" value="">
+    <br>
+    room id: <input type="text" name="roomid" value="">
+    <br>
+    member id: <input type="text" name="memberid" value="5ddb9d771ccb17001f2ebe92">
+    <br>
+    <input type="submit" value="Submit">
+  </form>
+  <form action="/sendMessage" method="POST">
+    <b>Send message</b>
+    <br>
+    token: <input type="text" name="token" value="">
+    <br>
+    room id: <input type="text" name="roomid" value="">
+    <br>
+    message: <input type="text" name="message" value="">
+    <br>
+    <input type="submit" value="Submit">
+  </form>
+</body>
+
+</html>
