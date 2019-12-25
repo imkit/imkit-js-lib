@@ -1,7 +1,7 @@
 {
   "type": "File",
   "start": 0,
-  "end": 1135,
+  "end": 1159,
   "loc": {
     "start": {
       "line": 1,
@@ -15,7 +15,7 @@
   "program": {
     "type": "Program",
     "start": 0,
-    "end": 1135,
+    "end": 1159,
     "loc": {
       "start": {
         "line": 1,
@@ -33,9 +33,9 @@
     "innerComments": [
       {
         "type": "CommentBlock",
-        "value": "*\n * When Socket Receive Message\n * @name SocketOnReceiveMessageFunction\n * @function\n * @param {MessageData} message\n ",
+        "value": "*\r\n * When Socket Receive Message\r\n * @name SocketOnReceiveMessageFunction\r\n * @function\r\n * @param {MessageData} message\r\n ",
         "start": 0,
-        "end": 123,
+        "end": 128,
         "loc": {
           "start": {
             "line": 1,
@@ -49,9 +49,9 @@
       },
       {
         "type": "CommentBlock",
-        "value": "*\n * @typedef {Object} SocketConfig\n * @property {String} domain\n * @property {String} [clientId]\n * @property {String} [token]\n * @property {String} [privateKey]\n * @property {Object} [events]\n * @property {function(error: Object)} [events.onAjaxError]\n * @property {function()} [onConnect]\n * @property {function()} [onDisconnect]\n * @property {function(message: MessageData)} [onReceiveMessage]\n * @property {function(room: {room: String, memberProperty: {badge: Number, client: String, lastRead: String}[]})} [onReceiveRoom]\n * @property {function(typing: {message: String, room: String, sender: String})} [onReceiveTyping]\n * @property {function(data: {messageID: String, roomID: String, memberID: String})} [onReceivelastRead]\n * @property {function(data: {room: String, folder: String, hidden: Boolean, muted: Boolean, sticky: Boolean, tags: String[]})} [onReceiveRoomPref]\n * @property {function(data: Object)} [onReceiveMyPrefChange]\n * @property {function(data: String)} [onReceiveMyPrefDelete]\n ",
-        "start": 124,
-        "end": 1134,
+        "value": "*\r\n * @typedef {Object} SocketConfig\r\n * @property {String} domain\r\n * @property {String} [clientId]\r\n * @property {String} [token]\r\n * @property {String} [privateKey]\r\n * @property {Object} [events]\r\n * @property {function(error: Object)} [events.onAjaxError]\r\n * @property {function()} [onConnect]\r\n * @property {function()} [onDisconnect]\r\n * @property {function(message: MessageData)} [onReceiveMessage]\r\n * @property {function(room: {room: String, memberProperty: {badge: Number, client: String, lastRead: String}[]})} [onReceiveRoom]\r\n * @property {function(typing: {message: String, room: String, sender: String})} [onReceiveTyping]\r\n * @property {function(data: {messageID: String, roomID: String, memberID: String})} [onReceivelastRead]\r\n * @property {function(data: {room: String, folder: String, hidden: Boolean, muted: Boolean, sticky: Boolean, tags: String[]})} [onReceiveRoomPref]\r\n * @property {function(data: Object)} [onReceiveMyPrefChange]\r\n * @property {function(data: String)} [onReceiveMyPrefDelete]\r\n ",
+        "start": 130,
+        "end": 1157,
         "loc": {
           "start": {
             "line": 7,
@@ -68,9 +68,9 @@
   "comments": [
     {
       "type": "CommentBlock",
-      "value": "*\n * When Socket Receive Message\n * @name SocketOnReceiveMessageFunction\n * @function\n * @param {MessageData} message\n ",
+      "value": "*\r\n * When Socket Receive Message\r\n * @name SocketOnReceiveMessageFunction\r\n * @function\r\n * @param {MessageData} message\r\n ",
       "start": 0,
-      "end": 123,
+      "end": 128,
       "loc": {
         "start": {
           "line": 1,
@@ -84,9 +84,9 @@
     },
     {
       "type": "CommentBlock",
-      "value": "*\n * @typedef {Object} SocketConfig\n * @property {String} domain\n * @property {String} [clientId]\n * @property {String} [token]\n * @property {String} [privateKey]\n * @property {Object} [events]\n * @property {function(error: Object)} [events.onAjaxError]\n * @property {function()} [onConnect]\n * @property {function()} [onDisconnect]\n * @property {function(message: MessageData)} [onReceiveMessage]\n * @property {function(room: {room: String, memberProperty: {badge: Number, client: String, lastRead: String}[]})} [onReceiveRoom]\n * @property {function(typing: {message: String, room: String, sender: String})} [onReceiveTyping]\n * @property {function(data: {messageID: String, roomID: String, memberID: String})} [onReceivelastRead]\n * @property {function(data: {room: String, folder: String, hidden: Boolean, muted: Boolean, sticky: Boolean, tags: String[]})} [onReceiveRoomPref]\n * @property {function(data: Object)} [onReceiveMyPrefChange]\n * @property {function(data: String)} [onReceiveMyPrefDelete]\n ",
-      "start": 124,
-      "end": 1134,
+      "value": "*\r\n * @typedef {Object} SocketConfig\r\n * @property {String} domain\r\n * @property {String} [clientId]\r\n * @property {String} [token]\r\n * @property {String} [privateKey]\r\n * @property {Object} [events]\r\n * @property {function(error: Object)} [events.onAjaxError]\r\n * @property {function()} [onConnect]\r\n * @property {function()} [onDisconnect]\r\n * @property {function(message: MessageData)} [onReceiveMessage]\r\n * @property {function(room: {room: String, memberProperty: {badge: Number, client: String, lastRead: String}[]})} [onReceiveRoom]\r\n * @property {function(typing: {message: String, room: String, sender: String})} [onReceiveTyping]\r\n * @property {function(data: {messageID: String, roomID: String, memberID: String})} [onReceivelastRead]\r\n * @property {function(data: {room: String, folder: String, hidden: Boolean, muted: Boolean, sticky: Boolean, tags: String[]})} [onReceiveRoomPref]\r\n * @property {function(data: Object)} [onReceiveMyPrefChange]\r\n * @property {function(data: String)} [onReceiveMyPrefDelete]\r\n ",
+      "start": 130,
+      "end": 1157,
       "loc": {
         "start": {
           "line": 7,
@@ -102,9 +102,9 @@
   "tokens": [
     {
       "type": "CommentBlock",
-      "value": "*\n * When Socket Receive Message\n * @name SocketOnReceiveMessageFunction\n * @function\n * @param {MessageData} message\n ",
+      "value": "*\r\n * When Socket Receive Message\r\n * @name SocketOnReceiveMessageFunction\r\n * @function\r\n * @param {MessageData} message\r\n ",
       "start": 0,
-      "end": 123,
+      "end": 128,
       "loc": {
         "start": {
           "line": 1,
@@ -118,9 +118,9 @@
     },
     {
       "type": "CommentBlock",
-      "value": "*\n * @typedef {Object} SocketConfig\n * @property {String} domain\n * @property {String} [clientId]\n * @property {String} [token]\n * @property {String} [privateKey]\n * @property {Object} [events]\n * @property {function(error: Object)} [events.onAjaxError]\n * @property {function()} [onConnect]\n * @property {function()} [onDisconnect]\n * @property {function(message: MessageData)} [onReceiveMessage]\n * @property {function(room: {room: String, memberProperty: {badge: Number, client: String, lastRead: String}[]})} [onReceiveRoom]\n * @property {function(typing: {message: String, room: String, sender: String})} [onReceiveTyping]\n * @property {function(data: {messageID: String, roomID: String, memberID: String})} [onReceivelastRead]\n * @property {function(data: {room: String, folder: String, hidden: Boolean, muted: Boolean, sticky: Boolean, tags: String[]})} [onReceiveRoomPref]\n * @property {function(data: Object)} [onReceiveMyPrefChange]\n * @property {function(data: String)} [onReceiveMyPrefDelete]\n ",
-      "start": 124,
-      "end": 1134,
+      "value": "*\r\n * @typedef {Object} SocketConfig\r\n * @property {String} domain\r\n * @property {String} [clientId]\r\n * @property {String} [token]\r\n * @property {String} [privateKey]\r\n * @property {Object} [events]\r\n * @property {function(error: Object)} [events.onAjaxError]\r\n * @property {function()} [onConnect]\r\n * @property {function()} [onDisconnect]\r\n * @property {function(message: MessageData)} [onReceiveMessage]\r\n * @property {function(room: {room: String, memberProperty: {badge: Number, client: String, lastRead: String}[]})} [onReceiveRoom]\r\n * @property {function(typing: {message: String, room: String, sender: String})} [onReceiveTyping]\r\n * @property {function(data: {messageID: String, roomID: String, memberID: String})} [onReceivelastRead]\r\n * @property {function(data: {room: String, folder: String, hidden: Boolean, muted: Boolean, sticky: Boolean, tags: String[]})} [onReceiveRoomPref]\r\n * @property {function(data: Object)} [onReceiveMyPrefChange]\r\n * @property {function(data: String)} [onReceiveMyPrefDelete]\r\n ",
+      "start": 130,
+      "end": 1157,
       "loc": {
         "start": {
           "line": 7,
@@ -145,8 +145,8 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 1135,
-      "end": 1135,
+      "start": 1159,
+      "end": 1159,
       "loc": {
         "start": {
           "line": 25,

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <base data-ice="baseUrl" href="../../../../">
-  <title data-ice="title">Url | imkit-js-api-v3</title>
+  <title data-ice="title">Search | imkit-js-api-v3</title>
   <link type="text/css" rel="stylesheet" href="css/style.css">
   <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
   <script src="script/prettify/prettify.js"></script>
@@ -53,17 +53,17 @@
 </nav>
 
 <div class="content" data-ice="content"><div class="header-notice">
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import Url from &apos;<span><a href="file/src/api/url/index.js.html#lineNumber6">imkit-js-api-v3/src/api/url/index.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import Search from &apos;<span><a href="file/src/api/search/index.js.html#lineNumber6">imkit-js-api-v3/src/api/search/index.js</a></span>&apos;</code></pre></div>
   <span data-ice="access">public</span>
   <span data-ice="kind">class</span>
   
   
   
-  <span data-ice="source">| <span><a href="file/src/api/url/index.js.html#lineNumber6">source</a></span></span>
+  <span data-ice="source">| <span><a href="file/src/api/search/index.js.html#lineNumber6">source</a></span></span>
 </div>
 
 <div class="self-detail detail">
-  <h1 data-ice="name">Url</h1>
+  <h1 data-ice="name">Search</h1>
 
   
 
@@ -113,13 +113,13 @@
           
           
           
-          <span class="code" data-ice="name"><span><a href="class/src/api/url/index.js~Url.html#instance-method-getPreview">getPreview</a></span></span><span class="code" data-ice="signature">(url: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span><{description: <span=""><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>, images: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span>, title: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span>}|<span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error">Error</a></span>&gt;</{description:></span>
+          <span class="code" data-ice="name"><span><a href="class/src/api/search/index.js~Search.html#instance-method-search">search</a></span></span><span class="code" data-ice="signature">(type: <span><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span><span>[]</span></span>, keyword: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span>, room: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span>, cancelToken: <span>axios.cancelToken</span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span><{messages: <span=""><span><a href="typedef/index.html#static-typedef-MessageData">MessageData</a></span><span>[]</span>, roomName: <span><span><a href="typedef/index.html#static-typedef-RoomData">RoomData</a></span><span>[]</span></span>, roomMember: <span><span><a href="typedef/index.html#static-typedef-RoomData">RoomData</a></span><span>[]</span></span>}|<span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error">Error</a></span>&gt;</{messages:></span>
         </p>
       </div>
       <div>
         
         
-        <div data-ice="description"><p>Get url preview data</p>
+        <div data-ice="description"><p>1.</p>
 </div>
       </div>
     </td>
@@ -141,25 +141,29 @@
 <div data-ice="methodDetails"><h2 data-ice="title">Public Methods</h2>
 
 <div class="detail" data-ice="detail">
-  <h3 data-ice="anchor" id="instance-method-getPreview">
+  <h3 data-ice="anchor" id="instance-method-search">
     <span class="access" data-ice="access">public</span>
     
     
     
     
     
-    <span class="code" data-ice="name">getPreview</span><span class="code" data-ice="signature">(url: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span><{description: <span=""><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>, images: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span>, title: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span>}|<span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error">Error</a></span>&gt;</{description:></span>
+    <span class="code" data-ice="name">search</span><span class="code" data-ice="signature">(type: <span><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span><span>[]</span></span>, keyword: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span>, room: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span>, cancelToken: <span>axios.cancelToken</span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span><{messages: <span=""><span><a href="typedef/index.html#static-typedef-MessageData">MessageData</a></span><span>[]</span>, roomName: <span><span><a href="typedef/index.html#static-typedef-RoomData">RoomData</a></span><span>[]</span></span>, roomMember: <span><span><a href="typedef/index.html#static-typedef-RoomData">RoomData</a></span><span>[]</span></span>}|<span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error">Error</a></span>&gt;</{messages:></span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/api/url/index.js.html#lineNumber24">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/api/search/index.js.html#lineNumber34">source</a></span></span>
     </span>
   </h3>
 
   
   
   
-  <div data-ice="description"><p>Get url preview data</p>
+  <div data-ice="description"><ol>
+<li>Search messages by keyword</li>
+<li>Search rooms by room name</li>
+<li>Search rooms by room members</li>
+</ol>
 </div>
 
   
@@ -173,11 +177,31 @@
     <tbody>
     
     <tr data-ice="property" data-depth="0">
-      <td data-ice="name" class="code" data-depth="0">url</td>
+      <td data-ice="name" class="code" data-depth="0">type</td>
+      <td data-ice="type" class="code"><span><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span><span>[]</span></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>Types to search, could be &quot;messages&quot;, &quot;roomName&quot;, &quot;roomMember&quot;</p>
+</td>
+    </tr>
+<tr data-ice="property" data-depth="0">
+      <td data-ice="name" class="code" data-depth="0">keyword</td>
       <td data-ice="type" class="code"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span></td>
       <td data-ice="appendix"></td>
-      <td data-ice="description"><p>&#x7DB2;&#x5740;</p>
+      <td data-ice="description"><p>Keyword text</p>
 </td>
+    </tr>
+<tr data-ice="property" data-depth="0">
+      <td data-ice="name" class="code" data-depth="0">room</td>
+      <td data-ice="type" class="code"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span></td>
+      <td data-ice="appendix"><ul><li>optional</li></ul></td>
+      <td data-ice="description"><p>Room ID. Search in room only</p>
+</td>
+    </tr>
+<tr data-ice="property" data-depth="0">
+      <td data-ice="name" class="code" data-depth="0">cancelToken</td>
+      <td data-ice="type" class="code"><span>axios.cancelToken</span></td>
+      <td data-ice="appendix"><ul><li>optional</li></ul></td>
+      <td data-ice="description"></td>
     </tr>
 </tbody>
   </table>
@@ -189,7 +213,7 @@
     <table>
       <tbody>
         <tr>
-          <td class="return-type code" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span><{description: <span=""><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>, images: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span>, title: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span>}|<span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error">Error</a></span>&gt;</{description:></td>
+          <td class="return-type code" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span><{messages: <span=""><span><a href="typedef/index.html#static-typedef-MessageData">MessageData</a></span><span>[]</span>, roomName: <span><span><a href="typedef/index.html#static-typedef-RoomData">RoomData</a></span><span>[]</span></span>, roomMember: <span><span><a href="typedef/index.html#static-typedef-RoomData">RoomData</a></span><span>[]</span></span>}|<span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error">Error</a></span>&gt;</{messages:></td>
           
         </tr>
       </tbody>

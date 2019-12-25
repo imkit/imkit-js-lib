@@ -36,6 +36,7 @@
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#api-me">api/me</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/api/me/index.js~Me.html">Me</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#api-message">api/message</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/api/message/index.js~Message.html">Message</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#api-room">api/room</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/api/room/index.js~Room.html">Room</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#api-search">api/search</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/api/search/index.js~Search.html">Search</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#api-url">api/url</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/api/url/index.js~Url.html">Url</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#socket">socket</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/socket/index.js~IMKitSocket.html">IMKitSocket</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#typedef">typedef</a><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-ApiConfig">ApiConfig</a></span></span></li>
@@ -81,9 +82,10 @@ export default class File {
    * @param {File} file
    * @param {Object} extra
    * @param {Function} progress
+   * @param {axios.cancelToken} [cancelToken]
    * @returns {Promise&lt;String|Error&gt;}
    */
-  upload(bucketName, file, extra = {}, progress = e =&gt; {}) {
+  upload(bucketName, file, extra = {}, progress = e =&gt; {}, cancelToken = null) {
     return new Promise((resolve, reject) =&gt; {
       let url = `${this.api.config.domain}/files/${encodeURIComponent(
         bucketName
@@ -98,15 +100,14 @@ export default class File {
       axios
         .post(url, data, {
           headers: headers,
-          onUploadProgress: progress
+          onUploadProgress: progress,
+          cancelToken
         })
         .then(
           res =&gt; {
             if (res.status &gt;= 200 &amp;&amp; res.status &lt; 300 &amp;&amp; res.data.RC === 0) {
               resolve(
-                `${this.api.config.domain}/files/${bucketName}/${
-                  res.data.result.id
-                }`
+                `${this.api.config.domain}/files/${bucketName}/${res.data.result.id}`
               );
             } else {
               resolve(res.data);
@@ -154,6 +155,44 @@ export default class File {
   }
 
   /**
+   * &#x53D6;&#x5F97;&#x6A94;&#x6848;&#x539F;&#x59CB;&#x8DEF;&#x5F91;
+   * @param {String} bucketName
+   * @param {String} fileId
+   * @param {Object} appendHeaders
+   * @returns {Promise&lt;{url: String|Error&gt;}
+   */
+  getFileSignedUrl(bucketName, fileId, appendHeaders = {}) {
+    return new Promise((resolve, reject) =&gt; {
+      let url = `${this.api.config.domain}/files/${encodeURIComponent(
+        bucketName
+      )}/${fileId}`;
+      let data = {
+        signedUrlOnly: 1
+      };
+      let headers = this.api.getHeader(this.isAdmin);
+
+      headers = Object.assign(headers, appendHeaders);
+
+      axios
+        .get(url, {
+          params: data,
+          headers: headers
+        })
+        .then(
+          res =&gt; {
+            if (res.status &gt;= 200 &amp;&amp; res.status &lt; 300) {
+              resolve(res.data.result.url);
+            }
+          },
+          error =&gt; {
+            this.api.onError(error);
+            reject(error);
+          }
+        );
+    });
+  }
+
+  /**
    * Downliad File
    * @param {String} bucketName
    * @param {String} fileId
@@ -178,15 +217,16 @@ export default class File {
           headers: headers
         })
         .then(
-          async res =&gt; {
+          res =&gt; {
             if (res.status &gt;= 200 &amp;&amp; res.status &lt; 300) {
               try {
-                let resFile = await this.downloadFileFormRealUrl(
+                this.downloadFileFormRealUrl(
                   res.data.result.url,
                   appendHeaders,
                   progress
-                );
-                resolve(resFile);
+                ).then(resFile =&gt; {
+                  resolve(resFile);
+                });
               } catch (e) {
                 reject(e);
               }
@@ -221,7 +261,7 @@ export default class File {
           responseType: &apos;arraybuffer&apos;
         })
         .then(
-          async res =&gt; {
+          res =&gt; {
             if (res.status &gt;= 200 &amp;&amp; res.status &lt; 300) {
               resolve(res);
             }

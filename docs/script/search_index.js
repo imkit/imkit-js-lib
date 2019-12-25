@@ -48,6 +48,12 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
+    "imkit-js-api-v3/src/api/search/index.js~search",
+    "class/src/api/search/index.js~Search.html",
+    "<span>Search</span> <span class=\"search-result-import-path\">imkit-js-api-v3/src/api/search/index.js</span>",
+    "class"
+  ],
+  [
     "imkit-js-api-v3/src/api/url/index.js~url",
     "class/src/api/url/index.js~Url.html",
     "<span>Url</span> <span class=\"search-result-import-path\">imkit-js-api-v3/src/api/url/index.js</span>",
@@ -432,6 +438,12 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "src/api/file/index.js~file#getfilesignedurl",
+    "class/src/api/file/index.js~File.html#instance-method-getFileSignedUrl",
+    "src/api/file/index.js~File#getFileSignedUrl",
+    "method"
+  ],
+  [
     "src/api/file/index.js~file#getmetadata",
     "class/src/api/file/index.js~File.html#instance-method-getMetadata",
     "src/api/file/index.js~File#getMetadata",
@@ -501,6 +513,12 @@ window.esdocSearchIndex = [
     "src/api/index.js~imkitapi#room",
     "class/src/api/index.js~IMKitApi.html#instance-member-room",
     "src/api/index.js~IMKitApi#room",
+    "member"
+  ],
+  [
+    "src/api/index.js~imkitapi#search",
+    "class/src/api/index.js~IMKitApi.html#instance-member-search",
+    "src/api/index.js~IMKitApi#search",
     "member"
   ],
   [
@@ -588,6 +606,12 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "src/api/message/index.js~message#searchv2",
+    "class/src/api/message/index.js~Message.html#instance-method-searchV2",
+    "src/api/message/index.js~Message#searchV2",
+    "method"
+  ],
+  [
     "src/api/room/index.js",
     "file/src/api/room/index.js.html",
     "src/api/room/index.js",
@@ -639,6 +663,12 @@ window.esdocSearchIndex = [
     "src/api/room/index.js~room#getroommessages",
     "class/src/api/room/index.js~Room.html#instance-method-getRoomMessages",
     "src/api/room/index.js~Room#getRoomMessages",
+    "method"
+  ],
+  [
+    "src/api/room/index.js~room#getroommessagesaround",
+    "class/src/api/room/index.js~Room.html#instance-method-getRoomMessagesAround",
+    "src/api/room/index.js~Room#getRoomMessagesAround",
     "method"
   ],
   [
@@ -699,6 +729,18 @@ window.esdocSearchIndex = [
     "src/api/room/index.js~room#updateroompref",
     "class/src/api/room/index.js~Room.html#instance-method-updateRoomPref",
     "src/api/room/index.js~Room#updateRoomPref",
+    "method"
+  ],
+  [
+    "src/api/search/index.js",
+    "file/src/api/search/index.js.html",
+    "src/api/search/index.js",
+    "file"
+  ],
+  [
+    "src/api/search/index.js~search#search",
+    "class/src/api/search/index.js~Search.html#instance-method-search",
+    "src/api/search/index.js~Search#search",
     "method"
   ],
   [

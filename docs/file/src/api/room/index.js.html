@@ -36,6 +36,7 @@
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#api-me">api/me</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/api/me/index.js~Me.html">Me</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#api-message">api/message</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/api/message/index.js~Message.html">Message</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#api-room">api/room</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/api/room/index.js~Room.html">Room</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#api-search">api/search</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/api/search/index.js~Search.html">Search</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#api-url">api/url</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/api/url/index.js~Url.html">Url</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#socket">socket</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/socket/index.js~IMKitSocket.html">IMKitSocket</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#typedef">typedef</a><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-ApiConfig">ApiConfig</a></span></span></li>
@@ -705,6 +706,54 @@ export default class Room {
         .then(
           res =&gt; {
             if (res.status &gt;= 200 &amp;&amp; res.status &lt; 300 &amp;&amp; res.data.RC === 0) {
+              resolve(res.data.result);
+            }
+          },
+          error =&gt; {
+            this.api.onError(error);
+            reject(error);
+          }
+        );
+    });
+  }
+
+  /**
+   * List Room Messages Around a give message
+   * @param {String} roomId
+   * @param {String} messageId
+   * @param {Number} [before] number of Messages earlier than the specified Message ID
+   * @param {Number} [after] number of Messages later than the specified Message ID
+   * @param {axios.cancelToken} [cancelToken]
+   * @returns {Promise&lt;{totalCount: Number, data: MessageData[]}|Error&gt;}
+   */
+  getRoomMessagesAround(roomId, messageId, before, after, cancelToken) {
+    return new Promise((resolve, reject) =&gt; {
+      let url = `${this.api.config.domain}/rooms/${encodeURIComponent(
+        roomId
+      )}/messages/${messageId}`;
+      let data = {
+        before: before || 0,
+        after: after || 0
+      };
+      let headers = this.api.getHeader(this.isAdmin);
+
+      axios
+        .get(url, {
+          params: data,
+          headers: headers,
+          cancelToken
+        })
+        .then(
+          res =&gt; {
+            if (res.status &gt;= 200 &amp;&amp; res.status &lt; 300 &amp;&amp; res.data.RC === 0) {
+              // &#x89E3;&#x5BC6;&#x8A0A;&#x606F;
+              res.data.result.data = res.data.result.data.map(message =&gt; {
+                return lib.message.decrypt(
+                  message,
+                  this.api.config.privateKey,
+                  this.api.config.clientId
+                );
+              });
               resolve(res.data.result);
             }
           },

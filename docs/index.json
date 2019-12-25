@@ -1129,7 +1129,7 @@
     "__docId__": 63,
     "kind": "file",
     "name": "src/api/auth/index.js",
-    "content": "import axios from 'axios';\n/**\n * @import * from '@/src/typedef';\n */\n\nexport default class Auth {\n  /**\n   * @private\n   * @param {Api} api\n   */\n  constructor(api) {\n    /**\n     * @private\n     * @type {Api}\n     */\n    this.api = api;\n    /**\n     * @private\n     * @type {Boolean}\n     */\n    this.isAdmin = false;\n  }\n\n  /**\n   * Create/Update user info and return token\n   * @param {Object} [info]\n   * @param {String} [info.id] Client id\n   * @param {String} [info.nickname]\n   * @param {String} [info.avatarUrl]\n   * @param {String} [info.email]\n   * @param {String} [info.publicKey]\n   * @returns {Promise<{token: String}|Error>}\n   */\n  sign(info = {}) {\n    return new Promise((resolve, reject) => {\n      let url = `${this.api.config.authBase}/sign`;\n      let data = info;\n      let headers = {};\n\n      axios\n        .post(url, data, {\n          headers: headers\n        })\n        .then(\n          res => {\n            if (res.status >= 200 && res.status < 300) {\n              resolve(res.data);\n            }\n          },\n          error => {\n            this.api.onError(error);\n            reject(error);\n          }\n        );\n    });\n  }\n\n  /**\n   * Verify token and get client id\n   * @param {String} token\n   * @returns {Promise<{id: String, nickname: String, avatarUrl: String, email:String, publicKey:String}|Error>}\n   */\n  verify(token) {\n    return new Promise((resolve, reject) => {\n      let url = `${this.api.config.authBase}/verify`;\n      let data = {\n        token\n      };\n      let headers = {};\n\n      axios\n        .post(url, data, {\n          headers: headers\n        })\n        .then(\n          res => {\n            if (res.status >= 200 && res.status < 300) {\n              resolve(res.data);\n            }\n          },\n          error => {\n            this.api.onError(error);\n            reject(error);\n          }\n        );\n    });\n  }\n}\n",
+    "content": "import axios from 'axios';\r\n/**\r\n * @import * from '@/src/typedef';\r\n */\r\n\r\nexport default class Auth {\r\n  /**\r\n   * @private\r\n   * @param {Api} api\r\n   */\r\n  constructor(api) {\r\n    /**\r\n     * @private\r\n     * @type {Api}\r\n     */\r\n    this.api = api;\r\n    /**\r\n     * @private\r\n     * @type {Boolean}\r\n     */\r\n    this.isAdmin = false;\r\n  }\r\n\r\n  /**\r\n   * Create/Update user info and return token\r\n   * @param {Object} [info]\r\n   * @param {String} [info.id] Client id\r\n   * @param {String} [info.nickname]\r\n   * @param {String} [info.avatarUrl]\r\n   * @param {String} [info.email]\r\n   * @param {String} [info.publicKey]\r\n   * @returns {Promise<{token: String}|Error>}\r\n   */\r\n  sign(info = {}) {\r\n    return new Promise((resolve, reject) => {\r\n      let url = `${this.api.config.authBase}/sign`;\r\n      let data = info;\r\n      let headers = {};\r\n\r\n      axios\r\n        .post(url, data, {\r\n          headers: headers\r\n        })\r\n        .then(\r\n          res => {\r\n            if (res.status >= 200 && res.status < 300) {\r\n              resolve(res.data);\r\n            }\r\n          },\r\n          error => {\r\n            this.api.onError(error);\r\n            reject(error);\r\n          }\r\n        );\r\n    });\r\n  }\r\n\r\n  /**\r\n   * Verify token and get client id\r\n   * @param {String} token\r\n   * @returns {Promise<{id: String, nickname: String, avatarUrl: String, email:String, publicKey:String}|Error>}\r\n   */\r\n  verify(token) {\r\n    return new Promise((resolve, reject) => {\r\n      let url = `${this.api.config.authBase}/verify`;\r\n      let data = {\r\n        token\r\n      };\r\n      let headers = {};\r\n\r\n      axios\r\n        .post(url, data, {\r\n          headers: headers\r\n        })\r\n        .then(\r\n          res => {\r\n            if (res.status >= 200 && res.status < 300) {\r\n              resolve(res.data);\r\n            }\r\n          },\r\n          error => {\r\n            this.api.onError(error);\r\n            reject(error);\r\n          }\r\n        );\r\n    });\r\n  }\r\n}\r\n",
     "static": true,
     "longname": "E:/REPO/IMKit/IMKit-Chat-v3/imkit-js-api-v3/src/api/auth/index.js",
     "access": "public",
@@ -1355,7 +1355,7 @@
     "__docId__": 70,
     "kind": "file",
     "name": "src/api/file/index.js",
-    "content": "import axios from 'axios';\r\n/**\r\n * @import * from '@/src/typedef';\r\n */\r\n\r\nexport default class File {\r\n  /**\r\n   * @private\r\n   * @param {Api} api\r\n   */\r\n  constructor(api) {\r\n    /**\r\n     * @private\r\n     * @type {Api}\r\n     * */\r\n    this.api = api;\r\n    /**\r\n     * @private\r\n     * @type {Boolean}\r\n     */\r\n    this.isAdmin = false;\r\n  }\r\n\r\n  /**\r\n   * Upload File\r\n   * @param {String} bucketName\r\n   * @param {File} file\r\n   * @param {Object} extra\r\n   * @param {Function} progress\r\n   * @returns {Promise<String|Error>}\r\n   */\r\n  upload(bucketName, file, extra = {}, progress = e => {}) {\r\n    return new Promise((resolve, reject) => {\r\n      let url = `${this.api.config.domain}/files/${encodeURIComponent(\r\n        bucketName\r\n      )}`;\r\n      let data = new FormData();\r\n      let headers = this.api.getHeader(this.isAdmin);\r\n\r\n      data.append('extra', JSON.stringify(extra));\r\n      data.append('file', file);\r\n      // headers = Object.assign(headers, data.getHeaders());\r\n\r\n      axios\r\n        .post(url, data, {\r\n          headers: headers,\r\n          onUploadProgress: progress\r\n        })\r\n        .then(\r\n          res => {\r\n            if (res.status >= 200 && res.status < 300 && res.data.RC === 0) {\r\n              resolve(\r\n                `${this.api.config.domain}/files/${bucketName}/${\r\n                  res.data.result.id\r\n                }`\r\n              );\r\n            } else {\r\n              resolve(res.data);\r\n            }\r\n          },\r\n          error => {\r\n            this.api.onError(error);\r\n            reject(error);\r\n          }\r\n        );\r\n    });\r\n  }\r\n\r\n  /**\r\n   * Get File metadata\r\n   * @param {String} bucketName\r\n   * @param {String} fileId\r\n   * @returns {Promise<{AcceptRanges: String, LastModified: String, ContentLength: Number, ETag: String, ContentType: String, Metadata: Object[], extra: Object[]|Error>}\r\n   */\r\n  getMetadata(bucketName, fileId) {\r\n    return new Promise((resolve, reject) => {\r\n      let url = `${this.api.config.domain}/files/${encodeURIComponent(\r\n        bucketName\r\n      )}/${fileId}/metadata`;\r\n      let data = {};\r\n      let headers = this.api.getHeader(this.isAdmin);\r\n\r\n      axios\r\n        .get(url, {\r\n          params: data,\r\n          headers: headers\r\n        })\r\n        .then(\r\n          res => {\r\n            if (res.status >= 200 && res.status < 300 && res.data.RC === 0) {\r\n              resolve(res.data.result);\r\n            }\r\n          },\r\n          error => {\r\n            this.api.onError(error);\r\n            reject(error);\r\n          }\r\n        );\r\n    });\r\n  }\r\n\r\n  /**\r\n   * Downliad File\r\n   * @param {String} bucketName\r\n   * @param {String} fileId\r\n   * @param {Object} appendHeaders\r\n   * @param {Function} progress\r\n   */\r\n  download(bucketName, fileId, appendHeaders = {}, progress = e => {}) {\r\n    return new Promise((resolve, reject) => {\r\n      let url = `${this.api.config.domain}/files/${encodeURIComponent(\r\n        bucketName\r\n      )}/${fileId}`;\r\n      let data = {\r\n        signedUrlOnly: 1\r\n      };\r\n      let headers = this.api.getHeader(this.isAdmin);\r\n\r\n      headers = Object.assign(headers, appendHeaders);\r\n\r\n      axios\r\n        .get(url, {\r\n          params: data,\r\n          headers: headers\r\n        })\r\n        .then(\r\n          async res => {\r\n            if (res.status >= 200 && res.status < 300) {\r\n              try {\r\n                let resFile = await this.downloadFileFormRealUrl(\r\n                  res.data.result.url,\r\n                  appendHeaders,\r\n                  progress\r\n                );\r\n                resolve(resFile);\r\n              } catch (e) {\r\n                reject(e);\r\n              }\r\n            }\r\n          },\r\n          error => {\r\n            this.api.onError(error);\r\n            reject(error);\r\n          }\r\n        );\r\n    });\r\n  }\r\n  /**\r\n   * Downliad File\r\n   * @private\r\n   * @param {String} url\r\n   * @param {Object} appendHeaders\r\n   * @param {Function} progress\r\n   */\r\n  downloadFileFormRealUrl(url, appendHeaders = {}, progress = e => {}) {\r\n    return new Promise((resolve, reject) => {\r\n      let data = {};\r\n      let headers = this.api.getHeader(this.isAdmin);\r\n\r\n      headers = Object.assign(headers, appendHeaders);\r\n\r\n      axios\r\n        .get(url, {\r\n          params: data,\r\n          headers: headers,\r\n          onDownloadProgress: progress,\r\n          responseType: 'arraybuffer'\r\n        })\r\n        .then(\r\n          async res => {\r\n            if (res.status >= 200 && res.status < 300) {\r\n              resolve(res);\r\n            }\r\n          },\r\n          error => {\r\n            this.api.onError(error);\r\n            reject(error);\r\n          }\r\n        );\r\n    });\r\n  }\r\n}\r\n",
+    "content": "import axios from 'axios';\n/**\n * @import * from '@/src/typedef';\n */\n\nexport default class File {\n  /**\n   * @private\n   * @param {Api} api\n   */\n  constructor(api) {\n    /**\n     * @private\n     * @type {Api}\n     * */\n    this.api = api;\n    /**\n     * @private\n     * @type {Boolean}\n     */\n    this.isAdmin = false;\n  }\n\n  /**\n   * Upload File\n   * @param {String} bucketName\n   * @param {File} file\n   * @param {Object} extra\n   * @param {Function} progress\n   * @param {axios.cancelToken} [cancelToken]\n   * @returns {Promise<String|Error>}\n   */\n  upload(bucketName, file, extra = {}, progress = e => {}, cancelToken = null) {\n    return new Promise((resolve, reject) => {\n      let url = `${this.api.config.domain}/files/${encodeURIComponent(\n        bucketName\n      )}`;\n      let data = new FormData();\n      let headers = this.api.getHeader(this.isAdmin);\n\n      data.append('extra', JSON.stringify(extra));\n      data.append('file', file);\n      // headers = Object.assign(headers, data.getHeaders());\n\n      axios\n        .post(url, data, {\n          headers: headers,\n          onUploadProgress: progress,\n          cancelToken\n        })\n        .then(\n          res => {\n            if (res.status >= 200 && res.status < 300 && res.data.RC === 0) {\n              resolve(\n                `${this.api.config.domain}/files/${bucketName}/${res.data.result.id}`\n              );\n            } else {\n              resolve(res.data);\n            }\n          },\n          error => {\n            this.api.onError(error);\n            reject(error);\n          }\n        );\n    });\n  }\n\n  /**\n   * Get File metadata\n   * @param {String} bucketName\n   * @param {String} fileId\n   * @returns {Promise<{AcceptRanges: String, LastModified: String, ContentLength: Number, ETag: String, ContentType: String, Metadata: Object[], extra: Object[]|Error>}\n   */\n  getMetadata(bucketName, fileId) {\n    return new Promise((resolve, reject) => {\n      let url = `${this.api.config.domain}/files/${encodeURIComponent(\n        bucketName\n      )}/${fileId}/metadata`;\n      let data = {};\n      let headers = this.api.getHeader(this.isAdmin);\n\n      axios\n        .get(url, {\n          params: data,\n          headers: headers\n        })\n        .then(\n          res => {\n            if (res.status >= 200 && res.status < 300 && res.data.RC === 0) {\n              resolve(res.data.result);\n            }\n          },\n          error => {\n            this.api.onError(error);\n            reject(error);\n          }\n        );\n    });\n  }\n\n  /**\n   * 取得檔案原始路徑\n   * @param {String} bucketName\n   * @param {String} fileId\n   * @param {Object} appendHeaders\n   * @returns {Promise<{url: String|Error>}\n   */\n  getFileSignedUrl(bucketName, fileId, appendHeaders = {}) {\n    return new Promise((resolve, reject) => {\n      let url = `${this.api.config.domain}/files/${encodeURIComponent(\n        bucketName\n      )}/${fileId}`;\n      let data = {\n        signedUrlOnly: 1\n      };\n      let headers = this.api.getHeader(this.isAdmin);\n\n      headers = Object.assign(headers, appendHeaders);\n\n      axios\n        .get(url, {\n          params: data,\n          headers: headers\n        })\n        .then(\n          res => {\n            if (res.status >= 200 && res.status < 300) {\n              resolve(res.data.result.url);\n            }\n          },\n          error => {\n            this.api.onError(error);\n            reject(error);\n          }\n        );\n    });\n  }\n\n  /**\n   * Downliad File\n   * @param {String} bucketName\n   * @param {String} fileId\n   * @param {Object} appendHeaders\n   * @param {Function} progress\n   */\n  download(bucketName, fileId, appendHeaders = {}, progress = e => {}) {\n    return new Promise((resolve, reject) => {\n      let url = `${this.api.config.domain}/files/${encodeURIComponent(\n        bucketName\n      )}/${fileId}`;\n      let data = {\n        signedUrlOnly: 1\n      };\n      let headers = this.api.getHeader(this.isAdmin);\n\n      headers = Object.assign(headers, appendHeaders);\n\n      axios\n        .get(url, {\n          params: data,\n          headers: headers\n        })\n        .then(\n          res => {\n            if (res.status >= 200 && res.status < 300) {\n              try {\n                this.downloadFileFormRealUrl(\n                  res.data.result.url,\n                  appendHeaders,\n                  progress\n                ).then(resFile => {\n                  resolve(resFile);\n                });\n              } catch (e) {\n                reject(e);\n              }\n            }\n          },\n          error => {\n            this.api.onError(error);\n            reject(error);\n          }\n        );\n    });\n  }\n  /**\n   * Downliad File\n   * @private\n   * @param {String} url\n   * @param {Object} appendHeaders\n   * @param {Function} progress\n   */\n  downloadFileFormRealUrl(url, appendHeaders = {}, progress = e => {}) {\n    return new Promise((resolve, reject) => {\n      let data = {};\n      let headers = this.api.getHeader(this.isAdmin);\n\n      headers = Object.assign(headers, appendHeaders);\n\n      axios\n        .get(url, {\n          params: data,\n          headers: headers,\n          onDownloadProgress: progress,\n          responseType: 'arraybuffer'\n        })\n        .then(\n          res => {\n            if (res.status >= 200 && res.status < 300) {\n              resolve(res);\n            }\n          },\n          error => {\n            this.api.onError(error);\n            reject(error);\n          }\n        );\n    });\n  }\n}\n",
     "static": true,
     "longname": "E:/REPO/IMKit/IMKit-Chat-v3/imkit-js-api-v3/src/api/file/index.js",
     "access": "public",
@@ -1460,7 +1460,7 @@
     "longname": "src/api/file/index.js~File#upload",
     "access": "public",
     "description": "Upload File",
-    "lineNumber": 32,
+    "lineNumber": 33,
     "unknown": [
       {
         "tagName": "@returns",
@@ -1506,6 +1506,16 @@
         "spread": false,
         "optional": false,
         "name": "progress",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "axios.cancelToken"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "cancelToken",
         "description": ""
       }
     ],
@@ -1570,6 +1580,65 @@
   {
     "__docId__": 77,
     "kind": "method",
+    "name": "getFileSignedUrl",
+    "memberof": "src/api/file/index.js~File",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/api/file/index.js~File#getFileSignedUrl",
+    "access": "public",
+    "description": "取得檔案原始路徑",
+    "lineNumber": 109,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Promise<{url: String|Error>}"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "bucketName",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "fileId",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "appendHeaders",
+        "description": ""
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise<{url: String|Error>"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 78,
+    "kind": "method",
     "name": "download",
     "memberof": "src/api/file/index.js~File",
     "generator": false,
@@ -1578,7 +1647,7 @@
     "longname": "src/api/file/index.js~File#download",
     "access": "public",
     "description": "Downliad File",
-    "lineNumber": 109,
+    "lineNumber": 147,
     "params": [
       {
         "nullable": null,
@@ -1628,7 +1697,7 @@
     }
   },
   {
-    "__docId__": 78,
+    "__docId__": 79,
     "kind": "method",
     "name": "downloadFileFormRealUrl",
     "memberof": "src/api/file/index.js~File",
@@ -1638,7 +1707,7 @@
     "longname": "src/api/file/index.js~File#downloadFileFormRealUrl",
     "access": "private",
     "description": "Downliad File",
-    "lineNumber": 155,
+    "lineNumber": 194,
     "params": [
       {
         "nullable": null,
@@ -1679,10 +1748,10 @@
     }
   },
   {
-    "__docId__": 79,
+    "__docId__": 80,
     "kind": "file",
     "name": "src/api/index.js",
-    "content": "import Admin from './admin';\r\nimport Auth from './auth';\r\nimport File from './file';\r\nimport Me from './me';\r\nimport Message from './message';\r\nimport Room from './room';\r\nimport Url from './url';\r\nimport lib from '../lib';\r\n/**\r\n * @import * from '@/src/typedef';\r\n */\r\n\r\nexport default class IMKitApi {\r\n  /**\r\n   * 建立 API 物件\r\n   * @param {ApiConfig} config\r\n   */\r\n  constructor(config) {\r\n    /** @type {ApiConfig} */\r\n    this.config = config;\r\n    /** @type {Admin} */\r\n    this.admin = new Admin(this);\r\n    /** @type {Auth} */\r\n    this.auth = new Auth(this);\r\n    /** @type {File} */\r\n    this.file = new File(this);\r\n    /** @type {Me} */\r\n    this.me = new Me(this);\r\n    /** @type {Message} */\r\n    this.message = new Message(this);\r\n    /** @type {Room} */\r\n    this.room = new Room(this);\r\n    /** @type {Url} */\r\n    this.url = new Url(this);\r\n  }\r\n\r\n  /**\r\n   * @private\r\n   * @param {Boolean} isAdmin\r\n   */\r\n  getHeader(isAdmin = false) {\r\n    let header;\r\n\r\n    if (isAdmin) {\r\n      header = {\r\n        API_KEY: this.config.apiKey\r\n      };\r\n    } else {\r\n      header = {\r\n        'IM-Authorization': this.config.token,\r\n        CLIENT_KEY: this.config.clientKey\r\n      };\r\n    }\r\n    return header;\r\n  }\r\n\r\n  /**\r\n   * @private\r\n   * @param {Object} error\r\n   */\r\n  onError(error) {\r\n    if (error.response) {\r\n      if (error.response.data.RC) {\r\n        this.config.events.onAjaxError(error.response.data);\r\n      } else {\r\n        this.config.events.onAjaxError({\r\n          RC: error.response.status,\r\n          RM: error.response.statusText\r\n        });\r\n      }\r\n    }\r\n  }\r\n\r\n  /**\r\n   * 產生 RSA 金鑰，暫不支援 node.js\r\n   * @returns {Promise<{publicKey: String, privateKey: String}|Error>}\r\n   */\r\n  generateRsaKey() {\r\n    return lib.message.generateRsaKey();\r\n  }\r\n}\r\n",
+    "content": "import Admin from './admin';\nimport Auth from './auth';\nimport File from './file';\nimport Me from './me';\nimport Message from './message';\nimport Room from './room';\nimport Search from './search';\nimport Url from './url';\nimport lib from '../lib';\n/**\n * @import * from '@/src/typedef';\n */\n\nexport default class IMKitApi {\n  /**\n   * 建立 API 物件\n   * @param {ApiConfig} config\n   */\n  constructor(config) {\n    /** @type {ApiConfig} */\n    this.config = config;\n    /** @type {Admin} */\n    this.admin = new Admin(this);\n    /** @type {Auth} */\n    this.auth = new Auth(this);\n    /** @type {File} */\n    this.file = new File(this);\n    /** @type {Me} */\n    this.me = new Me(this);\n    /** @type {Message} */\n    this.message = new Message(this);\n    /** @type {Room} */\n    this.room = new Room(this);\n    /** @type {Search} */\n    this.search = new Search(this);\n    /** @type {Url} */\n    this.url = new Url(this);\n  }\n\n  /**\n   * @private\n   * @param {Boolean} isAdmin\n   */\n  getHeader(isAdmin = false) {\n    let header;\n\n    if (isAdmin) {\n      header = {\n        API_KEY: this.config.apiKey\n      };\n    } else {\n      header = {\n        'IM-Authorization': this.config.token,\n        CLIENT_KEY: this.config.clientKey\n      };\n    }\n    return header;\n  }\n\n  /**\n   * @private\n   * @param {Object} error\n   */\n  onError(error) {\n    if (error.response) {\n      if (error.response.data.RC) {\n        this.config.events.onAjaxError(error.response.data);\n      } else {\n        this.config.events.onAjaxError({\n          RC: error.response.status,\n          RM: error.response.statusText\n        });\n      }\n    }\n  }\n\n  /**\n   * 產生 RSA 金鑰，暫不支援 node.js\n   * @returns {Promise<{publicKey: String, privateKey: String}|Error>}\n   */\n  generateRsaKey() {\n    return lib.message.generateRsaKey();\n  }\n}\n",
     "static": true,
     "longname": "E:/REPO/IMKit/IMKit-Chat-v3/imkit-js-api-v3/src/api/index.js",
     "access": "public",
@@ -1690,7 +1759,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 80,
+    "__docId__": 81,
     "kind": "class",
     "name": "IMKitApi",
     "memberof": "src/api/index.js",
@@ -1701,7 +1770,7 @@
     "importPath": "imkit-js-api-v3/src/api/index.js",
     "importStyle": "IMKitApi",
     "description": "",
-    "lineNumber": 13,
+    "lineNumber": 14,
     "unknown": [
       {
         "tagName": "@import",
@@ -1711,7 +1780,7 @@
     "interface": false
   },
   {
-    "__docId__": 81,
+    "__docId__": 82,
     "kind": "constructor",
     "name": "constructor",
     "memberof": "src/api/index.js~IMKitApi",
@@ -1721,7 +1790,7 @@
     "longname": "src/api/index.js~IMKitApi#constructor",
     "access": "public",
     "description": "建立 API 物件",
-    "lineNumber": 18,
+    "lineNumber": 19,
     "params": [
       {
         "nullable": null,
@@ -1736,7 +1805,7 @@
     ]
   },
   {
-    "__docId__": 82,
+    "__docId__": 83,
     "kind": "member",
     "name": "config",
     "memberof": "src/api/index.js~IMKitApi",
@@ -1744,7 +1813,7 @@
     "longname": "src/api/index.js~IMKitApi#config",
     "access": "public",
     "description": null,
-    "lineNumber": 20,
+    "lineNumber": 21,
     "type": {
       "nullable": null,
       "types": [
@@ -1755,7 +1824,7 @@
     }
   },
   {
-    "__docId__": 83,
+    "__docId__": 84,
     "kind": "member",
     "name": "admin",
     "memberof": "src/api/index.js~IMKitApi",
@@ -1763,7 +1832,7 @@
     "longname": "src/api/index.js~IMKitApi#admin",
     "access": "public",
     "description": null,
-    "lineNumber": 22,
+    "lineNumber": 23,
     "type": {
       "nullable": null,
       "types": [
@@ -1774,7 +1843,7 @@
     }
   },
   {
-    "__docId__": 84,
+    "__docId__": 85,
     "kind": "member",
     "name": "auth",
     "memberof": "src/api/index.js~IMKitApi",
@@ -1782,7 +1851,7 @@
     "longname": "src/api/index.js~IMKitApi#auth",
     "access": "public",
     "description": null,
-    "lineNumber": 24,
+    "lineNumber": 25,
     "type": {
       "nullable": null,
       "types": [
@@ -1793,7 +1862,7 @@
     }
   },
   {
-    "__docId__": 85,
+    "__docId__": 86,
     "kind": "member",
     "name": "file",
     "memberof": "src/api/index.js~IMKitApi",
@@ -1801,7 +1870,7 @@
     "longname": "src/api/index.js~IMKitApi#file",
     "access": "public",
     "description": null,
-    "lineNumber": 26,
+    "lineNumber": 27,
     "type": {
       "nullable": null,
       "types": [
@@ -1812,7 +1881,7 @@
     }
   },
   {
-    "__docId__": 86,
+    "__docId__": 87,
     "kind": "member",
     "name": "me",
     "memberof": "src/api/index.js~IMKitApi",
@@ -1820,7 +1889,7 @@
     "longname": "src/api/index.js~IMKitApi#me",
     "access": "public",
     "description": null,
-    "lineNumber": 28,
+    "lineNumber": 29,
     "type": {
       "nullable": null,
       "types": [
@@ -1831,7 +1900,7 @@
     }
   },
   {
-    "__docId__": 87,
+    "__docId__": 88,
     "kind": "member",
     "name": "message",
     "memberof": "src/api/index.js~IMKitApi",
@@ -1839,7 +1908,7 @@
     "longname": "src/api/index.js~IMKitApi#message",
     "access": "public",
     "description": null,
-    "lineNumber": 30,
+    "lineNumber": 31,
     "type": {
       "nullable": null,
       "types": [
@@ -1850,7 +1919,7 @@
     }
   },
   {
-    "__docId__": 88,
+    "__docId__": 89,
     "kind": "member",
     "name": "room",
     "memberof": "src/api/index.js~IMKitApi",
@@ -1858,7 +1927,7 @@
     "longname": "src/api/index.js~IMKitApi#room",
     "access": "public",
     "description": null,
-    "lineNumber": 32,
+    "lineNumber": 33,
     "type": {
       "nullable": null,
       "types": [
@@ -1869,7 +1938,26 @@
     }
   },
   {
-    "__docId__": 89,
+    "__docId__": 90,
+    "kind": "member",
+    "name": "search",
+    "memberof": "src/api/index.js~IMKitApi",
+    "static": false,
+    "longname": "src/api/index.js~IMKitApi#search",
+    "access": "public",
+    "description": null,
+    "lineNumber": 35,
+    "type": {
+      "nullable": null,
+      "types": [
+        "Search"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 91,
     "kind": "member",
     "name": "url",
     "memberof": "src/api/index.js~IMKitApi",
@@ -1877,7 +1965,7 @@
     "longname": "src/api/index.js~IMKitApi#url",
     "access": "public",
     "description": null,
-    "lineNumber": 34,
+    "lineNumber": 37,
     "type": {
       "nullable": null,
       "types": [
@@ -1888,7 +1976,7 @@
     }
   },
   {
-    "__docId__": 90,
+    "__docId__": 92,
     "kind": "method",
     "name": "getHeader",
     "memberof": "src/api/index.js~IMKitApi",
@@ -1898,7 +1986,7 @@
     "longname": "src/api/index.js~IMKitApi#getHeader",
     "access": "private",
     "description": "",
-    "lineNumber": 41,
+    "lineNumber": 44,
     "params": [
       {
         "nullable": null,
@@ -1919,7 +2007,7 @@
     }
   },
   {
-    "__docId__": 91,
+    "__docId__": 93,
     "kind": "method",
     "name": "onError",
     "memberof": "src/api/index.js~IMKitApi",
@@ -1929,7 +2017,7 @@
     "longname": "src/api/index.js~IMKitApi#onError",
     "access": "private",
     "description": "",
-    "lineNumber": 61,
+    "lineNumber": 64,
     "params": [
       {
         "nullable": null,
@@ -1946,7 +2034,7 @@
     "return": null
   },
   {
-    "__docId__": 92,
+    "__docId__": 94,
     "kind": "method",
     "name": "generateRsaKey",
     "memberof": "src/api/index.js~IMKitApi",
@@ -1956,7 +2044,7 @@
     "longname": "src/api/index.js~IMKitApi#generateRsaKey",
     "access": "public",
     "description": "產生 RSA 金鑰，暫不支援 node.js",
-    "lineNumber": 78,
+    "lineNumber": 81,
     "unknown": [
       {
         "tagName": "@returns",
@@ -1974,7 +2062,7 @@
     "params": []
   },
   {
-    "__docId__": 93,
+    "__docId__": 95,
     "kind": "file",
     "name": "src/api/me/index.js",
     "content": "import axios from 'axios';\r\n/**\r\n * @import * from '@/src/typedef';\r\n */\r\n\r\nexport default class Me {\r\n  /**\r\n   * @private\r\n   * @param {Api} api\r\n   */\r\n  constructor(api) {\r\n    /**\r\n     * @private\r\n     * @type {Api}\r\n     * */\r\n    this.api = api;\r\n    /**\r\n     * @private\r\n     * @type {Boolean}\r\n     */\r\n    this.isAdmin = false;\r\n  }\r\n\r\n  /**\r\n   * Get my info\r\n   * @returns {Promise<ClientData|Error>}\r\n   */\r\n  getInfo() {\r\n    return new Promise((resolve, reject) => {\r\n      let url = `${this.api.config.domain}/me`;\r\n      let data = {};\r\n      let headers = this.api.getHeader(this.isAdmin);\r\n\r\n      axios\r\n        .get(url, {\r\n          params: data,\r\n          headers: headers\r\n        })\r\n        .then(\r\n          res => {\r\n            if (res.status >= 200 && res.status < 300 && res.data.RC === 0) {\r\n              resolve(res.data.result);\r\n            }\r\n          },\r\n          error => {\r\n            this.api.onError(error);\r\n            reject(error);\r\n          }\r\n        );\r\n    });\r\n  }\r\n\r\n  /**\r\n   * Update my info\r\n   * @param {Object} info\r\n   * @param {String} [info.avatarUrl] 大頭網址\r\n   * @param {String} [info.email]\r\n   * @param {String} [info.nickname] 暱稱\r\n   * @returns {Promise<ClientData|Error>}\r\n   */\r\n  updateInfo(info) {\r\n    return new Promise((resolve, reject) => {\r\n      let url = `${this.api.config.domain}/me`;\r\n      let data = info;\r\n      let headers = this.api.getHeader(this.isAdmin);\r\n\r\n      axios\r\n        .post(url, data, {\r\n          headers: headers\r\n        })\r\n        .then(\r\n          res => {\r\n            if (res.status >= 200 && res.status < 300 && res.data.RC === 0) {\r\n              resolve(res.data.result);\r\n            }\r\n          },\r\n          error => {\r\n            this.api.onError(error);\r\n            reject(error);\r\n          }\r\n        );\r\n    });\r\n  }\r\n\r\n  /**\r\n   * Get badge\r\n   * @returns {Promise<{badge: Number}|Error>}\r\n   */\r\n  getBadge() {\r\n    return new Promise((resolve, reject) => {\r\n      let url = `${this.api.config.domain}/me/badge`;\r\n      let data = {};\r\n      let headers = this.api.getHeader(this.isAdmin);\r\n\r\n      axios\r\n        .get(url, {\r\n          params: data,\r\n          headers: headers\r\n        })\r\n        .then(\r\n          res => {\r\n            if (res.status >= 200 && res.status < 300 && res.data.RC === 0) {\r\n              resolve(res.data.result);\r\n            }\r\n          },\r\n          error => {\r\n            this.api.onError(error);\r\n            reject(error);\r\n          }\r\n        );\r\n    });\r\n  }\r\n\r\n  /**\r\n   * subscribe\r\n   * @param {String} type ios or ???\r\n   * @param {String} token\r\n   * @returns {Promise<{_id: String, type: String, __v: Number, client: String, token: String, deviceId: String}|Error>}\r\n   */\r\n  subscribe(type, token) {\r\n    return new Promise((resolve, reject) => {\r\n      let url = `${this.api.config.domain}/me/subscribe`;\r\n      let data = {\r\n        type,\r\n        token\r\n      };\r\n      let headers = this.api.getHeader(this.isAdmin);\r\n\r\n      axios\r\n        .post(url, data, {\r\n          headers: headers\r\n        })\r\n        .then(\r\n          res => {\r\n            if (res.status >= 200 && res.status < 300 && res.data.RC === 0) {\r\n              resolve(res.data.result);\r\n            }\r\n          },\r\n          error => {\r\n            this.api.onError(error);\r\n            reject(error);\r\n          }\r\n        );\r\n    });\r\n  }\r\n\r\n  /**\r\n   * unsubscribe\r\n   * @param {String} type ios or ???\r\n   * @param {String} token\r\n   * @returns {Promise<{n: Number, ok: Number}|Error>}\r\n   */\r\n  unsubscribe(type, token) {\r\n    return new Promise((resolve, reject) => {\r\n      let url = `${this.api.config.domain}/me/unsubscribe`;\r\n      let data = {\r\n        type,\r\n        token\r\n      };\r\n      let headers = this.api.getHeader(this.isAdmin);\r\n\r\n      axios\r\n        .post(url, data, {\r\n          headers: headers\r\n        })\r\n        .then(\r\n          res => {\r\n            if (res.status >= 200 && res.status < 300 && res.data.RC === 0) {\r\n              resolve(res.data.result);\r\n            }\r\n          },\r\n          error => {\r\n            this.api.onError(error);\r\n            reject(error);\r\n          }\r\n        );\r\n    });\r\n  }\r\n\r\n  /**\r\n   * Mute room (棄用)\r\n   * @param {String} roomId\r\n   * @returns {Promise<ClientData|Error>}\r\n   */\r\n  muteRoom(roomId) {\r\n    return new Promise((resolve, reject) => {\r\n      let url = `${this.api.config.domain}/me/mute/${encodeURIComponent(\r\n        roomId\r\n      )}`;\r\n      let data = {};\r\n      let headers = this.api.getHeader(this.isAdmin);\r\n\r\n      axios\r\n        .post(url, data, {\r\n          headers: headers\r\n        })\r\n        .then(\r\n          res => {\r\n            if (res.status >= 200 && res.status < 300 && res.data.RC === 0) {\r\n              resolve(res.data.result);\r\n            }\r\n          },\r\n          error => {\r\n            this.api.onError(error);\r\n            reject(error);\r\n          }\r\n        );\r\n    });\r\n  }\r\n\r\n  /**\r\n   * UnMute room (棄用)\r\n   * @param {String} roomId\r\n   * @returns {Promise<ClientData|Error>}\r\n   */\r\n  unMuteRoom(roomId) {\r\n    return new Promise((resolve, reject) => {\r\n      let url = `${this.api.config.domain}/me/mute/${encodeURIComponent(\r\n        roomId\r\n      )}`;\r\n      let data = {};\r\n      let headers = this.api.getHeader(this.isAdmin);\r\n\r\n      axios\r\n        .delete(url, {\r\n          data: data,\r\n          headers: headers\r\n        })\r\n        .then(\r\n          res => {\r\n            if (res.status >= 200 && res.status < 300 && res.data.RC === 0) {\r\n              resolve(res.data.result);\r\n            }\r\n          },\r\n          error => {\r\n            this.api.onError(error);\r\n            reject(error);\r\n          }\r\n        );\r\n    });\r\n  }\r\n\r\n  /**\r\n   * Get Pref list\r\n   */\r\n  getPref() {\r\n    return new Promise((resolve, reject) => {\r\n      let url = `${this.api.config.domain}/me/pref`;\r\n      let headers = this.api.getHeader(this.isAdmin);\r\n\r\n      axios\r\n        .get(url, {\r\n          headers: headers\r\n        })\r\n        .then(\r\n          res => {\r\n            if (res.status >= 200 && res.status < 300 && res.data.RC === 0) {\r\n              resolve(res.data.result);\r\n            }\r\n          },\r\n          error => {\r\n            this.api.onError(error);\r\n            reject(error);\r\n          }\r\n        );\r\n    });\r\n  }\r\n\r\n  /**\r\n   * Create or Update Pref\r\n   * @param {String} key\r\n   * @param {Object} data\r\n   */\r\n  updatePref(key, data) {\r\n    return new Promise((resolve, reject) => {\r\n      let url = `${this.api.config.domain}/me/pref/${key}`;\r\n      let headers = this.api.getHeader(this.isAdmin);\r\n\r\n      axios\r\n        .post(url, data, {\r\n          headers: headers\r\n        })\r\n        .then(\r\n          res => {\r\n            if (res.status >= 200 && res.status < 300 && res.data.RC === 0) {\r\n              resolve(res.data.result);\r\n            }\r\n          },\r\n          error => {\r\n            this.api.onError(error);\r\n            reject(error);\r\n          }\r\n        );\r\n    });\r\n  }\r\n\r\n  /**\r\n   * Delete Pref\r\n   * @param {String} key\r\n   */\r\n  deletePref(key) {\r\n    return new Promise((resolve, reject) => {\r\n      let url = `${this.api.config.domain}/me/pref/${key}`;\r\n      let headers = this.api.getHeader(this.isAdmin);\r\n\r\n      axios\r\n        .delete(url, {\r\n          headers: headers\r\n        })\r\n        .then(\r\n          res => {\r\n            if (res.status >= 200 && res.status < 300 && res.data.RC === 0) {\r\n              resolve(res.data.result);\r\n            }\r\n          },\r\n          error => {\r\n            this.api.onError(error);\r\n            reject(error);\r\n          }\r\n        );\r\n    });\r\n  }\r\n}\r\n",
@@ -1985,7 +2073,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 94,
+    "__docId__": 96,
     "kind": "class",
     "name": "Me",
     "memberof": "src/api/me/index.js",
@@ -2006,7 +2094,7 @@
     "interface": false
   },
   {
-    "__docId__": 95,
+    "__docId__": 97,
     "kind": "constructor",
     "name": "constructor",
     "memberof": "src/api/me/index.js~Me",
@@ -2032,7 +2120,7 @@
     "ignore": true
   },
   {
-    "__docId__": 96,
+    "__docId__": 98,
     "kind": "member",
     "name": "api",
     "memberof": "src/api/me/index.js~Me",
@@ -2052,7 +2140,7 @@
     "ignore": true
   },
   {
-    "__docId__": 97,
+    "__docId__": 99,
     "kind": "member",
     "name": "isAdmin",
     "memberof": "src/api/me/index.js~Me",
@@ -2072,7 +2160,7 @@
     "ignore": true
   },
   {
-    "__docId__": 98,
+    "__docId__": 100,
     "kind": "method",
     "name": "getInfo",
     "memberof": "src/api/me/index.js~Me",
@@ -2100,7 +2188,7 @@
     "params": []
   },
   {
-    "__docId__": 99,
+    "__docId__": 101,
     "kind": "method",
     "name": "updateInfo",
     "memberof": "src/api/me/index.js~Me",
@@ -2169,7 +2257,7 @@
     }
   },
   {
-    "__docId__": 100,
+    "__docId__": 102,
     "kind": "method",
     "name": "getBadge",
     "memberof": "src/api/me/index.js~Me",
@@ -2197,7 +2285,7 @@
     "params": []
   },
   {
-    "__docId__": 101,
+    "__docId__": 103,
     "kind": "method",
     "name": "subscribe",
     "memberof": "src/api/me/index.js~Me",
@@ -2246,7 +2334,7 @@
     }
   },
   {
-    "__docId__": 102,
+    "__docId__": 104,
     "kind": "method",
     "name": "unsubscribe",
     "memberof": "src/api/me/index.js~Me",
@@ -2295,7 +2383,7 @@
     }
   },
   {
-    "__docId__": 103,
+    "__docId__": 105,
     "kind": "method",
     "name": "muteRoom",
     "memberof": "src/api/me/index.js~Me",
@@ -2334,7 +2422,7 @@
     }
   },
   {
-    "__docId__": 104,
+    "__docId__": 106,
     "kind": "method",
     "name": "unMuteRoom",
     "memberof": "src/api/me/index.js~Me",
@@ -2373,7 +2461,7 @@
     }
   },
   {
-    "__docId__": 105,
+    "__docId__": 107,
     "kind": "method",
     "name": "getPref",
     "memberof": "src/api/me/index.js~Me",
@@ -2392,7 +2480,7 @@
     }
   },
   {
-    "__docId__": 106,
+    "__docId__": 108,
     "kind": "method",
     "name": "updatePref",
     "memberof": "src/api/me/index.js~Me",
@@ -2432,7 +2520,7 @@
     }
   },
   {
-    "__docId__": 107,
+    "__docId__": 109,
     "kind": "method",
     "name": "deletePref",
     "memberof": "src/api/me/index.js~Me",
@@ -2462,10 +2550,10 @@
     }
   },
   {
-    "__docId__": 108,
+    "__docId__": 110,
     "kind": "file",
     "name": "src/api/message/index.js",
-    "content": "import axios from 'axios';\r\n/**\r\n * @import * from '@/src/typedef';\r\n */\r\n\r\nexport default class Message {\r\n  /**\r\n   * @private\r\n   * @param {Api} api\r\n   */\r\n  constructor(api) {\r\n    /**\r\n     * @private\r\n     * @type {Api}\r\n     * */\r\n    this.api = api;\r\n    /**\r\n     * @private\r\n     * @type {Boolean}\r\n     */\r\n    this.isAdmin = false;\r\n  }\r\n\r\n  /**\r\n   * Search message\r\n   * @param {String} [limit = 20]\r\n   * @param {Object} [q = {}]\r\n   * @param {String} [q.sender]\r\n   * @param {Object} [q.message]\r\n   * @returns {Promise<{totalCount: Number, data: MessageData[]}|Error>}\r\n   */\r\n  search(limit = 20, q = {}) {\r\n    return new Promise((resolve, reject) => {\r\n      let url = `${this.api.config.domain}/messages`;\r\n      let data = {\r\n        limit,\r\n        q\r\n      };\r\n      let headers = this.api.getHeader(this.isAdmin);\r\n\r\n      axios\r\n        .get(url, {\r\n          params: data,\r\n          headers: headers\r\n        })\r\n        .then(\r\n          res => {\r\n            if (res.status >= 200 && res.status < 300 && res.data.RC === 0) {\r\n              resolve(res.data.result);\r\n            }\r\n          },\r\n          error => {\r\n            this.api.onError(error);\r\n            reject(error);\r\n          }\r\n        );\r\n    });\r\n  }\r\n}\r\n",
+    "content": "import axios from 'axios';\n/**\n * @import * from '@/src/typedef';\n */\n\nexport default class Message {\n  /**\n   * @private\n   * @param {Api} api\n   */\n  constructor(api) {\n    /**\n     * @private\n     * @type {Api}\n     * */\n    this.api = api;\n    /**\n     * @private\n     * @type {Boolean}\n     */\n    this.isAdmin = false;\n  }\n\n  /**\n   * Search message\n   * @param {String} [limit = 20]\n   * @param {Object} [q = {}]\n   * @param {String} [q.sender]\n   * @param {Object} [q.message]\n   * @returns {Promise<{totalCount: Number, data: MessageData[]}|Error>}\n   */\n  search(limit = 20, q = {}) {\n    return new Promise((resolve, reject) => {\n      let url = `${this.api.config.domain}/messages`;\n      let data = {\n        limit,\n        q\n      };\n      let headers = this.api.getHeader(this.isAdmin);\n\n      axios\n        .get(url, {\n          params: data,\n          headers: headers\n        })\n        .then(\n          res => {\n            if (res.status >= 200 && res.status < 300 && res.data.RC === 0) {\n              resolve(res.data.result);\n            }\n          },\n          error => {\n            this.api.onError(error);\n            reject(error);\n          }\n        );\n    });\n  }\n\n  /**\n   * Search message V2\n   * @param {String} [keyword]\n   * @returns {Promise<{data: MessageData[]}|Error>}\n   */\n  searchV2(keyword) {\n    return new Promise((resolve, reject) => {\n      let url = `${this.api.config.domain}/messages/search`;\n      let data = {\n        message: keyword\n      };\n      let headers = this.api.getHeader(this.isAdmin);\n\n      axios\n        .post(url, data, {\n          headers: headers\n        })\n        .then(\n          res => {\n            if (res.status >= 200 && res.status < 300 && res.data.RC === 0) {\n              resolve(res.data.result);\n            }\n          },\n          error => {\n            this.api.onError(error);\n            reject(error);\n          }\n        );\n    });\n  }\n}\n",
     "static": true,
     "longname": "E:/REPO/IMKit/IMKit-Chat-v3/imkit-js-api-v3/src/api/message/index.js",
     "access": "public",
@@ -2473,7 +2561,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 109,
+    "__docId__": 111,
     "kind": "class",
     "name": "Message",
     "memberof": "src/api/message/index.js",
@@ -2494,7 +2582,7 @@
     "interface": false
   },
   {
-    "__docId__": 110,
+    "__docId__": 112,
     "kind": "constructor",
     "name": "constructor",
     "memberof": "src/api/message/index.js~Message",
@@ -2520,7 +2608,7 @@
     "ignore": true
   },
   {
-    "__docId__": 111,
+    "__docId__": 113,
     "kind": "member",
     "name": "api",
     "memberof": "src/api/message/index.js~Message",
@@ -2540,7 +2628,7 @@
     "ignore": true
   },
   {
-    "__docId__": 112,
+    "__docId__": 114,
     "kind": "member",
     "name": "isAdmin",
     "memberof": "src/api/message/index.js~Message",
@@ -2560,7 +2648,7 @@
     "ignore": true
   },
   {
-    "__docId__": 113,
+    "__docId__": 115,
     "kind": "method",
     "name": "search",
     "memberof": "src/api/message/index.js~Message",
@@ -2633,10 +2721,49 @@
     }
   },
   {
-    "__docId__": 114,
+    "__docId__": 116,
+    "kind": "method",
+    "name": "searchV2",
+    "memberof": "src/api/message/index.js~Message",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/api/message/index.js~Message#searchV2",
+    "access": "public",
+    "description": "Search message V2",
+    "lineNumber": 65,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Promise<{data: MessageData[]}|Error>}"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "keyword",
+        "description": ""
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise<{data: MessageData[]}|Error>"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 117,
     "kind": "file",
     "name": "src/api/room/index.js",
-    "content": "import axios from 'axios';\nimport lib from '../../lib';\n/**\n * @import * from '@/src/typedef';\n */\n\nexport default class Room {\n  /**\n   * @private\n   * @param {Api} api\n   */\n  constructor(api) {\n    /**\n     * @private\n     * @type {Api}\n     * */\n    this.api = api;\n    /**\n     * @private\n     * @type {Boolean}\n     */\n    this.isAdmin = false;\n  }\n\n  /**\n   * Get rooms list\n   * @param {Number} [limit = 20] 最大回傳筆數\n   * @param {Number} [skip = 0] 從第幾筆開始\n   * @param {{members: String}} [q = {}]\n   * @param {String} [sort] 排序方式\n   * @returns {Promise<{totalCount: Number, data: RoomData[]}|Error>}\n   */\n  getRoomsList(limit = 20, skip = 0, q = {}, sort = null) {\n    return new Promise((resolve, reject) => {\n      let url = `${this.api.config.domain}/rooms`;\n      let data = {\n        limit,\n        skip,\n        q\n      };\n      let headers = this.api.getHeader(this.isAdmin);\n\n      if (sort) {\n        data.sort = sort;\n      }\n      axios\n        .get(url, {\n          params: data,\n          headers: headers\n        })\n        .then(\n          res => {\n            if (res.status >= 200 && res.status < 300 && res.data.RC === 0) {\n              // 解密訊息\n              if (res.data.result.data) {\n                res.data.result.data.forEach(room => {\n                  if (room.lastMessage) {\n                    room.lastMessage = lib.message.decrypt(\n                      room.lastMessage,\n                      this.api.config.privateKey,\n                      this.api.config.clientId\n                    );\n                  }\n                });\n              }\n\n              resolve(res.data.result);\n            }\n          },\n          error => {\n            this.api.onError(error);\n            reject(error);\n          }\n        );\n    });\n  }\n\n  /**\n   * Get room\n   * @param {String} roomId Room id\n   * @returns {Promise<RoomData|Error>}\n   */\n  getRoom(roomId) {\n    return new Promise((resolve, reject) => {\n      let url = `${this.api.config.domain}/rooms/${encodeURIComponent(roomId)}`;\n      let data = {};\n      let headers = this.api.getHeader(this.isAdmin);\n\n      axios\n        .get(url, {\n          params: data,\n          headers: headers\n        })\n        .then(\n          res => {\n            if (res.status >= 200 && res.status < 300 && res.data.RC === 0) {\n              // 解密訊息\n              if (res.data.result.lastMessage) {\n                res.data.result.lastMessage = lib.message.decrypt(\n                  res.data.result.lastMessage,\n                  this.api.config.privateKey,\n                  this.api.config.clientId\n                );\n              }\n              resolve(res.data.result);\n            }\n          },\n          error => {\n            this.api.onError(error);\n            reject(error);\n          }\n        );\n    });\n  }\n\n  /**\n   * Create room\n   * @param {Object} roomInfo\n   * @param {String} [roomInfo._id]\n   * @param {String} [roomInfo.name]\n   * @param {String} [roomInfo.description]\n   * @param {String} [roomInfo.cover] Image url\n   * @param {String} [roomInfo.roomType] 房間 type, \"direct\" or \"group\"\n   * @param {Boolean} [roomInfo.encrypted] 房間訊息是否加密\n   * @returns {Promise<RoomData|Error>}\n   */\n  createRoom(roomInfo) {\n    return new Promise((resolve, reject) => {\n      let url = `${this.api.config.domain}/rooms`;\n      let data = roomInfo;\n      let headers = this.api.getHeader(this.isAdmin);\n\n      axios\n        .post(url, data, {\n          headers: headers\n        })\n        .then(\n          res => {\n            if (res.status >= 200 && res.status < 300 && res.data.RC === 0) {\n              resolve(res.data.result);\n            }\n          },\n          error => {\n            this.api.onError(error);\n            reject(error);\n          }\n        );\n    });\n  }\n\n  /**\n   * Create And Join Room\n   * @param {Object} roomInfo\n   * @param {String} [roomInfo._id]\n   * @param {String} [roomInfo.name]\n   * @param {String} [roomInfo.description]\n   * @param {String} [roomInfo.cover] Image url\n   * @param {String} [roomInfo.roomType] 房間 type, \"direct\" or \"group\"\n   * @param {Boolean} [roomInfo.encrypted] 房間訊息是否加密\n   * @param {String[]|String} [roomInfo.invitee] 要邀請的人\n   * @returns {Promise<RoomData|Error>}\n   */\n  createAndJoinRoom(roomInfo) {\n    return new Promise((resolve, reject) => {\n      let url = `${this.api.config.domain}/rooms/createAndJoin`;\n      let data = roomInfo;\n      let headers = this.api.getHeader(this.isAdmin);\n\n      axios\n        .post(url, data, {\n          headers: headers\n        })\n        .then(\n          res => {\n            if (res.status >= 200 && res.status < 300 && res.data.RC === 0) {\n              resolve(res.data.result);\n            }\n          },\n          error => {\n            this.api.onError(error);\n            reject(error);\n          }\n        );\n    });\n  }\n\n  /**\n   * Update room\n   * @param {String} roomId\n   * @param {Object} roomInfo\n   * @param {String} [roomInfo.name]\n   * @param {String} [roomInfo.description]\n   * @param {String} [roomInfo.cover] Image url\n   * @param {Boolean} [roomInfo.encrypted] 房間訊息是否加密\n   * @returns {Promise<RoomData|Error>}\n   */\n  updateRoom(roomId, roomInfo) {\n    return new Promise((resolve, reject) => {\n      let url = `${this.api.config.domain}/rooms/${encodeURIComponent(roomId)}`;\n      let data = roomInfo;\n\n      let headers = this.api.getHeader(this.isAdmin);\n\n      axios\n        .put(url, data, {\n          headers: headers\n        })\n        .then(\n          res => {\n            if (res.status >= 200 && res.status < 300 && res.data.RC === 0) {\n              resolve(res.data.result);\n            }\n          },\n          error => {\n            this.api.onError(error);\n            reject(error);\n          }\n        );\n    });\n  }\n\n  /**\n   * 更新個人的房間資訊\n   * @param {String} roomId\n   * @param {RoomPref} pref\n   */\n  updateRoomPref(roomId, pref) {\n    return new Promise((resolve, reject) => {\n      let url = `${this.api.config.domain}/roomPrefs/${encodeURIComponent(\n        roomId\n      )}`;\n      let data = pref;\n\n      let headers = this.api.getHeader(this.isAdmin);\n\n      axios\n        .post(url, data, {\n          headers: headers\n        })\n        .then(\n          res => {\n            if (res.status >= 200 && res.status < 300 && res.data.RC === 0) {\n              resolve(res.data.result);\n            }\n          },\n          error => {\n            this.api.onError(error);\n            reject(error);\n          }\n        );\n    });\n  }\n\n  /**\n   * Update room bot\n   * @param {String} roomId\n   * @param {Object} roomInfo\n   * @param {String} [roomInfo.botState]\n   * @returns {Promise<RoomData|Error>}\n   */\n  updateRoomBot(roomId, roomInfo) {\n    return new Promise((resolve, reject) => {\n      let url = `${this.api.config.domain}/rooms/${encodeURIComponent(\n        roomId\n      )}/bot`;\n      let data = roomInfo;\n\n      let headers = this.api.getHeader(this.isAdmin);\n\n      axios\n        .put(url, data, {\n          headers: headers\n        })\n        .then(\n          res => {\n            if (res.status >= 200 && res.status < 300 && res.data.RC === 0) {\n              resolve(res.data.result);\n            }\n          },\n          error => {\n            this.api.onError(error);\n            reject(error);\n          }\n        );\n    });\n  }\n\n  /**\n   * 已讀\n   * @param {String} roomId\n   * @param {String} messageId\n   * @returns {Promise<{client:String, lastRead:String, badge:Number}|Error>}\n   */\n  updateLastRead(roomId, messageId) {\n    return new Promise((resolve, reject) => {\n      let url = `${this.api.config.domain}/rooms/${encodeURIComponent(\n        roomId\n      )}/lastRead`;\n      let data = {\n        message: messageId\n      };\n\n      let headers = this.api.getHeader(this.isAdmin);\n\n      axios\n        .put(url, data, {\n          headers: headers\n        })\n        .then(\n          res => {\n            if (res.status >= 200 && res.status < 300 && res.data.RC === 0) {\n              resolve(res.data.result);\n            }\n          },\n          error => {\n            this.api.onError(error);\n            reject(error);\n          }\n        );\n    });\n  }\n\n  /**\n   * Delete room\n   * @param {String} roomId\n   * @returns {Promise<{n: Number, nModified: Number, ok: Number}|Error>}\n   */\n  deleteRoom(roomId) {\n    return new Promise((resolve, reject) => {\n      let url = `${this.api.config.domain}/rooms/${encodeURIComponent(roomId)}`;\n      let data = {};\n      let headers = this.api.getHeader(this.isAdmin);\n\n      axios\n        .delete(url, {\n          data: data,\n          headers: headers\n        })\n        .then(\n          res => {\n            if (res.status >= 200 && res.status < 300 && res.data.RC === 0) {\n              resolve(res.data.result);\n            }\n          },\n          error => {\n            this.api.onError(error);\n            reject(error);\n          }\n        );\n    });\n  }\n\n  /**\n   * Join room\n   * @param {String} roomId\n   * @returns {Promise<RoomData|Error>}\n   */\n  joinRoom(roomId) {\n    return new Promise((resolve, reject) => {\n      let url = `${this.api.config.domain}/rooms/${encodeURIComponent(\n        roomId\n      )}/join`;\n      let data = {};\n      let headers = this.api.getHeader(this.isAdmin);\n\n      axios\n        .post(url, data, {\n          headers: headers\n        })\n        .then(\n          res => {\n            if (res.status >= 200 && res.status < 300 && res.data.RC === 0) {\n              resolve(res.data.result);\n            }\n          },\n          error => {\n            this.api.onError(error);\n            reject(error);\n          }\n        );\n    });\n  }\n\n  /**\n   * Add member to room\n   * @param {String} roomId\n   * @param {String} uid\n   * @returns {Promise<RoomData|Error>}\n   */\n  addMember(roomId, uid) {\n    return new Promise((resolve, reject) => {\n      let url = `${this.api.config.domain}/rooms/${encodeURIComponent(\n        roomId\n      )}/members/${encodeURIComponent(uid)}`;\n      let data = {};\n      let headers = this.api.getHeader(this.isAdmin);\n\n      axios\n        .post(url, data, {\n          headers: headers\n        })\n        .then(\n          res => {\n            if (res.status >= 200 && res.status < 300 && res.data.RC === 0) {\n              resolve(res.data.result);\n            }\n          },\n          error => {\n            this.api.onError(error);\n            reject(error);\n          }\n        );\n    });\n  }\n\n  /**\n   * Add members to room\n   * @param {String} roomId\n   * @param {String[]} invitees\n   * @returns {Promise<RoomData|Error>}\n   */\n  addMembers(roomId, invitees) {\n    return new Promise((resolve, reject) => {\n      let url = `${this.api.config.domain}/rooms/${encodeURIComponent(\n        roomId\n      )}/members/`;\n      let data = { invitees };\n      let headers = this.api.getHeader(this.isAdmin);\n\n      axios\n        .post(url, data, {\n          headers: headers\n        })\n        .then(\n          res => {\n            if (res.status >= 200 && res.status < 300 && res.data.RC === 0) {\n              resolve(res.data.result);\n            }\n          },\n          error => {\n            this.api.onError(error);\n            reject(error);\n          }\n        );\n    });\n  }\n\n  /**\n   * Delete member from room\n   * @param {String} roomId\n   * @param {String} uid\n   * @returns {Promise<RoomData|Error>}\n   */\n  deleteMember(roomId, uid) {\n    return new Promise((resolve, reject) => {\n      let url = `${this.api.config.domain}/rooms/${encodeURIComponent(\n        roomId\n      )}/members/${encodeURIComponent(uid)}`;\n      let data = {};\n      let headers = this.api.getHeader(this.isAdmin);\n\n      axios\n        .delete(url, {\n          data: data,\n          headers: headers\n        })\n        .then(\n          res => {\n            if (res.status >= 200 && res.status < 300 && res.data.RC === 0) {\n              resolve(res.data.result);\n            }\n          },\n          error => {\n            this.api.onError(error);\n            reject(error);\n          }\n        );\n    });\n  }\n\n  /**\n   * Tell other room members, I am Typing\n   * @param {String} roomId\n   * @param {String} message\n   * @returns {Promise<{message: String, room: String, sender: String}|Error>}\n   */\n  typing(roomId, message) {\n    return new Promise((resolve, reject) => {\n      let url = `${this.api.config.domain}/rooms/${encodeURIComponent(\n        roomId\n      )}/typing`;\n      let data = {\n        message\n      };\n      let headers = this.api.getHeader(this.isAdmin);\n\n      axios\n        .post(url, data, {\n          headers: headers\n        })\n        .then(\n          res => {\n            if (res.status >= 200 && res.status < 300 && res.data.RC === 0) {\n              resolve(res.data.result);\n            }\n          },\n          error => {\n            this.api.onError(error);\n            reject(error);\n          }\n        );\n    });\n  }\n\n  /**\n   * Send Message\n   * @param {RoomData} room\n   * @param {MessageInfo} message\n   * @returns {Promise<MessageData|Error>}\n   */\n  sendMessage(room, message) {\n    return new Promise((resolve, reject) => {\n      let url = `${this.api.config.domain}/rooms/${encodeURIComponent(\n        room._id\n      )}/message`;\n\n      // 加密訊息\n      let data = lib.message.encrypt(room, message);\n      let headers = this.api.getHeader(this.isAdmin);\n\n      axios\n        .post(url, data, {\n          headers: headers\n        })\n        .then(\n          res => {\n            if (res.status >= 200 && res.status < 300 && res.data.RC === 0) {\n              resolve(res.data.result);\n            }\n          },\n          error => {\n            this.api.onError(error);\n            reject(error);\n          }\n        );\n    });\n  }\n\n  /**\n   * Update member property\n   * @param {String} roomId\n   * @param {String} clientId\n   * @param {Object} property\n   * @param {String} property.property\n   * @param {String} property.value\n   * @returns {Promise<{client: String, rule: String}|Error>}\n   */\n  updateMemberProperty(roomId, clientId, property) {\n    return new Promise((resolve, reject) => {\n      let url = `${this.api.config.domain}/rooms/${encodeURIComponent(\n        roomId\n      )}/member/${encodeURIComponent(clientId)}`;\n      let data = property;\n\n      let headers = this.api.getHeader(this.isAdmin);\n\n      axios\n        .put(url, data, {\n          headers: headers\n        })\n        .then(\n          res => {\n            if (res.status >= 200 && res.status < 300 && res.data.RC === 0) {\n              resolve(res.data.result);\n            }\n          },\n          error => {\n            this.api.onError(error);\n            reject(error);\n          }\n        );\n    });\n  }\n\n  /**\n   * Get room messages list\n   * @param {String} roomId\n   * @param {Number} limit\n   * @param {String} beforeMessage Message id\n   * @returns {Promise<{totalCount: Number, data: MessageData[]}|Error>}\n   */\n  getRoomMessages(roomId, limit = 20, beforeMessage = null) {\n    return new Promise((resolve, reject) => {\n      let url = `${this.api.config.domain}/rooms/${encodeURIComponent(\n        roomId\n      )}/messages`;\n      let data = {\n        limit,\n        beforeMessage\n      };\n      let headers = this.api.getHeader(this.isAdmin);\n\n      axios\n        .get(url, {\n          params: data,\n          headers: headers\n        })\n        .then(\n          res => {\n            if (res.status >= 200 && res.status < 300 && res.data.RC === 0) {\n              // 解密訊息\n              res.data.result.data = res.data.result.data.map(message => {\n                return lib.message.decrypt(\n                  message,\n                  this.api.config.privateKey,\n                  this.api.config.clientId\n                );\n              });\n              resolve(res.data.result);\n            }\n          },\n          error => {\n            this.api.onError(error);\n            reject(error);\n          }\n        );\n    });\n  }\n\n  /**\n   * Get room messages count after timeInMS\n   * @param {String} roomId\n   * @param {Number} [timeInMS = 0]\n   * @returns {Promise<{count: Number}|Error>}\n   */\n  getRoomMessagesCount(roomId, timeInMS = 0) {\n    return new Promise((resolve, reject) => {\n      let url = `${this.api.config.domain}/rooms/${encodeURIComponent(\n        roomId\n      )}/count`;\n      let data = {\n        timeInMS\n      };\n      let headers = this.api.getHeader(this.isAdmin);\n\n      axios\n        .get(url, {\n          params: data,\n          headers: headers\n        })\n        .then(\n          res => {\n            if (res.status >= 200 && res.status < 300 && res.data.RC === 0) {\n              resolve(res.data.result);\n            }\n          },\n          error => {\n            this.api.onError(error);\n            reject(error);\n          }\n        );\n    });\n  }\n}\n",
+    "content": "import axios from 'axios';\nimport lib from '../../lib';\n/**\n * @import * from '@/src/typedef';\n */\n\nexport default class Room {\n  /**\n   * @private\n   * @param {Api} api\n   */\n  constructor(api) {\n    /**\n     * @private\n     * @type {Api}\n     * */\n    this.api = api;\n    /**\n     * @private\n     * @type {Boolean}\n     */\n    this.isAdmin = false;\n  }\n\n  /**\n   * Get rooms list\n   * @param {Number} [limit = 20] 最大回傳筆數\n   * @param {Number} [skip = 0] 從第幾筆開始\n   * @param {{members: String}} [q = {}]\n   * @param {String} [sort] 排序方式\n   * @returns {Promise<{totalCount: Number, data: RoomData[]}|Error>}\n   */\n  getRoomsList(limit = 20, skip = 0, q = {}, sort = null) {\n    return new Promise((resolve, reject) => {\n      let url = `${this.api.config.domain}/rooms`;\n      let data = {\n        limit,\n        skip,\n        q\n      };\n      let headers = this.api.getHeader(this.isAdmin);\n\n      if (sort) {\n        data.sort = sort;\n      }\n      axios\n        .get(url, {\n          params: data,\n          headers: headers\n        })\n        .then(\n          res => {\n            if (res.status >= 200 && res.status < 300 && res.data.RC === 0) {\n              // 解密訊息\n              if (res.data.result.data) {\n                res.data.result.data.forEach(room => {\n                  if (room.lastMessage) {\n                    room.lastMessage = lib.message.decrypt(\n                      room.lastMessage,\n                      this.api.config.privateKey,\n                      this.api.config.clientId\n                    );\n                  }\n                });\n              }\n\n              resolve(res.data.result);\n            }\n          },\n          error => {\n            this.api.onError(error);\n            reject(error);\n          }\n        );\n    });\n  }\n\n  /**\n   * Get room\n   * @param {String} roomId Room id\n   * @returns {Promise<RoomData|Error>}\n   */\n  getRoom(roomId) {\n    return new Promise((resolve, reject) => {\n      let url = `${this.api.config.domain}/rooms/${encodeURIComponent(roomId)}`;\n      let data = {};\n      let headers = this.api.getHeader(this.isAdmin);\n\n      axios\n        .get(url, {\n          params: data,\n          headers: headers\n        })\n        .then(\n          res => {\n            if (res.status >= 200 && res.status < 300 && res.data.RC === 0) {\n              // 解密訊息\n              if (res.data.result.lastMessage) {\n                res.data.result.lastMessage = lib.message.decrypt(\n                  res.data.result.lastMessage,\n                  this.api.config.privateKey,\n                  this.api.config.clientId\n                );\n              }\n              resolve(res.data.result);\n            }\n          },\n          error => {\n            this.api.onError(error);\n            reject(error);\n          }\n        );\n    });\n  }\n\n  /**\n   * Create room\n   * @param {Object} roomInfo\n   * @param {String} [roomInfo._id]\n   * @param {String} [roomInfo.name]\n   * @param {String} [roomInfo.description]\n   * @param {String} [roomInfo.cover] Image url\n   * @param {String} [roomInfo.roomType] 房間 type, \"direct\" or \"group\"\n   * @param {Boolean} [roomInfo.encrypted] 房間訊息是否加密\n   * @returns {Promise<RoomData|Error>}\n   */\n  createRoom(roomInfo) {\n    return new Promise((resolve, reject) => {\n      let url = `${this.api.config.domain}/rooms`;\n      let data = roomInfo;\n      let headers = this.api.getHeader(this.isAdmin);\n\n      axios\n        .post(url, data, {\n          headers: headers\n        })\n        .then(\n          res => {\n            if (res.status >= 200 && res.status < 300 && res.data.RC === 0) {\n              resolve(res.data.result);\n            }\n          },\n          error => {\n            this.api.onError(error);\n            reject(error);\n          }\n        );\n    });\n  }\n\n  /**\n   * Create And Join Room\n   * @param {Object} roomInfo\n   * @param {String} [roomInfo._id]\n   * @param {String} [roomInfo.name]\n   * @param {String} [roomInfo.description]\n   * @param {String} [roomInfo.cover] Image url\n   * @param {String} [roomInfo.roomType] 房間 type, \"direct\" or \"group\"\n   * @param {Boolean} [roomInfo.encrypted] 房間訊息是否加密\n   * @param {String[]|String} [roomInfo.invitee] 要邀請的人\n   * @returns {Promise<RoomData|Error>}\n   */\n  createAndJoinRoom(roomInfo) {\n    return new Promise((resolve, reject) => {\n      let url = `${this.api.config.domain}/rooms/createAndJoin`;\n      let data = roomInfo;\n      let headers = this.api.getHeader(this.isAdmin);\n\n      axios\n        .post(url, data, {\n          headers: headers\n        })\n        .then(\n          res => {\n            if (res.status >= 200 && res.status < 300 && res.data.RC === 0) {\n              resolve(res.data.result);\n            }\n          },\n          error => {\n            this.api.onError(error);\n            reject(error);\n          }\n        );\n    });\n  }\n\n  /**\n   * Update room\n   * @param {String} roomId\n   * @param {Object} roomInfo\n   * @param {String} [roomInfo.name]\n   * @param {String} [roomInfo.description]\n   * @param {String} [roomInfo.cover] Image url\n   * @param {Boolean} [roomInfo.encrypted] 房間訊息是否加密\n   * @returns {Promise<RoomData|Error>}\n   */\n  updateRoom(roomId, roomInfo) {\n    return new Promise((resolve, reject) => {\n      let url = `${this.api.config.domain}/rooms/${encodeURIComponent(roomId)}`;\n      let data = roomInfo;\n\n      let headers = this.api.getHeader(this.isAdmin);\n\n      axios\n        .put(url, data, {\n          headers: headers\n        })\n        .then(\n          res => {\n            if (res.status >= 200 && res.status < 300 && res.data.RC === 0) {\n              resolve(res.data.result);\n            }\n          },\n          error => {\n            this.api.onError(error);\n            reject(error);\n          }\n        );\n    });\n  }\n\n  /**\n   * 更新個人的房間資訊\n   * @param {String} roomId\n   * @param {RoomPref} pref\n   */\n  updateRoomPref(roomId, pref) {\n    return new Promise((resolve, reject) => {\n      let url = `${this.api.config.domain}/roomPrefs/${encodeURIComponent(\n        roomId\n      )}`;\n      let data = pref;\n\n      let headers = this.api.getHeader(this.isAdmin);\n\n      axios\n        .post(url, data, {\n          headers: headers\n        })\n        .then(\n          res => {\n            if (res.status >= 200 && res.status < 300 && res.data.RC === 0) {\n              resolve(res.data.result);\n            }\n          },\n          error => {\n            this.api.onError(error);\n            reject(error);\n          }\n        );\n    });\n  }\n\n  /**\n   * Update room bot\n   * @param {String} roomId\n   * @param {Object} roomInfo\n   * @param {String} [roomInfo.botState]\n   * @returns {Promise<RoomData|Error>}\n   */\n  updateRoomBot(roomId, roomInfo) {\n    return new Promise((resolve, reject) => {\n      let url = `${this.api.config.domain}/rooms/${encodeURIComponent(\n        roomId\n      )}/bot`;\n      let data = roomInfo;\n\n      let headers = this.api.getHeader(this.isAdmin);\n\n      axios\n        .put(url, data, {\n          headers: headers\n        })\n        .then(\n          res => {\n            if (res.status >= 200 && res.status < 300 && res.data.RC === 0) {\n              resolve(res.data.result);\n            }\n          },\n          error => {\n            this.api.onError(error);\n            reject(error);\n          }\n        );\n    });\n  }\n\n  /**\n   * 已讀\n   * @param {String} roomId\n   * @param {String} messageId\n   * @returns {Promise<{client:String, lastRead:String, badge:Number}|Error>}\n   */\n  updateLastRead(roomId, messageId) {\n    return new Promise((resolve, reject) => {\n      let url = `${this.api.config.domain}/rooms/${encodeURIComponent(\n        roomId\n      )}/lastRead`;\n      let data = {\n        message: messageId\n      };\n\n      let headers = this.api.getHeader(this.isAdmin);\n\n      axios\n        .put(url, data, {\n          headers: headers\n        })\n        .then(\n          res => {\n            if (res.status >= 200 && res.status < 300 && res.data.RC === 0) {\n              resolve(res.data.result);\n            }\n          },\n          error => {\n            this.api.onError(error);\n            reject(error);\n          }\n        );\n    });\n  }\n\n  /**\n   * Delete room\n   * @param {String} roomId\n   * @returns {Promise<{n: Number, nModified: Number, ok: Number}|Error>}\n   */\n  deleteRoom(roomId) {\n    return new Promise((resolve, reject) => {\n      let url = `${this.api.config.domain}/rooms/${encodeURIComponent(roomId)}`;\n      let data = {};\n      let headers = this.api.getHeader(this.isAdmin);\n\n      axios\n        .delete(url, {\n          data: data,\n          headers: headers\n        })\n        .then(\n          res => {\n            if (res.status >= 200 && res.status < 300 && res.data.RC === 0) {\n              resolve(res.data.result);\n            }\n          },\n          error => {\n            this.api.onError(error);\n            reject(error);\n          }\n        );\n    });\n  }\n\n  /**\n   * Join room\n   * @param {String} roomId\n   * @returns {Promise<RoomData|Error>}\n   */\n  joinRoom(roomId) {\n    return new Promise((resolve, reject) => {\n      let url = `${this.api.config.domain}/rooms/${encodeURIComponent(\n        roomId\n      )}/join`;\n      let data = {};\n      let headers = this.api.getHeader(this.isAdmin);\n\n      axios\n        .post(url, data, {\n          headers: headers\n        })\n        .then(\n          res => {\n            if (res.status >= 200 && res.status < 300 && res.data.RC === 0) {\n              resolve(res.data.result);\n            }\n          },\n          error => {\n            this.api.onError(error);\n            reject(error);\n          }\n        );\n    });\n  }\n\n  /**\n   * Add member to room\n   * @param {String} roomId\n   * @param {String} uid\n   * @returns {Promise<RoomData|Error>}\n   */\n  addMember(roomId, uid) {\n    return new Promise((resolve, reject) => {\n      let url = `${this.api.config.domain}/rooms/${encodeURIComponent(\n        roomId\n      )}/members/${encodeURIComponent(uid)}`;\n      let data = {};\n      let headers = this.api.getHeader(this.isAdmin);\n\n      axios\n        .post(url, data, {\n          headers: headers\n        })\n        .then(\n          res => {\n            if (res.status >= 200 && res.status < 300 && res.data.RC === 0) {\n              resolve(res.data.result);\n            }\n          },\n          error => {\n            this.api.onError(error);\n            reject(error);\n          }\n        );\n    });\n  }\n\n  /**\n   * Add members to room\n   * @param {String} roomId\n   * @param {String[]} invitees\n   * @returns {Promise<RoomData|Error>}\n   */\n  addMembers(roomId, invitees) {\n    return new Promise((resolve, reject) => {\n      let url = `${this.api.config.domain}/rooms/${encodeURIComponent(\n        roomId\n      )}/members/`;\n      let data = { invitees };\n      let headers = this.api.getHeader(this.isAdmin);\n\n      axios\n        .post(url, data, {\n          headers: headers\n        })\n        .then(\n          res => {\n            if (res.status >= 200 && res.status < 300 && res.data.RC === 0) {\n              resolve(res.data.result);\n            }\n          },\n          error => {\n            this.api.onError(error);\n            reject(error);\n          }\n        );\n    });\n  }\n\n  /**\n   * Delete member from room\n   * @param {String} roomId\n   * @param {String} uid\n   * @returns {Promise<RoomData|Error>}\n   */\n  deleteMember(roomId, uid) {\n    return new Promise((resolve, reject) => {\n      let url = `${this.api.config.domain}/rooms/${encodeURIComponent(\n        roomId\n      )}/members/${encodeURIComponent(uid)}`;\n      let data = {};\n      let headers = this.api.getHeader(this.isAdmin);\n\n      axios\n        .delete(url, {\n          data: data,\n          headers: headers\n        })\n        .then(\n          res => {\n            if (res.status >= 200 && res.status < 300 && res.data.RC === 0) {\n              resolve(res.data.result);\n            }\n          },\n          error => {\n            this.api.onError(error);\n            reject(error);\n          }\n        );\n    });\n  }\n\n  /**\n   * Tell other room members, I am Typing\n   * @param {String} roomId\n   * @param {String} message\n   * @returns {Promise<{message: String, room: String, sender: String}|Error>}\n   */\n  typing(roomId, message) {\n    return new Promise((resolve, reject) => {\n      let url = `${this.api.config.domain}/rooms/${encodeURIComponent(\n        roomId\n      )}/typing`;\n      let data = {\n        message\n      };\n      let headers = this.api.getHeader(this.isAdmin);\n\n      axios\n        .post(url, data, {\n          headers: headers\n        })\n        .then(\n          res => {\n            if (res.status >= 200 && res.status < 300 && res.data.RC === 0) {\n              resolve(res.data.result);\n            }\n          },\n          error => {\n            this.api.onError(error);\n            reject(error);\n          }\n        );\n    });\n  }\n\n  /**\n   * Send Message\n   * @param {RoomData} room\n   * @param {MessageInfo} message\n   * @returns {Promise<MessageData|Error>}\n   */\n  sendMessage(room, message) {\n    return new Promise((resolve, reject) => {\n      let url = `${this.api.config.domain}/rooms/${encodeURIComponent(\n        room._id\n      )}/message`;\n\n      // 加密訊息\n      let data = lib.message.encrypt(room, message);\n      let headers = this.api.getHeader(this.isAdmin);\n\n      axios\n        .post(url, data, {\n          headers: headers\n        })\n        .then(\n          res => {\n            if (res.status >= 200 && res.status < 300 && res.data.RC === 0) {\n              resolve(res.data.result);\n            }\n          },\n          error => {\n            this.api.onError(error);\n            reject(error);\n          }\n        );\n    });\n  }\n\n  /**\n   * Update member property\n   * @param {String} roomId\n   * @param {String} clientId\n   * @param {Object} property\n   * @param {String} property.property\n   * @param {String} property.value\n   * @returns {Promise<{client: String, rule: String}|Error>}\n   */\n  updateMemberProperty(roomId, clientId, property) {\n    return new Promise((resolve, reject) => {\n      let url = `${this.api.config.domain}/rooms/${encodeURIComponent(\n        roomId\n      )}/member/${encodeURIComponent(clientId)}`;\n      let data = property;\n\n      let headers = this.api.getHeader(this.isAdmin);\n\n      axios\n        .put(url, data, {\n          headers: headers\n        })\n        .then(\n          res => {\n            if (res.status >= 200 && res.status < 300 && res.data.RC === 0) {\n              resolve(res.data.result);\n            }\n          },\n          error => {\n            this.api.onError(error);\n            reject(error);\n          }\n        );\n    });\n  }\n\n  /**\n   * Get room messages list\n   * @param {String} roomId\n   * @param {Number} limit\n   * @param {String} beforeMessage Message id\n   * @returns {Promise<{totalCount: Number, data: MessageData[]}|Error>}\n   */\n  getRoomMessages(roomId, limit = 20, beforeMessage = null) {\n    return new Promise((resolve, reject) => {\n      let url = `${this.api.config.domain}/rooms/${encodeURIComponent(\n        roomId\n      )}/messages`;\n      let data = {\n        limit,\n        beforeMessage\n      };\n      let headers = this.api.getHeader(this.isAdmin);\n\n      axios\n        .get(url, {\n          params: data,\n          headers: headers\n        })\n        .then(\n          res => {\n            if (res.status >= 200 && res.status < 300 && res.data.RC === 0) {\n              // 解密訊息\n              res.data.result.data = res.data.result.data.map(message => {\n                return lib.message.decrypt(\n                  message,\n                  this.api.config.privateKey,\n                  this.api.config.clientId\n                );\n              });\n              resolve(res.data.result);\n            }\n          },\n          error => {\n            this.api.onError(error);\n            reject(error);\n          }\n        );\n    });\n  }\n\n  /**\n   * Get room messages count after timeInMS\n   * @param {String} roomId\n   * @param {Number} [timeInMS = 0]\n   * @returns {Promise<{count: Number}|Error>}\n   */\n  getRoomMessagesCount(roomId, timeInMS = 0) {\n    return new Promise((resolve, reject) => {\n      let url = `${this.api.config.domain}/rooms/${encodeURIComponent(\n        roomId\n      )}/count`;\n      let data = {\n        timeInMS\n      };\n      let headers = this.api.getHeader(this.isAdmin);\n\n      axios\n        .get(url, {\n          params: data,\n          headers: headers\n        })\n        .then(\n          res => {\n            if (res.status >= 200 && res.status < 300 && res.data.RC === 0) {\n              resolve(res.data.result);\n            }\n          },\n          error => {\n            this.api.onError(error);\n            reject(error);\n          }\n        );\n    });\n  }\n\n  /**\n   * List Room Messages Around a give message\n   * @param {String} roomId\n   * @param {String} messageId\n   * @param {Number} [before] number of Messages earlier than the specified Message ID\n   * @param {Number} [after] number of Messages later than the specified Message ID\n   * @param {axios.cancelToken} [cancelToken]\n   * @returns {Promise<{totalCount: Number, data: MessageData[]}|Error>}\n   */\n  getRoomMessagesAround(roomId, messageId, before, after, cancelToken) {\n    return new Promise((resolve, reject) => {\n      let url = `${this.api.config.domain}/rooms/${encodeURIComponent(\n        roomId\n      )}/messages/${messageId}`;\n      let data = {\n        before: before || 0,\n        after: after || 0\n      };\n      let headers = this.api.getHeader(this.isAdmin);\n\n      axios\n        .get(url, {\n          params: data,\n          headers: headers,\n          cancelToken\n        })\n        .then(\n          res => {\n            if (res.status >= 200 && res.status < 300 && res.data.RC === 0) {\n              // 解密訊息\n              res.data.result.data = res.data.result.data.map(message => {\n                return lib.message.decrypt(\n                  message,\n                  this.api.config.privateKey,\n                  this.api.config.clientId\n                );\n              });\n              resolve(res.data.result);\n            }\n          },\n          error => {\n            this.api.onError(error);\n            reject(error);\n          }\n        );\n    });\n  }\n}\n",
     "static": true,
     "longname": "E:/REPO/IMKit/IMKit-Chat-v3/imkit-js-api-v3/src/api/room/index.js",
     "access": "public",
@@ -2644,7 +2771,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 115,
+    "__docId__": 118,
     "kind": "class",
     "name": "Room",
     "memberof": "src/api/room/index.js",
@@ -2665,7 +2792,7 @@
     "interface": false
   },
   {
-    "__docId__": 116,
+    "__docId__": 119,
     "kind": "constructor",
     "name": "constructor",
     "memberof": "src/api/room/index.js~Room",
@@ -2691,7 +2818,7 @@
     "ignore": true
   },
   {
-    "__docId__": 117,
+    "__docId__": 120,
     "kind": "member",
     "name": "api",
     "memberof": "src/api/room/index.js~Room",
@@ -2711,7 +2838,7 @@
     "ignore": true
   },
   {
-    "__docId__": 118,
+    "__docId__": 121,
     "kind": "member",
     "name": "isAdmin",
     "memberof": "src/api/room/index.js~Room",
@@ -2731,7 +2858,7 @@
     "ignore": true
   },
   {
-    "__docId__": 119,
+    "__docId__": 122,
     "kind": "method",
     "name": "getRoomsList",
     "memberof": "src/api/room/index.js~Room",
@@ -2806,7 +2933,7 @@
     }
   },
   {
-    "__docId__": 120,
+    "__docId__": 123,
     "kind": "method",
     "name": "getRoom",
     "memberof": "src/api/room/index.js~Room",
@@ -2845,7 +2972,7 @@
     }
   },
   {
-    "__docId__": 121,
+    "__docId__": 124,
     "kind": "method",
     "name": "createRoom",
     "memberof": "src/api/room/index.js~Room",
@@ -2944,7 +3071,7 @@
     }
   },
   {
-    "__docId__": 122,
+    "__docId__": 125,
     "kind": "method",
     "name": "createAndJoinRoom",
     "memberof": "src/api/room/index.js~Room",
@@ -3054,7 +3181,7 @@
     }
   },
   {
-    "__docId__": 123,
+    "__docId__": 126,
     "kind": "method",
     "name": "updateRoom",
     "memberof": "src/api/room/index.js~Room",
@@ -3143,7 +3270,7 @@
     }
   },
   {
-    "__docId__": 124,
+    "__docId__": 127,
     "kind": "method",
     "name": "updateRoomPref",
     "memberof": "src/api/room/index.js~Room",
@@ -3183,7 +3310,7 @@
     }
   },
   {
-    "__docId__": 125,
+    "__docId__": 128,
     "kind": "method",
     "name": "updateRoomBot",
     "memberof": "src/api/room/index.js~Room",
@@ -3242,7 +3369,7 @@
     }
   },
   {
-    "__docId__": 126,
+    "__docId__": 129,
     "kind": "method",
     "name": "updateLastRead",
     "memberof": "src/api/room/index.js~Room",
@@ -3291,7 +3418,7 @@
     }
   },
   {
-    "__docId__": 127,
+    "__docId__": 130,
     "kind": "method",
     "name": "deleteRoom",
     "memberof": "src/api/room/index.js~Room",
@@ -3330,7 +3457,7 @@
     }
   },
   {
-    "__docId__": 128,
+    "__docId__": 131,
     "kind": "method",
     "name": "joinRoom",
     "memberof": "src/api/room/index.js~Room",
@@ -3369,7 +3496,7 @@
     }
   },
   {
-    "__docId__": 129,
+    "__docId__": 132,
     "kind": "method",
     "name": "addMember",
     "memberof": "src/api/room/index.js~Room",
@@ -3418,7 +3545,7 @@
     }
   },
   {
-    "__docId__": 130,
+    "__docId__": 133,
     "kind": "method",
     "name": "addMembers",
     "memberof": "src/api/room/index.js~Room",
@@ -3467,7 +3594,7 @@
     }
   },
   {
-    "__docId__": 131,
+    "__docId__": 134,
     "kind": "method",
     "name": "deleteMember",
     "memberof": "src/api/room/index.js~Room",
@@ -3516,7 +3643,7 @@
     }
   },
   {
-    "__docId__": 132,
+    "__docId__": 135,
     "kind": "method",
     "name": "typing",
     "memberof": "src/api/room/index.js~Room",
@@ -3565,7 +3692,7 @@
     }
   },
   {
-    "__docId__": 133,
+    "__docId__": 136,
     "kind": "method",
     "name": "sendMessage",
     "memberof": "src/api/room/index.js~Room",
@@ -3614,7 +3741,7 @@
     }
   },
   {
-    "__docId__": 134,
+    "__docId__": 137,
     "kind": "method",
     "name": "updateMemberProperty",
     "memberof": "src/api/room/index.js~Room",
@@ -3693,7 +3820,7 @@
     }
   },
   {
-    "__docId__": 135,
+    "__docId__": 138,
     "kind": "method",
     "name": "getRoomMessages",
     "memberof": "src/api/room/index.js~Room",
@@ -3752,7 +3879,7 @@
     }
   },
   {
-    "__docId__": 136,
+    "__docId__": 139,
     "kind": "method",
     "name": "getRoomMessagesCount",
     "memberof": "src/api/room/index.js~Room",
@@ -3803,10 +3930,256 @@
     }
   },
   {
-    "__docId__": 137,
+    "__docId__": 140,
+    "kind": "method",
+    "name": "getRoomMessagesAround",
+    "memberof": "src/api/room/index.js~Room",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/api/room/index.js~Room#getRoomMessagesAround",
+    "access": "public",
+    "description": "List Room Messages Around a give message",
+    "lineNumber": 674,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Promise<{totalCount: Number, data: MessageData[]}|Error>}"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "roomId",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "messageId",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Number"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "before",
+        "description": "number of Messages earlier than the specified Message ID"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Number"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "after",
+        "description": "number of Messages later than the specified Message ID"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "axios.cancelToken"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "cancelToken",
+        "description": ""
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise<{totalCount: Number, data: MessageData[]}|Error>"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 141,
+    "kind": "file",
+    "name": "src/api/search/index.js",
+    "content": "import axios from 'axios';\n/**\n * @import * from '@/src/typedef';\n */\n\nexport default class Search {\n  /**\n   * @private\n   * @param {Api} api\n   */\n  constructor(api) {\n    /**\n     * @private\n     * @type {Api}\n     * */\n    this.api = api;\n    /**\n     * @private\n     * @type {Boolean}\n     */\n    this.isAdmin = false;\n  }\n\n  /**\n   * 1. Search messages by keyword\n   * 2. Search rooms by room name\n   * 3. Search rooms by room members\n   * @param {String[]} type Types to search, could be \"messages\", \"roomName\", \"roomMember\"\n   * @param {String} keyword Keyword text\n   * @param {String} [room] Room ID. Search in room only\n   * @param {axios.cancelToken} [cancelToken]\n   * @returns {Promise<{messages: MessageData[], roomName: RoomData[], roomMember: RoomData[]}|Error>}\n   */\n  search(type, keyword, room, cancelToken) {\n    return new Promise((resolve, reject) => {\n      let url = `${this.api.config.domain}/search`;\n      let data = { type, keyword, room };\n      if (!room) {\n        delete data.room;\n      }\n      let headers = this.api.getHeader(this.isAdmin);\n\n      axios\n        .post(url, data, {\n          headers: headers,\n          cancelToken\n        })\n        .then(\n          res => {\n            if (res.status >= 200 && res.status < 300 && res.data.RC === 0) {\n              resolve(res.data.result);\n            }\n          },\n          error => {\n            this.api.onError(error);\n            reject(error);\n          }\n        );\n    });\n  }\n}\n",
+    "static": true,
+    "longname": "E:/REPO/IMKit/IMKit-Chat-v3/imkit-js-api-v3/src/api/search/index.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 142,
+    "kind": "class",
+    "name": "Search",
+    "memberof": "src/api/search/index.js",
+    "static": true,
+    "longname": "src/api/search/index.js~Search",
+    "access": "public",
+    "export": true,
+    "importPath": "imkit-js-api-v3/src/api/search/index.js",
+    "importStyle": "Search",
+    "description": "",
+    "lineNumber": 6,
+    "unknown": [
+      {
+        "tagName": "@import",
+        "tagValue": "* from '@/src/typedef';"
+      }
+    ],
+    "interface": false
+  },
+  {
+    "__docId__": 143,
+    "kind": "constructor",
+    "name": "constructor",
+    "memberof": "src/api/search/index.js~Search",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/api/search/index.js~Search#constructor",
+    "access": "private",
+    "description": "",
+    "lineNumber": 11,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Api"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "api",
+        "description": ""
+      }
+    ],
+    "ignore": true
+  },
+  {
+    "__docId__": 144,
+    "kind": "member",
+    "name": "api",
+    "memberof": "src/api/search/index.js~Search",
+    "static": false,
+    "longname": "src/api/search/index.js~Search#api",
+    "access": "private",
+    "description": "",
+    "lineNumber": 16,
+    "type": {
+      "nullable": null,
+      "types": [
+        "Api"
+      ],
+      "spread": false,
+      "description": null
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 145,
+    "kind": "member",
+    "name": "isAdmin",
+    "memberof": "src/api/search/index.js~Search",
+    "static": false,
+    "longname": "src/api/search/index.js~Search#isAdmin",
+    "access": "private",
+    "description": "",
+    "lineNumber": 21,
+    "type": {
+      "nullable": null,
+      "types": [
+        "Boolean"
+      ],
+      "spread": false,
+      "description": null
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 146,
+    "kind": "method",
+    "name": "search",
+    "memberof": "src/api/search/index.js~Search",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/api/search/index.js~Search#search",
+    "access": "public",
+    "description": "1. Search messages by keyword\n2. Search rooms by room name\n3. Search rooms by room members",
+    "lineNumber": 34,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Promise<{messages: MessageData[], roomName: RoomData[], roomMember: RoomData[]}|Error>}"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "String[]"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "type",
+        "description": "Types to search, could be \"messages\", \"roomName\", \"roomMember\""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "keyword",
+        "description": "Keyword text"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "room",
+        "description": "Room ID. Search in room only"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "axios.cancelToken"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "cancelToken",
+        "description": ""
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise<{messages: MessageData[], roomName: RoomData[], roomMember: RoomData[]}|Error>"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 147,
     "kind": "file",
     "name": "src/api/url/index.js",
-    "content": "import axios from 'axios';\n/**\n * @import * from '@/src/typedef';\n */\n\nexport default class Url {\n  /**\n   * @private\n   * @param {Api} api\n   */\n  constructor(api) {\n    /**\n     * @private\n     * @type {Api}\n     * */\n    this.api = api;\n  }\n\n  /**\n   * Get url preview data\n   * @param {String} url 網址\n   * @returns {Promise<{description: String, images: String, title: String}|Error>}\n   */\n  getPreview(url) {\n    return new Promise(resolve => {\n      let apiUrl = `${this.api.config.urlPreviewApi}/`;\n      let data = {\n        url\n      };\n\n      axios\n        .get(apiUrl, {\n          params: data\n        })\n        .then(res => {\n          resolve(res.data);\n        })\n        .catch(() => {\n          resolve(null);\n        });\n    });\n  }\n}\n",
+    "content": "import axios from 'axios';\r\n/**\r\n * @import * from '@/src/typedef';\r\n */\r\n\r\nexport default class Url {\r\n  /**\r\n   * @private\r\n   * @param {Api} api\r\n   */\r\n  constructor(api) {\r\n    /**\r\n     * @private\r\n     * @type {Api}\r\n     * */\r\n    this.api = api;\r\n  }\r\n\r\n  /**\r\n   * Get url preview data\r\n   * @param {String} url 網址\r\n   * @returns {Promise<{description: String, images: String, title: String}|Error>}\r\n   */\r\n  getPreview(url) {\r\n    return new Promise(resolve => {\r\n      let apiUrl = `${this.api.config.urlPreviewApi}/`;\r\n      let data = {\r\n        url\r\n      };\r\n\r\n      axios\r\n        .get(apiUrl, {\r\n          params: data\r\n        })\r\n        .then(res => {\r\n          resolve(res.data);\r\n        })\r\n        .catch(() => {\r\n          resolve(null);\r\n        });\r\n    });\r\n  }\r\n}\r\n",
     "static": true,
     "longname": "E:/REPO/IMKit/IMKit-Chat-v3/imkit-js-api-v3/src/api/url/index.js",
     "access": "public",
@@ -3814,7 +4187,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 138,
+    "__docId__": 148,
     "kind": "class",
     "name": "Url",
     "memberof": "src/api/url/index.js",
@@ -3835,7 +4208,7 @@
     "interface": false
   },
   {
-    "__docId__": 139,
+    "__docId__": 149,
     "kind": "constructor",
     "name": "constructor",
     "memberof": "src/api/url/index.js~Url",
@@ -3861,7 +4234,7 @@
     "ignore": true
   },
   {
-    "__docId__": 140,
+    "__docId__": 150,
     "kind": "member",
     "name": "api",
     "memberof": "src/api/url/index.js~Url",
@@ -3881,7 +4254,7 @@
     "ignore": true
   },
   {
-    "__docId__": 141,
+    "__docId__": 151,
     "kind": "method",
     "name": "getPreview",
     "memberof": "src/api/url/index.js~Url",
@@ -3920,10 +4293,10 @@
     }
   },
   {
-    "__docId__": 142,
+    "__docId__": 152,
     "kind": "file",
     "name": "src/index.js",
-    "content": "import IMKitApi from './api';\nimport IMKitSocket from './socket';\nexport { IMKitApi, IMKitSocket };\n\nif (typeof window !== 'undefined') {\n  window.IMKitApi = IMKitApi;\n  window.IMKitSocket = IMKitSocket;\n}\n",
+    "content": "import IMKitApi from './api';\r\nimport IMKitSocket from './socket';\r\nexport { IMKitApi, IMKitSocket };\r\n\r\nif (typeof window !== 'undefined') {\r\n  window.IMKitApi = IMKitApi;\r\n  window.IMKitSocket = IMKitSocket;\r\n}\r\n",
     "static": true,
     "longname": "E:/REPO/IMKit/IMKit-Chat-v3/imkit-js-api-v3/src/index.js",
     "access": "public",
@@ -3931,7 +4304,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 143,
+    "__docId__": 153,
     "kind": "file",
     "name": "src/lib/index.js",
     "content": "import Message from './Message';\r\n\r\n/**\r\n * @private\r\n */\r\nlet message = new Message();\r\n\r\nexport default { message };\r\n",
@@ -3942,7 +4315,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 144,
+    "__docId__": 154,
     "kind": "variable",
     "name": "message",
     "memberof": "src/lib/index.js",
@@ -3962,7 +4335,7 @@
     }
   },
   {
-    "__docId__": 145,
+    "__docId__": 155,
     "kind": "file",
     "name": "src/lib/Message.js",
     "content": "import forge from 'node-forge';\r\nimport CryptoJS from 'crypto-js';\r\n\r\n/**\r\n * @import * from '@/src/typedef';\r\n */\r\n\r\n/**\r\n * @private\r\n */\r\nclass Message {\r\n  /**\r\n   * @private\r\n   * @returns {Promise<{publicKey: String, privateKey: String}|Error>}\r\n   */\r\n  generateRsaKey() {\r\n    return new Promise((resolve, reject) => {\r\n      forge.pki.rsa.generateKeyPair(\r\n        { bits: 2048, workers: 2 },\r\n        (err, keypair) => {\r\n          if (err) {\r\n            reject(err);\r\n          } else {\r\n            let publicKey = forge.pki.publicKeyToPem(keypair.publicKey);\r\n            let privateKey = forge.pki.privateKeyToPem(keypair.privateKey);\r\n            resolve({\r\n              publicKey: publicKey\r\n                .replace(/-+END.*KEY-+/g, '')\r\n                .replace(/-+BEGIN.*KEY-+/g, '')\r\n                .replace(/\\r\\n|\\n/g, ''),\r\n              privateKey: privateKey\r\n                .replace(/-+END.*KEY-+/g, '')\r\n                .replace(/-+BEGIN.*KEY-+/g, '')\r\n                .replace(/\\r\\n|\\n/g, '')\r\n            });\r\n          }\r\n        }\r\n      );\r\n    });\r\n  }\r\n\r\n  /**\r\n   * @private\r\n   * @param {MessageData} message\r\n   * @param {String} privateKey\r\n   * @param {String} clientId\r\n   * @returns {MessageData}\r\n   */\r\n  decrypt(message, privateKey, clientId) {\r\n    if (message.messageType === 'encrypted') {\r\n      try {\r\n        let messageArray = message.message.split('|');\r\n        let encrypted = messageArray\r\n          .find(_message => {\r\n            return atob(_message.split(':')[0]) === clientId;\r\n          })\r\n          .split(':');\r\n\r\n        // RSA\r\n        let key = this.rsaDecrypt(privateKey, encrypted[2]);\r\n        let iv = this.rsaDecrypt(privateKey, encrypted[1]);\r\n\r\n        // AES\r\n        let messageStr = this.aesDecrypt(\r\n          key,\r\n          iv,\r\n          messageArray[messageArray.length - 1]\r\n        );\r\n\r\n        message = Object.assign(message, JSON.parse(messageStr));\r\n        if (message.reply) {\r\n          message.reply = this.decrypt(message.reply, privateKey, clientId);\r\n        }\r\n        return message;\r\n      } catch (e) {}\r\n    }\r\n    return message;\r\n  }\r\n\r\n  /**\r\n   * @private\r\n   * @param {RoomData} room\r\n   * @param {MessageInfo} message\r\n   * @returns {MessageInfo}\r\n   */\r\n  encrypt(room, message) {\r\n    if (room.encrypted) {\r\n      let reply = message.reply;\r\n      delete message.reply;\r\n      let messageStr = JSON.stringify(message);\r\n\r\n      // AES\r\n      let key = this.aesGenerateKey();\r\n      let iv = this.aesGenerateKey();\r\n      // AES 加密字串\r\n      let aesEncryptedMessage = this.aesEncrypt(key, iv, messageStr);\r\n\r\n      let messageArray = room.members\r\n        .filter(member => {\r\n          return member.publicKey;\r\n        })\r\n        .map(member => {\r\n          // RSA\r\n          let encryptedKey = this.rsaEncrypt(member.publicKey, key);\r\n          let encryptedIv = this.rsaEncrypt(member.publicKey, iv);\r\n          return `${btoa(member._id)}:${encryptedIv}:${encryptedKey}`;\r\n        });\r\n\r\n      messageArray.push(aesEncryptedMessage);\r\n      return {\r\n        messageType: 'encrypted',\r\n        message: messageArray.join('|'),\r\n        reply: reply\r\n      };\r\n    }\r\n    return message;\r\n  }\r\n\r\n  rsaEncrypt(publicKey, message) {\r\n    let _publicKey = forge.pki.publicKeyFromPem(\r\n      `-----BEGIN RSA PUBLIC KEY-----${publicKey}-----END RSA PUBLIC KEY-----`\r\n    );\r\n\r\n    return btoa(_publicKey.encrypt(atob(message), 'RSAES-PKCS1-V1_5'));\r\n  }\r\n\r\n  rsaDecrypt(privateKey, encrypted) {\r\n    let _privateKey = forge.pki.privateKeyFromPem(\r\n      `-----BEGIN RSA PRIVATE KEY-----${privateKey}-----END RSA PRIVATE KEY-----`\r\n    );\r\n\r\n    return btoa(_privateKey.decrypt(atob(encrypted), 'RSAES-PKCS1-V1_5'));\r\n  }\r\n\r\n  aesGenerateKey() {\r\n    return btoa(CryptoJS.lib.WordArray.random(8));\r\n  }\r\n\r\n  aesEncrypt(key, iv, message) {\r\n    let _key = CryptoJS.enc.Base64.parse(key);\r\n    let _iv = CryptoJS.enc.Base64.parse(iv);\r\n\r\n    return CryptoJS.AES.encrypt(message, _key, {\r\n      iv: _iv,\r\n      mode: CryptoJS.mode.CBC,\r\n      padding: CryptoJS.pad.Pkcs7\r\n    }).toString();\r\n  }\r\n\r\n  aesDecrypt(key, iv, encrypted) {\r\n    let _key = CryptoJS.enc.Base64.parse(key);\r\n    let _iv = CryptoJS.enc.Base64.parse(iv);\r\n\r\n    return CryptoJS.AES.decrypt(encrypted.toString(), _key, {\r\n      iv: _iv,\r\n      mode: CryptoJS.mode.CBC,\r\n      padding: CryptoJS.pad.Pkcs7\r\n    }).toString(CryptoJS.enc.Utf8);\r\n  }\r\n}\r\n\r\nexport default Message;\r\n",
@@ -3973,7 +4346,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 146,
+    "__docId__": 156,
     "kind": "class",
     "name": "Message",
     "memberof": "src/lib/Message.js",
@@ -3989,7 +4362,7 @@
     "ignore": true
   },
   {
-    "__docId__": 147,
+    "__docId__": 157,
     "kind": "method",
     "name": "generateRsaKey",
     "memberof": "src/lib/Message.js~Message",
@@ -4018,7 +4391,7 @@
     "params": []
   },
   {
-    "__docId__": 148,
+    "__docId__": 158,
     "kind": "method",
     "name": "decrypt",
     "memberof": "src/lib/Message.js~Message",
@@ -4078,7 +4451,7 @@
     "ignore": true
   },
   {
-    "__docId__": 149,
+    "__docId__": 159,
     "kind": "method",
     "name": "encrypt",
     "memberof": "src/lib/Message.js~Message",
@@ -4128,7 +4501,7 @@
     "ignore": true
   },
   {
-    "__docId__": 150,
+    "__docId__": 160,
     "kind": "method",
     "name": "rsaEncrypt",
     "memberof": "src/lib/Message.js~Message",
@@ -4161,7 +4534,7 @@
     }
   },
   {
-    "__docId__": 151,
+    "__docId__": 161,
     "kind": "method",
     "name": "rsaDecrypt",
     "memberof": "src/lib/Message.js~Message",
@@ -4194,7 +4567,7 @@
     }
   },
   {
-    "__docId__": 152,
+    "__docId__": 162,
     "kind": "method",
     "name": "aesGenerateKey",
     "memberof": "src/lib/Message.js~Message",
@@ -4214,7 +4587,7 @@
     }
   },
   {
-    "__docId__": 153,
+    "__docId__": 163,
     "kind": "method",
     "name": "aesEncrypt",
     "memberof": "src/lib/Message.js~Message",
@@ -4253,7 +4626,7 @@
     }
   },
   {
-    "__docId__": 154,
+    "__docId__": 164,
     "kind": "method",
     "name": "aesDecrypt",
     "memberof": "src/lib/Message.js~Message",
@@ -4292,10 +4665,10 @@
     }
   },
   {
-    "__docId__": 155,
+    "__docId__": 165,
     "kind": "file",
     "name": "src/socket/index.js",
-    "content": "import io from 'socket.io-client';\nimport lib from '../lib';\n/**\n * @import * from '@/src/typedef';\n */\n\nexport default class IMKitSocket {\n  /**\n   * 建立 Socket 物件\n   * @param {SocketConfig} config\n   */\n  constructor(config) {\n    /** @type {SocketConfig} */\n    this.config = config;\n\n    /**\n     * 上一次收到 ping 的時間\n     * @private\n     * @type {Number}\n     */\n    this.pingTime = 0;\n\n    /**\n     * socket 5 秒 ping 一次，超過 6 秒沒收到即為斷線\n     * @private\n     * @type {Number}\n     */\n    this.pingDelay = 6000;\n\n    /**\n     * @private\n     * @type {Boolean}\n     */\n    this.connectStatus = false;\n\n    /**\n     * @private\n     * @type {SocketIOClient.Socket}\n     */\n    this.socket = io(this.config.domain, {});\n    this.socket.connect();\n\n    setInterval(() => {\n      if (this.connectStatus) {\n        if (Date.now() - this.pingTime > this.pingDelay) {\n          this.disconnect();\n        }\n      } else {\n        if (Date.now() - this.pingTime < this.pingDelay) {\n          this.onConnect();\n        }\n      }\n    }, this.pingDelay);\n\n    this.socket.on('ping', () => {\n      this.pingTime = Date.now();\n    });\n\n    this.socket.on('connect', () => {\n      this.onConnect();\n    });\n\n    this.socket.on('disconnect', () => {\n      this.disconnect();\n    });\n\n    this.socket.on('chat message', data => {\n      data = this.base64Decode(data);\n      if (config.onReceiveMessage) {\n        config.onReceiveMessage(\n          lib.message.decrypt(\n            data,\n            this.config.privateKey,\n            this.config.clientId\n          )\n        );\n      } else {\n        console.log(data);\n      }\n    });\n\n    this.socket.on('room', data => {\n      data = this.base64Decode(data);\n      if (config.onReceiveRoom) {\n        config.onReceiveRoom(data);\n      } else {\n        console.log(data);\n      }\n    });\n\n    this.socket.on('typing', data => {\n      data = this.base64Decode(data);\n      if (config.onReceiveTyping) {\n        config.onReceiveTyping(data);\n      } else {\n        console.log(data);\n      }\n    });\n\n    this.socket.on('lastRead', data => {\n      data = this.base64Decode(data);\n      if (config.onReceivelastRead) {\n        config.onReceivelastRead(data);\n      } else {\n        console.log(data);\n      }\n    });\n\n    this.socket.on('roomPref', data => {\n      data = this.base64Decode(data);\n      if (config.onReceiveRoomPref) {\n        config.onReceiveRoomPref(data);\n      } else {\n        console.log(data);\n      }\n    });\n\n    this.socket.on('myPrefChange', data => {\n      data = this.base64Decode(data);\n      if (config.onReceiveMyPrefChange) {\n        config.onReceiveMyPrefChange(data);\n      } else {\n        console.log(data);\n      }\n    });\n\n    this.socket.on('myPrefDelete', data => {\n      data = new Buffer(data, 'base64').toString();\n      if (config.onReceiveMyPrefDelete) {\n        config.onReceiveMyPrefDelete(data);\n      } else {\n        console.log(data);\n      }\n    });\n  }\n\n  /**\n   * @private\n   */\n  onConnect() {\n    this.socket.emit('conf', { encoding: 'base64' }, () => {\n      this.pingTime = Date.now();\n      this.connectStatus = true;\n      if (this.config.onConnect) {\n        this.config.onConnect();\n      } else {\n        console.log('Default connect success');\n      }\n    });\n  }\n\n  /**\n   * @private\n   */\n  disconnect() {\n    this.pingTime = 0;\n    this.connectStatus = false;\n    if (this.config.onDisconnect) {\n      this.config.onDisconnect();\n    } else {\n      console.log('Default disconnect success');\n    }\n  }\n\n  /**\n   * chatIn\n   * @returns {Promise<{client: String}|Error>}\n   */\n  chatIn() {\n    return new Promise((resolve, reject) => {\n      this.socket.emit('auth', this.config.token, res => {\n        res = this.base64Decode(res);\n        if (res.RC === 0) {\n          resolve(res.result);\n        } else {\n          this.onError(res);\n          reject(new Error(`[IMKit WebSocket (auth)] ${res.RM}`));\n        }\n      });\n    });\n  }\n\n  /**\n   * Send message\n   * @param {String} roomId\n   * @param {MessageInfo} message\n   * @returns {Promise<MessageData|Error>}\n   */\n  sendMessage(roomId, message) {\n    return new Promise((resolve, reject) => {\n      let data = Object.assign(message, {\n        room: roomId\n      });\n\n      this.socket.emit('chat message', data, res => {\n        if (res.RC === 0) {\n          resolve(res.result);\n        } else {\n          this.onError(res);\n          reject(new Error(`[IMKit WebSocket (sendMessage)] ${res.RM}`));\n        }\n      });\n    });\n  }\n\n  /**\n   * Typing\n   * @param {String} roomId\n   * @param {String} text\n   */\n  typing(roomId, text) {\n    this.socket.emit('typing', roomId, text);\n  }\n\n  /**\n   * @private\n   * @param {Object} error\n   */\n  onError(error) {\n    this.config.events.onAjaxError(error);\n  }\n\n  base64Decode(base64) {\n    return JSON.parse(new Buffer(base64, 'base64').toString());\n  }\n}\n",
+    "content": "import io from 'socket.io-client';\nimport lib from '../lib';\n/**\n * @import * from '@/src/typedef';\n */\n\nexport default class IMKitSocket {\n  /**\n   * 建立 Socket 物件\n   * @param {SocketConfig} config\n   */\n  constructor(config) {\n    /** @type {SocketConfig} */\n    this.config = config;\n\n    /**\n     * 上一次收到 ping 的時間\n     * @private\n     * @type {Number}\n     */\n    this.pingTime = 0;\n\n    /**\n     * socket 5 秒 ping 一次，超過 6 秒沒收到即為斷線\n     * @private\n     * @type {Number}\n     */\n    this.pingDelay = 6000;\n\n    /**\n     * @private\n     * @type {Boolean}\n     */\n    this.connectStatus = false;\n\n    /**\n     * @private\n     * @type {SocketIOClient.Socket}\n     */\n    this.socket = io(this.config.domain, {\n      transports: ['websocket'],\n      forceNew: true\n    });\n    this.socket.connect();\n\n    setInterval(() => {\n      if (this.connectStatus) {\n        if (Date.now() - this.pingTime > this.pingDelay) {\n          this.disconnect();\n        }\n      } else {\n        if (Date.now() - this.pingTime < this.pingDelay) {\n          this.onConnect();\n        }\n      }\n    }, this.pingDelay);\n\n    this.socket.on('ping', () => {\n      this.pingTime = Date.now();\n    });\n\n    this.socket.on('connect', () => {\n      this.onConnect();\n    });\n\n    this.socket.on('disconnect', () => {\n      this.disconnect();\n    });\n\n    this.socket.on('chat message', data => {\n      data = this.base64Decode(data);\n      if (config.onReceiveMessage) {\n        config.onReceiveMessage(\n          lib.message.decrypt(\n            data,\n            this.config.privateKey,\n            this.config.clientId\n          )\n        );\n      } else {\n        console.log(data);\n      }\n    });\n\n    this.socket.on('room', data => {\n      data = this.base64Decode(data);\n      if (config.onReceiveRoom) {\n        config.onReceiveRoom(data);\n      } else {\n        console.log(data);\n      }\n    });\n\n    this.socket.on('typing', data => {\n      data = this.base64Decode(data);\n      if (config.onReceiveTyping) {\n        config.onReceiveTyping(data);\n      } else {\n        console.log(data);\n      }\n    });\n\n    this.socket.on('lastRead', data => {\n      data = this.base64Decode(data);\n      if (config.onReceivelastRead) {\n        config.onReceivelastRead(data);\n      } else {\n        console.log(data);\n      }\n    });\n\n    this.socket.on('roomPref', data => {\n      data = this.base64Decode(data);\n      if (config.onReceiveRoomPref) {\n        config.onReceiveRoomPref(data);\n      } else {\n        console.log(data);\n      }\n    });\n\n    this.socket.on('myPrefChange', data => {\n      data = this.base64Decode(data);\n      if (config.onReceiveMyPrefChange) {\n        config.onReceiveMyPrefChange(data);\n      } else {\n        console.log(data);\n      }\n    });\n\n    this.socket.on('myPrefDelete', data => {\n      data = new Buffer(data, 'base64').toString();\n      if (config.onReceiveMyPrefDelete) {\n        config.onReceiveMyPrefDelete(data);\n      } else {\n        console.log(data);\n      }\n    });\n  }\n\n  /**\n   * @private\n   */\n  onConnect() {\n    this.socket.emit('conf', { encoding: 'base64' }, () => {\n      this.pingTime = Date.now();\n      this.connectStatus = true;\n      if (this.config.onConnect) {\n        this.config.onConnect();\n      } else {\n        console.log('Default connect success');\n      }\n    });\n  }\n\n  /**\n   * @private\n   */\n  disconnect() {\n    this.pingTime = 0;\n    this.connectStatus = false;\n    if (this.config.onDisconnect) {\n      this.config.onDisconnect();\n    } else {\n      console.log('Default disconnect success');\n    }\n  }\n\n  /**\n   * chatIn\n   * @returns {Promise<{client: String}|Error>}\n   */\n  chatIn() {\n    return new Promise((resolve, reject) => {\n      this.socket.emit('auth', this.config.token, res => {\n        res = this.base64Decode(res);\n        if (res.RC === 0) {\n          resolve(res.result);\n        } else {\n          this.onError(res);\n          reject(new Error(`[IMKit WebSocket (auth)] ${res.RM}`));\n        }\n      });\n    });\n  }\n\n  /**\n   * Send message\n   * @param {String} roomId\n   * @param {MessageInfo} message\n   * @returns {Promise<MessageData|Error>}\n   */\n  sendMessage(roomId, message) {\n    return new Promise((resolve, reject) => {\n      let data = Object.assign(message, {\n        room: roomId\n      });\n\n      this.socket.emit('chat message', data, res => {\n        if (res.RC === 0) {\n          resolve(res.result);\n        } else {\n          this.onError(res);\n          reject(new Error(`[IMKit WebSocket (sendMessage)] ${res.RM}`));\n        }\n      });\n    });\n  }\n\n  /**\n   * Typing\n   * @param {String} roomId\n   * @param {String} text\n   */\n  typing(roomId, text) {\n    this.socket.emit('typing', roomId, text);\n  }\n\n  /**\n   * @private\n   * @param {Object} error\n   */\n  onError(error) {\n    this.config.events.onAjaxError(error);\n  }\n\n  base64Decode(base64) {\n    return JSON.parse(new Buffer(base64, 'base64').toString());\n  }\n}\n",
     "static": true,
     "longname": "E:/REPO/IMKit/IMKit-Chat-v3/imkit-js-api-v3/src/socket/index.js",
     "access": "public",
@@ -4303,7 +4676,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 156,
+    "__docId__": 166,
     "kind": "class",
     "name": "IMKitSocket",
     "memberof": "src/socket/index.js",
@@ -4324,7 +4697,7 @@
     "interface": false
   },
   {
-    "__docId__": 157,
+    "__docId__": 167,
     "kind": "constructor",
     "name": "constructor",
     "memberof": "src/socket/index.js~IMKitSocket",
@@ -4349,7 +4722,7 @@
     ]
   },
   {
-    "__docId__": 158,
+    "__docId__": 168,
     "kind": "member",
     "name": "config",
     "memberof": "src/socket/index.js~IMKitSocket",
@@ -4368,7 +4741,7 @@
     }
   },
   {
-    "__docId__": 159,
+    "__docId__": 169,
     "kind": "member",
     "name": "pingTime",
     "memberof": "src/socket/index.js~IMKitSocket",
@@ -4388,7 +4761,7 @@
     "ignore": true
   },
   {
-    "__docId__": 160,
+    "__docId__": 170,
     "kind": "member",
     "name": "pingDelay",
     "memberof": "src/socket/index.js~IMKitSocket",
@@ -4408,7 +4781,7 @@
     "ignore": true
   },
   {
-    "__docId__": 161,
+    "__docId__": 171,
     "kind": "member",
     "name": "connectStatus",
     "memberof": "src/socket/index.js~IMKitSocket",
@@ -4428,7 +4801,7 @@
     "ignore": true
   },
   {
-    "__docId__": 162,
+    "__docId__": 172,
     "kind": "member",
     "name": "socket",
     "memberof": "src/socket/index.js~IMKitSocket",
@@ -4448,7 +4821,7 @@
     "ignore": true
   },
   {
-    "__docId__": 164,
+    "__docId__": 174,
     "kind": "method",
     "name": "onConnect",
     "memberof": "src/socket/index.js~IMKitSocket",
@@ -4458,13 +4831,13 @@
     "longname": "src/socket/index.js~IMKitSocket#onConnect",
     "access": "private",
     "description": "",
-    "lineNumber": 140,
+    "lineNumber": 143,
     "ignore": true,
     "params": [],
     "return": null
   },
   {
-    "__docId__": 167,
+    "__docId__": 177,
     "kind": "method",
     "name": "disconnect",
     "memberof": "src/socket/index.js~IMKitSocket",
@@ -4474,13 +4847,13 @@
     "longname": "src/socket/index.js~IMKitSocket#disconnect",
     "access": "private",
     "description": "",
-    "lineNumber": 155,
+    "lineNumber": 158,
     "ignore": true,
     "params": [],
     "return": null
   },
   {
-    "__docId__": 170,
+    "__docId__": 180,
     "kind": "method",
     "name": "chatIn",
     "memberof": "src/socket/index.js~IMKitSocket",
@@ -4490,7 +4863,7 @@
     "longname": "src/socket/index.js~IMKitSocket#chatIn",
     "access": "public",
     "description": "chatIn",
-    "lineNumber": 169,
+    "lineNumber": 172,
     "unknown": [
       {
         "tagName": "@returns",
@@ -4508,7 +4881,7 @@
     "params": []
   },
   {
-    "__docId__": 171,
+    "__docId__": 181,
     "kind": "method",
     "name": "sendMessage",
     "memberof": "src/socket/index.js~IMKitSocket",
@@ -4518,7 +4891,7 @@
     "longname": "src/socket/index.js~IMKitSocket#sendMessage",
     "access": "public",
     "description": "Send message",
-    "lineNumber": 189,
+    "lineNumber": 192,
     "unknown": [
       {
         "tagName": "@returns",
@@ -4557,7 +4930,7 @@
     }
   },
   {
-    "__docId__": 172,
+    "__docId__": 182,
     "kind": "method",
     "name": "typing",
     "memberof": "src/socket/index.js~IMKitSocket",
@@ -4567,7 +4940,7 @@
     "longname": "src/socket/index.js~IMKitSocket#typing",
     "access": "public",
     "description": "Typing",
-    "lineNumber": 211,
+    "lineNumber": 214,
     "params": [
       {
         "nullable": null,
@@ -4593,7 +4966,7 @@
     "return": null
   },
   {
-    "__docId__": 173,
+    "__docId__": 183,
     "kind": "method",
     "name": "onError",
     "memberof": "src/socket/index.js~IMKitSocket",
@@ -4603,7 +4976,7 @@
     "longname": "src/socket/index.js~IMKitSocket#onError",
     "access": "private",
     "description": "",
-    "lineNumber": 219,
+    "lineNumber": 222,
     "params": [
       {
         "nullable": null,
@@ -4620,7 +4993,7 @@
     "return": null
   },
   {
-    "__docId__": 174,
+    "__docId__": 184,
     "kind": "method",
     "name": "base64Decode",
     "memberof": "src/socket/index.js~IMKitSocket",
@@ -4630,7 +5003,7 @@
     "longname": "src/socket/index.js~IMKitSocket#base64Decode",
     "access": "public",
     "description": null,
-    "lineNumber": 223,
+    "lineNumber": 226,
     "undocument": true,
     "params": [
       {
@@ -4647,7 +5020,7 @@
     }
   },
   {
-    "__docId__": 175,
+    "__docId__": 185,
     "kind": "file",
     "name": "src/typedef/ApiConfig.js",
     "content": "/**\r\n * @typedef {Object} ApiConfig\r\n * @property {String} domain\r\n * @property {String} [urlPreviewApi]\r\n * @property {String} [apiKey]\r\n * @property {String} clientKey\r\n * @property {String} [clientId]\r\n * @property {String} [token]\r\n * @property {String} [privateKey]\r\n * @property {String} [authBase]\r\n * @property {Object} [events]\r\n * @property {function(error: Object)} [events.onAjaxError]\r\n */\r\n",
@@ -4658,7 +5031,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 176,
+    "__docId__": 186,
     "kind": "typedef",
     "name": "ApiConfig",
     "memberof": "src/typedef/ApiConfig.js",
@@ -4777,7 +5150,7 @@
     }
   },
   {
-    "__docId__": 177,
+    "__docId__": 187,
     "kind": "file",
     "name": "src/typedef/ClientData.js",
     "content": "/**\r\n * @typedef {Object} ClientData\r\n * @property {String} _id\r\n * @property {String} avatarUrl\r\n * @property {String} email\r\n * @property {String} nickname\r\n * @property {Object} address\r\n * @property {Number} address.port\r\n * @property {String} address.family\r\n * @property {String} address.address\r\n * @property {String} userAgent\r\n * @property {String} lastLoginTime\r\n * @property {Number} lastLoginTimeMS\r\n * @property {String} id\r\n * @property {String} publicKey 訊息加密公鑰\r\n */\r\n",
@@ -4788,7 +5161,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 178,
+    "__docId__": 188,
     "kind": "typedef",
     "name": "ClientData",
     "memberof": "src/typedef/ClientData.js",
@@ -4937,10 +5310,10 @@
     }
   },
   {
-    "__docId__": 179,
+    "__docId__": 189,
     "kind": "file",
     "name": "src/typedef/MessageData.js",
-    "content": "/**\r\n * @typedef {Object} MessageData\r\n * @property {String} messageType\r\n * 'text', 'image', 'video', 'audio', 'location', 'sticker',\r\n * 'joinRoom', 'leaveRoom', 'addMember', 'deleteMember'\r\n * @property {String} message\r\n * @property {String} [sticker]\r\n * @property {String} [originalUrl]\r\n * @property {String} [thumbnailUrl]\r\n * @property {Number} [width]\r\n * @property {Number} [height]\r\n * @property {Number} [latitude]\r\n * @property {Number} [longitude]\r\n * @property {String} [duration]\r\n * @property {String} [extra]\r\n * @property {MessageData} [reply]\r\n *\r\n * @property {Object} sender\r\n * @property {String} sender.id client id\r\n * @property {String} sender.avatarUrl\r\n * @property {String} sender.nickname\r\n * @property {String} sender.lastLoginTime\r\n * @property {Number} sender.lastLoginTimeMS\r\n *\r\n * @property {String} messageTime\r\n * @property {Number} messageTimeMS\r\n * @property {String} id message id\r\n * @property {String} [appID]\r\n * @property {Number} [__v]\r\n *\r\n */\r\n",
+    "content": "/**\n * @typedef {Object} MessageData\n * @property {String} messageType\n * 'text', 'image', 'video', 'audio', 'location', 'sticker',\n * 'joinRoom', 'leaveRoom', 'addMember', 'deleteMember'\n * @property {String} message\n * @property {String} [room] room id\n * @property {String} [messageTime]\n * @property {String} [sticker]\n * @property {String} [originalUrl]\n * @property {String} [thumbnailUrl]\n * @property {Number} [width]\n * @property {Number} [height]\n * @property {Number} [latitude]\n * @property {Number} [longitude]\n * @property {String} [duration]\n * @property {String} [extra]\n * @property {MessageData} [reply]\n *\n * @property {Object} sender\n * @property {String} sender.id client id\n * @property {String} sender.avatarUrl\n * @property {String} sender.nickname\n * @property {String} sender.lastLoginTime\n * @property {Number} sender.lastLoginTimeMS\n *\n * @property {String} messageTime\n * @property {Number} messageTimeMS\n * @property {String} id message id\n * @property {String} [appID]\n * @property {Number} [__v]\n *\n */\n",
     "static": true,
     "longname": "E:/REPO/IMKit/IMKit-Chat-v3/imkit-js-api-v3/src/typedef/MessageData.js",
     "access": "public",
@@ -4948,7 +5321,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 180,
+    "__docId__": 190,
     "kind": "typedef",
     "name": "MessageData",
     "memberof": "src/typedef/MessageData.js",
@@ -4975,6 +5348,26 @@
         "spread": false,
         "optional": false,
         "name": "message",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "room",
+        "description": "room id"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "messageTime",
         "description": ""
       },
       {
@@ -5197,7 +5590,7 @@
     }
   },
   {
-    "__docId__": 181,
+    "__docId__": 191,
     "kind": "file",
     "name": "src/typedef/MessageInfo.js",
     "content": "/**\r\n * 丟什麼進去就會吐什麼出來，it's very free~~~\r\n * @typedef {Object} MessageInfo\r\n * @property {String} messageType\r\n * 'text', 'image', 'video', 'audio', 'location', 'sticker',\r\n * 'joinRoom', 'leaveRoom', 'addMember', 'deleteMember'\r\n * @property {String} [message]\r\n * @property {String} [sticker]\r\n * @property {String} [originalUrl]\r\n * @property {String} [thumbnailUrl]\r\n * @property {String} [width]\r\n * @property {String} [height]\r\n * @property {String} [latitude]\r\n * @property {String} [longitude]\r\n * @property {String} [duration]\r\n * @property {String} [extra]\r\n * @property {String} [reply]\r\n */\r\n",
@@ -5208,7 +5601,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 182,
+    "__docId__": 192,
     "kind": "typedef",
     "name": "MessageInfo",
     "memberof": "src/typedef/MessageInfo.js",
@@ -5347,7 +5740,7 @@
     }
   },
   {
-    "__docId__": 183,
+    "__docId__": 193,
     "kind": "file",
     "name": "src/typedef/Push.js",
     "content": "/**\r\n * @typedef {Object} PushPayload\r\n * @property {String} topic\r\n * @property {Number} badge\r\n * @property {String} sound\r\n * @property {String} nickname\r\n * @property {String} title\r\n * @property {String} collapseKey\r\n * @property {String} body\r\n * @property {String} icon\r\n * @property {String} sample-type:sample\r\n * @property {Object} alert\r\n * @property {String} alert.loc-key\r\n * @property {String[]} alert.loc-args\r\n */\r\n",
@@ -5358,7 +5751,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 184,
+    "__docId__": 194,
     "kind": "typedef",
     "name": "PushPayload",
     "memberof": "src/typedef/Push.js",
@@ -5497,7 +5890,7 @@
     }
   },
   {
-    "__docId__": 185,
+    "__docId__": 195,
     "kind": "file",
     "name": "src/typedef/RoomData.js",
     "content": "/**\r\n * @typedef {Object} RoomData\r\n * @property {String} _id\r\n * @property {String} appID 房間 ID\r\n * @property {MessageData} lastMessage 最後一則訊息\r\n * @property {String} name Room name\r\n * @property {Number} serviceStatus\r\n * @property {String} createdTime ex: 2018-05-21T08:41:28.438Z\r\n * @property {Object[]} memberProperties 會員已讀狀態\r\n * @property {Number} memberProperties.badge\r\n * @property {String} memberProperties.lastRead\r\n * @property {String} memberProperties.client\r\n * @property {Object[]} members 會員列表\r\n * @property {String} members[].id\r\n * @property {String} members[].avatarUrl\r\n * @property {String} members[].nickname\r\n * @property {String} members[].lastLoginTime\r\n * @property {Number} members[].lastLoginTimeMS\r\n * @property {Number} members[].publicKey\r\n * @property {Boolean} muted 是否靜音\r\n * @property {Number} createdTimeMS ex: 1526892088438\r\n * @property {String} id 房間 ID\r\n * @property {String} [roomType] 房間 type, \"direct\" or \"group\"\r\n * @property {Boolean} [encrypted] 房間訊息是否加密\r\n * @property {RoomPref} [pref] 房間個人資訊\r\n */\r\n",
@@ -5508,7 +5901,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 186,
+    "__docId__": 196,
     "kind": "typedef",
     "name": "RoomData",
     "memberof": "src/typedef/RoomData.js",
@@ -5757,7 +6150,7 @@
     }
   },
   {
-    "__docId__": 187,
+    "__docId__": 197,
     "kind": "file",
     "name": "src/typedef/RoomPref.js",
     "content": "/**\r\n * @typedef {Object} RoomPref\r\n * @property {String[]} [tags]\r\n * @property {String} [folder] 房間所屬資料夾\r\n * @property {Boolean} [muted] 是否靜音\r\n * @property {Boolean} [sticky] 是否置頂\r\n * @property {Boolean} [hidden] 是否隱藏\r\n */\r\n",
@@ -5768,7 +6161,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 188,
+    "__docId__": 198,
     "kind": "typedef",
     "name": "RoomPref",
     "memberof": "src/typedef/RoomPref.js",
@@ -5837,10 +6230,10 @@
     }
   },
   {
-    "__docId__": 189,
+    "__docId__": 199,
     "kind": "file",
     "name": "src/typedef/SocketConfig.js",
-    "content": "/**\n * When Socket Receive Message\n * @name SocketOnReceiveMessageFunction\n * @function\n * @param {MessageData} message\n */\n/**\n * @typedef {Object} SocketConfig\n * @property {String} domain\n * @property {String} [clientId]\n * @property {String} [token]\n * @property {String} [privateKey]\n * @property {Object} [events]\n * @property {function(error: Object)} [events.onAjaxError]\n * @property {function()} [onConnect]\n * @property {function()} [onDisconnect]\n * @property {function(message: MessageData)} [onReceiveMessage]\n * @property {function(room: {room: String, memberProperty: {badge: Number, client: String, lastRead: String}[]})} [onReceiveRoom]\n * @property {function(typing: {message: String, room: String, sender: String})} [onReceiveTyping]\n * @property {function(data: {messageID: String, roomID: String, memberID: String})} [onReceivelastRead]\n * @property {function(data: {room: String, folder: String, hidden: Boolean, muted: Boolean, sticky: Boolean, tags: String[]})} [onReceiveRoomPref]\n * @property {function(data: Object)} [onReceiveMyPrefChange]\n * @property {function(data: String)} [onReceiveMyPrefDelete]\n */\n",
+    "content": "/**\r\n * When Socket Receive Message\r\n * @name SocketOnReceiveMessageFunction\r\n * @function\r\n * @param {MessageData} message\r\n */\r\n/**\r\n * @typedef {Object} SocketConfig\r\n * @property {String} domain\r\n * @property {String} [clientId]\r\n * @property {String} [token]\r\n * @property {String} [privateKey]\r\n * @property {Object} [events]\r\n * @property {function(error: Object)} [events.onAjaxError]\r\n * @property {function()} [onConnect]\r\n * @property {function()} [onDisconnect]\r\n * @property {function(message: MessageData)} [onReceiveMessage]\r\n * @property {function(room: {room: String, memberProperty: {badge: Number, client: String, lastRead: String}[]})} [onReceiveRoom]\r\n * @property {function(typing: {message: String, room: String, sender: String})} [onReceiveTyping]\r\n * @property {function(data: {messageID: String, roomID: String, memberID: String})} [onReceivelastRead]\r\n * @property {function(data: {room: String, folder: String, hidden: Boolean, muted: Boolean, sticky: Boolean, tags: String[]})} [onReceiveRoomPref]\r\n * @property {function(data: Object)} [onReceiveMyPrefChange]\r\n * @property {function(data: String)} [onReceiveMyPrefDelete]\r\n */\r\n",
     "static": true,
     "longname": "E:/REPO/IMKit/IMKit-Chat-v3/imkit-js-api-v3/src/typedef/SocketConfig.js",
     "access": "public",
@@ -5848,7 +6241,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 190,
+    "__docId__": 200,
     "kind": "typedef",
     "name": "SocketConfig",
     "memberof": "src/typedef/SocketConfig.js",
@@ -6017,7 +6410,7 @@
     }
   },
   {
-    "__docId__": 191,
+    "__docId__": 201,
     "kind": "file",
     "name": "src/typedef/TokenData.js",
     "content": "/**\r\n * @typedef {Object} TokenData\r\n * @property {String} [_id]\r\n * @property {String} token\r\n * @property {String} client\r\n * @property {String} expirationDate\r\n * @property {Number} expirationDateMS\r\n * @property {String} [id]\r\n */\r\n",
@@ -6028,7 +6421,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 192,
+    "__docId__": 202,
     "kind": "typedef",
     "name": "TokenData",
     "memberof": "src/typedef/TokenData.js",
@@ -6108,7 +6501,7 @@
   },
   {
     "kind": "index",
-    "content": "# Imkit Js Api v3\n\n描述描述\n\n## Installing\n\n### NodeJs\n\n```sh\n$ npm install --save https://github.com/imkit/imkit-js-lib\n```\n\n## Use\n\n### NodeJs\n\n```javascript\nimport { IMKitApi, IMKitSocket } from 'imkit-js-api-v3';\n\nlet api = new IMKitApi(apiConfig);\nlet socket = new IMKitSocket(socketConfig);\n```\n\n### CDN\n\n```html\n<script src=\"https://cdn.jsdelivr.net/gh/imkit/imkit-js-lib/lib/imkit-js-api-v3.web.js\"></script>\n```\n\n```javascript\nlet api = new IMKitApi(apiConfig);\nlet socket = new IMKitSocket(socketConfig);\n```\n",
+    "content": "# Imkit Js Api v3\r\n\r\n描述描述\r\n\r\n## Installing\r\n\r\n### NodeJs\r\n\r\n```sh\r\n$ npm install --save https://github.com/imkit/imkit-js-lib\r\n```\r\n\r\n## Use\r\n\r\n### NodeJs\r\n\r\n```javascript\r\nimport { IMKitApi, IMKitSocket } from 'imkit-js-api-v3';\r\n\r\nlet api = new IMKitApi(apiConfig);\r\nlet socket = new IMKitSocket(socketConfig);\r\n```\r\n\r\n### CDN\r\n\r\n```html\r\n<script src=\"https://cdn.jsdelivr.net/gh/imkit/imkit-js-lib/lib/imkit-js-api-v3.web.js\"></script>\r\n```\r\n\r\n```javascript\r\nlet api = new IMKitApi(apiConfig);\r\nlet socket = new IMKitSocket(socketConfig);\r\n```\r\n",
     "longname": "E:\\REPO\\IMKit\\IMKit-Chat-v3\\imkit-js-api-v3\\README.md",
     "name": "./README.md",
     "static": true,
@@ -6116,7 +6509,7 @@
   },
   {
     "kind": "packageJSON",
-    "content": "{\n  \"name\": \"imkit-js-api-v3\",\n  \"version\": \"3.0.4\",\n  \"description\": \"\",\n  \"main\": \"src/index.js\",\n  \"scripts\": {\n    \"build\": \"webpack --env build\",\n    \"dev\": \"webpack --progress --colors --watch --env dev\",\n    \"test\": \"mocha --require babel-register --colors ./test/*.spec.js\",\n    \"test:watch\": \"mocha --require babel-register --colors -w ./test/*.spec.js\",\n    \"test:api\": \"mocha --require babel-register --colors ./test/api.spec.js\",\n    \"test:socket\": \"mocha --require babel-register --colors ./test/socket.spec.js\",\n    \"doc\": \"./node_modules/.bin/esdoc\"\n  },\n  \"repository\": {\n    \"type\": \"git\",\n    \"url\": \"\"\n  },\n  \"keywords\": [],\n  \"author\": \"Gagu\",\n  \"license\": \"ISC\",\n  \"bugs\": {\n    \"url\": \"https://\"\n  },\n  \"homepage\": \"https://\",\n  \"devDependencies\": {\n    \"@babel/cli\": \"^7.4.4\",\n    \"@babel/core\": \"^7.4.5\",\n    \"@babel/preset-env\": \"^7.4.5\",\n    \"babel-eslint\": \"^8.0.3\",\n    \"babel-loader\": \"^8.0.6\",\n    \"babel-plugin-add-module-exports\": \"^0.2.1\",\n    \"babel-preset-env\": \"^7.0.0-beta.3\",\n    \"babel-register\": \"^7.0.0-beta.3\",\n    \"chai\": \"^4.2.0\",\n    \"esdoc\": \"^1.1.0\",\n    \"esdoc-standard-plugin\": \"^1.0.0\",\n    \"eslint\": \"^5.16.0\",\n    \"eslint-loader\": \"^2.1.2\",\n    \"jsdom\": \"11.11.0\",\n    \"jsdom-global\": \"3.0.2\",\n    \"mocha\": \"^4.0.1\",\n    \"uglifyjs-webpack-plugin\": \"^1.3.0\",\n    \"webpack\": \"^4.32.2\",\n    \"webpack-cli\": \"^3.3.2\",\n    \"yargs\": \"^10.0.3\"\n  },\n  \"dependencies\": {\n    \"axios\": \"^0.18.0\",\n    \"crypto-js\": \"^3.1.9-1\",\n    \"node-forge\": \"^0.8.5\",\n    \"socket.io-client\": \"^2.2.0\"\n  }\n}\n",
+    "content": "{\r\n  \"name\": \"imkit-js-api-v3\",\r\n  \"version\": \"3.0.4\",\r\n  \"description\": \"\",\r\n  \"main\": \"src/index.js\",\r\n  \"scripts\": {\r\n    \"build\": \"webpack --env build\",\r\n    \"dev\": \"webpack --progress --colors --watch --env dev\",\r\n    \"test\": \"mocha --require babel-register --colors ./test/*.spec.js\",\r\n    \"test:watch\": \"mocha --require babel-register --colors -w ./test/*.spec.js\",\r\n    \"test:api\": \"mocha --require babel-register --colors ./test/api.spec.js\",\r\n    \"test:socket\": \"mocha --require babel-register --colors ./test/socket.spec.js\",\r\n    \"doc\": \"./node_modules/.bin/esdoc\"\r\n  },\r\n  \"repository\": {\r\n    \"type\": \"git\",\r\n    \"url\": \"\"\r\n  },\r\n  \"keywords\": [],\r\n  \"author\": \"Gagu\",\r\n  \"license\": \"ISC\",\r\n  \"bugs\": {\r\n    \"url\": \"https://\"\r\n  },\r\n  \"homepage\": \"https://\",\r\n  \"devDependencies\": {\r\n    \"@babel/cli\": \"^7.4.4\",\r\n    \"@babel/core\": \"^7.4.5\",\r\n    \"@babel/preset-env\": \"^7.4.5\",\r\n    \"babel-eslint\": \"^8.0.3\",\r\n    \"babel-loader\": \"^8.0.6\",\r\n    \"babel-plugin-add-module-exports\": \"^0.2.1\",\r\n    \"babel-preset-env\": \"^7.0.0-beta.3\",\r\n    \"babel-register\": \"^7.0.0-beta.3\",\r\n    \"chai\": \"^4.2.0\",\r\n    \"esdoc\": \"^1.1.0\",\r\n    \"esdoc-standard-plugin\": \"^1.0.0\",\r\n    \"eslint\": \"^5.16.0\",\r\n    \"eslint-loader\": \"^2.1.2\",\r\n    \"jsdom\": \"11.11.0\",\r\n    \"jsdom-global\": \"3.0.2\",\r\n    \"mocha\": \"^4.0.1\",\r\n    \"uglifyjs-webpack-plugin\": \"^1.3.0\",\r\n    \"webpack\": \"^4.32.2\",\r\n    \"webpack-cli\": \"^3.3.2\",\r\n    \"yargs\": \"^10.0.3\"\r\n  },\r\n  \"dependencies\": {\r\n    \"axios\": \"^0.18.0\",\r\n    \"crypto-js\": \"^3.1.9-1\",\r\n    \"node-forge\": \"^0.8.5\",\r\n    \"socket.io-client\": \"^2.2.0\"\r\n  }\r\n}\r\n",
     "longname": "E:\\REPO\\IMKit\\IMKit-Chat-v3\\imkit-js-api-v3\\package.json",
     "name": "package.json",
     "static": true,

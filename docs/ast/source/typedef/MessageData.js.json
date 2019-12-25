@@ -1,28 +1,28 @@
 {
   "type": "File",
   "start": 0,
-  "end": 993,
+  "end": 1035,
   "loc": {
     "start": {
       "line": 1,
       "column": 0
     },
     "end": {
-      "line": 32,
+      "line": 34,
       "column": 0
     }
   },
   "program": {
     "type": "Program",
     "start": 0,
-    "end": 993,
+    "end": 1035,
     "loc": {
       "start": {
         "line": 1,
         "column": 0
       },
       "end": {
-        "line": 32,
+        "line": 34,
         "column": 0
       }
     },
@@ -33,16 +33,16 @@
     "innerComments": [
       {
         "type": "CommentBlock",
-        "value": "*\r\n * @typedef {Object} MessageData\r\n * @property {String} messageType\r\n * 'text', 'image', 'video', 'audio', 'location', 'sticker',\r\n * 'joinRoom', 'leaveRoom', 'addMember', 'deleteMember'\r\n * @property {String} message\r\n * @property {String} [sticker]\r\n * @property {String} [originalUrl]\r\n * @property {String} [thumbnailUrl]\r\n * @property {Number} [width]\r\n * @property {Number} [height]\r\n * @property {Number} [latitude]\r\n * @property {Number} [longitude]\r\n * @property {String} [duration]\r\n * @property {String} [extra]\r\n * @property {MessageData} [reply]\r\n *\r\n * @property {Object} sender\r\n * @property {String} sender.id client id\r\n * @property {String} sender.avatarUrl\r\n * @property {String} sender.nickname\r\n * @property {String} sender.lastLoginTime\r\n * @property {Number} sender.lastLoginTimeMS\r\n *\r\n * @property {String} messageTime\r\n * @property {Number} messageTimeMS\r\n * @property {String} id message id\r\n * @property {String} [appID]\r\n * @property {Number} [__v]\r\n *\r\n ",
+        "value": "*\n * @typedef {Object} MessageData\n * @property {String} messageType\n * 'text', 'image', 'video', 'audio', 'location', 'sticker',\n * 'joinRoom', 'leaveRoom', 'addMember', 'deleteMember'\n * @property {String} message\n * @property {String} [room] room id\n * @property {String} [messageTime]\n * @property {String} [sticker]\n * @property {String} [originalUrl]\n * @property {String} [thumbnailUrl]\n * @property {Number} [width]\n * @property {Number} [height]\n * @property {Number} [latitude]\n * @property {Number} [longitude]\n * @property {String} [duration]\n * @property {String} [extra]\n * @property {MessageData} [reply]\n *\n * @property {Object} sender\n * @property {String} sender.id client id\n * @property {String} sender.avatarUrl\n * @property {String} sender.nickname\n * @property {String} sender.lastLoginTime\n * @property {Number} sender.lastLoginTimeMS\n *\n * @property {String} messageTime\n * @property {Number} messageTimeMS\n * @property {String} id message id\n * @property {String} [appID]\n * @property {Number} [__v]\n *\n ",
         "start": 0,
-        "end": 991,
+        "end": 1034,
         "loc": {
           "start": {
             "line": 1,
             "column": 0
           },
           "end": {
-            "line": 31,
+            "line": 33,
             "column": 3
           }
         }
@@ -52,16 +52,16 @@
   "comments": [
     {
       "type": "CommentBlock",
-      "value": "*\r\n * @typedef {Object} MessageData\r\n * @property {String} messageType\r\n * 'text', 'image', 'video', 'audio', 'location', 'sticker',\r\n * 'joinRoom', 'leaveRoom', 'addMember', 'deleteMember'\r\n * @property {String} message\r\n * @property {String} [sticker]\r\n * @property {String} [originalUrl]\r\n * @property {String} [thumbnailUrl]\r\n * @property {Number} [width]\r\n * @property {Number} [height]\r\n * @property {Number} [latitude]\r\n * @property {Number} [longitude]\r\n * @property {String} [duration]\r\n * @property {String} [extra]\r\n * @property {MessageData} [reply]\r\n *\r\n * @property {Object} sender\r\n * @property {String} sender.id client id\r\n * @property {String} sender.avatarUrl\r\n * @property {String} sender.nickname\r\n * @property {String} sender.lastLoginTime\r\n * @property {Number} sender.lastLoginTimeMS\r\n *\r\n * @property {String} messageTime\r\n * @property {Number} messageTimeMS\r\n * @property {String} id message id\r\n * @property {String} [appID]\r\n * @property {Number} [__v]\r\n *\r\n ",
+      "value": "*\n * @typedef {Object} MessageData\n * @property {String} messageType\n * 'text', 'image', 'video', 'audio', 'location', 'sticker',\n * 'joinRoom', 'leaveRoom', 'addMember', 'deleteMember'\n * @property {String} message\n * @property {String} [room] room id\n * @property {String} [messageTime]\n * @property {String} [sticker]\n * @property {String} [originalUrl]\n * @property {String} [thumbnailUrl]\n * @property {Number} [width]\n * @property {Number} [height]\n * @property {Number} [latitude]\n * @property {Number} [longitude]\n * @property {String} [duration]\n * @property {String} [extra]\n * @property {MessageData} [reply]\n *\n * @property {Object} sender\n * @property {String} sender.id client id\n * @property {String} sender.avatarUrl\n * @property {String} sender.nickname\n * @property {String} sender.lastLoginTime\n * @property {Number} sender.lastLoginTimeMS\n *\n * @property {String} messageTime\n * @property {Number} messageTimeMS\n * @property {String} id message id\n * @property {String} [appID]\n * @property {Number} [__v]\n *\n ",
       "start": 0,
-      "end": 991,
+      "end": 1034,
       "loc": {
         "start": {
           "line": 1,
           "column": 0
         },
         "end": {
-          "line": 31,
+          "line": 33,
           "column": 3
         }
       }
@@ -70,16 +70,16 @@
   "tokens": [
     {
       "type": "CommentBlock",
-      "value": "*\r\n * @typedef {Object} MessageData\r\n * @property {String} messageType\r\n * 'text', 'image', 'video', 'audio', 'location', 'sticker',\r\n * 'joinRoom', 'leaveRoom', 'addMember', 'deleteMember'\r\n * @property {String} message\r\n * @property {String} [sticker]\r\n * @property {String} [originalUrl]\r\n * @property {String} [thumbnailUrl]\r\n * @property {Number} [width]\r\n * @property {Number} [height]\r\n * @property {Number} [latitude]\r\n * @property {Number} [longitude]\r\n * @property {String} [duration]\r\n * @property {String} [extra]\r\n * @property {MessageData} [reply]\r\n *\r\n * @property {Object} sender\r\n * @property {String} sender.id client id\r\n * @property {String} sender.avatarUrl\r\n * @property {String} sender.nickname\r\n * @property {String} sender.lastLoginTime\r\n * @property {Number} sender.lastLoginTimeMS\r\n *\r\n * @property {String} messageTime\r\n * @property {Number} messageTimeMS\r\n * @property {String} id message id\r\n * @property {String} [appID]\r\n * @property {Number} [__v]\r\n *\r\n ",
+      "value": "*\n * @typedef {Object} MessageData\n * @property {String} messageType\n * 'text', 'image', 'video', 'audio', 'location', 'sticker',\n * 'joinRoom', 'leaveRoom', 'addMember', 'deleteMember'\n * @property {String} message\n * @property {String} [room] room id\n * @property {String} [messageTime]\n * @property {String} [sticker]\n * @property {String} [originalUrl]\n * @property {String} [thumbnailUrl]\n * @property {Number} [width]\n * @property {Number} [height]\n * @property {Number} [latitude]\n * @property {Number} [longitude]\n * @property {String} [duration]\n * @property {String} [extra]\n * @property {MessageData} [reply]\n *\n * @property {Object} sender\n * @property {String} sender.id client id\n * @property {String} sender.avatarUrl\n * @property {String} sender.nickname\n * @property {String} sender.lastLoginTime\n * @property {Number} sender.lastLoginTimeMS\n *\n * @property {String} messageTime\n * @property {Number} messageTimeMS\n * @property {String} id message id\n * @property {String} [appID]\n * @property {Number} [__v]\n *\n ",
       "start": 0,
-      "end": 991,
+      "end": 1034,
       "loc": {
         "start": {
           "line": 1,
           "column": 0
         },
         "end": {
-          "line": 31,
+          "line": 33,
           "column": 3
         }
       }
@@ -97,15 +97,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 993,
-      "end": 993,
+      "start": 1035,
+      "end": 1035,
       "loc": {
         "start": {
-          "line": 32,
+          "line": 34,
           "column": 0
         },
         "end": {
-          "line": 32,
+          "line": 34,
           "column": 0
         }
       }
