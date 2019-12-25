@@ -37,9 +37,11 @@ let socket = new IMKitSocket(socketConfig);
 ```
 ### 執行範例
 
+```javascript
 
 
 
+```
 
 
 ## 在客端網頁
@@ -59,5 +61,10 @@ let socket = new IMKitSocket(socketConfig);
 
 ### 執行範例
 
+```javascript
+
+
+
+```
 
 
